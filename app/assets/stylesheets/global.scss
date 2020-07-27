@@ -1,0 +1,132 @@
+@font-face {
+   font-family: 'Syne-Regular';
+   src: url('/app/assets/fonts/Syne-Regular.ttf')
+}
+
+@font-face {
+  font-family: 'MonumentGroteskTrial-Regular';
+  src: url('app/assets/fonts/MonumentGroteskTrial-Regular.woff')
+}
+
+body {
+  margin-left: 64px;
+  font-family: MonumentGroteskTrial-Regular;
+  background-color: #222222;
+  color: #F5F7F9;
+}
+
+nav {
+  h1{
+    margin-top: 56px;
+    margin-left: 64px;
+  }
+
+  a {
+    color: #F5F7F9;
+    text-decoration: none;
+  }
+}
+
+.button {
+  background-color: #222222; /* Green */
+  border: none;
+  color: #222222;
+  padding: 10px 16px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  transition-duration: 0.4s;
+}
+
+.button1 {
+  background-color: #222222;
+  color: #FF6640;
+  border: 2px solid #FF6640;
+  border-radius: 25px
+}
+
+.button1 a {
+  color: #FF6640;
+  text-decoration: none;
+  font-size: 12px;
+}
+
+.button1:hover {
+  background-color: #FF6640;
+
+ a{
+   color: #222222;
+ }
+}
+
+.button2 a {
+  color: #222222;
+  text-decoration: none;
+  font-size: 12px;
+}
+
+.button2 {
+  background-color: #FF6640;
+  border: 2px solid #FF6640;
+  border-radius: 25px
+}
+
+.button2:hover {opacity: 0.6}
+
+
+input[type=submit] {
+  background: #FF6640;
+  color: #222222;
+  border-color: #FF6640;
+  margin-top: 10px;
+  margin-left: 25px;
+}
+
+input, textarea {
+  font-size: 18px;
+  min-width: 100px;
+  border: 1px solid #FF6640;
+  padding: 7px 10px;
+  font-family: MonumentGroteskTrial-Regular;
+  margin: 8px 0px;
+  color: #FF6640;
+  background-color: #222222;
+}
+
+div, form {
+    margin: 0 0 0 25px;
+  }
+
+  input {
+    min-width: 200px;
+    font-size: 14px;
+  }
+
+
+ label {
+  display: block;
+  color: #FF6640;
+}
+
+.success {
+  background: #FF6640;
+  color: #222222;
+  padding: 10px 20px;
+  width: 25%
+}
+
+.error {
+  background: #FF6640;
+  color: #222222;
+  padding: 10px 20px;
+  width: 25%
+}
+
+footer a {
+  color: #F5F7F9;
+  text-decoration: none;
+
+}

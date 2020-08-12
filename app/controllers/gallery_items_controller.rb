@@ -4,10 +4,6 @@ class GalleryItemsController < ApplicationController
     @gallery_items = GalleryItem.all
   end
 
-  def show
-    @gallery_item = GalleryItem.find(params[:id])
-  end
-
   def new
     @gallery_item = GalleryItem.new
   end
@@ -17,11 +13,23 @@ class GalleryItemsController < ApplicationController
     @gallery_item.save
   end
 
+  def show
+    @gallery_item = GalleryItem.find(params[:id])
+  end
+
+  def edit
+  end
+
+
+  def update
+    render "edit"
+  end
+
   def destroy
   end
 
   def form_params
-     params.require(:GalleryItem).permit(:title, :author, :description, :year, :image)
+     params.require(:GalleryItem).permit(:id, :title, :author, :description, :year, :image)
    end
 
 

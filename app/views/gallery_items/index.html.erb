@@ -1,6 +1,16 @@
-<% @gallery_items.each do |item| %>
-<%= image_tag item.image.medium.url %>
-<p><%= item.title %></p>
-<p><%= item.author %></p>
-<p><%= item.year %></p>
-<% end %>
+
+<div class="gallery-items-grid">
+  <% @gallery_items.each do |item| %>
+  <%= link_to gallery_item_path(item) do %>
+  <div class="gallery-img">
+      <%= image_tag item.image.medium.url %>
+  </div>
+  <% end %>
+  <div class="gallery-components">
+    <h3><%= item.title %></h3>
+    <h3><%= item.author %></h3>
+    <h3><%= item.description %></h3>
+  </div>
+
+  <% end %>
+</div>

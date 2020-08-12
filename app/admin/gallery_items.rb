@@ -5,7 +5,7 @@ ActiveAdmin.register GalleryItem do
   #
   # Uncomment all parameters which should be permitted for assignment
   #
-   permit_params :title, :image, :author, :year, :description
+   permit_params :title, :image, :author, :year, :description, :film_id
   #
   # or
   #

@@ -1,0 +1,6 @@
+<% @gallery_items.each do |item| %>
+<%= image_tag item.image.medium.url %>
+<p><%= item.title %></p>
+<p><%= item.author %></p>
+<p><%= item.year %></p>
+<% end %>

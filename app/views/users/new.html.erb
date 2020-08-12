@@ -2,9 +2,9 @@
 <h3>Join the sink!</h3>
 
 <%= simple_form_for @user do |f| %>
-<%= f.input :name %>
+<%= f.input :name, :label => 'Full name' %>
 <%= f.input :username %>
-<%= f.input :email %>
+<%= f.input :email, :placeholder => 'e.g. juan@gmail.com' %>
 <%= f.input :password %>
 <%= f.input :password_confirmation %>
 

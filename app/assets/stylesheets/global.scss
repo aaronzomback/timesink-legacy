@@ -43,19 +43,19 @@ nav {
 
 .button1 {
   background-color: #222222;
-  color: #FF6640;
-  border: 2px solid #FF6640;
+  color: #F57944;
+  border: 2px solid #7AA8FF;
   border-radius: 25px
 }
 
 .button1 a {
-  color: #FF6640;
+  color: #7AA8FF;
   text-decoration: none;
   font-size: 12px;
 }
 
 .button1:hover {
-  background-color: #FF6640;
+  background-color: #7AA8FF;
 
  a{
    color: #222222;
@@ -69,8 +69,8 @@ nav {
 }
 
 .button2 {
-  background-color: #FF6640;
-  border: 2px solid #FF6640;
+  background-color: #7AA8FF;
+  border: 2px solid #7AA8FF;
   border-radius: 25px
 }
 
@@ -78,21 +78,26 @@ nav {
 
 
 input[type=submit] {
-  background: #FF6640;
+  background: #7AA8FF;
   color: #222222;
-  border-color: #FF6640;
+  border-color: #7AA8FF;
   margin-top: 10px;
   margin-left: 25px;
+}
+
+input[type=placeholder] {
+
+  color: #7AA8FF;
 }
 
 input, textarea {
   font-size: 18px;
   min-width: 100px;
-  border: 1px solid #FF6640;
+  border: 1px solid #7AA8FF;
   padding: 7px 10px;
   font-family: MonumentGroteskTrial-Regular;
   margin: 8px 0px;
-  color: #FF6640;
+  color: #7AA8FF;
   background-color: #222222;
 }
 
@@ -108,7 +113,7 @@ div, form {
 
  label {
   display: block;
-  color: #FF6640;
+  color: #7AA8FF;
 }
 
 .success {

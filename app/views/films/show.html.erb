@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<link href="https://vjs.zencdn.net/7.8.4/video-js.css" rel="stylesheet" />
+<!-- If you'd like to support IE8 (for Video.js versions prior to v7) -->
+<script src="https://vjs.zencdn.net/ie8/1.1.2/videojs-ie8.min.js"></script>
+<p>
+  <strong>  <%= @film.title %> </strong>
+</p>
+
+
+<video
+  id="my-video"
+  class="video-js vjs-theme-sea"
+  controls
+  preload="auto"
+  width="298"
+  height="319"
+  poster= "<%= url_for (@film.thumbnail)%>"
+  data-setup="{}"
+  >
+<source src="<%= url_for (@film.video)%>" type="video/mp4" />
+</video>
+
+<p>
+  <strong>Description:</strong>
+  <%= @film.description %>
+</p>
+<%= link_to 'Edit', edit_film_path(@film) %> |
+<%= link_to 'Back', films_path %>
+
+<script src="https://vjs.zencdn.net/7.8.4/video.js"></script>

@@ -14,7 +14,7 @@ class GalleryItemsController < ApplicationController
   end
 
   def show
-    @gallery_item = GalleryItem.find(params[:id])
+    @gallery_item = GalleryItem.find_by_title(params[:id])
   end
 
   def edit
@@ -29,7 +29,7 @@ class GalleryItemsController < ApplicationController
   end
 
   def form_params
-     params.require(:GalleryItem).permit(:id, :title, :author, :description, :year, :image)
+     params.require(:GalleryItem).permit(:title, :author, :description, :year, :image)
    end
 
 

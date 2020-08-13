@@ -7,4 +7,10 @@ class GalleryItem < ApplicationRecord
 
   mount_uploader :image, ImageUploader
 
+
+  def to_param
+    title
+  end
+
+
 end

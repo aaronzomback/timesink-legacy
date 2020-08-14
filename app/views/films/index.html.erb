@@ -1,0 +1,18 @@
+<div class="film-gallery-grid">
+
+<% @films.each do |film| %>
+
+<%= link_to film_path(film) do %>
+<div class="gallery-img">
+  <%= image_tag film.image.thumb.url %>
+</div>
+<% end %>
+
+<div class="gallery-components">
+    <h3><%= film.title %></h3>
+    <h3><%= film.author %></h3>
+    <h3><%= film.description %></h3>
+</div>
+
+<% end %>
+</div>

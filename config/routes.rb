@@ -6,12 +6,14 @@ Rails.application.routes.draw do
 
   resource :session
 
+  resources :films
+
   get "info", to: "pages#info"
   get "donate", to: "pages#donate"
   get "terms", to: "pages#terms"
   get "privacy_policy", to: "pages#privacy_policy"
   get "cookies_policy", to: "pages#cookies_policy"
 
-  root "pages#home"
+  root "films#index"
 
 end

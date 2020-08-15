@@ -1,4 +1,9 @@
 
+<div class="back-to-films">
+  <%= link_to films_path do %>
+  <h3>Back to film gallery</h3>
+  <% end %>
+</div>
 
 <div class="film-show-img">
   <%= image_tag @film.cover.show.url %>

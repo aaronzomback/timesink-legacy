@@ -10,7 +10,9 @@ Rails.application.routes.draw do
   resource :session
 
   # films controller
-  resources :films
+  resources :films do
+    resources :reviews
+  end
 
   get "info", to: "pages#info"
   get "donate", to: "pages#donate"

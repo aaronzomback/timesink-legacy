@@ -7,7 +7,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(form_params)
 
-    if @user.save
+    if @user.save!
       redirect_to root_path
 
     # keep hold of that user

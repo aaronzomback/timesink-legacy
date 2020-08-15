@@ -29,11 +29,18 @@ gem 'jbuilder', '~> 2.7'
 gem 'bootsnap', '>= 1.4.2', require: false
 
 gem 'simple_form'
+
+# user login, secure password
 gem 'bcrypt'
 
 # for admin
 gem 'activeadmin'
 gem 'devise'
+
+# for image uploads
+gem 'carrierwave', '~> 2.0'
+gem 'mini_magick'
+gem 'fog-aws'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

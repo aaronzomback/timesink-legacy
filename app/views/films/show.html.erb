@@ -8,3 +8,33 @@
 <div class="film-show-img">
   <%= image_tag @film.cover.show.url %>
 </div>
+
+
+<h3>Reviews</h3>
+
+<% @film.reviews.order("created_at desc").each do |review| %>
+  <div class="review">
+      <%= link_to film_review_path(@film) do %>
+    <h3><%= review.title %></h3>
+    <% end %>
+    <h4><%= review.score %></h4>
+
+
+    <p class="posted">
+      Published by
+
+      <% if review.user.present? %>
+      <%= link_to review.user.username, user_path(review.user) %>
+        </p>
+
+      <% else %>
+      anonymous
+      <% end %>
+
+      <% end %>
+
+<%= simple_form_for [@film, Review.new] do |f| %>
+<%= f.input :title %>
+<%= f.input :body %>
+<%= f.button :submit, "Add review" %>
+<% end %>

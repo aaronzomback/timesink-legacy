@@ -9,10 +9,20 @@
 }
 
 body {
-  margin-left: 64px;
   font-family: MonumentGroteskTrial-Regular;
   background-color: #222222;
   color: #F5F7F9;
+  height: 100vh;
+  width: 100vw;
+}
+
+.cover_img {
+  border: 1px solid #6E6E6E;
+}
+
+.prime-logo {
+  width: 200px;
+  height: 50px;
 }
 
 div.back-to-films{
@@ -23,8 +33,23 @@ div.back-to-films{
   }
 }
 
+div.film-item {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin-bottom: 16px;
+}
+
+div.film-show-img {
+  margin-bottom: 64px;
+}
+
+header {
+  margin-bottom: 64px;
+  width: 100%
+}
+
 nav {
-  h1{
+  img{
     margin-top: 56px;
     margin-left: 64px;
   }
@@ -51,19 +76,19 @@ nav {
 
 .button1 {
   background-color: #222222;
-  color: #FF6640;
-  border: 2px solid #FF6640;
+  color: #7AA8FF;
+  border: 2px solid #7AA8FF;
   border-radius: 25px
 }
 
 .button1 a {
-  color: #FF6640;
+  color: #7AA8FF;
   text-decoration: none;
   font-size: 12px;
 }
 
 .button1:hover {
-  background-color: #FF6640;
+  background-color: #7AA8FF;
 
  a{
    color: #222222;
@@ -77,8 +102,8 @@ nav {
 }
 
 .button2 {
-  background-color: #FF6640;
-  border: 2px solid #FF6640;
+  background-color: #7AA8FF;
+  border: 2px solid #7AA8FF;
   border-radius: 25px
 }
 
@@ -86,9 +111,9 @@ nav {
 
 
 input[type=submit] {
-  background: #FF6640;
+  background: #7AA8FF;
   color: #222222;
-  border-color: #FF6640;
+  border-color: #7AA8FF;
   margin-top: 10px;
   margin-left: 25px;
 }
@@ -96,11 +121,11 @@ input[type=submit] {
 input, textarea {
   font-size: 18px;
   min-width: 100px;
-  border: 1px solid #FF6640;
+  border: 1px solid #7AA8FF;
   padding: 7px 10px;
   font-family: MonumentGroteskTrial-Regular;
   margin: 8px 0px;
-  color: #FF6640;
+  color: #7AA8FF;
   background-color: #222222;
 }
 
@@ -116,7 +141,7 @@ div, form {
 
  label {
   display: block;
-  color: #FF6640;
+  color: #7AA8FF;
 }
 
 .success {

@@ -14,27 +14,19 @@
 
 <% @film.reviews.order("created_at desc").each do |review| %>
   <div class="review">
-      <%= link_to film_review_path(@film) do %>
+      <%= link_to film_review_path(@film, review) do %>
     <h3><%= review.title %></h3>
     <% end %>
-    <h4><%= review.score %></h4>
+    <h4> Rating <%= review.score %> / 5</h4>
 
 
     <p class="posted">
       Published by
 
-      <% if review.user.present? %>
       <%= link_to review.user.username, user_path(review.user) %>
         </p>
 
-      <% else %>
-      anonymous
+  </div>
       <% end %>
 
-      <% end %>
-
-<%= simple_form_for [@film, Review.new] do |f| %>
-<%= f.input :title %>
-<%= f.input :body %>
-<%= f.button :submit, "Add review" %>
-<% end %>
+      <%= link_to "Write a new review", new_film_review_path(@film) %>

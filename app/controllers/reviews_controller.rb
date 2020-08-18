@@ -5,6 +5,8 @@ class ReviewsController < ApplicationController
   end
 
   def new
+
+    @film = Film.find_by_title(params[:film_id])
     # this is the form for adding a new review
     @review = Review.new
   end
@@ -12,6 +14,8 @@ class ReviewsController < ApplicationController
 def create
   @film = Film.find_by_title(params[:film_id])
   @review = @film.reviews.new(form_params)
+
+
 
   # associate the review with the current user before saving
   @review.user = @current_user
@@ -28,7 +32,7 @@ def create
 end
 
 def show
-  @review = Review.find_by_body(params[:id])
+  @review = Review.find_by_title(params[:id])
 end
 
 

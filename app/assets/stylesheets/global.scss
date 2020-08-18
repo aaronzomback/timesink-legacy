@@ -16,6 +16,11 @@ body {
   width: 100vw;
 }
 
+a {
+  text-decoration: none;
+  color: #F5F7F9;
+}
+
 .cover_img {
   border: 1px solid #6E6E6E;
 }
@@ -145,15 +150,18 @@ div, form {
 }
 
 .success {
-  background: #FF6640;
-  color: #222222;
-  padding: 10px 20px;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  background: #028ff5;
+  color: #F5F7F9;
+  padding: 8px 16px;
   width: 25%
 }
 
 .error {
   background: #FF6640;
-  color: #222222;
+  color: #F5F7F9;
   padding: 10px 20px;
   width: 25%
 }
@@ -162,4 +170,9 @@ footer a {
   color: #F5F7F9;
   text-decoration: none;
 
+}
+
+div.review {
+  border-bottom: 1px solid #F5F7F9;
+  border-top: 1px solid #F5F7F9;
 }

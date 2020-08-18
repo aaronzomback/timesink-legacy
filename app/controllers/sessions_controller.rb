@@ -16,7 +16,7 @@ if @user.present?
 
  session[:user_id] = @user.id
 
- flash[:success] = "Succesfully logged in"
+ flash[:success] = "Welcome back to TimeSink!"
 
  redirect_to root_path
 
@@ -29,7 +29,7 @@ end
 def destroy
   reset_session
 
-  flash[:success] = "Succesfully logged out"
+  flash[:success] = "Succesfully logged out!"
 
   redirect_to root_path
 end

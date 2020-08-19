@@ -1,10 +1,10 @@
 
 <div class="film-gallery-grid">
 
+  <div class="film-item">
+
   <% @films.each do |film| %>
 
-
-<div class="film-item">
   <%= link_to film_path(film) do %>
     <div class="cover-img">
     <%= image_tag film.cover.gallery.url, :class => "cover_img" %>
@@ -16,7 +16,7 @@
       <h3><%= film.author %></h3>
       <h3><%= film.description %></h3>
     </div>
-</div>
 
     <% end %>
+    </div>
 </div>

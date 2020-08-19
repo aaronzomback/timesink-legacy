@@ -26,8 +26,7 @@ a {
 }
 
 .prime-logo {
-  width: 200px;
-  height: 50px;
+ width: 90%;
 }
 
 div.back-to-films{
@@ -36,6 +35,12 @@ div.back-to-films{
     color: #F5F7F9;
     font-size: 14px;
   }
+}
+
+div.film-gallery-grid {
+  display: flex;
+  flex-wrap: wrap;
+
 }
 
 div.film-item {
@@ -49,20 +54,22 @@ div.film-show-img {
 }
 
 header {
-  margin-bottom: 64px;
-  width: 100%
+  margin: 48px 64px 64px 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
 }
 
 nav {
-  img{
-    margin-top: 56px;
-    margin-left: 64px;
-  }
 
-  a {
+.links a {
     color: #F5F7F9;
     text-decoration: none;
+    margin-right: 56px;
   }
+
+  margin-right: 64px;
 }
 
 .button {
@@ -159,6 +166,10 @@ div, form {
   width: 25%
 }
 
+.arrowleft {
+  color: #F5F7F9;
+}
+
 .error {
   background: #FF6640;
   color: #F5F7F9;
@@ -166,10 +177,22 @@ div, form {
   width: 25%
 }
 
-footer a {
-  color: #F5F7F9;
-  text-decoration: none;
+footer {
 
+  bottom: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-top: 56px;
+
+
+  a {
+    color: #F5F7F9;
+    text-decoration: none;
+    margin-right: 48px;
+    margin-left: 48px;
+    font-size: 10px;
+    }
 }
 
 div.review {

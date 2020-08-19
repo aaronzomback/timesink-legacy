@@ -7,18 +7,27 @@
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
 
 
     <header>
+
+        <%= link_to root_path do %>
+        <%= image_tag "timesinkalt.svg", :class => "prime-logo"  %>
+        <% end %>
+
         <nav>
-          <span>
-            <%= link_to root_path do %>
-            <%= image_tag "TimeSinklogo.svg", :class => "prime-logo"  %>
-            <% end %>
+
+          <span class="links">
+            <%= link_to "Films", films_path %>
+            <%= link_to "Blog"  %>
+            <%= link_to "Forum"  %>
+            <%= link_to "Info", info_path %>
+            <%= link_to "Donate", donate_path %>
           </span>
 
-        <%= link_to "Info", info_path %>
-        <%= link_to "Donate", donate_path %>
 
         <% if is_logged_in? %>
     Welcome <%= @current_user.username %>!
@@ -39,11 +48,6 @@
           </nav>
     </header>
 
-
-  </head>
-
-  <body>
-
     <% if flash[:success].present? %>
    <div class="success">
      <%= flash[:success] %>
@@ -63,10 +67,11 @@
     </main>
 
 <footer>
-  © 2020 TimeSink Presents
-  <%= link_to "Terms", terms_path %>
-  <%= link_to "Cookies Policy", cookies_policy_path %>
-  <%= link_to "Privacy Policy", "privacy_policy_path" %>
+
+    <span>© 2020 TimeSink Presents</span>
+    <%= link_to "Terms", terms_path %>
+    <%= link_to "Cookies Policy", cookies_policy_path %>
+    <%= link_to "Privacy Policy", "privacy_policy_path" %>
 
 </footer>
 

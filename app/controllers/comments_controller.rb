@@ -1,6 +1,7 @@
 class CommentsController < ApplicationController
 
   before_action :find_commentable
+  before_action :find_current_user
 
   def new
     @comment = Comment.new
@@ -9,8 +10,8 @@ class CommentsController < ApplicationController
   def create
 
       @film = Film.find_by_title(params[:film_id])
-      @review = Review.find_by_title(params[:review_id])
-      @comment = @review.current_user.comments.new(comment_params)
+      @review = Review.friendly.find(params[:review_id])
+      @comment = @review.comments.new(comment_params)
 
       if @comment.save
         redirect_to film_review_path(@film, @review)

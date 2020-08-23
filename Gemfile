@@ -45,6 +45,11 @@ gem 'fog-aws'
 # features
 gem 'acts_as_votable', '~> 0.10.0'
 
+
+gem 'rails_refactor'
+gem 'friendly_id', '~> 5.1'
+gem 'stringex', '~> 2.8', '>= 2.8.5'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]

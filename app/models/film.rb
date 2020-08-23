@@ -2,6 +2,9 @@ class Film < ApplicationRecord
 
   mount_uploader :cover, ImageUploader
 
+  extend FriendlyId
+  friendly_id :title, use: :slugged
+
   # one film has many reviews
   has_many :reviews
 

@@ -1,12 +1,27 @@
 <div class="">
-  <p> <%= comment.body %></p>
-  <p>  Posted by <%= @current_user.username %>  </p>
-  <small><%= time_ago_in_words(comment.created_at) %> ago</small>
+
+  <div class="comment-content">
+    <p> <%= comment.body %></p>
+    <p>  Posted by <%= comment.user_id %>   </p>
+    <small><%= time_ago_in_words(comment.created_at) %> ago</small>
+
+  </div>
+
+ <% if is_logged_in? %>
 
   <%= form_for [@film, @review, Comment.new] do |f| %>
       <%= f.text_area :body, placeholder: "Add a Reply" %><br/>
       <%= f.submit "Reply"  %>
       <% end %>
+
+      <% else %>
+
+
+
+
+      <% end %>
+
+
 
 <p><%= render partial: 'comments/comment', collection: comment.comments %></p>
 </div>

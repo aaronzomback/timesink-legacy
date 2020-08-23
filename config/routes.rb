@@ -23,6 +23,11 @@ Rails.application.routes.draw do
     # blog
     resources :blog_posts, :path => "blog"
 
+    # forum
+    resources :forum_posts, :path => "forum" do
+      resources :comments
+    end
+
 
   get "info", to: "pages#info"
   get "donate", to: "pages#donate"

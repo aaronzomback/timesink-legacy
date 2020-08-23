@@ -41,9 +41,8 @@ def create
 end
 
 def show
-  @commentable = Review.find_by_title(params[:review_id])
   @film = Film.find_by_title(params[:film_id])
-  @review = Review.find_by_title(params[:id])
+  @review = Review.friendly.find(params[:id])
 end
 
 

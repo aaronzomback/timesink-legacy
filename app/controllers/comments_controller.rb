@@ -10,7 +10,7 @@ class CommentsController < ApplicationController
 
       @film = Film.find_by_title(params[:film_id])
       @review = Review.find_by_title(params[:review_id])
-      @comment = @review.comments.new(comment_params)
+      @comment = @review.current_user.comments.new(comment_params)
 
       if @comment.save
         redirect_to film_review_path(@film, @review)

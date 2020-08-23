@@ -14,12 +14,15 @@ Rails.application.routes.draw do
     resources :reviews do
       resources :comments
     end
+  end
 
     resources :comments do
       resources :comments
     end
 
-  end
+    # blog
+    resources :blog_posts, :path => "blog"
+
 
   get "info", to: "pages#info"
   get "donate", to: "pages#donate"

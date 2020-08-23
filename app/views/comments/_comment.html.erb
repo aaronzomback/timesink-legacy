@@ -1,6 +1,7 @@
 <div class="">
-  <p> <%=@comment.user.username %> <%= comment.body %></p>
-  <small>Submitted <%= time_ago_in_words(comment.created_at) %> ago</small>
+  <p> <%= comment.body %></p>
+  <p>  Posted by <%= @current_user.username %>  </p>
+  <small><%= time_ago_in_words(comment.created_at) %> ago</small>
 
   <%= form_for [@film, @review, Comment.new] do |f| %>
       <%= f.text_area :body, placeholder: "Add a Reply" %><br/>

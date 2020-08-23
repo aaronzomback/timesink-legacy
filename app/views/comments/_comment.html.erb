@@ -1,0 +1,11 @@
+<div class="">
+  <p> <%=@comment.user.username %> <%= comment.body %></p>
+  <small>Submitted <%= time_ago_in_words(comment.created_at) %> ago</small>
+
+  <%= form_for [@film, @review, Comment.new] do |f| %>
+      <%= f.text_area :body, placeholder: "Add a Reply" %><br/>
+      <%= f.submit "Reply"  %>
+      <% end %>
+
+<p><%= render partial: 'comments/comment', collection: comment.comments %></p>
+</div>

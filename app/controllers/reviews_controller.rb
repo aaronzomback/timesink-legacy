@@ -1,5 +1,6 @@
 class ReviewsController < ApplicationController
 
+
   def index
     @reviews = Review.all
   end
@@ -13,7 +14,8 @@ class ReviewsController < ApplicationController
     @review = Review.new
 
   else
-    redirect_to root_path
+    @film = Film.find_by_title(params[:film_id])
+    redirect_to film_path(@film)
     flash[:error] = "You must be logged in to write a review."
   end
 end
@@ -39,6 +41,8 @@ def create
 end
 
 def show
+  @commentable = Review.find_by_title(params[:review_id])
+  @film = Film.find_by_title(params[:film_id])
   @review = Review.find_by_title(params[:id])
 end
 
@@ -50,5 +54,6 @@ end
 def form_params
   params.require(:review).permit(:title, :body, :score)
 end
+
 
 end

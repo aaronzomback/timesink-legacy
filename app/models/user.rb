@@ -1,6 +1,7 @@
 class User < ApplicationRecord
 
   has_many :reviews
+  has_many :comments, as: :commentable
 
   validates :name, presence: true
   validates :username, presence: true, uniqueness: true

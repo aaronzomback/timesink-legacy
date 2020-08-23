@@ -11,7 +11,14 @@ Rails.application.routes.draw do
 
   # films controller
   resources :films do
-    resources :reviews
+    resources :reviews do
+      resources :comments
+    end
+
+    resources :comments do
+      resources :comments
+    end
+
   end
 
   get "info", to: "pages#info"

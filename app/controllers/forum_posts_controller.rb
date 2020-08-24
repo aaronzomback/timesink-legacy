@@ -14,7 +14,7 @@ class ForumPostsController < ApplicationController
   end
 
   def show
-    @forum_post = ForumPost.find_by_title(params[:forum_post_id])
+    @forum_post = ForumPost.friendly.find(params[:forum_post_id])
   end
 
   def edit

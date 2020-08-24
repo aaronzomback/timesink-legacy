@@ -14,8 +14,8 @@ class FilmsController < ApplicationController
   end
 
   def show
-    @film = Film.find_by_title(params[:id])
-    @review = Review.find_by_title(params[:review_id])
+    @film = Film.friendly.find(params[:id])
+    @review = Review.find_by_id(params[:review_id])
   end
 
   def edit

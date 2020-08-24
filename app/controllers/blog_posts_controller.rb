@@ -14,7 +14,7 @@ class BlogPostsController < ApplicationController
   end
 
   def show
-    @blog_post = BlogPost.find_by_title(params[:blog_post_id])
+    @blog_post = BlogPost.friendly.find(params[:blog_post_id])
   end
 
   def edit

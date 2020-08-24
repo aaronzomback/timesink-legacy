@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_23_220050) do
+ActiveRecord::Schema.define(version: 2020_08_23_234936) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string "namespace"
@@ -72,6 +72,8 @@ ActiveRecord::Schema.define(version: 2020_08_23_220050) do
     t.string "image_5"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "slug"
+    t.index ["slug"], name: "index_blog_posts_on_slug", unique: true
   end
 
   create_table "comments", force: :cascade do |t|
@@ -92,6 +94,8 @@ ActiveRecord::Schema.define(version: 2020_08_23_220050) do
     t.boolean "is_top_pick", default: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "slug"
+    t.index ["slug"], name: "index_films_on_slug", unique: true
   end
 
   create_table "forum_posts", force: :cascade do |t|
@@ -103,6 +107,8 @@ ActiveRecord::Schema.define(version: 2020_08_23_220050) do
     t.integer "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "slug"
+    t.index ["slug"], name: "index_forum_posts_on_slug", unique: true
     t.index ["user_id"], name: "index_forum_posts_on_user_id"
   end
 

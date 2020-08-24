@@ -13,7 +13,4 @@ class Film < ApplicationRecord
   validates :cover, presence: true
   validates :description, presence: true
 
-  def to_param
-    title
-  end
 end

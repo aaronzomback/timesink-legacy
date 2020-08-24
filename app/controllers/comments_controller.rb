@@ -9,7 +9,7 @@ class CommentsController < ApplicationController
 
   def create
 
-      @film = Film.find_by_title(params[:film_id])
+      @film = Film.friendly.find(params[:film_id])
       @review = Review.friendly.find(params[:review_id])
       @comment = @review.comments.new(comment_params)
 

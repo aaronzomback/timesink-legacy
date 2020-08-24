@@ -9,12 +9,12 @@ class ReviewsController < ApplicationController
 
     if is_logged_in?
 
-    @film = Film.find_by_title(params[:film_id])
+    @film = Film.friendly.find(params[:film_id])
     # this is the form for adding a new review
     @review = Review.new
 
   else
-    @film = Film.find_by_title(params[:film_id])
+    @film = Film.friendly.find(params[:film_id])
     redirect_to film_path(@film)
     flash[:error] = "You must be logged in to write a review."
   end
@@ -41,7 +41,7 @@ def create
 end
 
 def show
-  @film = Film.find_by_title(params[:film_id])
+  @film = Film.friendly.find(params[:film_id])
   @review = Review.friendly.find(params[:id])
 end
 

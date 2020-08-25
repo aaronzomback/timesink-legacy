@@ -6,13 +6,20 @@ ActiveAdmin.register Film do
   # Uncomment all parameters which should be permitted for assignment
   #
   permit_params :title, :author, :cover, :description, :year, :is_top_pick
-  #
-  # or
-  #
-  # permit_params do
-  #   permitted = [:title, :author, :cover, :description, :year, :is_top_pick]
-  #   permitted << :other if params[:action] == 'create' && current_user.admin?
-  #   permitted
-  # end
+
+  index do
+    selectable_column
+    index_column
+    column "Cover Image" do |film|
+      image_tag film.cover.thumb.url
+    end
+    column :title
+    column :author
+    column :description
+    column :year
+    column :is_top_pick
+    actions
+  end
+
 
 end

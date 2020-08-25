@@ -47,7 +47,9 @@ div.back-to-films{
 
 div.film-gallery-grid {
   display: flex;
-  flex-wrap:nowrap;
+  justify-content: space-around;
+  flex-direction: row;
+  flex-wrap: wrap;
   padding: 0, 4px;
   width: 100%;
 

@@ -3,6 +3,9 @@ class PagesController < ApplicationController
   def home
   end
 
+  def submissions_info
+  end
+
   def info
   end
 

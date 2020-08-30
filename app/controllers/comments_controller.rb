@@ -9,9 +9,11 @@ class CommentsController < ApplicationController
 
   def create
 
+
       @film = Film.friendly.find(params[:film_id])
       @review = Review.friendly.find(params[:review_id])
       @comment = @review.comments.new(comment_params)
+      @comment.user = @current_user
 
       if @comment.save
         redirect_to film_review_path(@film, @review)
@@ -24,7 +26,7 @@ class CommentsController < ApplicationController
     private
 
     def comment_params
-      params.require(:comment).permit(:body)
+      params.require(:comment).permit(:body, :user_id)
     end
 
     def find_commentable

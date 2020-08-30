@@ -1,5 +1,6 @@
 class SessionsController < ApplicationController
 
+
   def new
     # we don't need any variables in here
     # because were not adding to the database - just the session in this case
@@ -18,7 +19,7 @@ if @user.present?
 
  flash[:success] = "Welcome back to TimeSink!"
 
- redirect_to root_path
+redirect_back(fallback_location: root_path)
 
   else
    render "new"

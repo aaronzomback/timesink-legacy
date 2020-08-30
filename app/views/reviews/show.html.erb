@@ -14,23 +14,23 @@
 </section>
 
 
-
-<h3>Comments</h3>
-
-
-
-  <% if is_logged_in? %>
+<% if is_logged_in? %>
 
 <%= simple_form_for [@film, @review, Comment.new] do |f| %>
 <%= f.text_area :body, placeholder: "Add a comment" %><br/>
 <%= f.submit "Add Comment" %>
 <% end %>
 
-  <% else %>
+<% else %>
 
-  <h4> <%= link_to "Sign in to comment", new_session_path %></h4>
+<h4> <%= link_to "Sign in to comment", new_session_path %></h4>
 
-  <% end %>
+<% end %>
+
+<h3>Comments</h3>
+
+
+
 
 <ul>
   <%= render(partial: 'comments/comment', collection: @review.comments) %>

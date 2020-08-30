@@ -1,9 +1,14 @@
 <div class="">
 
   <div class="comment-content">
+    <% if comment.user_id.present? %>
+    <u>
+  <%= link_to comment.user.username, user_path(comment.user) %>
+  </u>
+  <span><small> posted <%= time_ago_in_words(comment.created_at) %> ago</small></span>
+  <% end %>
     <p> <%= comment.body %></p>
-    <p>  Posted by <%= comment.user_id %>   </p>
-    <small><%= time_ago_in_words(comment.created_at) %> ago</small>
+
 
   </div>
 

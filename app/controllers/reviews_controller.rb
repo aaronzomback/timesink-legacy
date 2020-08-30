@@ -43,6 +43,8 @@ end
 def show
   @film = Film.friendly.find(params[:film_id])
   @review = Review.friendly.find(params[:id])
+
+  cookies[:original_referrer] = request.original_url
 end
 
 

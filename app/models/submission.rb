@@ -1,4 +1,5 @@
 class Submission < ApplicationRecord
+
   belongs_to :user
 
   validates :title, presence: true
@@ -15,14 +16,12 @@ class Submission < ApplicationRecord
 
       Stripe.api_key = Rails.application.credentials[Rails.env.to_sym][:stripe_secret_key]
 
-
       Stripe::Charge.create(
         amount: 1000,
         currency: "usd",
         source: self.stripe_token,
-        description: "Order for " + self.email,
-        statement_descriptor: "TimeSink film submission")
-
+        description: "Order for ",
+        statement_descriptor: "TimeSink submit")
 
       self.save
 

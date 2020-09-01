@@ -8,6 +8,6 @@ class SubmissionMailer < ApplicationMailer
   def submission(submission)
     @submission = submission
 
-    mail to: @submission.user.email, subject: "Your film submission has been received!"
+    mail to: @submission.email, subject: "Your film submission has been received!"
   end
 end

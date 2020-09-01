@@ -18,12 +18,16 @@ class SubmissionsController < ApplicationController
 end
 
 def create
+
   @submission = Submission.new(form_params)
+
+    @submission.user = @current_user
 
   if @submission.save_and_charge
 
     flash[:success] = "Your film has been submitted!"
     redirect_to root_path
+
 
   else
     flash[:error] = "Oops, something went wrong with your submission. Please try again!"

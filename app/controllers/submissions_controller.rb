@@ -26,6 +26,8 @@ def create
   if @submission.save_and_charge
 
     flash[:success] = "Your film has been submitted!"
+    SubmissionMailer.receipt(@submission).deliver_now
+    SubmissionMailer.newsubmission(@submission).deliver_now
     redirect_to root_path
 
 

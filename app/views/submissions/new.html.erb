@@ -23,6 +23,35 @@
 
 <script>
   var stripe = Stripe("<%= Rails.application.credentials[Rails.env.to_sym][:stripe_public_key]%>")
+
+
+  // styles for the stripe inputs
+ var styles = {
+   base: {
+     iconColor: "#cccccc",
+     color: "#ffffff",
+     fontFamily: "Karla, Helvetica, Arial, sans-serif",
+     fontSize: "16px",
+
+     "::placeholder": {
+       color: "#cccccc"
+     },
+     ":-webkit-autofill": {
+       color: "#cccccc"
+     }
+   },
+   invalid: {
+     iconColor: "#FFC7EE",
+     color: "#A31621"
+   }
+ }
+
+
+
+
+
+
+
   var elements = stripe.elements();
   var card = elements.create("card")
 

@@ -5,9 +5,15 @@ class SubmissionMailer < ApplicationMailer
   #
   #   en.submission_mailer.received.subject
   #
-  def submission(submission)
+  def receipt(submission)
     @submission = submission
 
-    mail to: @submission.email, subject: "Your film submission has been received!"
+    mail to: @submission.user.email, subject: "Your film submission has been received!"
+  end
+
+  def newsubmission(submission)
+    @submission = submission
+
+    mail to: "info@timesink.tv", subject: "New submission order"
   end
 end

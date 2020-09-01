@@ -3,9 +3,6 @@ class PagesController < ApplicationController
   def home
   end
 
-  def submissions_info
-  end
-
   def info
   end
 
@@ -14,6 +11,9 @@ class PagesController < ApplicationController
 
   def terms
   end
+
+  def submit
+  end 
 
   def privacy_policy
   end

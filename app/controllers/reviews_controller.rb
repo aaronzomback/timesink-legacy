@@ -16,7 +16,7 @@ class ReviewsController < ApplicationController
   else
     @film = Film.friendly.find(params[:film_id])
     redirect_to film_path(@film)
-    flash[:error] = "You must be logged in to write a review."
+    flash[:error] = "You must be signed in to write a review."
   end
 end
 
@@ -44,7 +44,6 @@ def show
   @film = Film.friendly.find(params[:film_id])
   @review = Review.friendly.find(params[:id])
 
-  cookies[:original_referrer] = request.original_url
 end
 
 

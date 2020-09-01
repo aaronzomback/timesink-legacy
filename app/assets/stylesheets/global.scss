@@ -207,7 +207,7 @@ div, form {
   }
 
   input {
-    min-width: 200px;
+    min-width: 300px;
     font-size: 14px;
   }
 
@@ -260,4 +260,13 @@ section.review-content {
   padding-bottom: 16px;
   border-bottom: 1px solid #F5F7F9;
   border-top: 1px solid #F5F7F9;
+}
+
+.nested {
+  margin-left: 100px;
+}
+
+.submit {
+  width: 500px;
+  font-size: 12px;
 }

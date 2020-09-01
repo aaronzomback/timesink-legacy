@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_30_175745) do
+ActiveRecord::Schema.define(version: 2020_09_01_164615) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string "namespace"
@@ -76,6 +76,11 @@ ActiveRecord::Schema.define(version: 2020_08_30_175745) do
     t.index ["slug"], name: "index_blog_posts_on_slug", unique: true
   end
 
+  create_table "carts", force: :cascade do |t|
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "comments", force: :cascade do |t|
     t.string "commentable_type"
     t.integer "commentable_id"
@@ -95,6 +100,7 @@ ActiveRecord::Schema.define(version: 2020_08_30_175745) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "slug"
+    t.string "video"
     t.index ["slug"], name: "index_films_on_slug", unique: true
   end
 
@@ -123,6 +129,29 @@ ActiveRecord::Schema.define(version: 2020_08_30_175745) do
     t.index ["sluggable_type", "sluggable_id"], name: "index_friendly_id_slugs_on_sluggable_type_and_sluggable_id"
   end
 
+  create_table "order_items", force: :cascade do |t|
+    t.integer "order_id", null: false
+    t.integer "submission_id", null: false
+    t.integer "quantity"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.integer "cart_id"
+    t.index ["order_id"], name: "index_order_items_on_order_id"
+    t.index ["submission_id"], name: "index_order_items_on_submission_id"
+  end
+
+  create_table "orders", force: :cascade do |t|
+    t.string "full_name"
+    t.string "email"
+    t.string "country"
+    t.string "address_1"
+    t.string "address_2"
+    t.string "city"
+    t.string "postal_code"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "reviews", force: :cascade do |t|
     t.string "title"
     t.text "body"
@@ -149,6 +178,7 @@ ActiveRecord::Schema.define(version: 2020_08_30_175745) do
     t.integer "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "stripe_token"
     t.index ["user_id"], name: "index_submissions_on_user_id"
   end
 
@@ -163,6 +193,8 @@ ActiveRecord::Schema.define(version: 2020_08_30_175745) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "forum_posts", "users"
+  add_foreign_key "order_items", "orders"
+  add_foreign_key "order_items", "submissions"
   add_foreign_key "reviews", "films"
   add_foreign_key "reviews", "users"
   add_foreign_key "submissions", "users"

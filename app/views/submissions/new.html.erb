@@ -1,4 +1,4 @@
-<%= simple_form_for @submission do |f| %>
+<%= simple_form_for [@submission] do |f| %>
     <%= f.input :title, label: "Title of film" %>
     <%= f.input :year, label: "Release year" %>
     <%= f.input :film_length, label: "Film duration" %>
@@ -6,6 +6,40 @@
     <%= f.input :film_link, label: "Please attach a link to your film" %>
     <%= f.input :film_pw, label: "Password to film if link is private" %>
 
+    <div id="card-errors">
+      <% @submission.errors[:stripe_token].each do |message| %>
+<p class="error"><%= message %></p>
+<% end %>
+    </div>
+
+    <div id="card">
+
+    </div>
+
     <%= f.submit "Submit your film"  %>
 
 <% end %>
+
+
+<script>
+  var stripe = Stripe("<%= Rails.application.credentials[Rails.env.to_sym][:stripe_public_key]%>")
+  var elements = stripe.elements();
+  var card = elements.create("card")
+
+  card.mount("#card")
+
+  $("form.new_submission").on("submit", function (ev) {
+        ev.preventDefault()
+
+          stripe.createToken(card).then(function (result) {
+
+            if (result.error) {
+              $("#card-errors").html(result.error.message)
+            } else {
+
+                $("form.new_submission").append("<input type=hidden name='order[stripe_token]' value=" + result.token.id + ">")
+                $("form.new_submission").get(0).submit()
+            }
+          })
+  })
+</script>

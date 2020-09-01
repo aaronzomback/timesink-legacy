@@ -1,6 +1,7 @@
 class Film < ApplicationRecord
 
   mount_uploader :cover, ImageUploader
+  mount_uploader :video, VideoUploader
 
   extend FriendlyId
   friendly_id :title, use: :slugged

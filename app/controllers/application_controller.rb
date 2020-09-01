@@ -4,14 +4,13 @@ class ApplicationController < ActionController::Base
   # before any page loads, find the current user
   before_action :find_current_user
 
-  before_action :return_url
-
   # add in the method to use in 'views' , share the code used in 'views' to this controller
   helper_method :is_logged_in?
 
-  def return_url
-    cookies[:return_to_url] = request.url
-  end
+
+
+
+
 
   def find_current_user
 

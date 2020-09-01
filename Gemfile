@@ -42,8 +42,15 @@ gem 'carrierwave', '~> 2.0'
 gem 'mini_magick'
 gem 'fog-aws'
 
+#accept payments
+gem 'stripe'
+
 # features
 gem 'acts_as_votable', '~> 0.10.0'
+
+gem 'jquery-rails'
+
+gem 'video-js-rails', '~> 4.3', '>= 4.3.0.1'
 
 
 gem 'rails_refactor'

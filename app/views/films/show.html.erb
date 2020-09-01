@@ -6,9 +6,13 @@
   <% end %>
 </div>
 
+
 <div class="film-show-img">
+  <%= video_tag @film.video_url.to_s, :size => "640x480", :controls =>true %>
+
   <%= image_tag @film.cover.show.url %>
 </div>
+
 
 
 <h3>Reviews</h3>

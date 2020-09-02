@@ -1,3 +1,12 @@
-
-
 <h3>Forum</h3>
+
+<% @forum_posts.each do |post| %>
+
+<%= link_to forum_post_path(post) do %>
+<%= post.title %>
+<% end %>
+<%= post.user.username %>
+<% end %>
+
+
+<%= link_to "Create a new post", new_forum_post_path %>

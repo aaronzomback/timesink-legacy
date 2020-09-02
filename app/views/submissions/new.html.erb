@@ -1,3 +1,7 @@
+<h2>Film submission</h2>
+<h3>$10</h3>
+
+
 <%= simple_form_for [@submission] do |f| %>
     <%= f.input :title, label: "Title of film" %>
     <%= f.input :year, label: "Release year" %>
@@ -25,6 +29,14 @@
   var stripe = Stripe("<%= Rails.application.credentials[Rails.env.to_sym][:stripe_public_key]%>")
 
 
+  // load the fonts in
+var fonts = [
+{
+  cssSrc: "https://fonts.googleapis.com/css?family=Karla"
+}
+]
+
+
   // styles for the stripe inputs
  var styles = {
    base: {
@@ -47,15 +59,9 @@
  }
 
 
-
-
-
-
-
   var elements = stripe.elements();
-  var card = elements.create("card")
-
-  card.mount("#card")
+  var card = elements.create("card", {style: styles })
+    card.mount("#card")
 
   $("form.new_submission").on("submit", function (ev) {
         ev.preventDefault()

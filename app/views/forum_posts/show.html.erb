@@ -1,0 +1,13 @@
+
+<div class="back-to-forum-index">
+  <%= link_to forum_posts_path do %>
+  <i class="arrow left"></i>
+  <h3>Back to forum</h3>
+  <% end %>
+</div>
+
+
+<h3><%= @forum_post.title %></h3>
+<h6> Posted by <%= @forum_post.user.username %> </h6>
+
+<p><%= @forum_post.body %></p>

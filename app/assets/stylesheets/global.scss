@@ -21,6 +21,18 @@
 }
 
 @font-face {
+  font-family: 'KhmerSangamMN';
+  src: url('app/assets/fonts/KhmerSangamMN.ttf');
+}
+
+@font-face {
+  font-family: 'Canela';
+  src: url('app/assets/fonts/Canela-Light.ttf');
+}
+
+
+
+@font-face {
   font-family: 'Roboto', sans-serif;
   font-weight: 300;
   src:url('//fonts.googleapis.com/css2?family=Roboto');
@@ -34,11 +46,29 @@ h5{font-size:20px;}
 h6{font-size:18px;}
 
 body {
-  font-family: 'MonumentGroteskTrial-Regular';
+  font-family: 'KhmerSangamMN';
   background-color: #222222;
   color: #F5F7F9;
   height: 100vh;
   width: auto;
+}
+
+section.info {
+  font-family: 'Spectral';
+  line-height: 1.5;
+  margin-left: 8em;
+}
+
+section.about {
+
+  margin-top: 64px;
+  font-family: 'Spectral-Light';
+  margin-left: 12em;
+
+  h1 {
+    font-family: 'Canela-Light';
+    font-size: 24px;
+  }
 }
 
 h3 .review-title  {
@@ -63,7 +93,7 @@ a {
 }
 
 .prime-logo {
- width: 90%;
+ width: 50%;
 }
 
 div.back-to-films{
@@ -126,6 +156,7 @@ nav {
     text-decoration: none;
     margin-right: 56px;
     font-family: 'Spectral';
+    font-size: 14px;
   }
 
   margin-right: 64px;
@@ -135,7 +166,7 @@ nav {
   background-color: #222222; /* Green */
   border: none;
   color: #222222;
-  padding: 8px 20px;
+  padding: 6px 16px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
@@ -143,24 +174,26 @@ nav {
   margin: 4px 2px;
   cursor: pointer;
   transition-duration: 0.4s;
+  vertical-align: center;
 }
 
 .button1 {
   background-color: #222222;
-  color: #7AA8FF;
-  border: 2px solid #7AA8FF;
+  color: rgba(122, 168, 255, 0.7);
+  border: 2px solid rgba(122, 168, 255, 0.7);
   border-radius: 25px
 }
 
 .button1 a {
-  color: #7AA8FF;
+  color: rgba(122, 168, 255, 0.7);
   text-decoration: none;
   font-size: 12px;
-  font-family: 'MonumentGroteskTrial-Regular';
+  font-family: 'KhmerSangamMN';
 }
 
 .button1:hover {
-  background-color: #7AA8FF;
+  background-color: rgba(122, 168, 255, 0.7);
+  border-color: rgba(122, 168, 255, 0.2);
 
  a{
    color: #222222;
@@ -171,12 +204,12 @@ nav {
   color: #222222;
   text-decoration: none;
   font-size: 12px;
-  font-family: 'MonumentGroteskTrial-Regular';
+  font-family: 'KhmerSangamMN';
 }
 
 .button2 {
-  background-color: #7AA8FF;
-  border: 2px solid #7AA8FF;
+  background-color: rgba(122, 168, 255, 0.7);
+  border: 2px solid rgba(122, 168, 255, 0.2);
   border-radius: 25px
 }
 
@@ -190,13 +223,13 @@ nav {
 }
 
 .button3 a {
-  color: #7AA8FF;
+  color: rgba(122, 168, 255, 0.7);
   text-decoration: none;
   font-size: 12px;
 }
 
 .button3:hover {
-  background-color: #7AA8FF;
+  background-color: rgba(122, 168, 255, 0.2);
 
  a{
    color: #222222;
@@ -210,9 +243,10 @@ nav {
 }
 
 .button4 {
-  background-color: #7AA8FF;
-  border: 2px solid #7AA8FF;
-  border-radius: 25px
+  background-color: rgba(122, 168, 255, 0.7);
+  border: 2px solid rgba(122, 168, 255, 0.2);
+  border-radius: 25px;
+  padding: 8px 16px;
 }
 
 .button4:hover {opacity: 0.6}
@@ -220,9 +254,9 @@ nav {
 
 
 input[type=submit] {
-  background: #7AA8FF;
+  background: rgba(122, 168, 255, 0.7);
   color: #222222;
-  border-color: #7AA8FF;
+  border-color: rgba(122, 168, 255, 0.2);
   margin-top: 10px;
   margin-left: 25px;
 }
@@ -230,11 +264,11 @@ input[type=submit] {
 input, textarea {
   font-size: 18px;
   min-width: 100px;
-  border: 1px solid #7AA8FF;
+  border: 1px solid rgba(122, 168, 255, 0.7);
   padding: 7px 10px;
-  font-family: MonumentGroteskTrial-Regular;
+  font-family: 'KhmerSangamMN';
   margin: 8px 0px;
-  color: #7AA8FF;
+  color: rgba(122, 168, 255, 0.7);
   background-color: #222222;
 }
 
@@ -250,7 +284,7 @@ div, form {
 
  label {
   display: block;
-  color: #7AA8FF;
+  color: rgba(122, 168, 255, 0.7);
 }
 
 .success {

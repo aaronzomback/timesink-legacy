@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700');
+
 @font-face {
    font-family: 'Syne-Regular';
    src: url('/app/assets/fonts/Syne-Regular.ttf')
@@ -5,15 +7,42 @@
 
 @font-face {
   font-family: 'MonumentGroteskTrial-Regular';
-  src: url('app/assets/fonts/MonumentGroteskTrial-Regular.woff')
+  src: url('app/assets/fonts/MonumentGroteskTrial-Regular.woff');
 }
 
+@font-face {
+  font-family: "Spectral";
+  src: url('app/assets/fonts/Spectral.ttf');
+}
+
+@font-face {
+  font-family: 'Spectral-Light';
+  src: url('app/assets/fonts/spectral-light.ttf');
+}
+
+@font-face {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+  src:url('//fonts.googleapis.com/css2?family=Roboto');
+}
+
+h1{font-size:64px;}
+h2{font-size:48px;}
+h3{font-size:14px;}
+h4{font-size:16px;}
+h5{font-size:20px;}
+h6{font-size:18px;}
+
 body {
-  font-family: MonumentGroteskTrial-Regular;
+  font-family: 'MonumentGroteskTrial-Regular';
   background-color: #222222;
   color: #F5F7F9;
   height: 100vh;
   width: auto;
+}
+
+h3 .review-title  {
+  font-size: 12px;
 }
 
 .user-profile {
@@ -52,6 +81,10 @@ div.film-gallery-grid {
   flex-wrap: wrap;
   padding: 0, 4px;
   width: 100%;
+
+  h3 {
+    font-size: 12px;
+  }
 
 }
 
@@ -92,6 +125,7 @@ nav {
     color: #F5F7F9;
     text-decoration: none;
     margin-right: 56px;
+    font-family: 'Spectral';
   }
 
   margin-right: 64px;
@@ -101,7 +135,7 @@ nav {
   background-color: #222222; /* Green */
   border: none;
   color: #222222;
-  padding: 10px 16px;
+  padding: 8px 20px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
@@ -122,6 +156,7 @@ nav {
   color: #7AA8FF;
   text-decoration: none;
   font-size: 12px;
+  font-family: 'MonumentGroteskTrial-Regular';
 }
 
 .button1:hover {
@@ -136,6 +171,7 @@ nav {
   color: #222222;
   text-decoration: none;
   font-size: 12px;
+  font-family: 'MonumentGroteskTrial-Regular';
 }
 
 .button2 {

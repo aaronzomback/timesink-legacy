@@ -15,12 +15,12 @@
 
 
 
-<h3>Reviews</h3>
+<p class="reviews-title">Reviews</p>
 
 <% @film.reviews.order("created_at desc").each do |review| %>
   <div class="review">
       <%= link_to film_review_path(@film, review) do %>
-    <h3><u><%= review.title %></h3></u>
+    <h3 class="review-title"><u><%= review.title %></h3></u>
     <% end %>
     <h4> Rating <%= review.score %> / 5</h4>
 

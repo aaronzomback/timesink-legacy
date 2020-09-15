@@ -9,6 +9,8 @@
 <script src="https://js.stripe.com/v3/"></script>
 <%= favicon_link_tag asset_path('Group989.png') %>
 <script src="//vjs.zencdn.net/ie8/1.1.1/videojs-ie8.min.js" async></script>
+<link rel="stylesheet"
+  href="https://fonts.googleapis.com/css?family=Roboto">
 
   </head>
 
@@ -18,7 +20,7 @@
     <header>
 
         <%= link_to root_path do %>
-        <%= image_tag "timesinkalt.svg", :class => "prime-logo"  %>
+        <%= image_tag "timesinkCanela.svg", :class => "prime-logo"  %>
         <% end %>
 
         <nav>
@@ -49,7 +51,7 @@
   </button>
 
   <button class="button button2">
-    <%= link_to "Create account", new_user_path %>
+    <%= link_to "Submit film", submit_path %>
   </button>
 
       <% end %>

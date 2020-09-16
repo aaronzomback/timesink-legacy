@@ -41,6 +41,10 @@ class ImageUploader < CarrierWave::Uploader::Base
     process resize_to_fit: [400, 420]
   end
 
+  version :blog_cover do
+    process resize_to_fit: [320, 240]
+  end
+
 
 
   # Add a white list of extensions which are allowed to be uploaded.

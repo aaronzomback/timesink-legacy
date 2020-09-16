@@ -1,0 +1,36 @@
+ul.submit {
+
+    font-family: 'Canela-Light';
+
+    h2 {
+      font-size: 32px;
+    }
+
+    width: 100%;
+    list-style: none;
+
+    li {
+      margin-right: 120px;
+    }
+
+    li.submit-detail {
+      width: 25%;
+      float: left;
+    }
+
+    p {
+        font-family: 'Spectral-Light';
+      width: 360px;
+    }
+    margin-left: 4em;
+
+    div.button-submit {
+      margin-top: 32px;
+
+    }
+
+  .submit-img {
+    width: 25%;
+  }
+
+}

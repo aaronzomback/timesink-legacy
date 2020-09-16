@@ -1,1 +1,29 @@
-<h2>Themes from the bottom, est. 2020</h2>
+
+<section class="blog-intro">
+<h5>Latest from the blog</h5>
+<p>Featuring articles and op-ed's about art, cinema, & current-events. <br>
+  Any opinions expressed here are those of the writer alone.</p>
+</section>
+
+
+
+<ul>
+  <% @blog_posts.each do |blog_post| %>
+    <%= link_to blog_post_path(blog_post) do %>
+  <li>
+    <div class="blog-post-cover-wrapper">
+    <div class="blog-description">
+        <%= image_tag blog_post.cover.blog_cover.url, :class => "cover_blog_img" %>
+    </div>
+    <div class="blog-description">
+      <h5><%= blog_post.title %></h5>
+        <p class="blog-descriptor"><%= blog_post.description %></p>
+         <span> By <%= blog_post.author %></span>
+      <span> Published on <%= blog_post.publish_date %></span>
+    </div>
+    </div>
+  </li>
+
+  <% end %>
+  <% end %>
+</ul>

@@ -1,0 +1,16 @@
+
+
+
+<div class="back-to-blog-index">
+  <%= link_to blog_posts_path do %>
+  <i class="arrow left"></i>
+  <h3>Back to blog index</h3>
+  <% end %>
+</div>
+
+ <section class="blog-body">
+   <h2><%= @blog_post.title %></h2>
+   <h6>By <%= @blog_post.author %></h6>
+   <h6> Published: <%= @blog_post.publish_date %> </h6>
+  <p><%= @blog_post.body %></p>
+ </section>

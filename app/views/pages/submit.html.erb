@@ -1,15 +1,29 @@
-<h3>Film submission</h3>
-
-<p>$5.00</p>
-
-<p class="submit">Submissions are now open for consideration to be featured in the next series of TimeSink Presents film gallery. <br>
-  <br>
-
-TimeSink attracts an international audience of thousands of movie lovers, industry professionals and filmmakers throughout the year. <br> <br>
-
-We accept short films and feature length projects across all genres and formats.</p>
 
 
-<button class="button button4">
-  <%= link_to "Submit your film", new_submission_path(@user) %>
-  </button>
+<section>
+  <ul class="submit">
+    <li class="submit-detail">
+        <h2>Film submission</h2>
+
+        <h3>$10.00</h3>
+
+        <p class="submit">Submissions are now open for consideration to be featured in the next series of TimeSink Presents film gallery. <br>
+          <br>
+
+        TimeSink attracts an international audience of thousands of movie lovers, industry professionals and filmmakers throughout the year. <br> <br>
+
+        We accept short films and feature length projects across all genres and formats.</p>
+
+      <div class="button-submit">
+        <button class="button button4">
+          <%= link_to "Submit your film", new_submission_path(@user) %>
+          </button>
+      </div>
+    </li>
+
+    <li class="submit-image">
+      <%= image_tag "timesinkstream.gif", :class => "submit-img" %>
+  </li>
+  </ul>
+
+</section>

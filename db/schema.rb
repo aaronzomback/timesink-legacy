@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_09_01_164615) do
+ActiveRecord::Schema.define(version: 2020_09_16_132452) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string "namespace"
@@ -73,6 +73,7 @@ ActiveRecord::Schema.define(version: 2020_09_01_164615) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "slug"
+    t.string "publish_date"
     t.index ["slug"], name: "index_blog_posts_on_slug", unique: true
   end
 

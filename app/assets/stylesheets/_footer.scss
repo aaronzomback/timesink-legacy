@@ -1,0 +1,19 @@
+footer {
+
+  bottom: 16px;
+  left: 0px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  position: absolute;
+  margin: 56px 64px 24px 64px;
+
+
+  a {
+    color: #F5F7F9;
+    text-decoration: none;
+    margin-right: 48px;
+    margin-left: 48px;
+    font-size: 10px;
+    }
+}

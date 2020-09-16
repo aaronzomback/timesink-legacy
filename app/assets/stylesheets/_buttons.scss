@@ -1,0 +1,97 @@
+
+
+.button {
+  background-color: #222222; /* Dark Theater 4 */
+  border: none;
+  color: #222222;
+  padding: 6px 16px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  transition-duration: 0.4s;
+  vertical-align: center;
+}
+
+.button1 {
+  background-color: #222222;
+  color: rgba(122, 168, 255, 0.85);
+  border: 2px solid rgba(122, 168, 255, 0.85);
+  border-radius: 25px
+}
+
+.button1 a {
+  color: rgba(122, 168, 255, 0.85);
+  text-decoration: none;
+  font-size: 12px;
+  font-family: 'KhmerSangamMN';
+}
+
+.button1:hover {
+  background-color: rgba(122, 168, 255, 0.85);
+  border-color: rgba(122, 168, 255, 0.2);
+
+ a{
+   color: #222222;
+ }
+}
+
+.button2 a {
+  color: #222222;
+  text-decoration: none;
+  font-size: 12px;
+  font-family: 'KhmerSangamMN';
+}
+
+.button2 {
+  background-color: rgba(122, 168, 255, 0.85);
+  border: 2px solid rgba(122, 168, 255, 0.2);
+  border-radius: 25px
+}
+
+.button2:hover {opacity: 0.6}
+
+.button3 {
+  background-color: #222222;
+  color: rgba(122, 168, 255, 0.85);
+  border: 2px solid rgba(122, 168, 255, 0.85);
+  border-radius: 25px;
+  padding: 8px 16px;
+
+}
+
+.button3 a {
+  color: rgba(122, 168, 255, 0.85);
+  text-decoration: none;
+  font-size: 12px;
+}
+
+.button3:hover {
+  background-color: rgba(122, 168, 255, 0.85);
+
+ a{
+   color: #222222;
+ }
+}
+
+.button4 a {
+  color: #222222;
+  text-decoration: none;
+  font-size: 12px;
+}
+
+.button4 {
+  background-color: rgba(122, 168, 255, 0.85);
+  border: 2px solid rgba(122, 168, 255, 0.2);
+  border-radius: 25px;
+  padding: 8px 16px;
+}
+
+.button4:hover {opacity: 0.6}
+
+
+.sign-in-button {
+  border-radius: 25px;
+}

@@ -1,11 +1,15 @@
-<h2>Log in</h2>
+<section class="log-in">
 
-<%= simple_form_for :session, url: session_path do |f| %>
+  <%= simple_form_for :session, html: { class: "hide-required" }, url: session_path do |f| %>
 
-<%= f.input :username %>
-<%= f.input :password %>
-<%= f.button :submit, "Sign in" %>
+  <%= f.input :username, placeholder: 'Enter your username', required: false %>
+  <%= f.input :password, placeholder: 'Enter your password', required: false %>
+  <%= f.button :submit, "Sign in", :class => "sign-in-button" %>
 
-<% end %>
+  <% end %>
 
-<%= link_to "Create an account", new_user_path %>
+<div class="new-account">
+    Don't have an account? <%= link_to "Join the sink", new_user_path, :class => "create-account" %>
+</div>
+
+</section>

@@ -36,7 +36,7 @@ def destroy
 end
 
 def form_params
-  params.require(:session).permit(:username, :password)
+  params.require(:session).permit(:username, :email, :password)
 end
 
 

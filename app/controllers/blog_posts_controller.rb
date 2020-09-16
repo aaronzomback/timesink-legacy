@@ -14,7 +14,7 @@ class BlogPostsController < ApplicationController
   end
 
   def show
-    @blog_post = BlogPost.friendly.find(params[:blog_post_id])
+    @blog_post = BlogPost.friendly.find(params[:id])
   end
 
   def edit
@@ -29,7 +29,7 @@ class BlogPostsController < ApplicationController
 
 
   def blog_params
-    params.require(:blo_post).permit(:title, :description, :body, :author, :cover, :image_1, :image_2, :image_3, :image_4, :image_5)
+    params.require(:blog_post).permit(:title, :description, :body, :author, :publish_date, :cover, :image_1, :image_2, :image_3, :image_4, :image_5)
   end
 
 

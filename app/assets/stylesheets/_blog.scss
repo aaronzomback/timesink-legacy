@@ -1,26 +1,40 @@
+// Blog section intro
+
 .blog-intro  {
 
   margin-left: 4em;
 
   h5 {
       font-family: "Canela";
-      margin-bottom: 8px;
+      margin-bottom: 2px;
+      letter-spacing: 3px;
   }
 
   p {
-    font-size: 12px;
+    margin-top: 4px;
+    font-size: 14px;
     line-height: 1.5;
+    font-family: 'Spectral-Light';
+  }
+
+  p.opinions {
+    font-size: 8px;
   }
 
 }
 
+// Blog Posts as they appear in index
 
 ul {
 
-  margin-top: 120px;
+  margin-top: 64px;
   margin-left: auto;
   margin-right: auto;
-  width: 100%
+  width: 100%;
+
+  font-family: "Spectral-Light";
+
+   list-style: none;
 
  h1, h2, h3, h4, h5, h6 {
    font-family: "Canela";
@@ -28,16 +42,20 @@ ul {
    width: 100%;
  }
 
- font-family: "Spectral-Light";
-
-  list-style: none;
 
   li {
 
     div.blog-description {
-      float: left;
 
-      span {
+      align-items: center;
+      float: left;
+      margin-left: 64px;
+      h5 {
+        font-family: "Canela-Light";
+        margin-top: 0;
+      }
+
+      span.published {
         margin-left: 32px;
       }
 
@@ -49,9 +67,25 @@ ul {
     img {
       display: block;
     }
+
+    img.eyeglass {
+      display: inline-block;
+    }
+
+    div.eyeglass {
+      margin-left: 0;
+      display: flex;
+      align-items: center;
+    }
+
+    span.read {
+      margin-left: 8px;
+    }
   }
 }
 
+
+//
 
 div.back-to-blog-index {
   h3 {
@@ -63,11 +97,13 @@ section.blog-body {
 
   h2 {
     font-family: "Canela-Light";
-    text-align: center;
+    width: 600px;
+    margin-left: auto;
+    margin-right: auto;
   }
   p {
     line-height: 1.6;
-    font-family: "Spectral";
+    font-family: "Spectral-Light";
     width: 880px;
     margin-left: auto;
     margin-right: auto;

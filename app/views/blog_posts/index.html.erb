@@ -1,8 +1,7 @@
 
 <section class="blog-intro">
-<h5>Latest from the blog</h5>
-<p>Featuring articles and op-ed's about art, cinema, & current-events. <br>
-  Any opinions expressed here are those of the writer alone.</p>
+<h5>Drips from the faucet...</h5>
+<p>Featuring articles and op-ed's about art, cinema, & current-events. </p>
 </section>
 
 
@@ -17,9 +16,11 @@
     </div>
     <div class="blog-description">
       <h5><%= blog_post.title %></h5>
-        <p class="blog-descriptor"><%= blog_post.description %></p>
-         <span> By <%= blog_post.author %></span>
-      <span> Published on <%= blog_post.publish_date %></span>
+        <p class="blog-descriptor"><%= blog_post.description... %></p>
+        <div class="eyeglass">
+            <%= image_tag "eyeglass.svg", :class => "eyeglass" %> <span class="read">Read article</span>
+        </div> <br>
+         <span> By <%= blog_post.author %></span> <span class="published"> Published: <%= blog_post.publish_date %></span>
     </div>
     </div>
   </li>

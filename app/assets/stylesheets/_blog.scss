@@ -27,6 +27,7 @@
 
 ul {
 
+  display: grid;
   margin-top: 64px;
   margin-left: auto;
   margin-right: auto;
@@ -38,13 +39,18 @@ ul {
 
  h1, h2, h3, h4, h5, h6 {
    font-family: "Canela";
-   color: rgba(122, 168, 255, 0.85);
    width: 100%;
  }
 
 
   li {
 
+    transition: .3s ease-in-out;
+    -webkit-transform: scale(1);
+transform: scale(1);
+-webkit-transition: .3s ease-in-out;
+
+width: 100%;
     div.blog-description {
 
       align-items: center;
@@ -53,6 +59,7 @@ ul {
       h5 {
         font-family: "Canela-Light";
         margin-top: 0;
+        margin-bottom: 8px;
       }
 
       span.published {
@@ -61,25 +68,34 @@ ul {
 
       p.blog-descriptor {
         width: 400px;
+        font-size: 14px;
       }
     }
 
     img {
       display: block;
+
     }
 
     img.eyeglass {
       display: inline-block;
+      width: 5%;
     }
 
     div.eyeglass {
       margin-left: 0;
       display: flex;
       align-items: center;
+      margin-bottom: 8px;
+    }
+
+    span.author, span.published {
+      font-size: 12px;
     }
 
     span.read {
       margin-left: 8px;
+      font-size: 14px;
     }
   }
 }

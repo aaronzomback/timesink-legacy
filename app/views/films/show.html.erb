@@ -18,7 +18,9 @@
 <p class="reviews-title">Reviews</p>
 
 <% @film.reviews.order("created_at desc").each do |review| %>
-  <div class="review">
+
+
+  <div id="film-review-film", class="review">
       <%= link_to film_review_path(@film, review) do %>
     <h3 class="review-title"><u><%= review.title %></h3></u>
     <% end %>
@@ -32,6 +34,10 @@
         </p>
 
   </div>
+
       <% end %>
 
-      <%= link_to "Write a new review", new_film_review_path(@film) %>
+
+      <%= link_to new_film_review_path(@film) do %>
+      <%= image_tag "post.svg" %>
+      <% end %>

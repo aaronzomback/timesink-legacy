@@ -1,13 +1,11 @@
 
 <section class="blog-intro">
 <h5>Drips from the faucet...</h5>
-<p>Featuring articles and op-ed's about art, cinema, & current-events. </p>
+<p>Featuring articles and op-ed's by guest writers </p>
 </section>
 
-
-
-<ul>
   <% @blog_posts.each do |blog_post| %>
+<ul>
     <%= link_to blog_post_path(blog_post) do %>
   <li>
     <div class="blog-post-cover-wrapper">
@@ -16,15 +14,15 @@
     </div>
     <div class="blog-description">
       <h5><%= blog_post.title %></h5>
-        <p class="blog-descriptor"><%= blog_post.description... %></p>
+        <p class="blog-descriptor"> <%= blog_post.description... %></p>
         <div class="eyeglass">
             <%= image_tag "eyeglass.svg", :class => "eyeglass" %> <span class="read">Read article</span>
         </div> <br>
-         <span> By <%= blog_post.author %></span> <span class="published"> Published: <%= blog_post.publish_date %></span>
+         <span class="author"> By <%= blog_post.author %></span> <span class="published"> Published: <%= blog_post.publish_date %></span>
     </div>
     </div>
   </li>
 
   <% end %>
-  <% end %>
 </ul>
+  <% end %>

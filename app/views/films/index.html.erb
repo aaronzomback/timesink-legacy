@@ -10,13 +10,25 @@
     <div class="cover-img">
     <%= image_tag film.cover.gallery.url, :class => "cover_img" %>
     </div>
-    <% end %>
+
 
     <div class="gallery-components">
       <h3><%= film.title %></h3>
       <h3><%= film.description %></h3>
         <h3><%= film.author %></h3>
+
+        <% end %>
     </div>
+
+
+<a href="#film_review_film">
+    <div class="coffee-review-metric">
+
+      <%= image_tag "coffee.svg", :class => "coffee" %> <span class="reviews-number"><%= pluralize film.reviews.count, "Review" %> </span>
+
+    </div>
+  </a>
+
 
   </div>
     <% end %>

@@ -141,6 +141,24 @@ div.film-item {
       overlay: dfd
     }
   }
+
+  div.gallery-components {
+
+      div.coffee-review-metric {
+        align-items: center;
+        display: flex;
+        text-align: center;
+  }
+
+    img {
+      display: block;
+      width: 5%;
+    }
+
+    span.reviews-number {
+      font-size: 12px;
+    }
+  }
 }
 
 
@@ -213,4 +231,4 @@ section.review-content {
   margin-left: 100px;
 }
 
-@import "footer";
+// @import "footer";

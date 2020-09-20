@@ -4,7 +4,7 @@
 
 <%= simple_form_for [@submission] do |f| %>
     <%= f.input :title, label: "Title of film" %>
-    <%= f.input :year, label: "Release year" %>
+    <%= f.input :year, as: :select, collection: 2016..Date.today.year, label: "Release year", label_html: { class: 'year_class' } %>
     <%= f.input :film_length, label: "Film duration" %>
     <%= f.input :description, label: "Tell us what your film is about in one sentence" %>
     <%= f.input :film_link, label: "Please attach a link to your film" %>

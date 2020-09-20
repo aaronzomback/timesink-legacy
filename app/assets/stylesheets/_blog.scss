@@ -12,9 +12,9 @@
 
   p {
     margin-top: 4px;
-    font-size: 14px;
+    font-size: 10px;
     line-height: 1.5;
-    font-family: 'Spectral-Light';
+  font-family: 'MonumentGroteskTrial-Mono';
   }
 
   p.opinions {
@@ -49,6 +49,14 @@ ul {
     -webkit-transform: scale(1);
 transform: scale(1);
 -webkit-transition: .3s ease-in-out;
+
+div.blog-post-cover-wrapper {
+
+  padding: 100px 16px;
+  background-color: grey;
+
+}
+
 
 width: 100%;
     div.blog-description {

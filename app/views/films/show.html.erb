@@ -7,6 +7,13 @@
 </div>
 
 
+
+            <% if @film.is_top_pick %>
+            <div class="show-page">
+              <%= image_tag "is_featured.svg" %>
+            </div>
+            <% end %>
+
 <div class="film-show-img">
   <%= video_tag @film.video_url.to_s, :size => "640x480", :controls =>true %>
 
@@ -14,13 +21,16 @@
 </div>
 
 
+<%= @film.title %>
+<%= @film.description %>
+<%= @film.author %>
 
-<p class="reviews-title">Reviews</p>
+<p id="film" class="reviews-title">Reviews</p>
 
 <% @film.reviews.order("created_at desc").each do |review| %>
 
 
-  <div id="film-review-film", class="review">
+  <div class="review">
       <%= link_to film_review_path(@film, review) do %>
     <h3 class="review-title"><u><%= review.title %></h3></u>
     <% end %>

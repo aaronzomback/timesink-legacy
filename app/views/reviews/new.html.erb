@@ -3,6 +3,6 @@
 <%= simple_form_for [@film, @review] do |f| %>
 <%= f.input :title %>
 <%= f.input :body %>
-<%= f.input :score %>
+<%= f.input :score, as: :radio_buttons, :collection => 1..5, item_label_class: "radio-inline", item_wrapper_tag: false %>
 <%= f.button :submit, "Publish review" %>
 <% end %>

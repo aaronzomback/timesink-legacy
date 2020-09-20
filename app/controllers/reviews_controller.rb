@@ -21,7 +21,7 @@ class ReviewsController < ApplicationController
 end
 
 def create
-  @film = Film.find_by_title(params[:film_id])
+  @film = Film.friendly.find(params[:film_id])
   @review = @film.reviews.new(form_params)
 
 

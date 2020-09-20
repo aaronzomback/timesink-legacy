@@ -6,14 +6,16 @@ class SubmissionsController < ApplicationController
 
   def new
 
+    cookies[:original_referrer] = request.original_url
+
     if is_logged_in?
 
       # the form for adding a new submission
       @submission = Submission.new
 
   else
-    redirect_to submit_path
-    flash[:error] = "You must be signed in to submit a film!"
+    redirect_to new_session_path
+    flash[:error] = "Hey ho, what'd ya know? You must be signed in to submit a film!"
   end
 end
 

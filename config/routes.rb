@@ -21,16 +21,17 @@ Rails.application.routes.draw do
     end
 
     # blog
+    # change path url to "blog" from "blog_post"
     resources :blog_posts, :path => "blog"
 
     # forum
+    # change path url to "forum" from "forum_post"
     resources :forum_posts, :path => "forum" do
       resources :comments
     end
 
     # film submissions
-    resources :submissions do
-    end
+    resources :submissions
 
 
 

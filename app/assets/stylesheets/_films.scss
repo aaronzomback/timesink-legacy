@@ -1,0 +1,66 @@
+.cover_img {
+  border: 1px solid #6E6E6E;
+}
+
+div.back-to-films{
+  h3{
+    text-decoration: none;
+    color: #F5F7F9;
+    font-size: 14px;
+  }
+}
+
+div.film-gallery-grid {
+  border: 1px solid white;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+
+    font-family: 'MonumentGroteskTrial-Mono';
+
+
+
+    h3 {
+      font-size: 12px;
+        font-family: 'MonumentGroteskTrial-Mono';
+    }
+
+
+div.film-item {
+
+
+  img {
+    transition: 0.2s;
+
+    &:hover {
+      overlay: dfd
+    }
+  }
+
+  div.gallery-components {
+
+      div.coffee-review-metric {
+        align-items: center;
+        display: flex;
+        text-align: center;
+  }
+
+    img {
+      display: block;
+      width: 5%;
+    }
+
+    span.reviews-number {
+      font-size: 12px;
+    }
+  }
+}
+
+
+  div.film-show-img {
+    margin-bottom: 64px;
+  }
+
+  div.comment-content {
+    border-bottom: 1px solid white;
+  }
+}

@@ -19,7 +19,8 @@ if @user.present?
 
  flash[:success] = "Welcome back to TimeSink!"
 
-redirect_back(fallback_location: root_path)
+ # go back to previous page the user was on
+redirect_to cookies[:original_referrer]
 
   else
    render "new"

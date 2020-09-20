@@ -1,5 +1,7 @@
 class FilmsController < ApplicationController
 
+
+
   def index
     @films = Film.all
   end
@@ -16,6 +18,8 @@ class FilmsController < ApplicationController
   def show
     @film = Film.friendly.find(params[:id])
     @review = Review.find_by_id(params[:review_id])
+
+    cookies[:original_referrer] = request.original_url
   end
 
   def edit

@@ -1,0 +1,28 @@
+
+
+.Forum-Post-Row {
+
+  display: grid;
+  margin-left: 80px;
+
+  padding-top: 16px;
+  border-bottom: solid 1px white;
+  border-top: solid 1px white;
+
+}
+
+
+.Forum-Post-Column {
+
+  a {
+    border-bottom: solid 1px white;
+  }
+  text-align: left;
+
+  img {
+    img {
+      display: block;
+      margin-left: 80px;
+    }
+  }
+}

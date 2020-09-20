@@ -7,7 +7,7 @@ class Film < ApplicationRecord
   friendly_id :title, use: :slugged
 
   # one film has many reviews
-  has_many :reviews
+  has_many :reviews, dependent: :destroy
 
   validates :title, presence: true
   validates :author, presence: true

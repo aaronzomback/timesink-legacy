@@ -13,10 +13,10 @@
 
 <div class="film-gallery-grid">
 
-<ul>
+
     <% @films.each do |film| %>
 
-    <li>
+    <div class="film-item">
       <%= link_to film_path(film) do %>
         <div class="cover-img">
         <%= image_tag film.cover.gallery.url, :class => "cover_img" %>
@@ -41,13 +41,14 @@
             <% end %>
 
             <% end %>
-    </li>
+    </div>
+    </div>
+
+
   <% end %>
 
 
 
-
-</ul>
 
 
 </div>

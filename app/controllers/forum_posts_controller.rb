@@ -11,7 +11,8 @@ class ForumPostsController < ApplicationController
 
   else
 
-    flash[:error] = "Ah! You must be signed in to participate in the forum."
+    flash[:error] = "You must be signed in to participate in the forum."
+    redirect_to forum_posts_path
   end
 
   end
@@ -27,6 +28,7 @@ class ForumPostsController < ApplicationController
 
   def show
     @forum_post = ForumPost.friendly.find(params[:id])
+    @forum_posts = ForumPost.all
   end
 
   def edit

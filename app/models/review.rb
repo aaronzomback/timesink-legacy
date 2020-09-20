@@ -6,7 +6,7 @@ class Review < ApplicationRecord
   belongs_to :film
   belongs_to :user
 
-  has_many :comments, as: :commentable
+  has_many :comments, as: :commentable, dependent: :destroy
 
   validates :title, presence: true
   validates :body, length: {minimum: 10}

@@ -52,16 +52,20 @@
 
   <div class="review">
       <%= link_to film_review_path(@film, review) do %>
-    <hh6 class="review-title"><u><%= review.title %></h6></u>
+    <h6 class="review-title"><%= review.title %></h6>
     <% end %>
-    <p> Rating <%= review.score %> / 5</p>
+
+    <div class="review-details">
+      <p> Rating <%= review.score %> / 5</p>
 
 
-    <p class="posted">
-      <small>Published by
+      <p class="posted">
+        <small>Published by
 
-      <%= link_to review.user.username, user_path(review.user) %></small>
-        </p>
+        <%= link_to review.user.username, user_path(review.user) %> <%= time_ago_in_words(review.created_at) %> ago</small>
+          </p>
+
+    </div>
 
   </div>
 

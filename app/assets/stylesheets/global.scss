@@ -208,11 +208,7 @@ nav {
 
 
 
-section.review-content {
-  padding-bottom: 32px;
-  border-bottom: 1px solid #F5F7F9;
-  border-top: 1px solid #F5F7F9;
-}
+
 
 .nested {
   margin-left: 100px;
@@ -298,9 +294,7 @@ $duration: 30s;
 
   }
 
+  body { padding-bottom: 5rem; }
+  h1,h2,p {padding: 0 5%;}
+
 }
-
-
-
-body { padding-bottom: 5rem; }
-h1,h2,p {padding: 0 5%;}

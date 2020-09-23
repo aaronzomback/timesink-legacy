@@ -1,5 +1,5 @@
 .review {
-  border-bottom: 1px solid white;
+  border-bottom: 1px dotted white;
   font-family: "Spectral";
   margin-left: 80px;
   margin-top: 16px;
@@ -10,4 +10,18 @@
   width: 30%;
   display: block;
   margin: 48px 0 32px 80px;
+}
+
+div.review-details {
+  margin-left: 0;
+}
+
+.review h6 {
+  margin-bottom: 0px;
+  border-bottom: solid 1px white;
+  display: inline;
+}
+
+h3 .review-title  {
+  font-size: 12px;
 }

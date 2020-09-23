@@ -1,3 +1,7 @@
+<%= render "shared/ticker" %>
+
+
+
 
 <div class="back-to-films">
   <%= link_to films_path do %>
@@ -15,18 +19,18 @@
 
   <div class="film-show-info">
     <div class="">
-      <%= @film.title %>
-      <%= @film.description %>
-      <%= @film.author %>
+      <%= @film.title %> <br>
+      <%= @film.author %> <br>
+      <%= @film.description %> <br>
     </div>
     <div class="">
+      <% if @film.is_top_pick %>
+      <div class="show-page">
+        <%= image_tag "is_featured.svg" %>
+      </div>
+      <% end %>
+    </div>
 
-    </div>
-    <% if @film.is_top_pick %>
-    <div class="show-page">
-      <%= image_tag "is_featured.svg" %>
-    </div>
-    <% end %>
   </div>
 
 </section>
@@ -41,22 +45,22 @@
 
 
 
-<p id="film" class="reviews-title">Reviews</p>
+<%= image_tag "cornerreviews2.svg", :class => "cornercafereview" %>
 
 <% @film.reviews.order("created_at desc").each do |review| %>
 
 
   <div class="review">
       <%= link_to film_review_path(@film, review) do %>
-    <h3 class="review-title"><u><%= review.title %></h3></u>
+    <hh6 class="review-title"><u><%= review.title %></h6></u>
     <% end %>
-    <h4> Rating <%= review.score %> / 5</h4>
+    <p> Rating <%= review.score %> / 5</p>
 
 
     <p class="posted">
-      Published by
+      <small>Published by
 
-      <%= link_to review.user.username, user_path(review.user) %>
+      <%= link_to review.user.username, user_path(review.user) %></small>
         </p>
 
   </div>

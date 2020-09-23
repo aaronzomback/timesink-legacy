@@ -30,6 +30,9 @@
 /public/assets
 .byebug_history
 
+# Ignore db seeds admin login
+/db/seeds.rb
+
 # Ignore master key for decrypting credentials and more.
 /config/master.key
 

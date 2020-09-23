@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr">
+
+  <head>
+
+    <meta charset="utf-8">
+
+    <title></title>
+
+    <%= csrf_meta_tags %>
+
+    <%= csp_meta_tag %>
+
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+            <script src="https://js.stripe.com/v3/"></script>
+      <%= favicon_link_tag asset_path('Group989.png') %>
+    <script src="//vjs.zencdn.net/ie8/1.1.1/videojs-ie8.min.js" async></script>
+      <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Roboto">
+
+</head>
+  <body>
+
+    <%= link_to root_path do %>
+    <%= image_tag "timesinkLogosin.svg", :class => "prime-logo2"  %>
+    <% end %>
+
+    <main>
+      <%= yield %>
+    </main>
+
+  </body>
+
+</html>

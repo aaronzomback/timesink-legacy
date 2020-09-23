@@ -7,23 +7,39 @@
 </div>
 
 
+<section class="film-show-grid">
 
-            <% if @film.is_top_pick %>
-            <div class="show-page">
-              <%= image_tag "is_featured.svg" %>
-            </div>
-            <% end %>
-
-<div class="film-show-img">
-  <%= video_tag @film.video_url.to_s, :size => "640x480", :controls =>true %>
-
+    <div class="film-show-img" onclick="myFunction()" >
   <%= image_tag @film.cover.show.url %>
-</div>
+  </div>
+
+  <div class="film-show-info">
+    <div class="">
+      <%= @film.title %>
+      <%= @film.description %>
+      <%= @film.author %>
+    </div>
+    <div class="">
+
+    </div>
+    <% if @film.is_top_pick %>
+    <div class="show-page">
+      <%= image_tag "is_featured.svg" %>
+    </div>
+    <% end %>
+  </div>
+
+</section>
 
 
-<%= @film.title %>
-<%= @film.description %>
-<%= @film.author %>
+              <div class="film">
+                <span class="popupfilm">
+                  <%= video_tag @film.video_url.to_s, :size => "640x480", :controls =>true, :id => "filmPopUp" %>
+                  <%= image_tag "close.svg" %>
+                </span>
+              </div>
+
+
 
 <p id="film" class="reviews-title">Reviews</p>
 
@@ -51,3 +67,13 @@
       <%= link_to new_film_review_path(@film) do %>
       <%= image_tag "post.svg" %>
       <% end %>
+
+
+
+                  <script>
+                    // When the user clicks on div, open the popup
+                  function myFunction() {
+                    var popup = document.getElementById("filmPopUp");
+                    popup.classList.toggle("show");
+                  }
+                  </script>

@@ -14,7 +14,7 @@
     margin-top: 4px;
     font-size: 10px;
     line-height: 1.5;
-  font-family: 'MonumentGroteskTrial-Mono';
+    font-family: 'MonumentGroteskTrial-Mono';
   }
 
   p.opinions {
@@ -52,15 +52,12 @@ transform: scale(1);
 
 div.blog-post-cover-wrapper {
 
-  padding: 100px 16px;
   background-color: grey;
 
 }
 
-
-width: 100%;
     div.blog-description {
-
+      padding: 12px;
       align-items: center;
       float: left;
       margin-left: 64px;
@@ -91,7 +88,7 @@ width: 100%;
     }
 
     div.eyeglass {
-      margin-left: 0;
+      margin-left: 20px;
       display: flex;
       align-items: center;
       margin-bottom: 8px;

@@ -1,13 +1,18 @@
-<div class="">
+<div class="comment-container">
 
-  <div class="comment-content">
+  <div class="comment-user">
     <% if comment.user_id.present? %>
     <u>
   <%= link_to comment.user.username, user_path(comment.user) %>
   </u>
-  <span><small> posted <%= time_ago_in_words(comment.created_at) %> ago</small></span>
   <% end %>
-    <p> <%= comment.body %></p>
+  <span><small> says: </small></span>
+  </div>
+  <div class="comment-body">
+    <p> <%= simple_format comment.body %></p>
+    <p class="comment-timestamp">posted <%= time_ago_in_words(comment.created_at) %> ago</p>
+  </div>
+
 
 
   </div>
@@ -30,5 +35,4 @@
 
 <div class="nested">
   <%= render partial: 'comments/comment', collection: comment.comments %>
-</div>
 </div>

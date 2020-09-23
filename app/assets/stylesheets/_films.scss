@@ -1,6 +1,4 @@
-.cover_img {
-  border: 1px solid #6E6E6E;
-}
+
 
 div.back-to-films{
   h3{
@@ -11,12 +9,27 @@ div.back-to-films{
 }
 
 div.film-gallery-grid {
-  border: 1px solid white;
+  // border: 1px solid white;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
 
     font-family: 'MonumentGroteskTrial-Mono';
 
+    div.film-item {
+      text-align: center;
+
+    div.cover_img {
+      border: 1px solid #6E6E6E;
+      border-radius: 1px;
+      width: 302px;
+      height: 227px;
+
+        img {
+           display: block;
+
+        }
+
+    }
 
 
     h3 {
@@ -25,29 +38,41 @@ div.film-gallery-grid {
     }
 
 
-div.film-item {
+
+    div.title {
+      margin-left: 82px;
+      margin-top: 16px;
+      width: 100px;
+      text-align: left;
+      margin-right: 0;
 
 
-  img {
-    transition: 0.2s;
 
-    &:hover {
-      overlay: dfd
     }
-  }
-
-  div.gallery-components {
 
       div.coffee-review-metric {
-        align-items: center;
-        display: flex;
-        text-align: center;
+        width: 100%;
+
+        img {
+          width: 2%;
+        }
   }
 
-    img {
-      display: block;
-      width: 5%;
-    }
+
+
+          span.ribbon {
+
+
+            margin-right: 0;
+
+            img {
+              width: 20%;
+
+            }
+
+
+          }
+
 
     span.reviews-number {
       font-size: 12px;
@@ -58,9 +83,68 @@ div.film-item {
 
   div.film-show-img {
     margin-bottom: 64px;
+    cursor: pointer;
+    display: block;
   }
 
   div.comment-content {
     border-bottom: 1px solid white;
   }
+
+
+section.film-show-grid {
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
 }
+
+  div.film {
+    position: fixed;
+ display: inline-block;
+ cursor: pointer;
+}
+
+  .film .popupfilm {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+    background: rgba(0, 0, 0, 0.95);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    visibility: hidden;
+
+}
+
+
+/* Toggle this class - hide and show the popup */
+.popupfilm .show {
+  visibility: visible;
+  -webkit-animation: fadeIn 0.85s;
+  animation: fadeIn 0.85s;
+}
+
+/* Add animation (fade in the popup) */
+@-webkit-keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity:1 ;}
+}
+
+
+
+@media (max-width: 991px)
+    {
+      .film video {
+        max-width: 90%;
+      }
+    }

@@ -1,5 +1,7 @@
 <section class="log-in">
 
+
+
   <%= simple_form_for :session, html: { class: "hide-required" }, url: session_path do |f| %>
 
   <%= f.input :username, placeholder: 'Enter your username', required: false %>
@@ -7,6 +9,9 @@
   <%= f.button :submit, "Sign in", :class => "sign-in-button" %>
 
   <% end %>
+
+
+
 
 <div class="new-account">
     Don't have an account? <%= link_to "Join the sink", new_user_path, :class => "create-account" %>

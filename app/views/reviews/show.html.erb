@@ -8,9 +8,14 @@
 </div>
 
 <section class="review-content">
-  <h3><%= @review.title %></h3>
-  <h5> Published by <u><%= link_to @review.user.username, user_path(@review.user) %></u></h5>
-  <p><%= @review.body %></p>
+  <div class="">
+    <p><%= @review.title %></p>
+    <p> <%= @review.created_at.strftime("%b %e, %Y")%> </p>
+    <p> By <u><%= link_to @review.user.username, user_path(@review.user) %></u></p>
+  </div>
+  <div class="review-body-content">
+      <p class="review-body"><%= simple_format @review.body %></p>
+  </div>
 </section>
 
 

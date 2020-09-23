@@ -2,6 +2,8 @@ class BlogPostsController < ApplicationController
 
   def index
     @blog_posts = BlogPost.all
+
+    cookies[:original_referrer] = request.original_url
   end
 
   def new
@@ -15,6 +17,7 @@ class BlogPostsController < ApplicationController
 
   def show
     @blog_post = BlogPost.friendly.find(params[:id])
+    cookies[:original_referrer] = request.original_url
   end
 
   def edit

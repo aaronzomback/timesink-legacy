@@ -1,21 +1,12 @@
-<div class="ticker-wrap">
-<div class="ticker">
-  <div class="ticker__item">A NEW FILM BY RANDY SMORGA IS NOW PLAYING </div>
-  <div class="ticker__item">TIMESINK PRESENTS, LIVE: 11pm EST </div>
-  <%= link_to new_submission_path do %>
-  <div class="ticker__item">SUBMISSIONS ARE NOW OPEN! </div>
-      <% end %>
-      <div class="ticker__item">KANYE WEST ANNOUNCES NEW ALBUM</div>
-      <div class="ticker__item">MOVIE THEATER TICKET SALES CONTINUE TO DECLINE</div>
-</div>
-</div>
+<%= render "shared/ticker" %>
 
 
-<div class="film-gallery-grid">
 
 
+
+
+    <div class="film-gallery-grid">
     <% @films.each do |film| %>
-
     <div class="film-item">
       <%= link_to film_path(film) do %>
         <div class="cover-img">
@@ -23,32 +14,34 @@
         </div>
 
 
-        <div class="gallery-components">
-          <h3><%= film.title %></h3>
-          <h3><%= film.description %></h3>
-            <h3><%= film.author %></h3>
+          <div class="title">
+              <h3><%= film.title %></h3>
+              <h3><%= film.description %></h3>
+              <h3><%= film.author %></h3>
+          </div>
 
-            <div class="coffee-review-metric">
 
-              <%= image_tag "coffee.svg", :class => "coffee" %> <span class="reviews-number"><%= pluralize film.reviews.count, "Review" %> </span>
+        <span class="ribbon">
+          <% if film.is_top_pick %>
+            <%= image_tag "is_featured.svg" %>
+          <% end %>
+        </span>
 
-            </div>
 
-            <% if film.is_top_pick %>
-            <div class="ribbon">
-              <%= image_tag "is_featured.svg" %>
-            </div>
-            <% end %>
+        <div class="coffee-review-metric">
+            <%= image_tag "coffee.svg", :class => "coffee" %> <span class="reviews-number"><%= pluralize film.reviews.count, "Review" %> </span>
+        </div>
 
-            <% end %>
-    </div>
-    </div>
+        <% end %>
+
+      </div>
+
+
+
+
+
+
 
 
   <% end %>
-
-
-
-
-
 </div>

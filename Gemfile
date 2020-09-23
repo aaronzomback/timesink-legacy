@@ -49,6 +49,7 @@ gem 'stripe'
 gem 'acts_as_votable', '~> 0.10.0'
 
 gem 'jquery-rails'
+gem 'vanilla-ujs'
 
 gem 'video-js-rails', '~> 4.3', '>= 4.3.0.1'
 

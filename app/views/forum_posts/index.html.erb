@@ -1,36 +1,28 @@
-<div class="ticker-wrap">
-<div class="ticker">
-  <div class="ticker__item">A NEW FILM BY RANDY SMORGA IS NOW PLAYING </div>
-  <div class="ticker__item">TIMESINK PRESENTS, LIVE: 11pm EST </div>
-  <%= link_to new_submission_path do %>
-  <div class="ticker__item">SUBMISSIONS ARE NOW OPEN! </div>
-      <% end %>
-      <div class="ticker__item">KANYE WEST ANNOUNCES NEW ALBUM</div>
-      <div class="ticker__item">MOVIE THEATER TICKET SALES CONTINUE TO DECLINE</div>
-</div>
+<%= render "shared/ticker" %>
+
+
+
+
+
+<div class="forum-banner">
 </div>
 
+<div class="new-forum-post">
+  <%= link_to new_forum_post_path do %>
+   <%= image_tag "post.svg" %>
+   <% end %>
+</div>
 
 
-
-<h3>Forum</h3>
-
-<%= link_to new_forum_post_path do %>
- <%= image_tag "post.svg" %>
- <% end %>
-
-
-<div class="Forum-Post-Row">
   <% @forum_posts.order("created_at desc").each do |post| %>
-    <div class="Forum-Post-Column">
+<div class="Forum-Post-Row">
       <div class="Forum-Post">
         <%= link_to forum_post_path(post) do %>
-        <%= post.title %>
+        <h6><span><%= post.title %></span></h6>
         <% end %>
-      <p>Posted by <%= post.user.username %></p>
+      <p class="posted-by-forum">Posted by <%= post.user.username %></p>
+      <p class="date-post"><%= time_ago_in_words(post.created_at) %> ago</p>
     </div>
-    <div class="date-post">
-      Posted <%= post.created_at.strftime("%e %b %Y") %> 
-    </div>
-    <% end %>
+
   </div>
+      <% end %>

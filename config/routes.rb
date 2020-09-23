@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   resource :session
 
   # films controller
-  resources :films do
+  resources :films, :path => "films" do
     resources :reviews do
       resources :comments
     end
@@ -42,6 +42,7 @@ Rails.application.routes.draw do
   get "privacy_policy", to: "pages#privacy_policy"
   get "cookies_policy", to: "pages#cookies_policy"
   get "submit", to: "pages#submit"
+  get "submission_success", to: "pages#submission_success"
 
   root "films#index"
 

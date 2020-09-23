@@ -2,15 +2,15 @@
 <div class="back-to-forum-index">
   <%= link_to forum_posts_path do %>
   <i class="arrow left"></i>
-  <h3>Back to forum</h3>
+  <h6>Back to forum</h6>
   <% end %>
 </div>
 
 
-<h3><%= @forum_post.title %></h3>
-<h6> Posted by <%= @forum_post.user.username %> </h6>
+<h6><%= @forum_post.title %></h6>
+<p> Posted by <%= @forum_post.user.username %> </p>
 
-<p><%= @forum_post.body %></p>
+<p><%= simple_format @forum_post.body %></p>
 
 
 <% if is_logged_in? %>

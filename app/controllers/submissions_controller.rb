@@ -1,10 +1,12 @@
 class SubmissionsController < ApplicationController
 
+
   def index
     @submissions = Submission.all
   end
 
   def new
+
 
     cookies[:original_referrer] = request.original_url
 
@@ -15,22 +17,21 @@ class SubmissionsController < ApplicationController
 
   else
     redirect_to new_session_path
-    flash[:error] = "Hey ho, what'd ya know? You must be signed in to submit a film!"
+    flash[:error] = "You must be signed in to submit a film!"
   end
 end
 
 def create
 
-  @submission = Submission.new(form_params)
+    @submission = Submission.new(form_params)
 
     @submission.user = @current_user
 
   if @submission.save_and_charge
 
-    flash[:success] = "Your film has been submitted!"
     SubmissionMailer.receipt(@submission).deliver_now
     SubmissionMailer.newsubmission(@submission).deliver_now
-    redirect_to root_path
+    redirect_to submission_success_path
 
 
   else

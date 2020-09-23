@@ -20,12 +20,16 @@ ul.submit {
 
     p {
         font-family: 'Spectral-Light';
-      width: 360px;
+        width: 360px;
     }
-    margin-left: 4em;
+      margin-left: 4em;
 
     div.button-submit {
       margin-top: 32px;
+
+      .button-submit a {
+        font-family: "MonumentGroteskTrial-Regular";
+      }
 
     }
 

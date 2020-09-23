@@ -2,6 +2,7 @@ class SessionsController < ApplicationController
 
 
   def new
+      render :layout => 'sign'
     # we don't need any variables in here
     # because were not adding to the database - just the session in this case
   end
@@ -17,7 +18,6 @@ if @user.present?
 
  session[:user_id] = @user.id
 
- flash[:success] = "Welcome back to TimeSink!"
 
  # go back to previous page the user was on
 redirect_to cookies[:original_referrer]
@@ -31,7 +31,6 @@ end
 def destroy
   reset_session
 
-  flash[:success] = "Succesfully logged out!"
 
   redirect_to root_path
 end

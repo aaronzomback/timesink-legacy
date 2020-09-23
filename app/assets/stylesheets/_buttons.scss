@@ -26,7 +26,7 @@
   color: rgba(122, 168, 255, 0.85);
   text-decoration: none;
   font-size: 12px;
-  font-family: 'KhmerSangamMN';
+  font-family: 'MonumentGroteskTrial-Regular';
   text-align: center;
 }
 
@@ -43,7 +43,7 @@
   color: #222222;
   text-decoration: none;
   font-size: 12px;
-  font-family: 'KhmerSangamMN';
+  font-family: 'MonumentGroteskTrial-Regular';
   text-align: center;
   vertical-align: center;
 }
@@ -69,6 +69,7 @@
   color: rgba(122, 168, 255, 0.85);
   text-decoration: none;
   font-size: 12px;
+  font-family: "MonumentGroteskTrial-Regular";
 }
 
 .button3:hover {
@@ -83,6 +84,7 @@
   color: #222222;
   text-decoration: none;
   font-size: 12px;
+  font-family: "MonumentGroteskTrial-Regular";
 }
 
 .button4 {
@@ -95,6 +97,33 @@
 .button4:hover {opacity: 0.6}
 
 
+.button_continue {
+  background-color: #222222;
+  color: rgba(122, 168, 255, 0.85);
+  border: 2px solid rgba(122, 168, 255, 0.85);
+  border-radius: 25px;
+  padding: 12px 24px;
+
+    a {
+      color: rgba(122, 168, 255, 0.85);
+      text-decoration: none;
+      font-size: 12px;
+      font-family: "MonumentGroteskTrial-Regular";
+    }
+
+}
+
+.button_continue {
+  position: fixed;
+  left: 50%;
+  top: 55%;
+  transform: translateX(-40%);
+}
+
 .sign-in-button {
   border-radius: 25px;
+
+  a {
+    font-family: "MonumentGroteskTrial-Regular";
+  }
 }

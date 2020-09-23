@@ -5,6 +5,7 @@ class CommentsController < ApplicationController
 
   def new
     @comment = Comment.new
+
   end
 
   def create
@@ -31,7 +32,7 @@ class CommentsController < ApplicationController
 
     def find_commentable
       @commentable = Comment.find_by_id(params[:comment_id]) if params[:comment_id]
-      @commentable = Review.find_by_id(params[:review_id]) if params[:review_id]
+      @commentable = Review.friendly.find(params[:review_id]) if params[:review_id]
     end
 
 

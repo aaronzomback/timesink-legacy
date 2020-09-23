@@ -3,12 +3,14 @@
 <html>
 <head>
   <title>Timesink</title>
-  <%= csrf_meta_tags %>
+<%= csrf_meta_tags %>
   <%= csp_meta_tag %>
-<%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
       <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-          <script src="https://js.stripe.com/v3/"></script>
+        <script src="https://js.stripe.com/v3/"></script>
+
     <%= favicon_link_tag asset_path('Group989.png') %>
+    
   <script src="//vjs.zencdn.net/ie8/1.1.1/videojs-ie8.min.js" async></script>
     <link rel="stylesheet"
       href="https://fonts.googleapis.com/css?family=Roboto">
@@ -68,7 +70,7 @@
 
    <% if flash[:error].present? %>
    <div class="error">
-    <p><%= flash[:error] %></p> 
+    <p><%= flash[:error] %></p>
    </div>
    <% end %>
 

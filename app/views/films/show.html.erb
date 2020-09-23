@@ -13,7 +13,7 @@
 
 <section class="film-show-grid">
 
-    <div class="film-show-img" onclick="myFunction()" >
+    <div class="film-show-img" onclick="toggle();">
   <%= image_tag @film.cover.show.url %>
   </div>
 
@@ -36,16 +36,22 @@
 </section>
 
 
-              <div class="film">
-                <span class="popupfilm">
-                  <%= video_tag @film.video_url.to_s, :size => "640x480", :controls =>true, :id => "filmPopUp" %>
-                  <%= image_tag "close.svg" %>
+              <div class="popupfilm" id="filmPopUp">
+                <span class="">
+                  <%= video_tag @film.video_url.to_s, :size => "640x480", :controls =>true, :class => "video" %>
+                  <span class="close" onclick="toggle();"><%= image_tag "EXIT.svg" %></span>
                 </span>
               </div>
 
 
 
 <%= image_tag "cornerreviews2.svg", :class => "cornercafereview" %>
+
+
+      <%= link_to new_film_review_path(@film) do %>
+      <%= image_tag "post.svg", :class => "new-review-post" %>
+      <% end %>
+
 
 <% @film.reviews.order("created_at desc").each do |review| %>
 
@@ -54,6 +60,11 @@
       <%= link_to film_review_path(@film, review) do %>
     <h6 class="review-title"><%= review.title %></h6>
     <% end %>
+
+<div class="">
+  <p class="review-comment-count"><%= pluralize review.comments.count, "Comment" %></p>
+</div>
+
 
     <div class="review-details">
       <p> Rating <%= review.score %> / 5</p>
@@ -72,16 +83,11 @@
       <% end %>
 
 
-      <%= link_to new_film_review_path(@film) do %>
-      <%= image_tag "post.svg" %>
-      <% end %>
 
-
-
-                  <script>
-                    // When the user clicks on div, open the popup
-                  function myFunction() {
-                    var popup = document.getElementById("filmPopUp");
-                    popup.classList.toggle("show");
+                <script type="text/javascript">
+                  function toggle() {
+                    var popupfilm= document.querySelector(".popupfilm")
+                    popupfilm.classList.toggle("active")
                   }
-                  </script>
+
+                </script>

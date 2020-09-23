@@ -1,8 +1,10 @@
 .review {
-  border-bottom: 1px dotted white;
+
+  border-top: 1px dotted white;
   font-family: "Spectral";
   margin-left: 80px;
   margin-top: 16px;
+  padding-top: 16px;
 }
 
 
@@ -24,4 +26,17 @@ div.review-details {
 
 h3 .review-title  {
   font-size: 12px;
+}
+
+.new-review-post {
+  display: block;
+  margin-bottom: 16px;
+  margin-left: 800px;
+  width: 2%;
+
+}
+
+
+p.review-comment-count {
+  font-size: 14px;
 }

@@ -104,26 +104,46 @@ section.film-show-grid {
 
 }
 
-  div.film {
-    position: fixed;
- display: inline-block;
- cursor: pointer;
-}
 
-  .film .popupfilm {
+  .popupfilm {
     position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 1000;
-    background: rgba(0, 0, 0, 0.95);
+    background: rgba(0, 0, 0, 0.85);
     width: 100%;
     height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     visibility: hidden;
+    opacity: 0;
 
+    &.active {
+      visibility: visible;
+      opacity: 1;
+    }
+
+    .popupfilm.video {
+      position: relative;
+      outline: none;
+      max-width: 900px;
+    }
+
+    .close {
+
+      position: absolute;
+      top: 50px;
+      right: 195px;
+
+
+      cursor: pointer;
+
+      img {
+        width: 100%;
+      }
+    }
 }
 
 

@@ -1,5 +1,13 @@
 
 
+
+<div class="back-to-films">
+  <%= link_to film_path(@film) do %>
+  <i class="arrow left"></i>
+  <h3>Back to <%= @film.title %> </h3>
+  <% end %>
+</div>
+
 <%= simple_form_for [@film, @review] do |f| %>
 <%= f.input :title %>
 <%= f.input :body %>

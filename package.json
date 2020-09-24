@@ -1,3 +1,9 @@
+
+"scripts": {
+   "start": "node index.js"
+}
+
+
 {
   "name": "timesink",
   "private": true,

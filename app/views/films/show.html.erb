@@ -62,7 +62,12 @@
     <% end %>
 
 <div class="">
+  <% if review.comments.present? %>
   <p class="review-comment-count"><%= pluralize review.comments.count, "Comment" %></p>
+
+  <% else %>
+  <p class="review-comment-count">no comments yet</p>
+  <% end %>
 </div>
 
 

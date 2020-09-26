@@ -1,3 +1,10 @@
+
+
+.blog-underline {
+  border-bottom: 1px solid white;
+}
+
+
 // Blog section intro
 
 .blog-intro  {
@@ -116,17 +123,43 @@ div.back-to-blog-index {
 
 section.blog-body {
 
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+
   h2 {
-    font-family: "Canela-Light";
+    font-family: "SangBleuEmpire-Regular-WebTrial";
     width: 600px;
     margin-left: auto;
     margin-right: auto;
   }
+
+.blog-body-p {
+  margin-top: 56px;
+}
+
   p {
     line-height: 1.6;
     font-family: "Spectral-Light";
     width: 880px;
     margin-left: auto;
     margin-right: auto;
+  }
+}
+
+.blog-author-date {
+  margin-top: 16px;
+  margin-left: 12.5em;
+  margin-bottom: 32px;
+  font-family: "Spectral-Light";
+
+  img {
+    display: block;
+    margin-bottom: 40px;
+  }
+
+
+  h6 {
+    margin: 4px;
   }
 }

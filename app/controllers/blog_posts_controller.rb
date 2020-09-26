@@ -4,6 +4,7 @@ class BlogPostsController < ApplicationController
     @blog_posts = BlogPost.all
 
     cookies[:original_referrer] = request.original_url
+    render :layout => 'blogunderline'
   end
 
   def new
@@ -18,6 +19,7 @@ class BlogPostsController < ApplicationController
   def show
     @blog_post = BlogPost.friendly.find(params[:id])
     cookies[:original_referrer] = request.original_url
+    render :layout => 'blogunderline'
   end
 
   def edit

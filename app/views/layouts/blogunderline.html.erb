@@ -1,0 +1,93 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Timesink</title>
+<%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+      <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+        <script src="https://js.stripe.com/v3/"></script>
+
+    <%= favicon_link_tag asset_path('Group989.png') %>
+
+  <script src="//vjs.zencdn.net/ie8/1.1.1/videojs-ie8.min.js" async></script>
+    <link rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Roboto">
+
+      </head>
+
+<body>
+
+
+  <header>
+
+  <%= link_to root_path do %>
+  <%= image_tag "timesinkLogosin.svg", :class => "prime-logo"  %>
+  <% end %>
+
+  <nav>
+
+    <span class="links">
+      <%= link_to "Films", films_path %>
+      <%= link_to "Blog", blog_posts_path, :class => "blog-underline"  %>
+      <%= link_to "Forum", forum_posts_path  %>
+      <%= link_to "Info", info_path %>
+      <%= link_to "Donate", donate_path %>
+    </span>
+
+
+
+
+        <% if is_logged_in? %>
+      <span class="welcome">Bienvenue <%= @current_user.username %>!</span>
+  <%= link_to "Log out", session_path, method: :delete %>
+
+  <button class="button button3">
+    <%= link_to "Submit film", submit_path %>
+  </button>
+
+  <% else %>
+
+  <button class="button button1">
+    <%= link_to "Sign in", new_session_path %>
+  </button>
+
+  <button class="button button2">
+    <%= link_to "Submit film", submit_path %>
+  </button>
+
+      <% end %>
+
+          </nav>
+    </header>
+
+    <% if flash[:success].present? %>
+   <div class="success">
+     <%= flash[:success] %>
+   </div>
+   <% end %>
+
+   <% if flash[:error].present? %>
+   <div class="error">
+    <p><%= flash[:error] %></p>
+   </div>
+   <% end %>
+
+
+
+    <main>
+      <%= yield %>
+    </main>
+
+<footer>
+
+    <span>© 2020 TimeSink Presents</span>
+    <%= link_to "Terms", terms_path %>
+    <%= link_to "Cookies Policy", cookies_policy_path %>
+    <%= link_to "Privacy Policy", "privacy_policy_path" %>
+
+</footer>
+
+  </body>
+</html>

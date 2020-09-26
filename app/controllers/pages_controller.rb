@@ -7,9 +7,11 @@ class PagesController < ApplicationController
   end
 
   def info
+    render :layout => 'infounderline'
   end
 
   def donate
+    render :layout => 'donateunderline'
   end
 
   def terms

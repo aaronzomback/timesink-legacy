@@ -5,7 +5,7 @@
 <%= f.input :email %>
 
 <!-- generate four radio buttons with labels (TODO: move this into a helper) -->
-<% Donation::DONATION_DOLLAR_AMOUNTS.each do |amt| %>
+  <% Donation::DONATION_DOLLAR_AMOUNTS.each do |amt| %>
   <%= radio_button_tag "amount", amt %>
   <%= label_tag "amount_#{amt}", number_to_currency(amt, precision: 0)%>
   <% end %>
@@ -16,7 +16,7 @@
 <% end %>
 </div>
 
-<div id="card">
+<div id="card" class="card-donation">
 
 </div>
 

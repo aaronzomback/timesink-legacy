@@ -2,31 +2,40 @@
 
 
     <div class="film-gallery-grid">
+
     <% @films.each do |film| %>
+
     <div class="film-item">
+
       <%= link_to film_path(film) do %>
         <div class="cover-img">
         <%= image_tag film.cover.gallery.url, :class => "cover_img" %>
         </div>
 
-
-          <div class="title">
-              <h3><%= film.title %></h3>
-              <h3><%= film.description %></h3>
-              <h3><%= film.author %></h3>
-          </div>
-
-
-        <span class="ribbon">
-          <% if film.is_top_pick %>
-            <%= image_tag "is_featured.svg" %>
-          <% end %>
-        </span>
+<div class="film-grid">
+  <div class="title">
+      <h3><%= film.title %></h3>
+      <h3><%= film.description %></h3>
+      <h3><%= film.author %></h3>
+  </div>
 
 
-        <div class="coffee-review-metric">
-            <%= image_tag "coffee.svg", :class => "coffee" %> <span class="reviews-number"><%= pluralize film.reviews.count, "Review" %> </span>
-        </div>
+    <div class="">
+      <span class="ribbon">
+        <% if film.is_top_pick %>
+          <%= image_tag "is_featured.svg" %>
+        <% end %>
+      </span>
+
+
+      <div class="coffee-review-metric">
+          <%= image_tag "coffee.svg", :class => "coffee" %> <span class="reviews-number"><%= pluralize film.reviews.count, "Review" %> </span>
+      </div>
+    </div>
+
+</div>
+
+
 
         <% end %>
 

@@ -2,6 +2,7 @@
 <h3>Join the sink!</h3>
 
 <%= simple_form_for @user do |f| %>
+ <%= f.error_notification %>
 <%= f.input :name %>
 <%= f.input :username %>
 <%= f.input :email %>

@@ -10,8 +10,8 @@ class PagesController < ApplicationController
     render :layout => 'infounderline'
   end
 
-  def donate
-    render :layout => 'donateunderline'
+  def donation_success
+    render :layout => 'success'
   end
 
   def terms

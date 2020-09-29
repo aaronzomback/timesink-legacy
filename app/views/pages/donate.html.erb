@@ -18,3 +18,36 @@
     <button type="submit">Next</button>
   </div>
 </form>
+
+
+<div id="card-element"></div>
+
+
+<script type="text/javascript">
+  var express = require('express');
+var router = express.Router();
+// app.js already makes these routes start at /donate!
+
+// Donation form.
+router.get('/', function(req, res) {
+  res.render('donate');
+});
+
+// Thanks page.
+router.post('/thanks', function(req, res) {
+  res.render('thanks', { title: 'Thanks!' });
+});
+</script>
+
+<script type="text/javascript">
+  try {
+  const stripe = require('stripe')('<%= Rails.application.credentials[Rails.env.to_sym][:stripe_public_key]%>');
+  const paymentIntent = await stripe.paymentIntents.create({
+    amount: 1477, // $14.77, an easily identifiable amount
+    currency: 'usd',
+  });
+  console.log('Worked! ', paymentIntent.id);
+} catch(err) {
+  console.log('Error! ', err.message);
+}
+</script>

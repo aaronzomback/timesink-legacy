@@ -33,6 +33,9 @@ Rails.application.routes.draw do
     # film submissions
     resources :submissions
 
+    # donations
+    resources :donations, :only => [:new, :create]
+
 
 
 
@@ -42,6 +45,7 @@ Rails.application.routes.draw do
   get "privacy_policy", to: "pages#privacy_policy"
   get "cookies_policy", to: "pages#cookies_policy"
   get "submit", to: "pages#submit"
+  get "donation_success", to: "pages#donation_success"
   get "submission_success", to: "pages#submission_success"
 
   root "films#index"

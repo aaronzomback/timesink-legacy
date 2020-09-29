@@ -12,11 +12,14 @@ class UsersController < ApplicationController
   def create
     @user = User.new(form_params)
 
-    if @user.save!
-      redirect_to root_path
+    if @user.save
 
     # keep hold of that user
     session[:user_id] = @user.id
+
+
+    # go back to previous page the user was on
+   redirect_to cookies[:original_referrer]
 
     # let the user know they've signed up
     flash[:success] = "Welcome to TimeSink!"

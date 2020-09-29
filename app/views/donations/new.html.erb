@@ -1,0 +1,82 @@
+
+
+<%= simple_form_for @donation do |f| %>
+<%= f.input :name %>
+<%= f.input :email %>
+
+<!-- generate four radio buttons with labels (TODO: move this into a helper) -->
+<% Donation::DONATION_DOLLAR_AMOUNTS.each do |amt| %>
+  <%= radio_button_tag "amount", amt %>
+  <%= label_tag "amount_#{amt}", number_to_currency(amt, precision: 0)%>
+  <% end %>
+
+<div id="card-errors">
+  <% @donation.errors[:stripe_token].each do |message| %>
+<p class="error"><%= message %></p>
+<% end %>
+</div>
+
+<div id="card">
+
+</div>
+
+<%= f.submit "Donate to TimeSink"  %>
+
+<% end %>
+
+
+
+
+<script>
+
+  var stripe = Stripe("<%= Rails.application.credentials[Rails.env.to_sym][:stripe_public_key]%>")
+
+  // load the fonts in
+var fonts = [
+{
+  cssSrc: "https://fonts.googleapis.com/css?family=Karla"
+}
+]
+
+
+  // styles for the stripe inputs
+ var styles = {
+   base: {
+     iconColor: "#cccccc",
+     color: "#ffffff",
+     fontFamily: "MonumentGroteskTrial-Regular",
+     fontSize: "16px",
+
+     "::placeholder": {
+       color: "#cccccc"
+     },
+     ":-webkit-autofill": {
+       color: "#cccccc"
+     }
+   },
+   invalid: {
+     iconColor: "#FFC7EE",
+     color: "#A31621"
+   }
+ }
+
+
+  var elements = stripe.elements();
+  var card = elements.create("card", {style: styles })
+    card.mount("#card")
+
+  $("form.new_donation").on("submit", function (ev) {
+        ev.preventDefault()
+
+
+          stripe.createToken(card).then(function (result) {
+
+            if (result.error) {
+              $("#card-errors").html(result.error.message)
+            } else {
+                $("form.new_donation").append("<input type=hidden name='donation[stripe_token]' value=" + result.token.id + ">")
+                $("form.new_donation").get(0).submit()
+            }
+          })
+  })
+</script>

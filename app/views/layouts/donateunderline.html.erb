@@ -9,7 +9,7 @@
       <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
         <script src="https://js.stripe.com/v3/"></script>
 
-    <%= favicon_link_tag asset_path('Group989.png') %>
+    <%= favicon_link_tag asset_path('tsfavicon.png') %>
 
   <script src="//vjs.zencdn.net/ie8/1.1.1/videojs-ie8.min.js" async></script>
     <link rel="stylesheet"
@@ -33,7 +33,7 @@
       <%= link_to "Blog", blog_posts_path  %>
       <%= link_to "Forum", forum_posts_path  %>
       <%= link_to "Info", info_path %>
-      <%= link_to "Donate", donate_path, :class => "donate-underline"  %>
+      <%= link_to "Donate", new_donation_path, :class => "donate-underline"  %>
     </span>
 
 

@@ -20,7 +20,6 @@ class DonationsController < ApplicationController
     statement_descriptor: "TimeSink donation")
 
     redirect_to donation_success_path
-    flash[:success] = "Thank you for your poo!"
 
 end
 

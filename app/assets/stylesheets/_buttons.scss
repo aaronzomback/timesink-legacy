@@ -122,6 +122,9 @@
 
 .sign-in-button {
   border-radius: 25px;
+  position: fixed;
+  left: 50%;
+  transform: translate(-74%);
 
   a {
     font-family: "MonumentGroteskTrial-Regular";

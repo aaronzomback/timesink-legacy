@@ -12,11 +12,13 @@
 
 @font-face {
   font-family: "Spectral";
+  font-weight: 400;
   src: url('app/assets/fonts/Spectral.ttf');
 }
 
 @font-face {
   font-family: 'Spectral-Light';
+  font-weight: 300;
   src: url('app/assets/fonts/Spectral-Light.ttf');
 }
 
@@ -37,17 +39,13 @@
 
 @font-face {
   font-family: "SangBleuEmpire";
-  src: url('app/assets/fonts/SangBleuEmpire-Regular-WebTrial.ttf');
+  src: url('app/assets/fonts/SangBleuEmpireTrial-Regular.otf');
 }
 
 @font-face {
-  font-family: "SangBleu-Light";
-  src: url(app/assets/fonts/SangBleuKingdom-Light-WebTrial.ttf);
-  font-weight: 100;
+  font-family: 'SangBleu-Light';
+  src: url('app/assets/fonts/SangBleuKingdom-Light-WebTrial.ttf');
 }
-
-
-
 
 @font-face {
   font-family: 'Roboto', sans-serif;
@@ -55,17 +53,37 @@
   src:url('//fonts.googleapis.com/css2?family=Roboto');
 }
 
-h1{font-size:64px;}
-h2{font-size:48px;}
-h3{font-size:40px;}
-h4{font-size:32px;}
-h5{font-size:24px;}
-h6{font-size:18px;}
+@font-face {
+  font-family: 'SangBlueOGSans';
+  font-style: normal;
+  font-weight: normal;
+  src: font-url('app/assets/SangBleuOGSans-Regular-WebTrial.woff');
+}
+
+@font-face {
+  font-family: "Riviera-Nights";
+  font-weight: 400;
+  src: url('app/assets/fonts/RivieraNights-Regular-WebTrial.woff2');
+}
+
+
+h1{font-size:64px;
+font-weight: 400;}
+h2{font-size:48px;
+font-weight: 400;}
+h3{font-size:40px;
+font-weight: 400;}
+h4{font-size:32px;
+font-weight: 400;}
+h5{font-size:24px;
+font-weight: 400;}
+h6{font-size:18px;
+font-weight: 400;}
 
 
 
 body {
-  font-family: 'Roboto';
+  font-family: 'SangBleuOGSans';
   background-color: #222222;
   color: #F5F7F9;
   height: 100vh;
@@ -112,7 +130,7 @@ section.info {
 }
 
 div.comment-body {
-  border-bottom: 1px solid white;
+  border-bottom: 1px dotted white;
 
 }
 
@@ -159,15 +177,17 @@ a {
 }
 
 .prime-logo {
- width: 50%;
+ width: 55%;
+ display: block;
+ margin-left: 64px;
 }
 
 .prime-logo2 {
  width: 15%;
  position: fixed;
  left: 50%;
- top: 64px;
- transform: translateX(-50%);
+ top: 160px;
+ transform: translateX(-78%);
 }
 
 header {
@@ -184,7 +204,7 @@ nav {
     color: #F5F7F9;
     text-decoration: none;
     margin-right: 56px;
-    font-family: 'Spectral';
+    font-family: 'SangBleuOGSans';
     font-size: 14px;
   }
 
@@ -273,8 +293,8 @@ $duration: 30s;
   padding-left: 100%;
   box-sizing: content-box;
   font-size: 16px;
-  font-family: 'MonumentGroteskTrial-Mono';
-  margin-bottom: 24px;
+  font-family: "KhmerSangamMN";
+  margin-bottom: 48px;
 
 
   div.ticker {
@@ -312,4 +332,18 @@ $duration: 30s;
   body { padding-bottom: 5rem; }
   h1,h2,p {padding: 0 5%;}
 
+}
+
+.home_video {
+ width: 100vw;
+ height: 100vh;
+ position: absolute;
+ object-fit: cover;
+ top: 0;
+ z-index: -2;
+}
+
+.home-video-wrapper {
+  height: 100vh;
+  display: flex;
 }

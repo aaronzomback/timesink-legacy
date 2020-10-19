@@ -18,7 +18,6 @@ class ReviewsController < ApplicationController
   else
     @film = Film.friendly.find(params[:film_id])
     redirect_to new_session_path
-    flash[:error] = "You must be signed in to write a review."
   end
 end
 

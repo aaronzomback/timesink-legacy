@@ -5,7 +5,7 @@ ActiveAdmin.register Film do
   #
   # Uncomment all parameters which should be permitted for assignment
   #
-  permit_params :title, :author, :cover, :video, :description, :year, :is_top_pick
+  permit_params :title, :author, :cover, :video, :description, :description_body, :year, :is_top_pick
 
   index do
     selectable_column
@@ -16,6 +16,7 @@ ActiveAdmin.register Film do
     column :title
     column :author
     column :description
+    column :description_body
     column :year
     column :is_top_pick
     actions

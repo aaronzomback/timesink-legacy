@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   resources :users
 
 # session controller
-  resource :session
+  resource :session, :only => [:new, :create, :destroy]
 
   # films controller
   resources :films, :path => "films" do

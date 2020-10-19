@@ -9,10 +9,10 @@ class SessionsController < ApplicationController
 
   def create
 
-   @username = form_params[:username]
+   @email = form_params[:email]
    @password = form_params[:password]
 
-   @user = User.find_by(username: @username).try(:authenticate, @password)
+   @user = User.find_by(email: @email).try(:authenticate, @password)
 
 if @user.present?
 

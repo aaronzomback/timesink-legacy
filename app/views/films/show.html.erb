@@ -18,19 +18,25 @@
   </div>
 
   <div class="film-show-info">
+    <span><% if @film.is_top_pick %>
+     <%= image_tag "is_featured.svg", :class => "top-pick-show" %>
+   <% end %></span>
     <div class="">
-      <%= @film.title %> <br>
-      <%= @film.author %> <br>
-      <%= @film.description %> <br>
+      <h2 class="film-title"><%= @film.title %></h2>
+      <h6 class="film-author"><%= @film.author %></h6> <span><%= @film.description %></span>
+      <p class="film-description"><%= @film.description_body %></p>
     </div>
-    <div class="">
-      <% if @film.is_top_pick %>
-      <div class="show-page">
-        <%= image_tag "is_featured.svg" %>
-      </div>
-      <% end %>
+    <div class="play-button" onclick="toggle();">
+      <span> Play </span> <%= image_tag "play.svg", :class => "play-symbol" %>
     </div>
-
+    <div class="preview-button">
+      Trailer
+    </div>
+    <%= link_to new_film_review_path(@film) do %>
+    <div class="write-review-button">
+      Write a review
+    </div>
+    <% end %>
   </div>
 
 </section>
@@ -38,19 +44,14 @@
 
               <div class="popupfilm" id="filmPopUp">
                 <span class="">
-                  <%= video_tag @film.video_url.to_s, :size => "640x480", :controls =>true, :class => "video" %>
+                  <%= video_tag @film.video_url.to_s, :size => "960x540", :controls =>true, :class => "video" %>
                   <span class="close" onclick="toggle();"><%= image_tag "EXIT.svg" %></span>
                 </span>
               </div>
 
 
 
-<%= image_tag "cornerreviews2.svg", :class => "cornercafereview" %>
 
-
-      <%= link_to new_film_review_path(@film) do %>
-      <%= image_tag "post.svg", :class => "new-review-post" %>
-      <% end %>
 
 
 <% @film.reviews.order("created_at desc").each do |review| %>

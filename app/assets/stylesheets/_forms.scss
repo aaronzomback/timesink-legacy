@@ -4,15 +4,15 @@ input[type=submit] {
   border-color: rgba(122, 168, 255, 0.2);
   margin-top: 10px;
   margin-left: 25px;
-  font-family: "MonumentGroteskTrial-Regular";
+  font-family: "Spectral";
 }
 
 input, textarea {
-  font-size: 18px;
+  font-size: 16px;
   min-width: 100px;
   border: 1px solid rgba(122, 168, 255, 0.85);
   padding: 7px 10px;
-  font-family: 'MonumentGroteskTrial-Regular';
+  font-family: 'Spectral';
   margin: 8px 0px;
   color: white;
   background-color: #222222;
@@ -50,8 +50,11 @@ input, textarea {
 
 div.new-account {
   text-align: center;
-  margin-left: inherit;
-  margin-right: inherit;
+  width: 100%;
+  position: fixed;
+  transform: translate(-62%);
+  left: 50%;
+  top: 135%;
   margin-top: 16px;
   color: rgba(122, 168, 255, 0.85);
 
@@ -60,6 +63,10 @@ div.new-account {
     border-bottom: 1px solid rgba(122, 168, 255, 0.85);
     display: inline-block;
     line-height: 0.85;
+  }
+
+  label.password_optional {
+    margin-top: 16px;
   }
 }
 

@@ -1,10 +1,25 @@
 .review {
 
-  border-top: 1px dotted white;
+  border-top: 1px dotted rgba(122, 168, 255, 0.5);
   font-family: "Spectral";
   margin-left: 80px;
   margin-top: 16px;
   padding-top: 16px;
+}
+
+.review-form {
+  width: 600px;
+  margin-left: 80px;
+}
+
+textarea {
+  width: 600px;
+  height: 120px;
+}
+
+input {
+  font-size: 12px;
+  font-family: "Spectral";
 }
 
 
@@ -25,7 +40,7 @@ div.review-details {
 }
 
 h3 .review-title  {
-  font-size: 12px;
+  font-size: 24px;
 }
 
 .new-review-post {
@@ -34,6 +49,11 @@ h3 .review-title  {
   margin-left: 800px;
   width: 2%;
 
+}
+
+.review-content {
+  width: 600px;
+  margin-left: 120px;
 }
 
 

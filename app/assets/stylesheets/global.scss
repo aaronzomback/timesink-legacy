@@ -39,7 +39,7 @@
 
 @font-face {
   font-family: "SangBleuEmpire";
-  src: url('app/assets/fonts/SangBleuEmpireTrial-Regular.otf');
+  src: url('app/assets/fonts/SangBleuEmpire-Regular.ttf');
 }
 
 @font-face {
@@ -57,7 +57,7 @@
   font-family: 'SangBlueOGSans';
   font-style: normal;
   font-weight: normal;
-  src: font-url('app/assets/SangBleuOGSans-Regular-WebTrial.woff');
+  src: url('app/assets/fonts/SangBleuOGSans-Regular-WebTrial.ttf');
 }
 
 @font-face {
@@ -83,12 +83,14 @@ font-weight: 400;}
 
 
 body {
-  font-family: 'SangBleuOGSans';
+  font-family: 'Spectral';
   background-color: #222222;
   color: #F5F7F9;
   height: 100vh;
   width: 100vw;
   position: relative;
+  margin-left: 80px;
+  margin-right: 80px;
 }
 
 .ribbon img {
@@ -204,8 +206,8 @@ nav {
     color: #F5F7F9;
     text-decoration: none;
     margin-right: 56px;
-    font-family: 'SangBleuOGSans';
-    font-size: 14px;
+    font-family: "SangBleuEmpire";
+    font-size: 18px;
   }
 
   margin-right: 64px;
@@ -222,7 +224,7 @@ nav {
   background-color: rgba(134, 244, 181, 0.85);
   color: #F5F7F9;
   padding: 4px 20px;
-  width: 25%
+  width: 100%
 }
 
 .arrowleft {

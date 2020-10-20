@@ -5,8 +5,6 @@
 }
 
 .film-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
 }
 
 div.back-to-films{
@@ -17,29 +15,35 @@ div.back-to-films{
   h3{
     text-decoration: none;
     color: #F5F7F9;
-    font-size: 14px;
-    font-family: 'SangBleuOGSans';
+    font-size: 21px;
+    font-family: 'SangBleuEmpire';
+    display: inline-block;
   }
 }
 
 div.film-gallery-grid {
   // border: 1px solid white;
   display: grid;
+  grid-column-gap: 0px;
   grid-template-columns: 1fr 1fr 1fr;
   font-family: 'MonumentGroteskTrial-Mono';
+  width: 800px;
 
 
     div.film-item {
       text-align: center;
       margin: 24px;
+      width: 360px;
 
 
     div.cover_img {
       border: 1px solid #6E6E6E;
-      border-radius: 1px;
+
+
 
         img {
            display: block;
+
 
         }
 
@@ -47,8 +51,8 @@ div.film-gallery-grid {
 
 
     h3 {
-      font-size: 12px;
-        font-family: 'Spectral-Light';
+      font-size: 21px;
+        font-family: 'Spectral';
     }
 
 
@@ -113,9 +117,9 @@ section.film-show-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
     width: 880px;
-    margin-left: 180px;
+    margin-left: 220px;
     grid-column-gap: 112px;
-    margin-top: 64px;
+    margin-top: 24px;
 
 
 
@@ -153,8 +157,8 @@ section.film-show-grid {
   margin-top: 40px;
   display: inline-block;
   width: 100px;
-  border: 1px solid rgba(122, 168, 255, 0.85);
-  color: rgba(122, 168, 255, 0.85);
+  border: 1px solid #80acff;
+  color: #80acff;
   padding: 10px 20px;
   text-align: center;
   cursor: pointer;
@@ -164,7 +168,7 @@ section.film-show-grid {
   margin-top: 40px;
   display: inline-block;
   width: 100px;
-  background-color: rgba(122, 168, 255, 0.85);
+  background-color: #80acff;
   color: black;
   padding: 10px 20px;
   text-align: left;
@@ -215,6 +219,7 @@ section.film-show-grid {
       position: relative;
       outline: none;
       max-width: 900px;
+      pointer-events: none;
     }
 
     .close {

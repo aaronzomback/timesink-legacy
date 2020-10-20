@@ -2,6 +2,7 @@ class ReviewsController < ApplicationController
 
 
   def index
+      @film = Film.friendly.find(params[:film_id])
     @reviews = Review.all
   end
 

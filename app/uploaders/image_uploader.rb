@@ -34,11 +34,11 @@ class ImageUploader < CarrierWave::Uploader::Base
   end
 
   version :gallery do
-    process resize_to_fill: [221, 294]
+    process resize_to_fill: [287, 383]
   end
 
   version :show do
-    process resize_to_fit: [400, 420]
+    process resize_to_fill: [301, 402]
   end
 
   version :blog_cover do

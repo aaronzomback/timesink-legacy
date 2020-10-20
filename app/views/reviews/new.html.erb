@@ -3,8 +3,7 @@
 
 <div class="back-to-films">
   <%= link_to film_path(@film) do %>
-  <i class="arrow left"></i>
-  <h3>Back to <%= @film.title %> </h3>
+    <span><%= image_tag "BackArrow1.svg" %> </span><h3>Back to <%= @film.title %> </h3>
   <% end %>
 </div>
 

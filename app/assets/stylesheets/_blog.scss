@@ -1,4 +1,8 @@
-
+div.back-to-blog-index {
+  h3 {
+    display: inline-block;
+  }
+}
 
 .blog-underline {
   border-bottom: 1px solid white;
@@ -39,6 +43,8 @@ ul {
   margin-left: auto;
   margin-right: auto;
   width: 100%;
+  border: 1px solid grey;
+  padding: 24px 4px;
 
   font-family: "Spectral-Light";
 

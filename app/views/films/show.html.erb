@@ -5,8 +5,7 @@
 
 <div class="back-to-films">
   <%= link_to films_path do %>
-  <i class="arrow left"></i>
-  <h3>Back to film gallery</h3>
+  <span><%= image_tag "BackArrow1.svg" %> </span><h3 class="back-to-gallery">Back to film gallery</h3>
   <% end %>
 </div>
 
@@ -32,9 +31,9 @@
     <div class="preview-button">
       Trailer
     </div>
-    <%= link_to new_film_review_path(@film) do %>
+    <%= link_to film_reviews_path(@film) do %>
     <div class="write-review-button">
-      Write a review
+      Reviews
     </div>
     <% end %>
   </div>
@@ -44,49 +43,11 @@
 
               <div class="popupfilm" id="filmPopUp">
                 <span class="">
-                  <%= video_tag @film.video_url.to_s, :size => "960x540", :controls =>true, :class => "video" %>
+                  <%= video_tag @film.video_url.to_s, :controlsList => "nodownload", :size => "960x540", :controls =>true, :class => "video" %>
                   <span class="close" onclick="toggle();"><%= image_tag "EXIT.svg" %></span>
                 </span>
               </div>
 
-
-
-
-
-
-<% @film.reviews.order("created_at desc").each do |review| %>
-
-
-  <div class="review">
-      <%= link_to film_review_path(@film, review) do %>
-    <h6 class="review-title"><%= review.title %></h6>
-    <% end %>
-
-<div class="">
-  <% if review.comments.present? %>
-  <p class="review-comment-count"><%= pluralize review.comments.count, "Comment" %></p>
-
-  <% else %>
-  <p class="review-comment-count">no comments yet</p>
-  <% end %>
-</div>
-
-
-    <div class="review-details">
-      <p> Rating <%= review.score %> / 5</p>
-
-
-      <p class="posted">
-        <small>Published by
-
-        <%= link_to review.user.username, user_path(review.user) %> <%= time_ago_in_words(review.created_at) %> ago</small>
-          </p>
-
-    </div>
-
-  </div>
-
-      <% end %>
 
 
 

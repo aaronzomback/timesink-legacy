@@ -20,18 +20,6 @@
   </div>
 
 
-    <div class="">
-      <span class="ribbon">
-        <% if film.is_top_pick %>
-          <%= image_tag "is_featured.svg" %>
-        <% end %>
-      </span>
-
-
-      <div class="coffee-review-metric">
-          <%= image_tag "coffee.svg", :class => "coffee" %> <span class="reviews-number"><%= pluralize film.reviews.count, "Review" %> </span>
-      </div>
-    </div>
 
 </div>
 

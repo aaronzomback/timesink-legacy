@@ -1,4 +1,11 @@
 
+<div class="back-to-films">
+  <%= link_to film_path(@film) do %>
+  <span><%= image_tag "BackArrow1.svg" %> </span> <h3>Back to <%= @film.title %> </h3>
+  <% end %>
+</div>
+
+
 <%= link_to new_film_review_path(@film) do %>
 <div class="write-review-button">
   Write a review

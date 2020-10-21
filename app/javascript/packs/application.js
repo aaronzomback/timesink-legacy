@@ -8,9 +8,7 @@ require("turbolinks").start()
 require("@rails/activestorage").start()
 require("channels")
 require('jquery')
-require('jquery-ui')
-require('jquery.ui.slider')
-require('form_slider')
+
 
 
 

@@ -10,7 +10,6 @@ class FilmsController < ApplicationController
     @films = Film.joins("left join reviews on reviews.film_id = films.id").group('films.id').order('count(reviews.id) desc')
 
     cookies[:original_referrer] = request.original_url
-    render :layout => 'filmsunderline'
 
   end
 
@@ -28,7 +27,6 @@ class FilmsController < ApplicationController
     @review = Review.find_by_id(params[:review_id])
 
     cookies[:original_referrer] = request.original_url
-    render :layout => 'filmsunderline'
   end
 
   def edit

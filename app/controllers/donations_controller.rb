@@ -2,7 +2,7 @@ class DonationsController < ApplicationController
 
   def new
     @donation = Donation.new
-    render :layout => 'donateunderline'
+
   end
 
   def create

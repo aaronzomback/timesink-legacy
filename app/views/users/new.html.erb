@@ -12,3 +12,12 @@
 <%= f.button :submit, "Join the sink" %>
 
 <% end %>
+
+
+<div class="already-sign-in">
+    Already have an account? <%= link_to "Sign in", new_session_path, :class => "sign-in-from-new-account" %>
+</div>
+
+<div class="agree">
+  By joining the sink, you agree to TimeSink's Terms and Privacy Policy
+</div>

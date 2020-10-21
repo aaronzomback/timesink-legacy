@@ -3,7 +3,6 @@ class ForumPostsController < ApplicationController
   def index
     @forum_posts = ForumPost.all
     cookies[:original_referrer] = request.original_url
-    render :layout => 'forumunderline'
   end
 
   def new
@@ -32,7 +31,6 @@ class ForumPostsController < ApplicationController
     @forum_post = ForumPost.friendly.find(params[:id])
     @forum_posts = ForumPost.all
     cookies[:original_referrer] = request.original_url
-    render :layout => 'forumunderline'
   end
 
   def edit

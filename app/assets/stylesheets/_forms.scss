@@ -2,6 +2,7 @@ input[type=submit] {
   background: rgba(122, 168, 255, 0.85);
   color: #222222;
   border-color: rgba(122, 168, 255, 0.2);
+  padding: 8px 16px;
   margin-top: 10px;
   margin-left: 25px;
   font-family: "Spectral";
@@ -11,11 +12,13 @@ input, textarea {
   font-size: 16px;
   min-width: 100px;
   border: 1px solid rgba(122, 168, 255, 0.85);
-  padding: 7px 10px;
+  border-radius: 24px;
+  padding: 10px 16px;
   font-family: 'Spectral';
-  margin: 8px 0px;
+  margin: 8px 0px 16px 0;
   color: white;
   background-color: #222222;
+
 
       &:focus {
           outline: none !important;
@@ -27,7 +30,7 @@ input, textarea {
 .log-in {
   width: 400px;
   position: fixed;
-  top: 55%;
+  top: 50%;
   left: 50%;
   transform: translate(-50%, -75%);
 }
@@ -43,6 +46,7 @@ input, textarea {
 
 
  label {
+   margin-bottom: 0;
   display: block;
   color: rgba(122, 168, 255, 0.85);
 }

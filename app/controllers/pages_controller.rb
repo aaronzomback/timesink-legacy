@@ -7,7 +7,7 @@ class PagesController < ApplicationController
   end
 
   def info
-    render :layout => 'infounderline'
+
   end
 
   def donation_success

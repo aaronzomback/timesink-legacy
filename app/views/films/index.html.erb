@@ -1,6 +1,15 @@
 <%= render "shared/ticker" %>
 
 
+
+   <section class="animation">
+     <!-- drawing goes here -->
+     <p> <i>Moving Arrows</i> by Jasper Ritsky, 2020</p>
+   </section>
+
+
+
+
     <div class="film-gallery-grid">
 
     <% @films.each do |film| %>
@@ -38,3 +47,9 @@
 
   <% end %>
 </div>
+
+
+
+<%= javascript_pack_tag 'utils' %>
+<%= javascript_pack_tag 'two_min' %>
+<%= javascript_pack_tag 'script' %>

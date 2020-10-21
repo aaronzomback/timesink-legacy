@@ -67,6 +67,11 @@
 }
 
 
+.links a.selected {
+  border-bottom: 1px solid white;
+}
+
+
 h1{font-size:64px;
 font-weight: 400;}
 h2{font-size:48px;
@@ -80,14 +85,17 @@ font-weight: 400;}
 h6{font-size:18px;
 font-weight: 400;}
 
-
+section.animation {
+  width: 400px;
+  height: 600px;
+  margin-left: 360px;
+  margin-bottom: 120px;
+}
 
 body {
   font-family: 'Spectral';
   background-color: #222222;
   color: #F5F7F9;
-  height: 100vh;
-  width: 100vw;
   position: relative;
   margin-left: 80px;
   margin-right: 80px;
@@ -116,6 +124,14 @@ body {
 @import "info";
 
 @import "donate";
+
+@import "frontAnimation";
+
+@import "buttons";
+
+@import "forms";
+
+@import "footer";
 
 
 .welcome {
@@ -179,28 +195,30 @@ a {
 }
 
 .prime-logo {
- width: 55%;
+ width: 75%;
  display: block;
- margin-left: 64px;
 }
 
 .prime-logo2 {
  width: 15%;
  position: fixed;
  left: 50%;
- top: 160px;
+ top: 20%;
  transform: translateX(-78%);
 }
 
 header {
-  margin: 48px 64px 64px 64px;
+  margin: 48px 0px 64px 0px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content:space-between;
   width: 100%;
+  background-color: #222222;
+  padding: 8px 24px;
 }
 
 nav {
+
 
 .links a {
     color: #F5F7F9;
@@ -208,15 +226,16 @@ nav {
     margin-right: 56px;
     font-family: "SangBleuEmpire";
     font-size: 18px;
+
+    &:focus {
+      border-bottom: 1px solid white;
+
+      }
+
   }
 
   margin-right: 64px;
 }
-
-@import "buttons";
-
-@import "forms";
-
 
 
 

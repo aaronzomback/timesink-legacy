@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_10_22_143814) do
+ActiveRecord::Schema.define(version: 2020_10_22_153950) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string "namespace"
@@ -190,6 +190,7 @@ ActiveRecord::Schema.define(version: 2020_10_22_143814) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "stripe_token"
+    t.string "status", default: "in-progress"
     t.index ["user_id"], name: "index_submissions_on_user_id"
   end
 

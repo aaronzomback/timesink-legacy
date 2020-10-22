@@ -5,14 +5,21 @@ ActiveAdmin.register Submission do
   #
   # Uncomment all parameters which should be permitted for assignment
   #
-  permit_params :title, :year, :description, :film_length, :film_link, :film_pw, :price, :user_id
-  #
-  # or
-  #
-  # permit_params do
-  #   permitted = [:title, :year, :description, :film_length, :film_link, :film_pw, :price, :user_id]
-  #   permitted << :other if params[:action] == 'create' && current_user.admin?
-  #   permitted
-  # end
+  permit_params :title, :year, :description, :film_length, :film_link, :film_pw, :price, :user_id, :status, :created_at
+
+
+  index do
+    selectable_column
+    index_column
+
+    column :created_at
+    column :title
+    column :year
+    column :film_length
+    column :description
+    column :film_link
+    column :status
+    actions
+  end
 
 end

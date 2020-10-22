@@ -42,6 +42,6 @@ end
 
 
   def form_params
-    params.require(:user).permit(:name, :location, :username, :avatar, :email, :password, :password_confirmation)
+    params.require(:user).permit(:name, :location, :username, :avatar, :email, :password, :password_confirmation, :submissions)
   end
 end

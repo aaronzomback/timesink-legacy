@@ -1,0 +1,20 @@
+<h2>Edit profile</h2>
+
+<div class="edit-account-form">
+
+<%= simple_form_for @current_user, url: account_path do |f| %>
+
+<% if @current_user.avatar.present? %>
+  <%= image_tag @current_user.avatar.show.url, :class => "avatar" %>
+  <% end %>
+
+  <%= f.input :avatar %>
+  <%= f.input :location, placeholder: 'i.e. Houston, TX' %>
+  <%= f.input :name %>
+  <%= f.input :username %>
+  <%= f.input :email %>
+
+  <%= f.button :submit, "Update profile" %>
+<% end %>
+
+</div>

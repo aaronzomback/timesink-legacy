@@ -7,6 +7,10 @@ class SessionsController < ApplicationController
     # because were not adding to the database - just the session in this case
   end
 
+  def show
+    redirect_to new_session_path
+  end
+
   def create
 
    @email = form_params[:email]

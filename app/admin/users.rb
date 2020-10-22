@@ -5,14 +5,21 @@ ActiveAdmin.register User do
   #
   # Uncomment all parameters which should be permitted for assignment
   #
-  permit_params :name, :username, :email, :password_digest
-  #
-  # or
-  #
-  # permit_params do
-  #   permitted = [:name, :username, :email, :password_digest]
-  #   permitted << :other if params[:action] == 'create' && current_user.admin?
-  #   permitted
-  # end
+  permit_params :name, :username, :email, :password_digest, :avatar, :location
+
+  index do
+    selectable_column
+    index_column
+    column "Avatar" do |user|
+      image_tag user.avatar.thumbnail.url if user.avatar.present?
+    end
+    column :location
+    column :name
+    column :username
+    column :email
+    column :password
+    actions
+  end
+
 
 end

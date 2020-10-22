@@ -9,7 +9,11 @@
 <section class="review-content">
   <div class="">
     <h5><%= @review.title %></h5> <span><%= @review.created_at.strftime("%b %e, %Y")%></span>
-    <p> Review by <u><%= link_to @review.user.username, user_path(@review.user) %></u></p>
+    <p> Review by
+        <% if @review.user.avatar.present? %>
+        <%= image_tag @review.user.avatar.thumbnail.url, :class => "avatar" %>
+        <% end %>
+        <u><%= link_to @review.user.username, user_path(@review.user) %></u></p>
   </div>
   <div class="review-body-content">
       <p class="review-body"><%= simple_format @review.body %></p>

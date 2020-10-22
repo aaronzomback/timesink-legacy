@@ -42,6 +42,8 @@
       <span class="welcome">Bienvenue <%= @current_user.username %>!</span>
   <%= link_to "Log out", session_path, method: :delete %>
 
+  <%= link_to "Edit profile", edit_account_path %>
+
   <button class="button button3">
     <%= link_to "Submit film", submit_path %>
   </button>

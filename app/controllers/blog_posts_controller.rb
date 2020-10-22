@@ -26,7 +26,7 @@ class BlogPostsController < ApplicationController
   end
 
   def update
-    render "update"
+    render "edit"
   end
 
   def destroy

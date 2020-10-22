@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   resources :users
 
 # session controller
-  resource :session, :only => [:new, :create, :destroy]
+  resource :session, :only => [:new, :create, :destroy, :show]
 
   # films controller
   resources :films, :path => "films" do
@@ -19,6 +19,9 @@ Rails.application.routes.draw do
     resources :comments do
       resources :comments
     end
+
+    # user account
+    resource :account
 
     # blog
     # change path url to "blog" from "blog_post"

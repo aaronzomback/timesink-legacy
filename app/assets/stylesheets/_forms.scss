@@ -88,3 +88,43 @@ select.required {
   border-color: rgba(122, 168, 255, 0.85);
     font-family: 'MonumentGroteskTrial-Mono';
 }
+
+
+
+// new user
+
+div.join-the-sink {
+  width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+
+  label {
+    text-align: left;
+  }
+}
+
+.already-sign-in {
+  color: #80acff;
+    text-align: center;
+}
+
+.sign-in-from-new-account {
+  color: #80acff;
+  border-bottom: 1px solid #80acff;
+  text-align: center;
+}
+
+div.agree {
+  margin-top: 32px;
+  font-size: 10px;
+  text-align: center;
+}
+
+// edit account
+
+div.edit-account-form {
+  input {
+    border-radius: 2px;
+  }
+}

@@ -3,6 +3,12 @@ class Film < ApplicationRecord
   mount_uploader :cover, ImageUploader
   mount_uploader :video, VideoUploader
 
+  acts_as_votable
+
+   def score
+    self.get_upvotes.size - self.get_downvotes.size
+  end
+
   extend FriendlyId
   friendly_id :title, use: :slugged
 

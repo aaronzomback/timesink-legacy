@@ -16,6 +16,13 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :films do
+  member do
+    put "like", to: "films#upvote"
+    put "unlike", to: "films#unvote"
+  end
+end
+
     resources :comments do
       resources :comments
     end

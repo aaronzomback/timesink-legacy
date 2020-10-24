@@ -39,6 +39,18 @@ class FilmsController < ApplicationController
   def destroy
   end
 
+  def upvote
+  @film = Film.friendly.find(params[:id])
+  @film.upvote_by @current_user
+  redirect_to films_path
+  end
+
+ def unvote
+   @film = Film.friendly.find(params[:id])
+   @film.unvote_by @current_user
+   redirect_to films_path
+ end
+
 
   def form_params
     params.require(:Film).permit(:title, :author, :cover, :video, :description, :description_body, :year, :is_top_pick)

@@ -1,27 +1,31 @@
 class CommentsController < ApplicationController
 
-  before_action :find_commentable
-  before_action :find_current_user
 
-  def new
-    @comment = Comment.new
+before_action :find_current_user
 
-  end
+    # def new
+    # end
 
-  def create
-
-
-      @film = Film.friendly.find(params[:film_id])
-      @review = Review.friendly.find(params[:review_id])
-      @comment = @review.comments.new(comment_params)
+    def create
+      @comment = @commentable.comments.new(comment_params)
       @comment.user = @current_user
-
       if @comment.save
-        redirect_to film_review_path(@film, @review)
-        flash[:success] = "Your comment has been posted!"
+        respond_to do |format|
+          format.html { redirect_to @commentable }
+          format.js # create.js.erb
+            flash[:success] = "Your comment was posted!"
+        end
       else
-        redirect_to :back, notice: "Your comment wasn't posted!"
+        redirect_to @commentable,
+        flash[:error] = "Comment could not be created."
       end
+    end
+
+    def destroy
+      @comment = @commentable.comments.find_by_id(params[:id])
+      @comment.destroy # update(user: nil, content: nil)
+      redirect_back(fallback_location: root_url)
+      flash[:success] = "Your comment was deleted"
     end
 
     private
@@ -29,14 +33,4 @@ class CommentsController < ApplicationController
     def comment_params
       params.require(:comment).permit(:body, :user_id)
     end
-
-    def find_commentable
-      @commentable = Comment.find_by_id(params[:comment_id]) if params[:comment_id]
-      @commentable = Review.friendly.find(params[:review_id]) if params[:review_id]
-    end
-
-
-
-
-
-end
+  end

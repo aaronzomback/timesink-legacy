@@ -28,7 +28,9 @@
       <h3><%= film.author %></h3>
   </div>
 
-  <%= link_to image_tag "Polygon2.svg" like_film_path(film) method: :put %>
+  <%= link_to like_film_path(film), method: :put do %>
+  <%= image_tag "Polygon2.svg" %>
+  <% end %>
 
   <%= link_to "downvote", unlike_film_path(film), method: :put %>
   <%= film.score %>

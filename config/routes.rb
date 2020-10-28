@@ -11,10 +11,8 @@ Rails.application.routes.draw do
 
   # films controller
   resources :films, :path => "films" do
-    resources :reviews do
-      resources :comments
+    resources :reviews
     end
-  end
 
   resources :films do
   member do
@@ -23,16 +21,18 @@ Rails.application.routes.draw do
   end
 end
 
-    resources :comments do
-      resources :comments
-    end
+   resources :comments, only: [] do
+  resources :comments, only: [:new, :create, :destroy], module: :comments
+end
 
     # user account
     resource :account
 
     # blog
     # change path url to "blog" from "blog_post"
-    resources :blog_posts, :path => "blog"
+      resources :blog_posts, :path => "blog" do
+          resources :comments, only: [:new, :create, :destroy], module: :blog_posts
+    end
 
     # forum
     # change path url to "forum" from "forum_post"

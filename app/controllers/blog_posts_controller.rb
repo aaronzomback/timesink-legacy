@@ -17,7 +17,7 @@ class BlogPostsController < ApplicationController
   end
 
   def show
-    @blog_post = BlogPost.friendly.find(params[:id])
+    @blog_post = BlogPost.includes(:comments).friendly.find(params[:id])
     cookies[:original_referrer] = request.original_url
 
   end

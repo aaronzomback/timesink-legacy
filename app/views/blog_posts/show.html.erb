@@ -18,3 +18,12 @@
        <p><%= simple_format @blog_post.body %></p>
    </div>
  </section>
+
+
+<p><%= render 'comments/form', commentable: @blog_post, comment: Comment.new %></p>
+ <%= link_to "Add Comment", new_blog_post_comment_path(@blog_post), remote: true %>
+
+ <h5>Comments</h5>
+ <div id='comments'>
+   <%= render @blog_post.comments %>
+ </div>

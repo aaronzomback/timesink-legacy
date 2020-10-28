@@ -1,0 +1,21 @@
+<div class="comments">
+  <h2 class="page-header"><%= film.nested_comments.length %> Comments</h2>
+  <%= render partial: 'partials/nested_comments', collection: film.root_comments %>
+
+  <div class="well add-comment">
+    <h2 class="page-header"><%= comment_descriptor %></h2>
+    <a name="comment"></a>
+    <% if flash[:notice] %>
+      <div class="alert alert-success"><%= flash[:notice] %></div>
+    <% end %>
+    <% if flash[:alert] %>
+      <div class="alert alert-danger"><%= flash[:alert] %></div>
+    <% end %>
+    <%= simple_form_for [film, film.nested_comments.build(session[:nested_comment]) ], html: { class: 'form-horizontal', data: { toggle: 'validator' }} do |f| %>
+      <%= f.error :base, error_method: :to_sentence %>
+      <%= f.hidden_field :reply_comment, value: params[:nested_comment_id] %>
+      <%= f.input :body, required: true, label: "Comment", type: 'text', input_html: { rows: '8', maxlength: 3600 } %>
+      <%= f.button :submit, "Submit Comment", class: 'btn btn-primary' %>
+    <% end %>
+  </div>
+</div>

@@ -1,34 +1,22 @@
-<div class="comment-container">
 
-  <div class="comment-user">
-    <% if comment.user_id.present? %>
-    <u>
-  <%= link_to comment.user.username, user_path(comment.user) %>
-  </u>
+
+
+<%= content_tag :div, id: dom_id(comment), class: 'comment' do %>
+  <% if comment.deleted? %>
+    <strong>[deleted]</strong>
+  <% else %>
+  <span><%= image_tag comment.user.avatar.thumbnail.url, class: "avatar" %> </span>
+    <strong><%= comment.user.username %></strong>
+    <p><%= comment.body %></p>
   <% end %>
-  <span><small> says: </small></span>
-  </div>
-  <div class="comment-body">
-    <p> <%= simple_format comment.body %></p>
-    <p class="comment-timestamp">posted <%= time_ago_in_words(comment.created_at) %> ago</p>
-  </div>
 
+  <div class='links'><small>
+    <%= link_to 'Reply', [:new, comment, :comment], remote: true %>
+    <% if @current_user == comment.user %>
+      <%= link_to 'Delete', [comment.commentable, comment], method: :delete, data: { confirm: 'Are you sure?' } %>
+    <% end %>
+  </small></div>
 
-
-  </div>
-
- <% if is_logged_in? %>
-
-  <%= form_for [@film, @review, Comment.new] do |f| %>
-      <%= f.text_area :body, placeholder: "Add a Reply" %><br/>
-      <%= f.submit "Reply"  %>
-      <% end %>
-
-      <% else %>
-      <% end %>
-
-
-
-<div class="nested">
-  <%= render partial: 'comments/comment', collection: comment.comments %>
-</div>
+  <%= render 'comments/form', commentable: comment, comment: Comment.new %>
+  <%= render comment.comments %>
+<% end %>

@@ -2,13 +2,10 @@
 
 
 <%= content_tag :div, id: dom_id(comment), class: 'comment' do %>
-  <% if comment.deleted? %>
-    <strong>[deleted]</strong>
-  <% else %>
   <span><%= image_tag comment.user.avatar.thumbnail.url, class: "avatar" %> </span>
     <strong><%= comment.user.username %></strong>
     <p><%= comment.body %></p>
-  <% end %>
+
 
   <div class='links'><small>
     <%= link_to 'Reply', [:new, comment, :comment], remote: true %>

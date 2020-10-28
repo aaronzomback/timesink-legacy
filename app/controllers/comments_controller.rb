@@ -7,6 +7,7 @@ before_action :find_current_user
     # end
 
     def create
+
       @comment = @commentable.comments.new(comment_params)
       @comment.user = @current_user
       if @comment.save
@@ -21,12 +22,12 @@ before_action :find_current_user
       end
     end
 
+
     def destroy
-      @comment = @commentable.comments.find_by_id(params[:id])
-      @comment.destroy # update(user: nil, content: nil)
-      redirect_back(fallback_location: root_url)
-      flash[:success] = "Your comment was deleted"
-    end
+    @comment = @commentable.comments.find(params[:id])
+    @comment.destroy # update(user: nil, content: nil)
+    redirect_back(fallback_location: root_url)
+  end
 
     private
 

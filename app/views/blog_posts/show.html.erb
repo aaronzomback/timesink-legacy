@@ -7,6 +7,8 @@
   <% end %>
 </div>
 
+
+
  <section class="blog-body">
    <h2><%= @blog_post.title %></h2>
    <div class="blog-author-date">
@@ -19,9 +21,16 @@
    </div>
  </section>
 
+<% if is_logged_in? %>
 
 <p><%= render 'comments/form', commentable: @blog_post, comment: Comment.new %></p>
  <%= link_to "Add Comment", new_blog_post_comment_path(@blog_post), remote: true %>
+
+ <% else %>
+
+ <p><%= link_to "Sign in to comment", new_session_path  %></p>
+
+ <% end %>
 
  <h5>Comments</h5>
  <div id='comments'>

@@ -10,8 +10,4 @@ class Comment < ApplicationRecord
     user.nil?
   end
 
-  def destroy
-    update(user: nil, body: nil)
-  end
-
 end

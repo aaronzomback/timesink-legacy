@@ -28,11 +28,11 @@
       <h3><%= film.author %></h3>
   </div>
 
-  <%= link_to like_film_path(film), method: :put do %>
+  <%= link_to like_film_path(film), remote: true, method: :put do %>
   <%= image_tag "Polygon2.svg" %>
   <% end %>
 
-  <%= link_to "downvote", unlike_film_path(film), method: :put %>
+  <%= link_to "downvote", unlike_film_path(film), method: :put, remote: true %>
   <%= film.score %>
 
 

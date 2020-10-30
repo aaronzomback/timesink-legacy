@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  mount Notifications::Engine => "/notifications"
+
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
 
@@ -22,7 +24,7 @@ Rails.application.routes.draw do
 end
 
    resources :comments, only: [] do
-  resources :comments, only: [:new, :create, :destroy], module: :comments
+  resources :comments, only: [:new, :create, :edit, :update, :destroy], module: :comments
 end
 
     # user account
@@ -31,7 +33,7 @@ end
     # blog
     # change path url to "blog" from "blog_post"
       resources :blog_posts, :path => "blog" do
-          resources :comments, only: [:new, :create, :destroy], module: :blog_posts
+          resources :comments, only: [:new, :create, :edit, :update, :destroy], module: :blog_posts
     end
 
     # forum

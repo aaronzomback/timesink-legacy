@@ -60,6 +60,7 @@ gem 'stripe'
 
 # features
 gem 'acts_as_votable', '~> 0.12.1'
+gem 'notifications'
 
 gem 'jquery-rails'
 gem 'vanilla-ujs'

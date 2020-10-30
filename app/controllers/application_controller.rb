@@ -7,10 +7,14 @@ class ApplicationController < ActionController::Base
   # add in the method to use in 'views' , share the code used in 'views' to this controller
   helper_method :is_logged_in?
 
+  helper_method :current_user
 
 
 
 
+  def current_user
+   @current_user ||= User.find_by(id: session[:user_id])
+  end
 
   def find_current_user
 

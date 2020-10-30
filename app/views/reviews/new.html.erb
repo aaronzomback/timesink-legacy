@@ -12,7 +12,7 @@
 <%= simple_form_for [@film, @review] do |f| %>
 <%= f.input :title %>
 <%= f.input :body, :class => "body" %>
-<%= f.input :score, :as => :range, :collection => 1..5, item_wrapper_tag: false %>
+
 <%= f.button :submit, "Publish review" %>
 <% end %>
 

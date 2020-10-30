@@ -9,10 +9,7 @@
 
   <div class='links'><small>
     <%= link_to 'Reply', [:new, comment, :comment], remote: true %>
-    <% if @current_user == comment.user %>
-      <%= link_to 'Edit', [:edit, comment.commentable, comment] %>
-      <%= link_to 'Delete', [comment.commentable, comment], method: :delete, data: { confirm: 'Are you sure?' } %>
-    <% end %>
+
   </small></div>
 
   <%= render 'comments/form', commentable: comment, comment: Comment.new %>

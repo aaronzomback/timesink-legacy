@@ -13,8 +13,10 @@ Rails.application.routes.draw do
 
   # films controller
   resources :films, :path => "films" do
-    resources :reviews
+    resources :reviews do
+      resources :comments, only: [:new, :create, :edit, :update, :destroy], module: :reviews
     end
+  end
 
   resources :films do
   member do

@@ -17,7 +17,7 @@
 
   <div class="review">
       <%= link_to film_review_path(@film, review) do %>
-    <h6 class="review-title"><%= review.title %></h6>
+    <p><%= review.body %> </p>
     <% end %>
 
 <div class="">
@@ -30,8 +30,6 @@
 </div>
 
 
-    <div class="review-details">
-      <p> Rating <%= review.score %> / 5</p>
 
 
       <p class="posted">

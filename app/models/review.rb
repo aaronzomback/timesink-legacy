@@ -1,7 +1,7 @@
 class Review < ApplicationRecord
 
   extend FriendlyId
-  friendly_id :title, use: :slugged
+  friendly_id :title, use: [:slugged, :finders]
 
   belongs_to :film
   belongs_to :user
@@ -9,8 +9,8 @@ class Review < ApplicationRecord
   has_many :comments, as: :commentable, dependent: :destroy
 
   validates :title, presence: true
-  validates :body, length: {minimum: 10}
-  validates :score, numericality: { only_integer: true, greater_than_or_equal_to: 0, less_than_or_equal_to: 5 }
+  validates :body, length: {minimum: 5}
+
 
 
 end

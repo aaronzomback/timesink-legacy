@@ -1107,6 +1107,10 @@ acorn@^6.4.1:
   resolved "https://registry.yarnpkg.com/acorn/-/acorn-6.4.1.tgz#531e58ba3f51b9dacb9a6646ca4debf5b14ca474"
   integrity sha512-ZVA9k326Nwrj3Cj9jlh3wGFutC2ZornPNARZwsNYqQYgN0EsV2d53w5RN/co65Ohn4sUAUtb1rSUAOD6XN9idA==
 
+activeadmin_quill_editor@blocknotes/activeadmin_quill_editor:
+  version "0.3.0"
+  resolved "https://codeload.github.com/blocknotes/activeadmin_quill_editor/tar.gz/6daf6f6bc8d5422b070147d3a34c8d4054fd9573"
+
 aes-decrypter@3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/aes-decrypter/-/aes-decrypter-3.0.0.tgz#7848a1c145b9fdbf57ae3e2b5b1bc7cf0644a8fb"

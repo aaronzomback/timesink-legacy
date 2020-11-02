@@ -4,12 +4,17 @@
 <%= content_tag :div, id: dom_id(comment), class: 'comment' do %>
   <span><%= image_tag comment.user.avatar.thumbnail.url, class: "avatar" %> </span>
     <strong><%= comment.user.username %></strong>
-    <p><%= comment.body %></p>
+    <p> <%= auto_link(simple_format(comment.body), html: { target: '_blank' }) %></p>
+
+
 
 
   <div class='links'><small>
     <%= link_to 'Reply', [:new, comment, :comment], remote: true %>
-
+    <% if @current_user == comment.user %>
+      <%= link_to 'Edit', [:edit, comment.commentable, comment], remote: true %>
+      <%= link_to 'Delete', [comment.commentable, comment], method: :delete, data: { confirm: 'Are you sure?' } %>
+    <% end %>
   </small></div>
 
   <%= render 'comments/form', commentable: comment, comment: Comment.new %>

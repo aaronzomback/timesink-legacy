@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_10_30_141045) do
+ActiveRecord::Schema.define(version: 2020_10_31_013416) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string "namespace"
@@ -112,6 +112,13 @@ ActiveRecord::Schema.define(version: 2020_10_30_141045) do
     t.string "slug"
     t.string "video"
     t.text "description_body"
+    t.integer "cached_votes_total", default: 0
+    t.integer "cached_votes_score", default: 0
+    t.integer "cached_votes_up", default: 0
+    t.integer "cached_votes_down", default: 0
+    t.integer "cached_weighted_score", default: 0
+    t.integer "cached_weighted_total", default: 0
+    t.float "cached_weighted_average", default: 0.0
     t.index ["slug"], name: "index_films_on_slug", unique: true
   end
 

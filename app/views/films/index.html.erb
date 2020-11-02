@@ -28,12 +28,29 @@
       <h3><%= film.author %></h3>
   </div>
 
-  <%= link_to like_film_path(film), remote: true, method: :put do %>
-  <%= image_tag "Polygon2.svg" %>
-  <% end %>
+<div class="parent-likes">
 
-  <%= link_to "downvote", unlike_film_path(film), method: :put, remote: true %>
-  <%= film.score %>
+    <div class="like_count">
+      <%= film.get_likes.size %>
+    </div>
+
+
+
+<% if film.liked_by @current_user %>
+  <div> <%= link_to like_film_path(film, 'unlike'), :class => "upvoted", remote: true, method: :put do %>
+      <%= image_tag "Polygon2.svg" %> </div>
+  <% end %>
+  <% else %>
+<div class="">
+  <%= link_to like_film_path(film, 'like'), :class => "upvote", remote: true, method: :put do %>
+  <%= image_tag "Polygon2.svg" %>
+</div>
+<% end %>
+<% end %>
+
+</div>
+
+
 
 
 </div>

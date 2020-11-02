@@ -48,6 +48,10 @@ GEM
       ransack (~> 2.1, >= 2.1.1)
       sassc-rails (~> 2.1)
       sprockets (>= 3.0, < 4.1)
+    activeadmin_quill_editor (0.3.0)
+      activeadmin (~> 2.0)
+    activeadmin_trumbowyg (0.2.8)
+      activeadmin (~> 2.0)
     activejob (6.0.3.2)
       activesupport (= 6.0.3.2)
       globalid (>= 0.3.6)
@@ -235,6 +239,8 @@ GEM
       nokogiri (>= 1.6)
     rails-html-sanitizer (1.3.0)
       loofah (~> 2.3)
+    rails_autolink (1.1.6)
+      rails (> 3.1)
     rails_refactor (1.4.6)
     railties (6.0.3.2)
       actionpack (= 6.0.3.2)
@@ -291,6 +297,8 @@ GEM
     thor (1.0.1)
     thread_safe (0.3.6)
     tilt (2.0.10)
+    tinymce-rails (5.5.1)
+      railties (>= 3.1.1)
     turbolinks (5.2.1)
       turbolinks-source (~> 5.2)
     turbolinks-source (5.2.0)
@@ -327,7 +335,9 @@ PLATFORMS
 
 DEPENDENCIES
   activeadmin
-  acts_as_votable (~> 0.12.1)
+  activeadmin_quill_editor
+  activeadmin_trumbowyg
+  acts_as_votable
   bcrypt
   bootsnap (>= 1.4.2)
   byebug
@@ -346,6 +356,7 @@ DEPENDENCIES
   pg
   puma (~> 4.1)
   rails (~> 6.0.3, >= 6.0.3.2)
+  rails_autolink (~> 1.1, >= 1.1.6)
   rails_refactor
   sass-rails (>= 6)
   selenium-webdriver
@@ -355,6 +366,7 @@ DEPENDENCIES
   sqlite3 (~> 1.4)
   stringex (~> 2.8, >= 2.8.5)
   stripe
+  tinymce-rails
   turbolinks (~> 5)
   tzinfo-data
   vanilla-ujs

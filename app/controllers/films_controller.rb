@@ -1,6 +1,6 @@
 class FilmsController < ApplicationController
 
-
+  respond_to :js, :html, :json
 
   def index
 
@@ -39,16 +39,13 @@ class FilmsController < ApplicationController
   def destroy
   end
 
-  def upvote
+  def like
   @film = Film.friendly.find(params[:id])
-  @film.upvote_by @current_user
-  redirect_to films_path
-  end
-
- def unvote
-   @film = Film.friendly.find(params[:id])
-   @film.unvote_by @current_user
-   redirect_to films_path
+   if params[:format] == 'like'
+     @film.liked_by @current_user
+   elsif params[:format] == 'unlike'
+     @film.unliked_by @current_user
+   end
  end
 
 

@@ -55,11 +55,17 @@ gem 'carrierwave', '~> 2.0'
 gem 'mini_magick'
 gem 'fog-aws'
 
+gem 'rails_autolink', '~> 1.1', '>= 1.1.6'
+
+gem 'tinymce-rails'
+gem 'activeadmin_quill_editor'
+gem 'activeadmin_trumbowyg'
+
 #accept payments
 gem 'stripe'
 
 # features
-gem 'acts_as_votable', '~> 0.12.1'
+gem 'acts_as_votable'
 gem 'notifications'
 
 gem 'jquery-rails'

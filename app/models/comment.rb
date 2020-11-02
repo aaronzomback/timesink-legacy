@@ -19,7 +19,7 @@ class Comment < ApplicationRecord
      notification.actor = self.user
      notification.user = self.commentable.user
      notification.target = self
-     # notification.second_target = self.blog_post
+     notification.second_target = self.commentable
    end
  end
 

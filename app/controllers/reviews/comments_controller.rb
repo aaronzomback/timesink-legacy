@@ -11,7 +11,6 @@ class Reviews::CommentsController < CommentsController
   private
 
   def set_commentable
-    @film = Film.friendly.find(params[:film_id])
     @review = Review.friendly.find(params[:review_id])
     @commentable = Review.friendly.find(params[:review_id])
   end

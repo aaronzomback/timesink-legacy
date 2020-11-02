@@ -22,10 +22,8 @@
 
 <% if is_logged_in? %>
 
-<%= form_for([@film, @review, @commentable, Comment.new]) do |f| %>
- <%= f.text_area :body %>
- <%= f.submit "Comment", :class => "btn" %>
-<% end %>
+<p><%= render 'comments/form', commentable: @review, comment: Comment.new %></p>
+ <%= link_to "Add Comment", new_review_comment_path(@review), remote: true %>
 
  <% else %>
 

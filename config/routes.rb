@@ -13,17 +13,20 @@ Rails.application.routes.draw do
 
   # films controller
   resources :films, :path => "films" do
+    resources :reviews, :path => "café"
+    end
+
     resources :reviews do
       resources :comments, only: [:new, :create, :edit, :update, :destroy], module: :reviews
     end
-  end
+
 
   resources :films do
   member do
-    put "like", to: "films#upvote"
-    put "unlike", to: "films#unvote"
+    put "like" => "films#like"
   end
 end
+
 
    resources :comments, only: [] do
   resources :comments, only: [:new, :create, :edit, :update, :destroy], module: :comments

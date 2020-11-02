@@ -1,7 +1,7 @@
 # notifications Config
 Notifications.configure do
   # Class name of you User model, default: 'User'
-  # self.user_class = 'User'
+  self.user_class = :User
 
   # Method of user name in User model, default: 'username'
   # self.user_name_method = 'username'

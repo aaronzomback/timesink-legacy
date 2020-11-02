@@ -23,7 +23,7 @@ Rails.application.routes.draw do
 
   resources :films do
   member do
-    put "like" => "films#like"
+    put "like", to: "films#like"
   end
 end
 

@@ -1,10 +1,7 @@
 $('.upvoted').on('ajax:success', function(){
   $(this).parent().parent().find('.like_count').html('<%= @film.get_likes.size %>');
-  $(this).closest('.upvoted');
 });
-
 
 $('.upvote').on('ajax:success', function(){
   $(this).parent().parent().find('.like_count').html('<%= @film.get_likes.size %>');
-  $(this).closest('.like');
 });

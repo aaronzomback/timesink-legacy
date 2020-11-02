@@ -7,7 +7,7 @@
 <p>Featuring articles and op-ed's by guest writers </p>
 </section>
 
-  <% @blog_posts.each do |blog_post| %>
+  <% @blog_posts.order("created_at desc").each do |blog_post| %>
 <ul>
     <%= link_to blog_post_path(blog_post) do %>
   <li>

@@ -12,6 +12,7 @@ class User < ApplicationRecord
   validates :email, presence: true, uniqueness: true, format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i, on: :create }
   validates :password, presence: true, :length => { :minimum => 8, :message => "Must be at least 8 characters"}, :on => :create
 
+  acts_as_voter
 
   has_secure_password
 

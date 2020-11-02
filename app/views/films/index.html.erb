@@ -35,8 +35,7 @@
     </div>
 
 
-
-<% if film.liked_by @current_user %>
+<% if @current_user.liked? film %>
   <div> <%= link_to like_film_path(film, 'unlike'), :class => "upvoted", remote: true, method: :put do %>
       <%= image_tag "Polygon2.svg" %> </div>
   <% end %>
@@ -47,6 +46,7 @@
 </div>
 <% end %>
 <% end %>
+
 
 </div>
 

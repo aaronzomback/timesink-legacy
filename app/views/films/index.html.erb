@@ -34,18 +34,12 @@
       <%= film.get_likes.size %>
     </div>
 
+    <div class="liking-target">
+    <%= link_to like_film_path(film), class: "upvoted {liked_or_not}", method: 'put', remote: true do %>
+   <%= image_tag "Polygon2.svg" %>
+     <% end %>
+       </div>
 
-
-  <div> <%= link_to unlike_film_path(film), :class => "upvoted", remote: true, method: :put do %>
-      <%= image_tag "Polygon2.svg" %> </div>
-  <% end %>
-
-
-<div class="">
-  <%= link_to like_film_path(film), :class => "upvote", remote: true, method: :put do %>
-  <%= image_tag "Polygon2.svg" %>
-</div>
-<% end %>
 
 
 

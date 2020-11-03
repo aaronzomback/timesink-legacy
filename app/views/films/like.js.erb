@@ -1,7 +1,6 @@
-$('.upvoted').on('ajax:success', function(){
-  $(this).parent().parent().find('.like_count').html('<%= @film.get_likes.size %>');
-});
-
-$('.upvote').on('ajax:success', function(){
-  $(this).parent().parent().find('.like_count').html('<%= @film.get_likes.size %>');
-});
+<% if @current_user.liked? @film %>
+     $('.liking-target > a').addClass('liked');
+<% else %>
+     $('.liking-target > a').removeClass('liked');
+<% end %>
+$('.liking-target  .like_count').html('<%= @film.get_likes.size %>');

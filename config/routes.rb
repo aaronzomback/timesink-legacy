@@ -24,7 +24,6 @@ Rails.application.routes.draw do
   resources :films do
   member do
     put "like", to: "films#like"
-    put "unlike", to: "films#unlike"
   end
 end
 

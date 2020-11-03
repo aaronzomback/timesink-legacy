@@ -1,6 +1,7 @@
 class FilmsController < ApplicationController
 
   respond_to :js, :json, :html
+  before_action :set_film, only: [:show, :edit, :update, :destroy, :like]
 
 
 
@@ -38,20 +39,23 @@ class FilmsController < ApplicationController
   def destroy
   end
 
-
   def like
-    @film = Film.friendly.find(params[:id])
+  if @current_user.liked? @film
+    @film.unliked_by @current_user
+  else
     @film.liked_by @current_user
-     redirect_back(fallback_location: root_path)
-
-    end
-
-    def unlike
-      @film = Film.friendly.find(params[:id])
-      @film.unliked_by @current_user
-      redirect_back(fallback_location: root_path) 
   end
+  respond_to do |format|
+   format.js
+ end
+end
 
+
+  private
+
+  def set_film
+      @film = Film.friendly.find(params[:id])
+    end
 
 
   def form_params

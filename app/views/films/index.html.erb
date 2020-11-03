@@ -28,16 +28,19 @@
       <h3><%= film.author %></h3>
   </div>
 
+<% end %>
+
 <div class="parent-likes">
 
-    <div class="like_count">
-      <%= film.get_likes.size %>
-    </div>
 
-    <div class="liking-target">
-    <%= link_to like_film_path(film), class: "upvoted {liked_or_not}", method: 'put', remote: true do %>
+    <div>
+    <%= link_to like_film_path(film.id), class: "upvoted {liked_or_not}", method: :put, remote: :true do %>
    <%= image_tag "Polygon2.svg" %>
      <% end %>
+     <span id="js <%= film.id %>">
+       <%= film.get_likes.size %>
+     </span>
+
        </div>
 
 
@@ -52,7 +55,7 @@
 
 
 
-        <% end %>
+
 
       </div>
 

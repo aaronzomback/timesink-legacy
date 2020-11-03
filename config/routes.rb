@@ -13,7 +13,7 @@ Rails.application.routes.draw do
 
   # films controller
   resources :films, :path => "films" do
-    resources :reviews, :path => "café"
+    resources :reviews, :path => "cafe"
     end
 
     resources :reviews do

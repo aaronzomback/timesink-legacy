@@ -20,6 +20,18 @@
     <span><% if @film.is_top_pick %>
      <%= image_tag "is_featured.svg", :class => "top-pick-show" %>
    <% end %></span>
+
+   <div class="liking-target">
+   <%= link_to like_film_path(@film), class: "upvoted {liked_or_not}", method: :put, remote: :true do %>
+  <%= image_tag "Polygon2.svg" %>
+    <% end %>
+    <span class="like_count">
+      <%= @film.get_likes.size %>
+    </span>
+
+      </div>
+
+
     <div class="">
       <h2 class="film-title"><%= @film.title %></h2>
       <h6 class="film-author"><%= @film.author %></h6> <span><%= @film.description %></span>
@@ -36,6 +48,12 @@
       Café talk
     </div>
     <% end %>
+
+
+
+
+
+
   </div>
 
 </section>

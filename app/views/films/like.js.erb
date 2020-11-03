@@ -1,6 +1,9 @@
-<% if @current_user.liked? @film %>
-     $('.liking-target > a').addClass('liked');
-<% else %>
-     $('.liking-target > a').removeClass('liked');
-<% end %>
-$('.liking-target  .like_count').html('<%= @film.get_likes.size %>');
+$('.js<%= @film.id %>').html('<%= @film.get_likes.size %>');
+$('.like_count').html('<%= @film.get_likes.size %>');
+
+
+
+console.log("like worked")
+
+
+console.log("like worked")

@@ -1,6 +1,6 @@
 class FilmsController < ApplicationController
 
-  respond_to :js, :json, :html
+  respond_to :js, :html
   before_action :set_film, only: [:show, :edit, :update, :destroy, :like]
 
 

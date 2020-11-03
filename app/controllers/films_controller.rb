@@ -7,9 +7,6 @@ class FilmsController < ApplicationController
 
     @films = Film.all
 
-      # to order films by descending amount of reviews received
-    @films = Film.joins("left join reviews on reviews.film_id = films.id").group('films.id').order('count(reviews.id) desc')
-
     cookies[:original_referrer] = request.original_url
 
   end

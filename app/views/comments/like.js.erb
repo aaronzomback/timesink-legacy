@@ -1,0 +1,7 @@
+$('.upvoted').on('ajax:success', function(){
+  $(this).parent().parent().find('.like_count').html('<%= @comment.commentable.get_likes.size %>');
+});
+
+$('.upvote').on('ajax:success', function(){
+  $(this).parent().parent().find('.like_count').html('<%= @comment.commentable.get_likes.size %>');
+});

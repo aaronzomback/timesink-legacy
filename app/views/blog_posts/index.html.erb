@@ -22,6 +22,14 @@
           <%= image_tag "eyeglass.svg", :class => "eyeglass" %> <span class="read">Read article</span>
         </div> <br>
          <span class="author"> By <%= blog_post.author %></span> <span class="published"> Published: <%= blog_post.publish_date %></span>
+         <span class="">
+           <% if blog_post.comments.present? %>
+           <p class="blog-post-comment-count"><%= pluralize blog_post.comments.count, "Comment" %></p>
+
+           <% else %>
+           <p class="blog-post-comment-count">no comments yet</p>
+           <% end %>
+         </span>
     </div>
     </div>
   </li>

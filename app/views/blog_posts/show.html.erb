@@ -32,7 +32,15 @@
 
  <% end %>
 
- <h5>Comments</h5>
+
+ <% if @blog_post.comments.present? %>
+
+  <h5> Comments (<%= @blog_post.comments.count %>) </h5>
+ <% else %>
+
+ <h5>No comments yet</h5>
+ <% end %>
+
  <div id='comments'>
    <%= render @blog_post.comments %>
  </div>

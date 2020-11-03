@@ -31,7 +31,16 @@
 
  <% end %>
 
- <h5>Comments</h5>
+ <div class="">
+   <% if @review.comments.present? %>
+   <h5>Comments (<%= @review.comments.count %>) </h5>
+
+   <% else %>
+   <h5> No comments yet</h5>
+   <% end %>
+ </div>
+
+
  <div id='comments'>
    <%= render @review.comments %>
  </div>

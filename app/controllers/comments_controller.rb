@@ -28,16 +28,10 @@ before_action :find_current_user
 
     def update
       @comment = @commentable.comments.find(params[:id])
-      if @comment.update(comment_params)
-        respond_to do |format|
-          format.html { redirect_to @commentable }
-          format.js # create.js.erb
-            flash[:success] = "Editor in chief, your comment was updated!"
+      @comment.update(comment_params)
+      flash[:success] = "Editor in chief, your comment was updated!"
+      redirect_to @commentable
         end
-    else
-       redirect_back(fallback_location: root_url)
-     end
-    end
 
 
     def destroy

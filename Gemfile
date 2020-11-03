@@ -65,7 +65,7 @@ gem 'activeadmin_trumbowyg'
 gem 'stripe'
 
 # features
-gem 'acts_as_votable'
+gem 'acts_as_votable', '~> 0.12.1'
 gem 'notifications'
 
 gem 'jquery-rails'

@@ -3,6 +3,7 @@ class FilmsController < ApplicationController
   respond_to :js, :json, :html
 
 
+
   def index
 
     @films = Film.all
@@ -40,13 +41,17 @@ class FilmsController < ApplicationController
 
   def like
     @film = Film.friendly.find(params[:id])
-    if params[:format] == 'like'
-      @film.liked_by @current_user
-    elsif
-      params[:format] == 'unlike'
+    @film.liked_by @current_user
+     redirect_back(fallback_location: root_path)
+
+    end
+
+    def unlike
+      @film = Film.friendly.find(params[:id])
       @film.unliked_by @current_user
+      redirect_back(fallback_location: root_path) 
   end
-end
+
 
 
   def form_params

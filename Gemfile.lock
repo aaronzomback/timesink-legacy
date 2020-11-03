@@ -337,7 +337,7 @@ DEPENDENCIES
   activeadmin
   activeadmin_quill_editor
   activeadmin_trumbowyg
-  acts_as_votable
+  acts_as_votable (~> 0.12.1)
   bcrypt
   bootsnap (>= 1.4.2)
   byebug

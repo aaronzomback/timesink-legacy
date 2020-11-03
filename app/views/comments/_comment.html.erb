@@ -12,11 +12,15 @@
   <div class='links'><small>
     <%= link_to 'Reply', [:new, comment, :comment], remote: true %>
     <% if @current_user == comment.user %>
-      <%= link_to 'Edit', [:edit, comment.commentable, comment]%>
-      <%= link_to 'Delete', [comment.commentable, comment], method: :delete, data: { confirm: 'Are you sure?' } %>
+       <span class="comment-actions">
+         <% if comment.created_at > 1.hour.ago %>
+          <%= link_to 'Edit', [:edit, comment.commentable, comment]%>
+          <% end %>
+          <%= link_to 'Delete', [comment.commentable, comment], method: :delete, data: { confirm: 'Are you sure?' } %>
+       </span>
     <% end %>
   </small></div>
 
   <%= render 'comments/form', commentable: comment, comment: Comment.new %>
-  <%= render comment.comments %>
+  <%= render comment.comments.order("created_at desc")  %>
 <% end %>

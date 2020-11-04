@@ -1,5 +1,10 @@
-$('.js<%= @film.id %>').html('<%= @film.get_likes.size %>');
-$('.like_count').html('<%= @film.get_likes.size %>');
+
+
+if ($('#js-<%= @film.id %>').length > 0) {
+ $('#js-<%= @film.id %>').html('<%= @film.get_likes.size %>');
+} else {
+ $('.like_count').html('<%= @film.get_likes.size %>');
+}
 
 
 

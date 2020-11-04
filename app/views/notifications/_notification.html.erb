@@ -1,5 +1,3 @@
-
-
 <%= cache(['notifications', Notifications::VERSION, notification]) do %>
 <div id="notification-<%= notification.id %>"
      data-id="<%= notification.id %>"
@@ -10,7 +8,7 @@
     <% end %>
   </div>
   <div class="media-body">
-    <%= render partial: "/notifications/#{notification.notify_type}", locals: { notification: notification }, :formats => [:html] %> %>
+
   </div>
   <div class="media-right">
     <%= l notification.created_at, format: :short %>

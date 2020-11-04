@@ -9,13 +9,15 @@ class Comment < ApplicationRecord
 
   validates :body, presence: true
 
-  def deleted?
-    user.nil?
-  end
+    def deleted?
+      user.nil?
+    end
+
+  private
 
   def create_notifications
    Notification.create do |notification|
-     notification.notify_type = 'comment'
+     notification.notify_type = 'commentable'
      notification.actor = self.user
      notification.user = self.commentable.user
      notification.target = self

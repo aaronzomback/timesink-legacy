@@ -22,33 +22,31 @@
 
   <header>
 
-      <%= link_to root_path do %>
-      <%= image_tag "TimeSinkSang.svg", :class => "prime-logo"  %>
-      <% end %>
+    <%= link_to main_app.root_path do %>
+    <%= image_tag "TimeSinkSang.svg", :class => "prime-logo"  %>
+    <% end %>
 
-      <nav>
+    <nav>
 
-      <span class="links">
-        <%= link_to "Films", films_path  %>
-        <%= link_to "Blog", blog_posts_path %>
-        <%= link_to "Info", info_path %>
-        <%= link_to "Donate", new_donation_path  %>
-      </span>
-
-
+    <span class="links">
+      <%= link_to "Films", main_app.films_path  %>
+      <%= link_to "Blog", main_app.blog_posts_path %>
+      <%= link_to "Info", main_app.info_path %>
+      <%= link_to "Donate", main_app.new_donation_path  %>
+    </span>
 
 
-     <% if is_logged_in? %>
+    <% if is_logged_in? %>
 
     <span class="welcome">Bienvenue <%= @current_user.username %>!</span>
-  <%= link_to "Log out", session_path, method: :delete %>
+  <%= link_to "Log out", main_app.session_path, method: :delete %>
 
-  <%= link_to "Edit profile", edit_account_path %>
+  <%= link_to "Edit profile", main_app.edit_account_path %>
 
-  <%= link_to pluralize(Notification.unread_count(@current_user), 'Notification'), notifications_path %>
+  <%= link_to pluralize(Notification.unread_count(@current_user), 'Notification'), main_app.notifications_path %>
 
   <button class="button button3">
-    <%= link_to "Submit film", submit_path %>
+    <%= link_to "Submit film", main_app.submit_path %>
   </button>
 
   <% else %>
@@ -87,8 +85,8 @@
 <footer>
 
     <span>© 2020 TimeSink Presents</span>
-    <%= link_to "Terms", terms_path %>
-    <%= link_to "Cookies Policy", cookies_policy_path %>
-    <%= link_to "Privacy Policy", "privacy_policy_path" %>
+    <%= link_to "Terms", main_app.terms_path %>
+    <%= link_to "Cookies Policy", main_app.cookies_policy_path %>
+    <%= link_to "Privacy Policy", main_app.privacy_policy_path %>
 
 </footer>

@@ -14,7 +14,6 @@ before_action :find_current_user
         respond_to do |format|
           format.html { redirect_to @commentable }
           format.js # create.js.erb
-            flash[:success] = "Your comment was posted!"
         end
       else
         redirect_to @commentable,

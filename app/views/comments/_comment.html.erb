@@ -6,6 +6,16 @@
     <strong><%= comment.user.username %></strong>
     <p> <%= auto_link(simple_format(comment.body), html: { target: '_blank' }) %></p>
 
+    <div class="liking-target">
+    <%= link_to like_comment_path(comment), class: "upvoted {liked_or_not}", remote: true, method: :put do %>
+   <%= image_tag "Polygon2.svg" %>
+     <% end %>
+      <span id="js2-<%= comment.id %>">
+       <%= comment.get_likes.size %>
+     </span>
+
+       </div>
+
 
 
 

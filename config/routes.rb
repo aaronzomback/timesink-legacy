@@ -21,11 +21,18 @@ Rails.application.routes.draw do
     end
 
 
-  resources :films do
-  member do
-    put "like", to: "films#like"
-  end
-end
+      resources :films do
+      member do
+        put "like", to: "films#like"
+      end
+    end
+
+    resources :comments do
+    member do
+      put "like", to: "comments#like"
+    end
+    end
+
 
 
    resources :comments, only: [] do

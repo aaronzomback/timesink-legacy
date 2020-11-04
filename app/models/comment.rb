@@ -7,6 +7,8 @@ class Comment < ApplicationRecord
   has_many :comments, as: :commentable
   belongs_to :user, optional: true
 
+  acts_as_votable
+
   validates :body, presence: true
 
     def deleted?

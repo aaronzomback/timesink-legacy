@@ -17,7 +17,21 @@
   <div class="review-body-content">
       <p class="review-body"><%= simple_format @review.body %></p>
   </div>
+
+  <div>
+  <%= link_to like_review_path(@review), class: "upvoted {liked_or_not}", method: :put, remote: :true do %>
+ <%= image_tag "Polygon2.svg" %>
+   <% end %>
+   <span class="like_count">
+     <%= @review.get_likes.size %>
+   </span>
+
+     </div>
+
+
 </section>
+
+
 
 
 <% if is_logged_in? %>

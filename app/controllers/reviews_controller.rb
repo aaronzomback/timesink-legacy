@@ -1,6 +1,8 @@
 class ReviewsController < ApplicationController
 
-  before_action :set_film
+  respond_to :js, :html
+  before_action :set_review, only: [:show, :edit, :update, :destroy, :like]
+
 
 
   def index
@@ -45,7 +47,7 @@ def create
 end
 
 def show
-    @film = Film.friendly.find(params[:film_id])
+  @film = Film.friendly.find(params[:film_id])
   @review = Review.friendly.find(params[:id])
 
 
@@ -57,8 +59,20 @@ def destroy
 
 end
 
-def set_film
-  @film = Film.friendly.find(params[:film_id])
+
+def like
+if @current_user.liked? @review
+  @review.unliked_by @current_user
+else
+  @review.liked_by @current_user
+end
+respond_to do |format|
+ format.js
+end
+end
+
+def set_review
+  @review = Review.friendly.find(params[:id])
 end
 
 def form_params

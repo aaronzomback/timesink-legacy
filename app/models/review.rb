@@ -11,6 +11,8 @@ class Review < ApplicationRecord
   validates :title, presence: true
   validates :body, length: {minimum: 5}
 
+  acts_as_votable
+
 
 
 end

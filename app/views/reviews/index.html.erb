@@ -40,6 +40,16 @@
 
     </div>
 
-  </div>
+    <div>
+    <%= link_to like_review_path(review), class: "upvoted {liked_or_not}", method: :put, remote: :true do %>
+   <%= image_tag "Polygon2.svg" %>
+     <% end %>
+     <span id="js3-<%= review.id %>">
+       <%= review.get_likes.size %>
+     </span>
+
+       </div>
+
+
 
       <% end %>

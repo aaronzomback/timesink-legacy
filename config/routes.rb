@@ -33,6 +33,13 @@ Rails.application.routes.draw do
     end
     end
 
+    resources :reviews do
+    member do
+      put "like", to: "reviews#like"
+    end
+    end
+
+
 
 
    resources :comments, only: [] do

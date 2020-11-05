@@ -1,5 +1,7 @@
 class ReviewsController < ApplicationController
 
+  before_action :set_film
+
 
   def index
       @film = Film.friendly.find(params[:film_id])
@@ -45,7 +47,7 @@ end
 def show
     @film = Film.friendly.find(params[:film_id])
   @review = Review.friendly.find(params[:id])
-    @film = Film.friendly.find(params[:film_id])
+
 
     cookies[:original_referrer] = request.original_url
 end
@@ -53,6 +55,10 @@ end
 
 def destroy
 
+end
+
+def set_film
+  @film = Film.friendly.find(params[:film_id])
 end
 
 def form_params

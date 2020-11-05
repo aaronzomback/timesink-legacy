@@ -22,7 +22,7 @@ before_action :find_current_user
           format.js # create.js.erb
         end
       else
-        redirect_to @commentable,
+        redirect_to cookies[:original_referrer]
         flash[:error] = "Comment could not be created."
       end
     end
@@ -35,7 +35,7 @@ before_action :find_current_user
       @comment = @commentable.comments.find(params[:id])
       @comment.update(comment_params)
       flash[:success] = "Editor in chief, your comment was updated!"
-      redirect_to @commentable
+         redirect_to cookies[:original_referrer]
         end
 
 
@@ -49,7 +49,7 @@ before_action :find_current_user
   def like
 
   @comment = Comment.find(params[:id])
-  
+
   if @current_user.liked? @comment
     @comment.unliked_by @current_user
   else

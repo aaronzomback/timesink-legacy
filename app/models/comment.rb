@@ -15,6 +15,7 @@ class Comment < ApplicationRecord
       user.nil?
     end
 
+
   private
 
   def create_notifications

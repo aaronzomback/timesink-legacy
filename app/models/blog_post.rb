@@ -17,7 +17,7 @@ class BlogPost < ApplicationRecord
   validates :description, presence: true
   validates :body, presence: true
 
-  has_many :comments, as: :commentable
+  has_many :comments, as: :commentable, dependent: :destroy
 
 
 end

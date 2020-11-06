@@ -27,12 +27,11 @@ def create
 
     @submission.user = @current_user
 
-  if @submission.save_and_charge
+    if @submission.save
 
-    SubmissionMailer.receipt(@submission).deliver_now
-    SubmissionMailer.newsubmission(@submission).deliver_now
-    redirect_to submission_success_path
-
+          SubmissionMailer.receipt(@submission).deliver_now
+          SubmissionMailer.newsubmission(@submission).deliver_now
+          redirect_to submission_success_path
 
   else
     flash[:error] = "Oops, something went wrong with your submission. Please try again!"
@@ -42,6 +41,6 @@ end
 
 
   def form_params
-    params.require(:submission).permit(:title, :year, :film_length, :description, :film_link, :film_pw, :stripe_token)
+    params.require(:submission).permit(:title, :year, :film_length, :description, :film_link, :film_pw, :stripe_payment_id)
   end
 end

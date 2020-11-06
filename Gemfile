@@ -63,6 +63,9 @@ gem 'activeadmin_trumbowyg'
 
 #accept payments
 gem 'stripe'
+gem 'dotenv'
+gem 'json'
+gem 'sinatra'
 
 # features
 gem 'acts_as_votable', '~> 0.12.1'

@@ -61,6 +61,10 @@ end
       resources :comments
     end
 
+    # stripe payments & processing
+
+    resources :payment_intents
+
     # film submissions
     resources :submissions
 

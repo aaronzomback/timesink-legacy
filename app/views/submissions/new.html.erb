@@ -2,7 +2,13 @@
 <h3>$10</h3>
 
 
+<form class="" action="/submissions" method="post" id="new_submission">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+</form>
+
+
 <%= simple_form_for [@submission] do |f| %>
+    <%= f.hidden_field :stripe_payment_id, id: 'payment' %>
     <%= f.input :title, label: "Title of film" %>
     <%= f.input :year, as: :select, collection: 2016..Date.today.year, label: "Release year", label_html: { class: 'year_class' } %>
     <%= f.input :film_length, label: "Film duration" %>
@@ -63,17 +69,48 @@ var fonts = [
   var card = elements.create("card", {style: styles })
     card.mount("#card")
 
-  $("form.new_submission").on("submit", function (ev) {
-        ev.preventDefault()
+    const form = document.querySelector('#new_submission');
+    form.addEventListener('submit', function(e){
+      e.preventDefault();
+      // Step 1: POST request to create payment intent
+      fetch('/payment-intents', {
+        method: 'POST',
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+          authenticity_token: '<%= form_authenticity_token %>',
+        }),
+      })
+        .then((response) => response.json())
+        .then((paymentIntent) => {
+          // Step 2: Create payment method and confirm payment intent
+          stripe.confirmCardPayment(
+          paymentIntent.client_secret, {
+             payment_method: {
+               card: cardElement
+             }
+           }
+         ).then((resp) => {
+           if(resp.error) {
+             alert(resp.error.message);
+           } else {
+             // Step 3: Embed payment id in form
+             const paymentIdInput = document.querySelector('#payment')
+             paymentIdInput.value = paymentIntent.id;
+             form.submit();
+           }
+         })
+        })
+        .catch((error) => {
+          console.error('Error:', error);
+        });
 
-          stripe.createToken(card).then(function (result) {
+    });
 
-            if (result.error) {
-              $("#card-errors").html(result.error.message)
-            } else {
-                $("form.new_submission").append("<input type=hidden name='submission[stripe_token]' value=" + result.token.id + ">")
-                $("form.new_submission").get(0).submit()
-            }
-          })
-  })
+
+
+
+
+
 </script>

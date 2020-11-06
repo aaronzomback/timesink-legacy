@@ -1,7 +1,6 @@
 class Comment < ApplicationRecord
 
 
-  after_commit :create_notifications, on: :create
 
   belongs_to :commentable, polymorphic: true
   has_many :comments, as: :commentable
@@ -15,8 +14,10 @@ class Comment < ApplicationRecord
       user.nil?
     end
 
+      after_commit :create_notifications, on: :create
 
-  private
+    private
+
 
   def create_notifications
    Notification.create do |notification|

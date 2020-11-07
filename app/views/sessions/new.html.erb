@@ -3,9 +3,9 @@
 
 
   <%= simple_form_for :session, html: { class: "hide-required" }, url: session_path do |f| %>
-
-  <%= f.input :email, placeholder: 'Enter your email', required: false %>
-  <%= f.input :password, placeholder: 'Enter your password', required: false, :class => "password_optional" %>
+   <%= f.error_notification %>
+  <%= f.input :email, placeholder: 'Enter your email' %>
+  <%= f.input :password, placeholder: 'Enter your password', :class => "password_optional" %>
   <%= f.button :submit, "Sign in", :class => "sign-in-button" %>
 
   <% end %>

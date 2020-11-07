@@ -39,7 +39,7 @@ class FilmsController < ApplicationController
   def destroy
   end
 
-  
+
   def like
   if @current_user.liked? @film
     @film.unliked_by @current_user

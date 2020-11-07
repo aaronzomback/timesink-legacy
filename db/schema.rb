@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_06_013332) do
+ActiveRecord::Schema.define(version: 2020_11_07_143445) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string "namespace"
@@ -105,6 +105,7 @@ ActiveRecord::Schema.define(version: 2020_11_06_013332) do
     t.string "stripe_token"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "stripe_payment_id"
   end
 
   create_table "films", force: :cascade do |t|

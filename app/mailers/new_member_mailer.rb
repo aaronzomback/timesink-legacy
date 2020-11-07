@@ -11,4 +11,10 @@ class NewMemberMailer < ApplicationMailer
 
     mail to: @user.email, subject: "Welcome to TimeSink!"
   end
+
+  def newmember(user)
+    @user = user
+
+    mail to: "info@timesink.tv", subject: "New member joined!"
+  end
 end

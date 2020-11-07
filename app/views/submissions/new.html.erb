@@ -1,27 +1,35 @@
 <h2>Film submission</h2>
 <h3>$10</h3>
 
-<form action="/submissions" method="post" id="new_submission">
+
+<form class="" action="/submissions" method="post" id="new_submission">
   <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
   <input type="hidden" name="submission[stripe_payment_id]" id="payment">
-
-  <div class="field">
-    <label for="title">Title</label>
-    <input type="text" name="submission[title]" id="title" value="Test Submission">
-  </div>
-
-  <div class="field">
-    <div id="card"></div>
-  </div>
-
-
-  <input type="submit" value="Create Submission">
 </form>
+
+
+<%= simple_form_for [@submission] do |f| %>
+    <%= f.input :title, label: "Title of film" %>
+    <%= f.input :year, as: :select, collection: 2016..Date.today.year, label: "Release year", label_html: { class: 'year_class' } %>
+    <%= f.input :film_length, label: "Film duration" %>
+    <%= f.input :description, label: "Tell us what your film is about in one sentence" %>
+    <%= f.input :film_link, label: "Please attach a link to your film" %>
+    <%= f.input :film_pw, label: "Password to film if link is private" %>
+
+
+    <div id='card'>
+
+    </div>
+
+    <%= f.submit "Submit your film"  %>
+
+<% end %>
 
 
 
 
 <script charset="utf-8">
+
   var stripe = Stripe('<%= Rails.application.credentials[Rails.env.to_sym][:stripe_public_key] %>');
     // load the fonts in
   var fonts = [{
@@ -32,7 +40,7 @@
     base: {
       iconColor: "#cccccc",
       color: "#ffffff",
-      fontFamily: "MonumentGroteskTrial-Regular",
+      fontFamily: "Spectral",
       fontSize: "16px",
 
       "::placeholder": {
@@ -47,7 +55,6 @@
       color: "#A31621"
     }
   }
-
   var elements = stripe.elements();
   var cardElement = elements.create('card', {style: styles});
   cardElement.mount('#card');
@@ -89,4 +96,5 @@
       console.error('Error:', error);
     });
   });
+
 </script>

@@ -1,4 +1,5 @@
-class WebhooksController < ApplicationController
+class WebhooksDonationsController < ApplicationController
+
 
   skip_before_action :verify_authenticity_token
 
@@ -29,12 +30,12 @@ def create
     payment_intent = event.data.object # contains a Stripe::PaymentIntent
 
     puts "PaymentIntent succeeded"
-    @submission = Submission.find_by!(stripe_payment_id: payment_intent.id)
-    @submission.update(status: 'paid')
-    puts "Submission found: #{@submission.title}"
+    @donation = Donation.find_by!(stripe_payment_id: payment_intent.id)
+    @donation.update(status: 'paid')
+    puts "Donation found: #{@donation.name}"
 
-     SubmissionMailer.receipt(@submission).deliver_now
-     SubmissionMailer.newsubmission(@submission).deliver_now
+     # SubmissionMailer.receipt(@submission).deliver_now
+     # SubmissionMailer.newsubmission(@submission).deliver_now
   else
     puts "Unhandled event type: #{event.type}"
   end

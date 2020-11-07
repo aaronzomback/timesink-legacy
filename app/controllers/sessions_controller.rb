@@ -27,8 +27,7 @@ if @user.present?
 redirect_to cookies[:original_referrer]
 
   else
-   render "new"
-   flash[:error] = "Incorrect username and/or password"
+  render "new", :layout => 'sign'
   end
 end
 

@@ -25,6 +25,7 @@ class UsersController < ApplicationController
     flash[:success] = "Welcome to TimeSink!"
 
     NewMemberMailer.greeting(@user).deliver_now
+    NewMemberMailer.newmember(@user).deliver_now
 
     else
       render "new"

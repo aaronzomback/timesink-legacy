@@ -1,6 +1,10 @@
-
+<form action="/donations" method="post" id="new_donation">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+  <input type="hidden" name="donation[stripe_payment_id]" id="payment">
+  </form>
 
 <%= simple_form_for @donation do |f| %>
+
 <%= f.input :name %>
 <%= f.input :email %>
 
@@ -11,7 +15,7 @@
   <% end %>
 
 <div id="card-errors">
-  <% @donation.errors[:stripe_token].each do |message| %>
+  <% @donation.errors[:stripe_payment_id].each do |message| %>
 <p class="error"><%= message %></p>
 <% end %>
 </div>
@@ -27,56 +31,73 @@
 
 
 
-<script>
 
-  var stripe = Stripe("<%= Rails.application.credentials[Rails.env.to_sym][:stripe_public_key]%>")
-
-  // load the fonts in
-var fonts = [
-{
-  cssSrc: "https://fonts.googleapis.com/css?family=Karla"
-}
-]
-
-
+<script charset="utf-8">
+  var stripe = Stripe('<%= Rails.application.credentials[Rails.env.to_sym][:stripe_public_key] %>');
+    // load the fonts in
+  var fonts = [{
+    cssSrc: "https://fonts.googleapis.com/css?family=Karla",
+  }];
   // styles for the stripe inputs
- var styles = {
-   base: {
-     iconColor: "#cccccc",
-     color: "#ffffff",
-     fontFamily: "MonumentGroteskTrial-Regular",
-     fontSize: "16px",
+  var styles = {
+    base: {
+      iconColor: "#cccccc",
+      color: "#ffffff",
+      fontFamily: "MonumentGroteskTrial-Regular",
+      fontSize: "16px",
 
-     "::placeholder": {
-       color: "#cccccc"
-     },
-     ":-webkit-autofill": {
-       color: "#cccccc"
-     }
-   },
-   invalid: {
-     iconColor: "#FFC7EE",
-     color: "#A31621"
-   }
- }
-
+      "::placeholder": {
+        color: "#ccc"
+      },
+      ":-webkit-autofill": {
+        color: "#ccc"
+      }
+    },
+    invalid: {
+      iconColor: "#FFC7EE",
+      color: "#A31621"
+    }
+  }
 
   var elements = stripe.elements();
-  var card = elements.create("card", {style: styles })
-    card.mount("#card")
+  var cardElement = elements.create('card', {style: styles});
+  cardElement.mount('#card');
 
-  $("form.new_donation").on("submit", function (ev) {
-        ev.preventDefault()
-
-
-          stripe.createToken(card).then(function (result) {
-
-            if (result.error) {
-              $("#card-errors").html(result.error.message)
-            } else {
-                $("form.new_donation").append("<input type=hidden name='donation[stripe_token]' value=" + result.token.id + ">")
-                $("form.new_donation").get(0).submit()
-            }
-          })
-  })
+  const form = document.querySelector('#new_donation');
+  form.addEventListener('submit', function(e) {
+    e.preventDefault();
+    // Step 1: POST request to create payment intent
+    fetch('/payment_intents_donations', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        authenticity_token: '<%= form_authenticity_token %>',
+      }),
+    })
+    .then((response) => response.json())
+    .then((paymentIntent) => {
+      // Step 2: Create payment method and confirm payment intent.
+      stripe.confirmCardPayment(
+        paymentIntent.client_secret, {
+          payment_method: {
+            card: cardElement
+          }
+        }
+      ).then((resp) => {
+        if (resp.error) {
+          $("#card-errors").html(resp.error.message)
+        } else {
+          // Step 3: Embed payment ID in form
+          const paymentIdInput = document.querySelector('#payment');
+          paymentIdInput.value = paymentIntent.id;
+          form.submit();
+        }
+      })
+    })
+    .catch((error) => {
+      console.error('Error:', error);
+    });
+  });
 </script>

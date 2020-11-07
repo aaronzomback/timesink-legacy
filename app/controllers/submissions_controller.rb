@@ -33,12 +33,12 @@ def create
 
   else
     flash[:error] = "Oops, something went wrong with your submission. Please try again!"
-    redirect_to root_path
+    render "new"
   end
 end
 
 
   def form_params
-    params.require(:submission).permit(:title, :stripe_payment_id)
+    params.require(:submission).permit(:title, :year, :film_pw, :description, :film_length, :film_link, :stripe_payment_id)
   end
 end

@@ -5,7 +5,7 @@ class Donation < ApplicationRecord
 
 
   def amount_in_dollars
-    :amount * 100
+    [:amount] * 100
   end
 
   DONATION_DOLLAR_AMOUNTS = [10, 25, 50, 100]

@@ -1,5 +1,11 @@
 class DonationsController < ApplicationController
 
+
+  def index
+    render "new"
+  end
+
+
   def new
     @donation = Donation.new
 
@@ -10,6 +16,9 @@ class DonationsController < ApplicationController
 
 
    if @donation.save
+
+     DonationMailer.ThankYou(@donation).deliver_now
+     DonationMailer.newdonation(@donation).deliver_now
 
     redirect_to donation_success_path
 

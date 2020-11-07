@@ -2,7 +2,7 @@ class SubmissionsController < ApplicationController
 
 
   def index
-    @submissions = Submission.all
+    render "new"
   end
 
   def new
@@ -39,6 +39,6 @@ end
 
 
   def form_params
-    params.require(:submission).permit(:title, :year, :film_pw, :description, :film_length, :film_link, :stripe_payment_id)
+    params.require(:submission).permit(:title, :stripe_payment_id)
   end
 end

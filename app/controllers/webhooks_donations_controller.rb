@@ -34,8 +34,8 @@ def create
     @donation.update(status: 'paid')
     puts "Donation found: #{@donation.name}"
 
-     # SubmissionMailer.receipt(@submission).deliver_now
-     # SubmissionMailer.newsubmission(@submission).deliver_now
+     SubmissionMailer.ThankYou(@donation).deliver_now
+     SubmissionMailer.newdonation(@donation).deliver_now
   else
     puts "Unhandled event type: #{event.type}"
   end

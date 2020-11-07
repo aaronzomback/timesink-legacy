@@ -1,35 +1,33 @@
 <h2>Film submission</h2>
 <h3>$10</h3>
 
-
-<form class="" action="/submissions" method="post" id="new_submission">
+<form action="/submissions" method="post" id="new_submission">
   <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
   <input type="hidden" name="submission[stripe_payment_id]" id="payment">
-</form>
 
+  <div class="field">
+    <label for="title">Title</label>
+    <input type="text" name="submission[title]" id="title" value="Test Submission">
+  </div>
 
-<%= simple_form_for [@submission] do |f| %>
-    <%= f.input :title, label: "Title of film" %>
-    <%= f.input :year, as: :select, collection: 2016..Date.today.year, label: "Release year", label_html: { class: 'year_class' } %>
-    <%= f.input :film_length, label: "Film duration" %>
-    <%= f.input :description, label: "Tell us what your film is about in one sentence" %>
-    <%= f.input :film_link, label: "Please attach a link to your film" %>
-    <%= f.input :film_pw, label: "Password to film if link is private" %>
+  <div class="field">
+    <div id="card"></div>
+  </div>
 
-
-    <div id='card'>
-
-    </div>
-
-    <%= f.submit "Submit your film"  %>
-
+  <div id="card-errors">
+    <% @submission.errors[:stripe_payment_id].each do |message| %>
+<p class="error"><%= message %></p>
 <% end %>
+  </div>
+
+
+  <input type="submit" value="Create Submission">
+</form>
 
 
 
 
 <script charset="utf-8">
-
   var stripe = Stripe('<%= Rails.application.credentials[Rails.env.to_sym][:stripe_public_key] %>');
     // load the fonts in
   var fonts = [{
@@ -38,23 +36,24 @@
   // styles for the stripe inputs
   var styles = {
     base: {
-      iconColor: "#cccccc",
-      color: "#ffffff",
+      iconColor: "#F5F7F9",
+      color: "#F5F7F9",
       fontFamily: "Spectral",
       fontSize: "16px",
 
       "::placeholder": {
-        color: "#ccc"
+        color: "#F5F7F9"
       },
       ":-webkit-autofill": {
-        color: "#ccc"
+        color: "#F5F7F9"
       }
     },
     invalid: {
-      iconColor: "#FFC7EE",
-      color: "#A31621"
+      iconColor: "#F5F7F9",
+      color: "#261ce9"
     }
   }
+
   var elements = stripe.elements();
   var cardElement = elements.create('card', {style: styles});
   cardElement.mount('#card');
@@ -82,8 +81,8 @@
           }
         }
       ).then((resp) => {
-        if(resp.error) {
-          alert(resp.error.message);
+        if (resp.error) {
+          $("#card-errors").html(resp.error.message)
         } else {
           // Step 3: Embed payment ID in form
           const paymentIdInput = document.querySelector('#payment');
@@ -97,4 +96,5 @@
     });
   });
 
+  console.log("Success!")
 </script>

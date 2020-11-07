@@ -1,7 +1,10 @@
 <h1>We've received a new submission from <%= @submission.user.name %>! </h1>
 
-<h3>Their film is called <%= @submission.title %> and is <%= @submission.film_length %> long. </h3>
+<h3>Film title: <%= @submission.title %>
+<h3>Year released: <%= @submission.year %> </h3>
+<h3>Film length: <%= @submission.film_length %> </h3>
+<h3>Film description: <%= @submission.description %></h3>
+<h3>Film link: <%= @submission.film_link %> </h3>
+<h3> Film pw: <%= @submission.film_pw %> </h3>
 
-<h4>Film description: <%= @submission.description %></h4>
-
-<h6>Happy viewing!</h6>
+<h4>Happy viewing!</h4>

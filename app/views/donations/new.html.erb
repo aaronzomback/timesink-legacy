@@ -1,18 +1,26 @@
 <form action="/donations" method="post" id="new_donation">
   <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
   <input type="hidden" name="donation[stripe_payment_id]" id="payment">
+
+  <div class="field">
+    <label for="Name">Name</label>
+    <input type="text" name="donation[name]" id="Name" value="Test donation">
+  </div>
+
+  <div class="field">
+    <label for="Email">Email</label>
+    <input type="text" name="donation[email]" id="Email" value="Test donation">
+  </div>
+
+  <div class="field">
+    <label for="Amount">Amount</label>
+    <input type="number" name="donation[amount]" id="Amount" value="Test donation">
+  </div>
+
+    <input type="submit" value="Create Donation">
   </form>
 
-<%= simple_form_for @donation do |f| %>
 
-<%= f.input :name %>
-<%= f.input :email %>
-
-<!-- generate four radio buttons with labels (TODO: move this into a helper) -->
-  <% Donation::DONATION_DOLLAR_AMOUNTS.each do |amt| %>
-  <%= radio_button_tag "amount", amt %>
-  <%= label_tag "amount_#{amt}", number_to_currency(amt, precision: 0)%>
-  <% end %>
 
 <div id="card-errors">
   <% @donation.errors[:stripe_payment_id].each do |message| %>
@@ -24,15 +32,16 @@
 
 </div>
 
-<%= f.submit "Donate to TimeSink"  %>
 
-<% end %>
+
 
 
 
 
 
 <script charset="utf-8">
+  (function(){
+
   var stripe = Stripe('<%= Rails.application.credentials[Rails.env.to_sym][:stripe_public_key] %>');
     // load the fonts in
   var fonts = [{
@@ -100,4 +109,5 @@
       console.error('Error:', error);
     });
   });
+  })();
 </script>

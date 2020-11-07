@@ -72,7 +72,7 @@ end
     resources :submissions
 
     # donations
-    resources :donations, :only => [:new, :create]
+    resources :donations, :only => [:new, :create, :index]
 
 
 

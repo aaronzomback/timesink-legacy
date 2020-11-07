@@ -29,8 +29,6 @@ def create
 
     if @submission.save
 
-          SubmissionMailer.receipt(@submission).deliver_now
-          SubmissionMailer.newsubmission(@submission).deliver_now
           redirect_to submission_success_path
 
   else
@@ -41,6 +39,6 @@ end
 
 
   def form_params
-    params.require(:submission).permit(:title, :year, :film_length, :description, :film_link, :film_pw, :stripe_payment_id)
+    params.require(:submission).permit(:title, :stripe_payment_id)
   end
 end

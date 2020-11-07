@@ -62,8 +62,8 @@ end
     end
 
     # stripe payments & processing
-
     resources :payment_intents
+    resources :webhooks, only: [:create]
 
     # film submissions
     resources :submissions

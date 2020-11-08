@@ -6,8 +6,40 @@
   <input type="hidden" name="submission[stripe_payment_id]" id="payment">
 
   <div class="field">
-    <label for="title">Title</label>
-    <input type="text" name="submission[title]" id="title" value="Test Submission">
+    <label for="title">Film title</label>
+    <input type="text" name="submission[title]" id="title" placeholder="Enter your film title">
+  </div>
+
+  <div class="field">
+    <label for="year">Release year</label>
+<select id="year" name="submission[year]">
+  <option value="2016">2016</option>
+  <option value="2017">2017</option>
+  <option value="2018">2018</option>
+  <option value="2019">2019</option>
+  <option value="2020">2020</option>
+</select>
+  </div>
+
+  <div class="field">
+    <label for="length">Film duration</label>
+    <input type="text" name="submission[length]" id="length" placeholder="Enter film duration in minutes">
+  </div>
+
+  <div class="field">
+    <label for="description">Tell us what your film is about in one sentence</label>
+    <input type="text" name="submission[description]" id="description" placeholder="One sentence film synopsis">
+  </div>
+
+
+  <div class="field">
+    <label for="film_link">Please provide a link to your film</label>
+    <input type="text" name="submission[film_link]" id="film_link" placeholder="Enter url to film link">
+  </div>
+
+  <div class="field">
+    <label for="film_pw">Please provide a password to film if link is private</label>
+    <input type="text" name="submission[film_pw]" id="film_pw" placeholder="Enter password to link if required">
   </div>
 
   <div class="field">
@@ -21,7 +53,7 @@
   </div>
 
 
-  <input type="submit" value="Create Submission">
+  <input type="submit" value="Submit">
 </form>
 
 

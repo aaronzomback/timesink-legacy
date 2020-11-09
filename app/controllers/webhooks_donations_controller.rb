@@ -31,8 +31,7 @@ def create
 
     puts "PaymentIntent succeeded"
     @donation = Donation.find_by!(stripe_payment_id: payment_intent.id)
-    @donation.update(status: 'paid')
-    puts "Donation found: #{@donation.name}"
+    puts "Donation found: #{@donation.amount}"
 
     DonationMailer.ThankYou(@donation).deliver_now
     DonationMailer.newdonation(@donation).deliver_now

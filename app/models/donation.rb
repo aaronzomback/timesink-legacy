@@ -2,10 +2,11 @@ class Donation < ApplicationRecord
 
   validates :name, presence: true
   validates :email, presence: true
+  validates :amount, presence: true
 
 
   def amount_in_dollars
-    [:amount] * 100
+    [:amount].to_i * 100
   end
 
   DONATION_DOLLAR_AMOUNTS = [10, 25, 50, 100]

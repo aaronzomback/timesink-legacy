@@ -17,8 +17,6 @@ class DonationsController < ApplicationController
 
    if @donation.save
 
-     DonationMailer.ThankYou(@donation).deliver_now
-     DonationMailer.newdonation(@donation).deliver_now
 
     redirect_to donation_success_path
 
@@ -30,7 +28,7 @@ class DonationsController < ApplicationController
 end
 
   def form_params
-    params.require(:donation).permit(:name, :email, :amount, :stripe_payment_id)
+    params.require(:donation).permit(:name, :email, :amount, :stripe_payment_id, :amount_in_dollars)
   end
 
 end

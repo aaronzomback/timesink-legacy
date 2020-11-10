@@ -10,6 +10,7 @@
 </div>
 
 
+
 <section class="film-show-grid">
 
     <div class="film-show-img" onclick="toggle();">
@@ -29,6 +30,8 @@
       <%= @film.get_likes.size %>
     </span>
 
+    <span> Views <%= @film.impressionist_count(:filter=>:ip_address) %></span>
+
       </div>
 
 
@@ -40,7 +43,7 @@
     <div class="play-button" onclick="toggle();">
       <span> Play </span> <%= image_tag "play.svg", :class => "play-symbol" %>
     </div>
-    <div class="preview-button">
+    <div class="preview-button" onclick="toggle();">
       Trailer
     </div>
     <%= link_to film_reviews_path(@film) do %>

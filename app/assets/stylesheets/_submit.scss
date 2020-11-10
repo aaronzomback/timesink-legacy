@@ -56,5 +56,48 @@ ul.submit {
   color: rgba(122, 168, 255, 0.85);
   border-color: rgba(122, 168, 255, 0.85);
   border-radius: 30px;
-  padding: 0 12px;
+  padding: 4px 16px;
+}
+
+
+p.donation-proceed {
+  color: rgba(122, 168, 255, 0.85);
+}
+
+.StripeElement {
+  box-shadow: 0px 4px 34px rgba(0, 0, 0, 0.65);
+  background-color: #0f1011;;
+  border-radius: 4px;
+  padding: 24px 16px
+}
+
+.input-icon {
+  position: relative;
+}
+
+.input-icon > i {
+  position: absolute;
+  display: block;
+  transform: translate(0, -50%);
+  top: 60%;
+  pointer-events: none;
+  width: 35px;
+  text-align: center;
+  font-style: normal;
+  color: rgba(122, 168, 255, 0.85);
+}
+
+.input-icon > input {
+  padding-left: 25px;
+  padding-right: 0;
+}
+
+.input-icon-right > i {
+  right: 0;
+}
+
+.input-icon-right > input {
+  padding-left: 0;
+  padding-right: 25px;
+  text-align: right;
 }

@@ -1,3 +1,4 @@
+<p class="donation-proceed">All donation proceeds are reinvested directly back into the TimeSink operation</p>
 
 <form action="/donations" method="post" id="new_donation">
   <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
@@ -13,10 +14,12 @@
     <input type="text" name="donation[email]" id="Email">
   </div>
 
-  <div class="field">
-    <label for="Amount">Amount</label>
- <input type="number" name="donation[amount]" id="amount" step="any" class="currency" min="1" max="2500.00" placeholder="Enter a dollar amt here">
-  </div>
+
+<div class="input-icon">
+    <label for="Amount">Enter custom amount (i.e. $10, $25, $50, $100, etc.)</label>
+<input type="number" name="donation[amount]" id="amount" step="any" class="currency" min="1" max="2500.00" placeholder="0.00">
+<i class="donation-$">$</i>
+</div>
 
 
 <div id="card-errors">
@@ -37,12 +40,14 @@
 
 
 
-
-
-
 <script charset="utf-8">
   (function(){
 
+    $(document).ready(function () {
+        $(".amount").change(function() {
+            $(this).val(parseFloat($(this).val()).toFixed(2));
+        });
+    });
   var stripe = Stripe('<%= Rails.application.credentials[Rails.env.to_sym][:stripe_public_key] %>');
     // load the fonts in
   var fonts = [{

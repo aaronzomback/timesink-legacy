@@ -4,8 +4,6 @@ class CommentsController < ApplicationController
 respond_to :js, :html
 
 
-
-
 before_action :find_current_user
 
 

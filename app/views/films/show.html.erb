@@ -43,7 +43,7 @@
     <div class="play-button" onclick="toggle();">
       <span> Play </span> <%= image_tag "play.svg", :class => "play-symbol" %>
     </div>
-    <div class="preview-button" onclick="toggle();">
+    <div class="preview-button" onclick="toggleTrailer();">
       Trailer
     </div>
     <%= link_to film_reviews_path(@film) do %>
@@ -69,13 +69,25 @@
                 </span>
               </div>
 
+              <div class="popuptrailer" id="popuptrailer">
+                <span class="">
+                  <%= video_tag @film.trailer_url.to_s, :controlsList => "nodownload", :size => "960x540", :controls =>true, :class => "video" %>
+                  <span class="close" onclick="toggleTrailer();"> <%= image_tag "EXIT.svg" %></span>
+                </span>
+            </div>
 
 
 
                 <script type="text/javascript">
                   function toggle() {
-                    var popupfilm= document.querySelector(".popupfilm")
-                    popupfilm.classList.toggle("active")
-                  }
+                  var popupfilm= document.querySelector(".popupfilm")
+                  popupfilm.classList.toggle("active")
+                }
+              </script>
 
-                </script>
+             <script type="text/javascript">
+               function toggleTrailer() {
+               var trailer= document.querySelector(".popuptrailer")
+               trailer.classList.toggle("active")
+             }
+              </script>

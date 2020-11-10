@@ -25,7 +25,7 @@ class FilmsController < ApplicationController
   def show
     @film = Film.friendly.find(params[:id])
     @review = Review.find_by_id(params[:review_id])
-    impressionist(@film) 
+    impressionist(@film)
 
     cookies[:original_referrer] = request.original_url
   end
@@ -61,7 +61,7 @@ end
 
 
   def form_params
-    params.require(:Film).permit(:title, :author, :cover, :video, :description, :description_body, :year, :is_top_pick)
+    params.require(:Film).permit(:title, :author, :cover, :video, :trailer, :description, :description_body, :year, :is_top_pick)
   end
 
 end

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_10_031146) do
+ActiveRecord::Schema.define(version: 2020_11_10_193201) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string "namespace"
@@ -127,6 +127,7 @@ ActiveRecord::Schema.define(version: 2020_11_10_031146) do
     t.integer "cached_weighted_score", default: 0
     t.integer "cached_weighted_total", default: 0
     t.float "cached_weighted_average", default: 0.0
+    t.string "trailer"
     t.index ["slug"], name: "index_films_on_slug", unique: true
   end
 

@@ -222,6 +222,8 @@ section.film-show-grid {
       pointer-events: none;
     }
 
+
+
     .close {
 
       position: absolute;
@@ -235,6 +237,50 @@ section.film-show-grid {
         width: 100%;
       }
     }
+}
+
+
+
+.popuptrailer {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+  background: rgba(0, 0, 0, 0.85);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  visibility: hidden;
+  opacity: 0;
+
+  &.active {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  .popuptrailer.video {
+    position: relative;
+    outline: none;
+    max-width: 900px;
+    pointer-events: none;
+  }
+
+  .close {
+
+    position: absolute;
+    top: 50px;
+    right: 195px;
+
+
+    cursor: pointer;
+
+    img {
+      width: 100%;
+    }
+  }
 }
 
 
@@ -255,6 +301,26 @@ section.film-show-grid {
   from {opacity: 0;}
   to {opacity:1 ;}
 }
+
+
+/* Toggle this class - hide and show the popup */
+.popuptrailer .show {
+  visibility: visible;
+  -webkit-animation: fadeIn 0.40s;
+  animation: fadeIn 0.40s;
+}
+
+/* Add animation (fade in the popup) */
+@-webkit-keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity:1 ;}
+}
+
 
 
 

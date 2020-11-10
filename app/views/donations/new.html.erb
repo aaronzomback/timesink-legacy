@@ -48,6 +48,7 @@
             $(this).val(parseFloat($(this).val()).toFixed(2));
         });
     });
+
   var stripe = Stripe('<%= Rails.application.credentials[Rails.env.to_sym][:stripe_public_key] %>');
     // load the fonts in
   var fonts = [{

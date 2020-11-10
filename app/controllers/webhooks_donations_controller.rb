@@ -34,7 +34,7 @@ def create
     puts "Donation found: #{@donation.amount}"
 
     DonationMailer.ThankYou(@donation).deliver_now
-    DonationMailer.newdonation(@donation).deliver_now
+
   else
     puts "Unhandled event type: #{event.type}"
   end

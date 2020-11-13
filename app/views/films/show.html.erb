@@ -22,17 +22,21 @@
      <%= image_tag "is_featured.svg", :class => "top-pick-show" %>
    <% end %></span>
 
-   <div class="liking-target">
-   <%= link_to like_film_path(@film), class: "upvoted {liked_or_not}", method: :put, remote: :true do %>
-  <%= image_tag "Polygon2.svg" %>
-    <% end %>
-    <span class="like_count">
-      <%= @film.get_likes.size %>
+  <span class="liking-target">
+       <%= link_to like_film_path(@film), class: "upvoted {liked_or_not}", method: :put, remote: :true do %>
+       <%= image_tag "Polygon2.svg", :class => "polygon" %>
+        <% end %>
+        <span class="like_count">
+          <%= @film.get_likes.size %>
+        </span>
+  </span>
+
+    <span class="views">
+    <%= image_tag "view.svg", :class => "eyeball" %>
+    <span class="impressions"><%= @film.impressionist_count(:filter=>:ip_address) %></span>
     </span>
 
-    <span> Views <%= @film.impressionist_count(:filter=>:ip_address) %></span>
 
-      </div>
 
 
     <div class="">

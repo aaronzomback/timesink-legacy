@@ -2,7 +2,7 @@ class FilmsController < ApplicationController
 
   respond_to :js, :html
   before_action :set_film, only: [:show, :edit, :update, :destroy, :like]
-  impressionist :actions=>[:show,:index]
+
 
 
   def index

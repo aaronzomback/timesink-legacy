@@ -1,5 +1,24 @@
 
 
+.polygon {
+  vertical-align: middle;
+  display: inline-block;
+}
+
+span.views {
+  margin-left: 64px;
+}
+
+span.impressions {
+      vertical-align: middle;
+}
+
+.eyeball {
+  display: inline-block;
+  width: 10%;
+    vertical-align: middle;
+}
+
 .film-underline {
   border-bottom: 1px solid white;
 }

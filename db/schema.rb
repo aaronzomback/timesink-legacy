@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_10_193201) do
+ActiveRecord::Schema.define(version: 2020_11_13_174033) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string "namespace"
@@ -280,6 +280,8 @@ ActiveRecord::Schema.define(version: 2020_11_10_193201) do
     t.datetime "updated_at", precision: 6, null: false
     t.string "avatar"
     t.string "location"
+    t.string "password_reset_token"
+    t.datetime "password_reset_sent_at"
   end
 
   create_table "votes", force: :cascade do |t|

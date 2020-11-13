@@ -11,6 +11,9 @@ Rails.application.routes.draw do
 # session controller
   resource :session, :only => [:new, :create, :destroy, :show]
 
+# user password resets
+  resources :password_resets
+
   # films controller
   resources :films, :path => "films" do
     resources :reviews, :path => "cafe"

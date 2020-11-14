@@ -6,6 +6,7 @@
 <%= csrf_meta_tags %>
   <%= csp_meta_tag %>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://vjs.zencdn.net/7.8.4/video-js.css" rel="stylesheet" />
   <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
       <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
         <script src="https://js.stripe.com/v3/"></script>
@@ -91,3 +92,10 @@
     <%= link_to "Privacy Policy", main_app.privacy_policy_path %>
 
 </footer>
+
+
+
+ <script src="https://vjs.zencdn.net/7.8.4/video.js"></script>
+
+
+</body>

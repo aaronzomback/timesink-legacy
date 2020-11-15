@@ -10,11 +10,6 @@
 </div>
 
 
-  <video-js controls autoplay preload class="vjs-theme-sea" id="player-id" data-setup='{"liveui": true,"fluid": true}'>
-  <source src= "<%= @film.video_url.to_s %>">
-</video-js>
-
-
 
 <section class="film-show-grid">
 
@@ -78,12 +73,12 @@
                 </span>
               </div>
 
-              <div>
-                <span class="">
-                  <video-js controls autoplay preload class="popuptrailer" id="popuptrailer" data-setup='{"liveui": true,"fluid": true}'>
-                  <source src="<%= @film.trailer_url.to_s %>" size="960x540">
+              <div class="popuptrailer" id="popuptrailer">
+                <span>
+                  <video-js controls autoplay preload data-setup='{"liveui": true}' width=960 height=540>
+                  <source src="<%= @film.trailer_url.to_s %>" >
                   </video-js>
-                  <span class="close" onclick="toggleTrailer();"> <%= image_tag "EXIT.svg" %></span>
+              <span class="close" onclick="toggleTrailer();"><%= image_tag "EXIT.svg" %></span>
                 </span>
             </div>
 

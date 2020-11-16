@@ -1,12 +1,30 @@
 /* Change all text and icon colors in the player. */
 .video-js {
   color: #007dff;
+  font-size: 20px;
+  font-family: "Spectral";
 }
 
 /* Change the border of the big play button. */
-.video-js .video-js-big-play-button {
-  border-color: #007dff;
+.video-js .vjs-big-play-button {
+
+  border-radius: 100px;
 }
+
+.video-js .vjs-play-progress {
+  background-color: #007dff;
+}
+
+.video-js .vjs-volume-level{
+  background-color: #007dff;
+}
+
+.vjs-volume-panel.vjs-control.vjs-volume-panel-horizontal {
+  color: #007dff;
+}
+
+
+$center-big-play-button: true;
 
 /* Change the color of various "bars". */
 .vjs-matrix .vjs-volume-level,
@@ -15,6 +33,16 @@
   background: #007dff;
 }
 
+
+
+.video-js .vjs-control-bar,
+.video-js .vjs-big-play-button,
+.video-js .vjs-menu-button .vjs-menu-content {
+  /* IE8 - has no alpha support */
+  background-color: black;
+  /* Opacity: 1.0 = 100%, 0.0 = 0% */
+  background-color: rgba(2, 1, 27, 0.8);
+}
 
 
 

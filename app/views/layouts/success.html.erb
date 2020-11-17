@@ -1,32 +1,27 @@
-<!DOCTYPE html>
 
+
+<!DOCTYPE html>
 <html lang="en" dir="ltr">
 
   <head>
+  <meta charset="utf-8">
 
-    <meta charset="utf-8">
+  <title></title>
 
-    <title></title>
-
-    <%= csrf_meta_tags %>
-
-    <%= csp_meta_tag %>
-
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
   <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-  <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-            <script src="https://js.stripe.com/v3/"></script>
+<%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+        <script src="https://js.stripe.com/v3/"></script>
       <%= favicon_link_tag asset_path('tsfavicon.png') %>
-    <script src="//vjs.zencdn.net/ie8/1.1.1/videojs-ie8.min.js" async></script>
+  <script src="//vjs.zencdn.net/ie8/1.1.1/videojs-ie8.min.js" async></script>
       <link rel="stylesheet"
         href="https://fonts.googleapis.com/css?family=Roboto">
 
-</head>
-  <body>
-
-    <main>
-      <%= yield %>
-    </main>
-
-  </body>
-
+    </head>
+    <body>
+  <main>
+  <%= yield %>
+</main>
+</body>
 </html>

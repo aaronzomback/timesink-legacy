@@ -21,6 +21,12 @@ def update
   render "edit"
 end
 
+def destroy
+  session[:user_id] = nil
+  @cuurent_user = User.find(params[:id])
+  @current_user.destroy
+end
+
 def form_params
   params.require(:user).permit(:avatar, :location, :name, :username, :email, :password)
 end

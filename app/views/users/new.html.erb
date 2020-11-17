@@ -6,15 +6,11 @@
 
 <%= simple_form_for @user do |f| %>
  <%= f.error_notification %>
-  <%= render "#{@user.current_step}_step", :f => f %>
+<%= render "#{@user.current_step}_step", :f => f %>
  <%= f.button :submit, "Continue", :name => "continue_button" unless @user.last_step? %>
  <%= f.button :submit, "Back", :name => "back_button" unless @user.first_step? %>
 
 <% end %>
 
-
-<div class="already-sign-in">
- Already have an account? <%= link_to "Sign in", new_session_path, :class => "sign-in-from-new-account" %>
-</div>
 
 </div>

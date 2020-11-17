@@ -1,10 +1,11 @@
 class UsersController < ApplicationController
 
   def index
-    @users = User.all
+    render "new"
   end
 
   def new
+
     session[:user_params] ||= {}
     @user = User.new
     @user = User.new(session[:user_params])
@@ -13,7 +14,8 @@ class UsersController < ApplicationController
   end
 
   def create
-    session[:user_params].deep_merge!(params[:user]) if params[:user]
+
+    session[:user_params]
     @user = User.new(session[:user_params])
     @user.current_step = session[:user_step]
     if params[:back_button]
@@ -25,8 +27,7 @@ class UsersController < ApplicationController
     end
     session[:user_step] = @user.current_step
     if @user.new_record?
-    render "new"
-
+      render "new"
     else
 
     # keep hold of that user
@@ -51,8 +52,11 @@ end
   end
 
   def destroy
-    @user = User.destroy(params[:id])
-  end
+      session[:user_id] = nil
+      @user = User.find_by_username(params[:id]).destroy
+
+      redirect_to root_path, notice: "User deleted."
+end
 
 
 

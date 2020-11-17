@@ -4,30 +4,32 @@ class UsersController < ApplicationController
     @users = User.all
   end
 
+
   def new
     session[:user_params] ||= {}
-    @user = User.new
     @user = User.new(session[:user_params])
     @user.current_step = session[:user_step]
-    render :layout => 'success'
   end
 
-  def create
-    session[:user_params].deep_merge!(params[:user]) if params[:user]
-    @user = User.new(session[:user_params])
-    @user.current_step = session[:user_step]
-    if params[:back_button]
-      @user.previous_step
-    elsif @user.last_step?
-      @user.save
-    else
-      @user.next_step
-    end
-    session[:user_step] = @user.current_step
-    if @user.new_record?
-    render "new"
 
-    else
+  def create
+    session[:user_params].deep_merge!(params[:user].to_unsafe_h) if params[:user]
+   @user = User.new(session[:user_params])
+   @user.current_step = session[:user_step]
+      if params[:back_button]
+        @user.previous_step
+      elsif @user.last_step?
+        @user.save
+      else
+        @user.next_step
+      end
+
+      session[:user_step] = @user.current_step
+
+      if @user.new_record?
+      render "new"
+
+      else
 
     # keep hold of that user
     session[:user_id] = @user.id
@@ -41,8 +43,6 @@ class UsersController < ApplicationController
 
     NewMemberMailer.greeting(@user).deliver_now
     NewMemberMailer.newmember(@user).deliver_now
-
-
     end
 end
 
@@ -51,12 +51,15 @@ end
   end
 
   def destroy
-    @user = User.destroy(params[:id])
+    session[:user_id] = nil
+    @user = User.find_by_username(params[:id]).destroy
+    flash[:success] = "Your account has been deleted"
+    redirect_to root_path
   end
 
 
 
-  def user_params
+  def form_params
     params.require(:user).permit(:user, :name, :location, :username, :avatar, :email, :password, :password_confirmation, :submissions)
   end
 end

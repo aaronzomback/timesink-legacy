@@ -2,7 +2,11 @@
 <h2>Pick an image for your profile</h2>
 
 <% if @user.avatar.present? %>
+<label class="avatar">
+  <span style="display:none;">
 <%= image_tag @user.avatar.show.url, :class => "avatar" %>
+</span
+</label>
 <% end %>
 
   <%= f.input :avatar %>

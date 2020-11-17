@@ -5,30 +5,44 @@ class UsersController < ApplicationController
   end
 
   def new
+    session[:user_params] ||= {}
     @user = User.new
-        render :layout => 'success'
+    @user = User.new(session[:user_params])
+    @user.current_step = session[:user_step]
+    render :layout => 'success'
   end
 
   def create
-    @user = User.new(form_params)
+    session[:user_params].deep_merge!(params[:user]) if params[:user]
+    @user = User.new(session[:user_params])
+    @user.current_step = session[:user_step]
+    if params[:back_button]
+      @user.previous_step
+    elsif @user.last_step?
+      @user.save
+    else
+      @user.next_step
+    end
+    session[:user_step] = @user.current_step
+    if @user.new_record?
+    render "new"
 
-    if @user.save
+    else
 
     # keep hold of that user
     session[:user_id] = @user.id
 
-
-    # go back to previous page the user was on
-   redirect_to cookies[:original_referrer]
-
     # let the user know they've signed up
     flash[:success] = "Welcome to TimeSink!"
+
+    # go back to previous page the user was on
+   redirect_to root_path
+
 
     NewMemberMailer.greeting(@user).deliver_now
     NewMemberMailer.newmember(@user).deliver_now
 
-    else
-      render "new"
+
     end
 end
 
@@ -42,7 +56,7 @@ end
 
 
 
-  def form_params
-    params.require(:user).permit(:name, :location, :username, :avatar, :email, :password, :password_confirmation, :submissions)
+  def user_params
+    params.require(:user).permit(:user, :name, :location, :username, :avatar, :email, :password, :password_confirmation, :submissions)
   end
 end

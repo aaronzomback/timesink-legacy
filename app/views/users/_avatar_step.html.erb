@@ -1,0 +1,8 @@
+
+<h2>Pick an image for your profile</h2>
+
+<% if @user.avatar.present? %>
+<%= image_tag @user.avatar.show.url, :class => "avatar" %>
+<% end %>
+
+  <%= f.input :avatar %>

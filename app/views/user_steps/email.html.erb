@@ -1,0 +1,9 @@
+
+
+<%= simple_form_for @user, url: wizard_path do |f| %>
+ <%= f.error_notification %>
+<%= f.input :email, placeholder: 'i.e. address@email.com' %>
+<%= f.input :password, placeholder: 'Enter password' %>
+<%= f.input :password_confirmation, placeholder: 'Confirm password' %>
+
+ <%= f.button :submit, "Join the sink" %>

@@ -6,13 +6,14 @@ ActiveAdmin.register Comment, :as => "PostComment" do
   # Uncomment all parameters which should be permitted for assignment
   #
   permit_params :commentable_type, :commentable_id, :user_id, :username, :body
-  #
-  # or
-  #
-  # permit_params do
-  #   permitted = [:commentable_type, :commentable_id, :user_id, :body]
-  #   permitted << :other if params[:action] == 'create' && current_user.admin?
-  #   permitted
-  # end
+
+  index do
+    selectable_column
+    index_column
+    column :commentable_type
+    column :body
+    actions
+  end
+
 
 end

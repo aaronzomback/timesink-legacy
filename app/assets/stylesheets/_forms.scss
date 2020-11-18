@@ -3,6 +3,20 @@
   src: url('app/assets/fonts/SangBleuEmpire-Regular.ttf');
 }
 
+label.password.required, label.password.optional, label.email.required {
+  margin-left: 160px;
+  margin-bottom: 4px;
+  margin-top: 8px;
+}
+
+div.avatar-step {
+margin-top: 100px;
+}
+
+div.email-step {
+  margin-top: 100px;
+}
+
 h4.add-avatar {
   margin-top: 8px;
   margin-bottom: 0;
@@ -30,18 +44,21 @@ input[type=submit] {
 input, textarea {
   font-size: 16px;
   min-width: 100px;
-  border: 1px solid rgba(122, 168, 255, 0.85);
-  border-radius: 24px;
+  border-bottom: 1px solid rgba(122, 168, 255, 0.85);
   padding: 10px 16px;
   font-family: 'Spectral';
   margin: 8px 0px 16px 0;
-  color: white;
+  color: rgba(122, 168, 255, 0.6);
   background-color: #0f1011;
+  border-top-style: hidden;
+  border-right-style: hidden;
+  border-left-style: hidden;
+  border-bottom-style: groove;
 
 
       &:focus {
           outline: none !important;
-          border: 1px solid white;
+          border: 2px solid rgba(122, 168, 255, 0.4);
       }
 
 }

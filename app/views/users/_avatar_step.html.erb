@@ -1,17 +1,14 @@
 
+<div class="avatar-step">
 
 <%= image_tag "UserAvatar.svg" %>
 
 <h4 class="add-avatar">Add a profile photo</h4>
 
-<p class="add-avatar-description">Adding a photo or graphic helps build <br> trust and recognition in the community.</p>
+<p class="add-avatar-description">Adding a photo or graphic helps build <br> trust and recognition in the sink.</p>
 
-<% if @user.avatar.present? %>
-<label class="avatar">
-  <span style="display:none;">
-<%= image_tag @user.avatar.show.url, :class => "avatar" %>
-</span
-</label>
-<% end %>
 
   <%= f.input :avatar, label: false %>
+
+
+</div>

@@ -1,5 +1,20 @@
-.review {
 
+
+.write-review-button {
+  margin-top: 24px;
+  display: inline-block;
+  width: 180px;
+  background-color: #020b17;
+  border: 1px solid rgba(122, 168, 255, 0.85);
+  color: rgba(122, 168, 255, 0.85);
+  padding: 10px 20px;
+  text-align: center;
+  cursor: pointer;
+  margin-left: 80%;
+  margin-bottom: 24px;
+}
+
+.review {
   border-top: 1px dotted rgba(122, 168, 255, 0.5);
   font-family: "Spectral";
   margin-left: 80px;
@@ -22,12 +37,6 @@ input {
   font-family: "Spectral";
 }
 
-
-.cornercafereview {
-  width: 30%;
-  display: block;
-  margin: 48px 0 32px 80px;
-}
 
 div.review-details {
   margin-left: 0;

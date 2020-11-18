@@ -4,12 +4,10 @@
 <%= content_tag :div, id: dom_id(comment), class: 'comment' do %>
 
 
+
   <span><%= image_tag comment.user.avatar.thumbnail.url, class: "avatar" %> </span>
 
 
-
-
-  <% end %>
 
 
     <strong><%= comment.user.username %></strong>

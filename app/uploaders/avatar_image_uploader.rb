@@ -15,8 +15,8 @@ class AvatarImageUploader < CarrierWave::Uploader::Base
 
   # Provide a default URL as a default if there hasn't been a file uploaded:
   def default_url
-     ActionController::Base.helpers.asset_path("app/assets/images" + [version_name, "TS.png"].compact.join('_'))
-   end
+    "TS.png"
+  end
 
   # Process files as they are uploaded:
   # process scale: [200, 300]

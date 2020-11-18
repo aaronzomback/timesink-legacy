@@ -31,7 +31,10 @@ class UsersController < ApplicationController
 
       else
 
-    # keep hold of that user
+    # remove the onboarding session
+    session[:user_step] = session[:user_params] = nil
+
+    # keep hold of that user and begin a new session with their newly created account
     session[:user_id] = @user.id
 
     # let the user know they've signed up

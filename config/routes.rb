@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   ActiveAdmin.routes(self)
 
   # users controller
-  resources :users
+  resources :users, :path => "join"
 
 # session controller
   resource :session, :only => [:new, :create, :destroy, :show]

@@ -1,5 +1,10 @@
 
-<h2>Pick an image for your profile</h2>
+
+<%= image_tag "UserAvatar.svg" %>
+
+<h4 class="add-avatar">Add a profile photo</h4>
+
+<p class="add-avatar-description">Adding a photo or graphic helps build <br> trust and recognition in the community.</p>
 
 <% if @user.avatar.present? %>
 <label class="avatar">
@@ -9,4 +14,4 @@
 </label>
 <% end %>
 
-  <%= f.input :avatar %>
+  <%= f.input :avatar, label: false %>

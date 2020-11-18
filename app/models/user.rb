@@ -3,6 +3,11 @@ class User < ApplicationRecord
 
   attr_writer :current_step
 
+  validates_presence_of :name, :if => lambda { |u| u.current_step == "name" }
+  validates_presence_of :username, :if => lambda { |u| u.current_step == "username" }
+  validates_presence_of :email, :if => lambda { |u| u.current_step == "email_password" }
+  validates_presence_of :password, :if => lambda { |u| u.current_step == "email_password" }
+
   acts_as_voter
 
   mount_uploader :avatar, AvatarImageUploader
@@ -44,6 +49,13 @@ class User < ApplicationRecord
 
   def last_step?
     current_step == steps.last
+  end
+
+  def all_valid?
+    steps.all? do |step|
+      self.current_step = step
+      valid?
+    end
   end
 
   def send_password_reset

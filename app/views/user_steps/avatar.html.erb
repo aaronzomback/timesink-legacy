@@ -1,9 +1,0 @@
-
-
-<%= simple_form_for @user, url: wizard_path do |f| %>
- <%= f.error_notification %>
-  <%= f.input :avatar %>
- <%= f.button :submit, "Continue" %>
-  or <%= link_to "skip this step", root_path %>
-
-  <% end %>

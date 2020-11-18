@@ -1,5 +1,7 @@
 class UsersController < ApplicationController
 
+  layout "success"
+
   def index
     @users = User.all
   end
@@ -16,15 +18,16 @@ class UsersController < ApplicationController
     session[:user_params].deep_merge!(params[:user].to_unsafe_h) if params[:user]
    @user = User.new(session[:user_params])
    @user.current_step = session[:user_step]
+
       if params[:back_button]
         @user.previous_step
       elsif @user.last_step?
-        @user.save
+        @user.save if @user.all_valid?
       else
         @user.next_step
       end
-
       session[:user_step] = @user.current_step
+
 
       if @user.new_record?
       render "new"
@@ -41,7 +44,7 @@ class UsersController < ApplicationController
     flash[:success] = "Welcome to TimeSink!"
 
     # go back to previous page the user was on
-   redirect_to root_path
+   redirect_to cookies[:original_referrer]
 
 
     NewMemberMailer.greeting(@user).deliver_now

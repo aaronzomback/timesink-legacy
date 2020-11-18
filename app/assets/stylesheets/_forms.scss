@@ -1,12 +1,24 @@
-label.avatar {
-  color: blue;
-  border-color: blue;
-  font-family: "spectral";
+@font-face {
+  font-family: "SangBleuEmpire";
+  src: url('app/assets/fonts/SangBleuEmpire-Regular.ttf');
 }
 
+h4.add-avatar {
+  margin-top: 8px;
+  margin-bottom: 0;
+}
+
+p.add-avatar-description {
+  margin-top: 24px;
+  margin-bottom: 56px;
+}
+
+h2.whats-your-name {
+  font-family: "SangBleuEmpire"
+}
 
 input[type=submit] {
-  background: rgba(122, 168, 255, 0.85);
+  background: #80acff;
   color: #222222;
   border-color: rgba(122, 168, 255, 0.2);
   padding: 8px 16px;

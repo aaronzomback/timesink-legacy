@@ -16,8 +16,8 @@ class AfterSignUpsController < ApplicationController
     @user = current_user
     if @user.update_attributes(params.require(:user).permit(:avatar))
       redirect_to cookies[:original_referrer]
-      else
-      render_wizard @user
+    else 
+      render_wizard
     end
   end
 

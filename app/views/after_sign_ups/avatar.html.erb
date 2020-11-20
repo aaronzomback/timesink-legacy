@@ -1,0 +1,22 @@
+
+
+<div class="avatar-step">
+
+<%= image_tag "UserAvatar.svg" %>
+
+<h4 class="add-avatar">Add a profile photo</h4>
+
+<p class="add-avatar-description">Adding a photo or graphic helps build <br> trust and recognition in the sink.</p>
+
+<%= simple_form_for(@user, :url => wizard_path, :method => :put) do |f| %>
+<%= f.input :avatar, label: false %>
+<%= f.submit 'Enter the sink', :class => 'btn btn-primary' %>
+<% end %>
+
+
+
+
+</div>
+
+
+<%= link_to 'skip for now', next_wizard_path %>

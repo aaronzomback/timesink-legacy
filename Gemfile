@@ -53,8 +53,10 @@ gem 'devise'
 # for film page views count
 gem 'impressionist'
 
-# store file upload avatar in sessions
-gem 'activerecord-session_store'
+ # wizard for multi-step forms
+ gem 'wicked'
+
+
 
 # for image uploads
 gem 'carrierwave', '~> 2.0'
@@ -71,7 +73,6 @@ gem 'activeadmin_trumbowyg'
 gem 'stripe'
 gem 'dotenv'
 gem 'json'
-gem 'sinatra'
 
 # features
 gem 'acts_as_votable', '~> 0.12.1'

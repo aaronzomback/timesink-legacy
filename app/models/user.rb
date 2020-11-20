@@ -13,7 +13,7 @@ class User < ApplicationRecord
   mount_uploader :avatar, AvatarImageUploader
 
   has_many :reviews
-  has_many :comments, as: :commentable, dependent: :destroy
+  has_many :comments, dependent: :destroy
   has_many :submissions
 
   validates :name, presence: true

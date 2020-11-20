@@ -58,6 +58,8 @@ gem 'carrierwave', '~> 2.0'
 gem 'mini_magick'
 gem 'fog-aws'
 
+gem 'wicked'
+
 gem 'rails_autolink', '~> 1.1', '>= 1.1.6'
 
 gem 'tinymce-rails'

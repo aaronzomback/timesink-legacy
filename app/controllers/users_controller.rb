@@ -44,7 +44,7 @@ class UsersController < ApplicationController
     flash[:success] = "Welcome to TimeSink!"
 
     # go back to previous page the user was on
-   redirect_to cookies[:original_referrer]
+   redirect_to after_sign_up_path(:avatar)
 
 
     NewMemberMailer.greeting(@user).deliver_now
@@ -62,6 +62,11 @@ end
     flash[:success] = "Your account has been deleted"
     redirect_to root_path
   end
+
+  protected
+   def after_sign_up_path_for(resource)
+     after_register_path(:avatar)
+   end
 
 
 

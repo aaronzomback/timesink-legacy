@@ -14,6 +14,9 @@ Rails.application.routes.draw do
 # user password resets
   resources :password_resets
 
+  # after sign ups
+  resources :after_sign_ups
+
   # films controller
   resources :films, :path => "films" do
     resources :reviews, :path => "cafe"

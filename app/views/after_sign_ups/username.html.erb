@@ -1,0 +1,11 @@
+
+
+
+<h2>How will you be seen?</h2>
+
+<p>Your TimeSink screen name is <br> what  everyone sees when you post. <br>
+
+<%= simple_form_for(@user, :url => wizard_path, :method => :put) do |f| %>
+  <%= f.input :username, placeholder: 'Enter your screen name', label: false %>
+  <%= f.submit 'Next', :class => 'btn btn-primary' %>
+<% end %>

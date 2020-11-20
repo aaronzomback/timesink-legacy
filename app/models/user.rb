@@ -32,7 +32,7 @@ class User < ApplicationRecord
   end
 
   def steps
-    %w[name username location avatar email_password]
+    %w[name username location email_password]
   end
 
   def next_step

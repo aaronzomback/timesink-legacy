@@ -30,9 +30,7 @@ class UsersController < ApplicationController
       if params[:back_button]
         @user.previous_step
       elsif @user.last_step?
-        # Re-populate the Carrierwave uploader's cache with the cache identifier
-        # saved in the session
-        @user.save
+        @user.save if @user.all_valid?
       else
         @user.next_step
       end

@@ -17,7 +17,7 @@ ActiveAdmin.register User do
     column :name
     column :username
     column :email
-    column :password
+    column :newsletter
     actions
   end
 

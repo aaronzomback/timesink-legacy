@@ -5,6 +5,13 @@ Rails.application.routes.draw do
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
 
+    namespace :intake do
+    resources :user_names, only: %i[new create]
+    resources :user_usernames, only: %i[new create]
+    resources :user_locations, only: %i[new create]
+    resources :user_email_passwords, only: %i[new create]
+  end
+
   # users controller
   resources :users, :path => "join"
 

@@ -1,0 +1,23 @@
+
+
+<h3 class-="Im">I'm</h3>
+
+ <%= form_with(model: @user_name) do |f| %>
+   <% if @user_name.errors.any? %>
+     <div id="error_explanation">
+       <b><%= pluralize(@user_name.errors.count, "error") %> prohibited this user profile from being saved:</b>
+
+       <ul>
+         <% @user_name.errors.full_messages.each do |message| %>
+           <li><%= message %></li>
+         <% end %>
+       </ul>
+     </div>
+   <% end %>
+
+   <div class="form-group">
+     <%= f.text_field :name, class: 'form-control', placeholder: 'Your full name', label: false %>
+   </div>
+
+   <%= f.submit 'Next Step', class: 'btn btn-primary' %>
+ <% end %>

@@ -1,0 +1,28 @@
+<h2>What's your persona?</h2>
+
+
+<%= form_with(model: @user_username) do |f| %>
+  <% if @user_username.errors.any? %>
+    <div id="error_explanation">
+      <b><%= pluralize(@user_username.errors.count, "error") %> prohibited this user profile from being saved:</b>
+
+      <ul>
+        <% @user_username.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= f.text_field :username, class: 'form-control', placeholder: 'Create your screen name', label: false %>
+  </div>
+
+  <%= f.submit 'Next Step', class: 'btn btn-primary' %>
+<% end %>
+
+
+<div class="">
+
+<p class="screen-name-description">Your TimeSink screen name is what everyone sees when you post. You can always change this later. <br>
+  </div>

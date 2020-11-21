@@ -1,0 +1,22 @@
+
+<h3>Where are you located?</h3>
+
+<%= form_with(model: @user_location) do |f| %>
+  <% if @user_location.errors.any? %>
+    <div id="error_explanation">
+      <b><%= pluralize(@user_location.errors.count, "error") %> prohibited this user profile from being saved:</b>
+
+      <ul>
+        <% @user_location.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= f.text_field :location, class: 'form-control', placeholder: 'Enter your location', label: false %>
+  </div>
+
+  <%= f.submit 'Next Step', class: 'btn btn-primary' %>
+<% end %>

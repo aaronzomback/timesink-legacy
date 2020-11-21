@@ -9,7 +9,11 @@ class ApplicationController < ActionController::Base
 
   helper_method :current_user
 
+  helper_method :already
 
+  def already
+    "Already a member?"
+  end
 
   def current_user
    @current_user ||= User.find_by(id: session[:user_id])

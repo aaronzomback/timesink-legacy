@@ -132,6 +132,8 @@ select.required {
 // new user
 
 div.join-the-sink {
+
+  margin-top: 8em;
   width: 600px;
   margin-left: auto;
   margin-right: auto;
@@ -145,6 +147,7 @@ div.join-the-sink {
 .already-sign-in {
   color: #80acff;
     text-align: center;
+    margin-top: 32px;
 }
 
 .sign-in-from-new-account {
@@ -154,16 +157,15 @@ div.join-the-sink {
   line-height: 0.85;
 }
 
-div.agree {
-  margin-top: 32px;
-  font-size: 10px;
-  text-align: center;
-}
-
 // edit account
 
 div.edit-account-form {
   input {
     border-radius: 2px;
   }
+}
+
+input.boolean.optional.user_newsletter {
+  border: 1px solid white;
+  background-color: blue;
 }

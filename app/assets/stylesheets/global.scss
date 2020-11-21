@@ -140,6 +140,8 @@ body {
 
 @import "sign_in";
 
+@import "onboarding";
+
 @import "after_sign_up";
 
 @import "footer";
@@ -378,4 +380,12 @@ $duration: 30s;
 .home-video-wrapper {
   height: 100vh;
   display: flex;
+}
+
+header.blog-show {
+  background-color: #222222;
+}
+
+body.blog-show {
+  background-color: white;
 }

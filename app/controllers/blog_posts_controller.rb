@@ -20,6 +20,7 @@ class BlogPostsController < ApplicationController
     @blog_post = BlogPost.includes(:comments).friendly.find(params[:id])
     cookies[:original_referrer] = request.original_url
 
+
   end
 
   def edit

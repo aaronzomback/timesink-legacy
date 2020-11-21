@@ -12,5 +12,14 @@
 <% end %>
 
 
-
 </div>
+
+
+<% if @user.first_step? %>
+
+
+<div class="already-sign-in">
+ <%= already %> <%= link_to "Sign in", new_session_path, :class => "sign-in-from-new-account", :name => "already-member" %>
+</div>
+
+<% end %>

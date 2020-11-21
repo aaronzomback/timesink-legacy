@@ -1,0 +1,8 @@
+
+
+<h3>I'm</h3>
+
+<%= simple_form_for(@user, :url => wizard_path, :method => :put) do |f| %>
+  <%= f.input :name, :placeholder => "Enter your full name" %>
+  <%= f.submit 'Next', :class => 'btn btn-primary' %>
+<% end %>

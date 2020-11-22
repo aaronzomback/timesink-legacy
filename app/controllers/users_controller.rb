@@ -45,7 +45,7 @@ class UsersController < ApplicationController
         # Re-populate the Carrierwave uploader's cache with the cache identifier
         # saved in the session
         @user.avatar_cache = session[:user_params][:avatar]
-        @user.save 
+        @user.save!
       else
         @user.next_step
       end
@@ -99,10 +99,9 @@ end
     flash[:success] = "Your account has been deleted"
     redirect_to root_path
   end
-
-
+  
 
   def form_params
-    params.require(:user).permit(:user, :name, :location, :username, :avatar, :email, :password, :password_confirmation, :submissions)
+    params.require(:user).permit(:user, :name, :location, :username, :avatar, :email, :password, :password_confirmation, :newsletter)
   end
 end

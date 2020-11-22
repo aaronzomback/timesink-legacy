@@ -2,6 +2,8 @@ class User < ApplicationRecord
 
 
   attr_writer :current_step
+  attr_writer :avatar_cache
+
 
   validates_presence_of :name, :if => lambda { |u| u.current_step == "name" }
   validates_presence_of :username, :if => lambda { |u| u.current_step == "username" }

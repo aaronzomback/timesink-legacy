@@ -3,6 +3,10 @@
   src: url('app/assets/fonts/SangBleuEmpire-Regular.ttf');
 }
 
+input.boolean.optional_user_newsletter {
+  margin-left: 0px;
+}
+
 label.password.required, label.password.optional, label.email.required {
   margin-left: 160px;
   margin-bottom: 4px;
@@ -140,14 +144,20 @@ div.join-the-sink {
 }
 
 .already-sign-in {
-  color: #80acff;
+    color: #80acff;
     text-align: center;
+    margin-top: 32px;
+
+a {
+  color: #80acff;
+  border-bottom: 1px solid #80acff;
+}
+
 }
 
 .sign-in-from-new-account {
   color: #80acff;
   text-align: center;
-  border-bottom: 1px solid rgba(#7aa8ff, 0.85);
   line-height: 0.85;
 }
 

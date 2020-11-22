@@ -1,0 +1,2 @@
+module SessionsFromResetsHelper
+end

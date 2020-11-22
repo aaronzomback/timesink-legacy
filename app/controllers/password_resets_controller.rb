@@ -1,14 +1,16 @@
 class PasswordResetsController < ApplicationController
 
+  layout "success"
+
   def new
 
   end
 
   def create
-    user = User.find_by_email(params[:email])
-    user.send_password_reset if user
-    flash[:notice] = 'E-mail sent with password reset instructions.'
-    redirect_to new_session_path
+    @user = User.find_by_email(params[:email])
+    @user.send_password_reset if @user
+    flash[:success] = "E-mail sent with password reset instructions."
+    redirect_to new_blob_path
   end
 
   def edit
@@ -22,7 +24,7 @@ class PasswordResetsController < ApplicationController
     redirect_to new_password_reset_path
   elsif @user.update(user_params)
     flash[:notice] = 'Password has been reset!'
-    redirect_to new_session_path
+    redirect_to new_blob_path
   else
     render :edit
   end

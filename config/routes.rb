@@ -11,8 +11,20 @@ Rails.application.routes.draw do
 # session controller
   resource :session, :only => [:new, :create, :destroy, :show]
 
+  # session from reset_password
+  resource :blob
+
 # user password resets
   resources :password_resets
+
+
+
+  # film submissions
+  resources :submissions
+
+  # donations
+  resources :donations, :only => [:new, :create, :index]
+
 
   # films controller
   resources :films, :path => "films" do
@@ -43,8 +55,6 @@ Rails.application.routes.draw do
     end
 
 
-
-
    resources :comments, only: [] do
   resources :comments, only: [:new, :create, :edit, :update, :destroy], module: :comments
 end
@@ -69,13 +79,6 @@ end
     resources :webhooks, only: [:create]
     resources :payment_intents_donations
     resources :webhooks_donations, only: [:create]
-
-
-    # film submissions
-    resources :submissions
-
-    # donations
-    resources :donations, :only => [:new, :create, :index]
 
 
 

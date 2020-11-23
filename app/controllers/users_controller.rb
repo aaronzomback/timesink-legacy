@@ -95,11 +95,12 @@ end
 
   def destroy
     session[:user_id] = nil
-    @user = User.find_by_username(params[:id]).destroy
+    @user = User.find_by_username(params[:id])
+    @user.destroy
     flash[:success] = "Your account has been deleted"
     redirect_to root_path
   end
-  
+
 
   def form_params
     params.require(:user).permit(:user, :name, :location, :username, :avatar, :email, :password, :password_confirmation, :newsletter)

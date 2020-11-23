@@ -18,6 +18,7 @@ ActiveAdmin.register Submission do
     column :film_length
     column :description
     column :film_link
+    column :film_pw
     column :status
     actions
   end

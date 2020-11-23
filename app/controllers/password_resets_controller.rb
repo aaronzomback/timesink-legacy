@@ -23,7 +23,7 @@ class PasswordResetsController < ApplicationController
     flash[:notice] = 'Password reset has expired'
     redirect_to new_password_reset_path
   elsif @user.update(user_params)
-    flash[:notice] = 'Password has been reset!'
+    flash[:success] = "Password has been reset!"
     redirect_to new_blob_path
   else
     render :edit

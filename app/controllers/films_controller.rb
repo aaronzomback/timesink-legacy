@@ -2,7 +2,7 @@ class FilmsController < ApplicationController
 
   respond_to :js, :html
   before_action :set_film, only: [:show, :edit, :update, :destroy, :like]
-  impressionist :actions=>[:show,:index]
+
 
 
   def index
@@ -25,9 +25,8 @@ class FilmsController < ApplicationController
   def show
     @film = Film.friendly.find(params[:id])
     @review = Review.find_by_id(params[:review_id])
-    impressionist(@film) 
 
-    cookies[:original_referrer] = request.original_url
+      impressionist(@film)
   end
 
   def edit

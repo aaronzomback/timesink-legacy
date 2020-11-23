@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_10_031146) do
+ActiveRecord::Schema.define(version: 2020_11_23_172240) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string "namespace"
@@ -127,6 +127,8 @@ ActiveRecord::Schema.define(version: 2020_11_10_031146) do
     t.integer "cached_weighted_score", default: 0
     t.integer "cached_weighted_total", default: 0
     t.float "cached_weighted_average", default: 0.0
+    t.string "trailer"
+    t.integer "impressions_count"
     t.index ["slug"], name: "index_films_on_slug", unique: true
   end
 
@@ -253,6 +255,15 @@ ActiveRecord::Schema.define(version: 2020_11_10_031146) do
     t.index ["user_id"], name: "index_reviews_on_user_id"
   end
 
+  create_table "sessions", force: :cascade do |t|
+    t.string "session_id", null: false
+    t.text "data"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["session_id"], name: "index_sessions_on_session_id", unique: true
+    t.index ["updated_at"], name: "index_sessions_on_updated_at"
+  end
+
   create_table "submissions", force: :cascade do |t|
     t.string "title"
     t.integer "year"
@@ -279,6 +290,9 @@ ActiveRecord::Schema.define(version: 2020_11_10_031146) do
     t.datetime "updated_at", precision: 6, null: false
     t.string "avatar"
     t.string "location"
+    t.string "password_reset_token"
+    t.datetime "password_reset_sent_at"
+    t.boolean "newsletter", default: true
   end
 
   create_table "votes", force: :cascade do |t|

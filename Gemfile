@@ -53,6 +53,8 @@ gem 'devise'
 # for film page views count
 gem 'impressionist'
 
+gem 'activerecord-session_store'
+
 # for image uploads
 gem 'carrierwave', '~> 2.0'
 gem 'mini_magick'

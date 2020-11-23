@@ -22,17 +22,20 @@
      <%= image_tag "is_featured.svg", :class => "top-pick-show" %>
    <% end %></span>
 
-   <div class="liking-target">
-   <%= link_to like_film_path(@film), class: "upvoted {liked_or_not}", method: :put, remote: :true do %>
-  <%= image_tag "Polygon2.svg" %>
-    <% end %>
-    <span class="like_count">
-      <%= @film.get_likes.size %>
+  <span class="liking-target">
+       <%= link_to like_film_path(@film), class: "upvoted {liked_or_not}", method: :put, remote: :true do %>
+       <%= image_tag "Polygon2.svg", :class => "polygon" %>
+        <% end %>
+        <span class="like_count">
+          <%= @film.get_likes.size %>
+        </span>
+  </span>
+
+    <span class="views">
+    <span class="impressions"><%= @film.impressionist_count(:filter=>:ip_address) %></span>
     </span>
 
-    <span> Views <%= @film.impressionist_count(:filter=>:ip_address) %></span>
 
-      </div>
 
 
     <div class="">
@@ -43,11 +46,11 @@
     <div class="play-button" onclick="toggle();">
       <span> Play </span> <%= image_tag "play.svg", :class => "play-symbol" %>
     </div>
-    <div class="preview-button" onclick="toggle();">
+    <div class="preview-button" onclick="toggleTrailer();">
       Trailer
     </div>
     <%= link_to film_reviews_path(@film) do %>
-    <div class="write-review-button">
+    <div class="cafe-talk-button">
       Café talk
     </div>
     <% end %>
@@ -62,20 +65,43 @@
 </section>
 
 
-              <div class="popupfilm" id="filmPopUp">
-                <span class="">
-                  <%= video_tag @film.video_url.to_s, :controlsList => "nodownload", :size => "960x540", :controls =>true, :class => "video" %>
-                  <span class="close" onclick="toggle();"><%= image_tag "EXIT.svg" %></span>
-                </span>
-              </div>
 
 
+      
 
 
                 <script type="text/javascript">
                   function toggle() {
-                    var popupfilm= document.querySelector(".popupfilm")
-                    popupfilm.classList.toggle("active")
-                  }
+                  var popupfilm= document.querySelector(".popupfilm")
+                  popupfilm.classList.toggle("active")
+                }
+              </script>
 
-                </script>
+             <script type="text/javascript">
+               function toggleTrailer() {
+               var trailer= document.querySelector(".popuptrailer")
+               trailer.classList.toggle("active")
+             }
+              </script>
+
+
+              <script>
+                $(function(){
+  var $refreshButton = $('#refresh');
+  var $results = $('#css_result');
+
+  function refresh(){
+    var css = $('style.cp-pen-styles').text();
+    $results.html(css);
+  }
+
+  refresh();
+  $refreshButton.click(refresh);
+
+  // Select all the contents when clicked
+  $results.click(function(){
+    $(this).select();
+  });
+});
+
+              </script>

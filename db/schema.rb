@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_22_014854) do
+ActiveRecord::Schema.define(version: 2020_11_23_165723) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string "namespace"
@@ -128,6 +128,7 @@ ActiveRecord::Schema.define(version: 2020_11_22_014854) do
     t.integer "cached_weighted_total", default: 0
     t.float "cached_weighted_average", default: 0.0
     t.string "trailer"
+    t.integer "impressions_count"
     t.index ["slug"], name: "index_films_on_slug", unique: true
   end
 
@@ -163,21 +164,15 @@ ActiveRecord::Schema.define(version: 2020_11_22_014854) do
     t.string "controller_name"
     t.string "action_name"
     t.string "view_name"
-    t.string "request_hash"
     t.string "ip_address"
-    t.string "session_hash"
     t.text "message"
     t.text "referrer"
     t.text "params"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["controller_name", "action_name", "ip_address"], name: "controlleraction_ip_index"
-    t.index ["controller_name", "action_name", "request_hash"], name: "controlleraction_request_index"
-    t.index ["controller_name", "action_name", "session_hash"], name: "controlleraction_session_index"
     t.index ["impressionable_type", "impressionable_id", "ip_address"], name: "poly_ip_index"
     t.index ["impressionable_type", "impressionable_id", "params"], name: "poly_params_request_index"
-    t.index ["impressionable_type", "impressionable_id", "request_hash"], name: "poly_request_index"
-    t.index ["impressionable_type", "impressionable_id", "session_hash"], name: "poly_session_index"
     t.index ["impressionable_type", "message", "impressionable_id"], name: "impressionable_type_message_index"
     t.index ["user_id"], name: "index_impressions_on_user_id"
   end
@@ -291,7 +286,7 @@ ActiveRecord::Schema.define(version: 2020_11_22_014854) do
     t.string "location"
     t.string "password_reset_token"
     t.datetime "password_reset_sent_at"
-    t.boolean "newsletter"
+    t.boolean "newsletter", default: true
   end
 
   create_table "votes", force: :cascade do |t|

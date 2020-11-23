@@ -4,6 +4,11 @@ class User < ApplicationRecord
   attr_writer :current_step
   attr_writer :avatar_cache
 
+  mount_uploader :avatar, AvatarImageUploader
+
+  extend FriendlyId
+  friendly_id :username, use: :slugged
+
 
   validates_presence_of :name, :if => lambda { |u| u.current_step == "name" }
   validates_presence_of :username, :if => lambda { |u| u.current_step == "username" }
@@ -12,7 +17,6 @@ class User < ApplicationRecord
 
   acts_as_voter
 
-  mount_uploader :avatar, AvatarImageUploader
 
   has_many :reviews
   has_many :comments, dependent: :destroy

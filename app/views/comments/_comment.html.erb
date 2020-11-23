@@ -9,8 +9,9 @@
 
   <% end %>
 
-
+    <%= link_to user_path(comment) do %>
     <strong><%= comment.user.username %></strong>
+    <% end %>
     <p> <%= auto_link(simple_format(comment.body), html: { target: '_blank' }) %></p>
 
     <div class="liking-target">

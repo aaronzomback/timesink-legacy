@@ -5,7 +5,7 @@ ActiveAdmin.register User do
   #
   # Uncomment all parameters which should be permitted for assignment
   #
-  permit_params :name, :username, :email, :password_digest, :avatar, :location
+  permit_params :name, :username, :email, :password_digest, :avatar, :location, :user_id
   index do
     selectable_column
     index_column

@@ -3,8 +3,17 @@
   src: url('app/assets/fonts/SangBleuEmpire-Regular.ttf');
 }
 
-input.boolean.optional_user_newsletter {
-  margin-left: 0px;
+input.newsletter {
+  min-width: 30px;
+}
+
+label.checkbox {
+  margin-top: 16px;
+  padding-left: 120px;
+  margin-bottom: 24px;
+  font-size: 14px;
+  align-items: center;
+  vertical-align: middle;
 }
 
 label.password.required, label.password.optional, label.email.required {

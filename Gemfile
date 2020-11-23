@@ -73,6 +73,8 @@ gem 'dotenv'
 gem 'json'
 gem 'sinatra'
 
+gem 'rb-readline'
+
 # features
 gem 'acts_as_votable', '~> 0.12.1'
 gem 'notifications'

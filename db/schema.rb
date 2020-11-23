@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_23_184350) do
+ActiveRecord::Schema.define(version: 2020_11_23_211715) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string "namespace"
@@ -272,6 +272,8 @@ ActiveRecord::Schema.define(version: 2020_11_23_184350) do
     t.string "password_reset_token"
     t.datetime "password_reset_sent_at"
     t.boolean "newsletter", default: true
+    t.string "slug"
+    t.index ["slug"], name: "index_users_on_slug", unique: true
   end
 
   create_table "votes", force: :cascade do |t|

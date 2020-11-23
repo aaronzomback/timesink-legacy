@@ -2,6 +2,7 @@ class UsersController < ApplicationController
 
   layout "success"
 
+
   def index
     @users = User.all
   end

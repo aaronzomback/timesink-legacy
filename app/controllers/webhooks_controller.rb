@@ -8,6 +8,7 @@ def create
   event = nil
   endpoint_secret = Rails.application.credentials[Rails.env.to_sym][:stripe_webhook_secret]
 
+
   begin
     event = Stripe::Webhook.construct_event(
       payload, sig_header, endpoint_secret
@@ -34,6 +35,7 @@ def create
 
      SubmissionMailer.receipt(@submission).deliver_now
      SubmissionMailer.newsubmission(@submission).deliver_now
+
   else
     puts "Unhandled event type: #{event.type}"
   end

@@ -2,7 +2,8 @@ class Film < ApplicationRecord
 
 
   acts_as_votable
-  is_impressionable
+  acts_as_punchable
+  
 
   mount_uploader :cover, ImageUploader
   mount_uploader :video, VideoUploader

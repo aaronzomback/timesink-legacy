@@ -8,6 +8,7 @@
     "@rails/webpacker": "4.2.2",
     "activeadmin_quill_editor": "blocknotes/activeadmin_quill_editor",
     "jquery": "^3.5.1",
+    "quill-image-uploader": "^1.2.2",
     "turbolinks": "^5.2.0",
     "vash": "^0.13.0"
   },

@@ -226,6 +226,9 @@ GEM
     public_suffix (4.0.6)
     puma (4.3.6)
       nio4r (~> 2.0)
+    punching_bag (0.7.0)
+      railties (>= 3.2)
+      voight_kampff (>= 1.0)
     rack (2.2.3)
     rack-protection (2.1.0)
       rack
@@ -328,6 +331,8 @@ GEM
       railties (>= 4.2.0)
     video-js-rails (4.3.0.1)
       railties (>= 3.1)
+    voight_kampff (1.1.4)
+      rack (>= 1.4, < 3.0)
     warden (1.2.9)
       rack (>= 2.0.9)
     web-console (4.0.4)
@@ -379,6 +384,7 @@ DEPENDENCIES
   notifications
   pg
   puma (~> 4.1)
+  punching_bag
   rails (~> 6.0.3, >= 6.0.3.2)
   rails_autolink (~> 1.1, >= 1.1.6)
   rails_refactor

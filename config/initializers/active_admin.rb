@@ -336,7 +336,6 @@ ActiveAdmin.setup do |config|
   #
   # config.use_webpacker = true
 
-
   ActiveAdmin::ResourceController.class_eval do
   def find_resource
     finder = resource_class.is_a?(FriendlyId) ? :slug : :id

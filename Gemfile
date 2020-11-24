@@ -52,6 +52,7 @@ gem 'devise'
 
 # for film page views count
 gem 'impressionist'
+gem "punching_bag"
 
 # store file upload avatar in sessions
 gem 'activerecord-session_store'

@@ -4,7 +4,6 @@ class FilmsController < ApplicationController
   before_action :set_film, only: [:show, :edit, :update, :destroy, :like]
 
 
-
   def index
 
     @films = Film.all
@@ -25,9 +24,9 @@ class FilmsController < ApplicationController
   def show
     @film = Film.friendly.find(params[:id])
     @review = Review.find_by_id(params[:review_id])
+    @film.punch(request)
 
 
-    cookies[:original_referrer] = request.original_url
   end
 
   def edit

@@ -39,7 +39,7 @@ def create
 
   flash[:success] = "Your review has been published!"
     # go back to our film show path
-    redirect_to film_path(@film)
+    redirect_to film_reviews_path(@film)
 
   else
     render "new"

@@ -1,10 +1,14 @@
 
 
-
 <section class="user-profile">
   <h2>User profile</h2>
 
-  <%= @user.name %>
+  <% if @user.avatar.present? %>
+  <p><%= image_tag @user.avatar.show.url, :class => "avatar"%>
+<% end %>
 
+  <p><%= @user.location %></p>
+  <p><%= @user.name %></p>
+  <p><%= @user.email %></p>
 
 </section>

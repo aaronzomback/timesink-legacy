@@ -5,6 +5,9 @@ class User < ApplicationRecord
   attr_writer :avatar_cache
 
 
+    extend FriendlyId
+    friendly_id :username, use: :slugged
+
   validates_presence_of :name, :if => lambda { |u| u.current_step == "name" }
   validates_presence_of :username, :if => lambda { |u| u.current_step == "username" }
   validates_presence_of :email, :if => lambda { |u| u.current_step == "email_password" }

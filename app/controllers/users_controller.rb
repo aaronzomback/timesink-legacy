@@ -90,13 +90,13 @@ class UsersController < ApplicationController
 end
 
   def show
-    @user = User.find_by_username(params[:id])
+    @user = User.friendly.find(params[:id])
     render :layout => 'application'
   end
 
   def destroy
     session[:user_id] = nil
-    @user = User.find_by_username(params[:id])
+    @user = User.friendly.find(params[:id])
     @user.destroy
     flash[:success] = "Your account has been deleted"
     redirect_to root_path

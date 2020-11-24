@@ -368,7 +368,7 @@ DEPENDENCIES
   dotenv
   fog-aws
   form_slider
-  friendly_id (~> 5.1)
+  friendly_id (~> 5.4.0)
   impressionist
   jbuilder (~> 2.7)
   jquery-rails

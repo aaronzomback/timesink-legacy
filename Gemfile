@@ -84,7 +84,7 @@ gem 'video-js-rails', '~> 4.3', '>= 4.3.0.1'
 
 
 gem 'rails_refactor'
-gem 'friendly_id', '~> 5.1'
+gem 'friendly_id', '~> 5.4.0'
 gem 'stringex', '~> 2.8', '>= 2.8.5'
 
 group :development, :test do

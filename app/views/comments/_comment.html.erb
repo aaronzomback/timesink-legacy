@@ -9,7 +9,7 @@
 
   <% end %>
 
-    <%= link_to main_app.user_path(comment.user) do %>
+    <%= link_to user_path(comment.user) do %>
     <strong><%= comment.user.username %></strong>
     <% end %>
     <p> <%= auto_link(simple_format(comment.body), html: { target: '_blank' }) %></p>

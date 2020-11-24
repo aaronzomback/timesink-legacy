@@ -29,7 +29,7 @@ class DonationsController < ApplicationController
 end
 
   def form_params
-    params.require(:donation).permit(:name, :email, :amount, :stripe_payment_id, :amount_in_dollars)
+    params.require(:donation).permit(:name, :email, :note, :amount, :stripe_payment_id, :amount_in_dollars)
   end
 
 end

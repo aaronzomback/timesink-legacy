@@ -5,7 +5,7 @@ class PaymentIntentsController < ApplicationController
     payment_intent = Stripe::PaymentIntent.create(
       amount: 1000,
       currency: 'usd',
-      description: "Order for ",
+      description: "Submission ",
       statement_descriptor: 'TimeSink submit',
     )
     # return the client secret

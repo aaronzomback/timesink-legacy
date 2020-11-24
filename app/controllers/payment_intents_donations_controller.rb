@@ -23,7 +23,7 @@ class PaymentIntentsDonationsController < ApplicationController
   end
 
   def f_params
-    params.permit(:name, :email, :amount, :stripe_payment_id, :authenticity_token)
+    params.permit(:name, :email, :note, :amount, :stripe_payment_id, :authenticity_token)
   end
 
 end

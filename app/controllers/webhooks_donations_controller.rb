@@ -3,6 +3,7 @@ class WebhooksDonationsController < ApplicationController
 
   skip_before_action :verify_authenticity_token
 
+
 def create
   payload = request.body.read
   sig_header = request.env['HTTP_STRIPE_SIGNATURE']
@@ -32,7 +33,7 @@ def create
     puts "PaymentIntent succeeded"
     @donation = Donation.find_by!(stripe_payment_id: payment_intent.id)
     puts "Donation found: #{@donation.amount}"
-
+    
     DonationMailer.ThankYou(@donation).deliver_now
 
   else

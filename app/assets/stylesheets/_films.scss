@@ -103,8 +103,8 @@ div.film-gallery-grid {
 
 
     div.cover_img {
-      border: 1px solid #6E6E6E;
-
+      border: 1px solid;
+      box-shadow: 0px 4px 34px rgba(0, 0, 0, 0.65), inset 0 1px 0 #222222;
 
 
         img {

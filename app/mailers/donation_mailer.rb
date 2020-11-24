@@ -11,7 +11,7 @@ class DonationMailer < ApplicationMailer
   def newdonation(donation)
     @donation = donation
 
-    mail to: "info@timesink.tv", subject: "New donation!"
+    mail to: "timesinkpresents@gmail.com", subject: "New donation!"
   end
 
 end

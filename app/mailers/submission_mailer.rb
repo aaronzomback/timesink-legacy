@@ -13,7 +13,7 @@ class SubmissionMailer < ApplicationMailer
 
   def newsubmission(submission)
     @submission = submission
-
-    mail to: "info@timesink.tv", subject: "New submission order"
+    
+    mail to: "timesinkpresents@gmail.com", subject: "New submission order"
   end
 end

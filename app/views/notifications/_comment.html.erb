@@ -1,4 +1,20 @@
+<div class="notification-box">
+
 <div class=''>
-  <%= link_to notification.actor.username, main_app.user_path(notification.actor) %> has commented in
+  <% if notification.user.avatar.present? %>
+  <span class="avatar-notification"><%= image_tag notification.actor.avatar.thumbnail.url, :class => "avatar" %></span>
+  <% end %>
+  <%= link_to notification.actor.username, main_app.user_path(notification.actor) %> responded
+
+  <% if notification.target.body.present? %>
+  <span class="comment-notification"><i><%= notification.target.body %></i></span>
+
+  <% else %>
+  <% nil %>
+  <% end %>
+
+  to your comment
+</div>
+
 
 </div>

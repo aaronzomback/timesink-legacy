@@ -5,12 +5,18 @@
   <% end %>
 </div>
 
+<div class="cafe-title">
+<h3> The <%= @film.title %> café </h3>
+</div>
+
 
 <%= link_to new_film_review_path(@film) do %>
 <div class="write-review-button">
   Write a review
 </div>
 <% end %>
+
+<% if @film.reviews.present? %>
 
 <% @film.reviews.order("created_at desc").each do |review| %>
 
@@ -51,5 +57,13 @@
        </div>
 
 
+
+      <% end %>
+
+      <% else %>
+
+      <div class="no-discussion">
+        <h4><%= no_discussion %> <%= @film.title %></h4>
+      </div>
 
       <% end %>

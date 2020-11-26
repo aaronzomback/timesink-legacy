@@ -51,7 +51,7 @@ gem 'activeadmin'
 gem 'devise'
 
 # for film page views count
-gem 'impressionist'
+gem 'impressionist', '>= 1.61'
 gem "punching_bag"
 
 # store file upload avatar in sessions

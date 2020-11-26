@@ -9,11 +9,16 @@ class ApplicationController < ActionController::Base
 
   helper_method :current_user
 
-
   helper_method :already
+
+  helper_method :no_discussion
 
   def already
     "Already a member?"
+  end
+
+  def no_discussion
+    "No discussion yet for"
   end
 
   def current_user

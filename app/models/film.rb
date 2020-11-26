@@ -3,11 +3,21 @@ class Film < ApplicationRecord
 
   acts_as_votable
   acts_as_punchable
-  
+  is_impressionable
+
 
   mount_uploader :cover, ImageUploader
   mount_uploader :video, VideoUploader
   mount_uploader :trailer, VideoUploader
+
+
+  def create_impression(film, message = nil)
+    if request.format.html?
+      # Initialize a new session if it doesn't exist.
+      session[:init] = true if request.session_options[:id].blank?
+      impressionist(film, message, unique: [:request_hash])
+    end
+  end
 
 
 

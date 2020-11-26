@@ -374,7 +374,7 @@ DEPENDENCIES
   fog-aws
   form_slider
   friendly_id (~> 5.4.0)
-  impressionist
+  impressionist (>= 1.61)
   jbuilder (~> 2.7)
   jquery-rails
   jquery-ui-rails

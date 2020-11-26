@@ -16,10 +16,12 @@ before_action :find_current_user
       @comment.user = @current_user
       CommentNotifier.call(@comment, current_user)
       if @comment.save
+        CommentNotifier.call(@comment) if @commentable == @comment  
         respond_to do |format|
           format.html { redirect_to @commentable }
           format.js # create.js.erb
         end
+
       else
         redirect_to cookies[:original_referrer]
         flash[:error] = "Comment could not be created."

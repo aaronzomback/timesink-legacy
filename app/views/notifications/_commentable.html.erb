@@ -1,6 +1,3 @@
-
-
-
 <div class="notification-box">
 
 <div class=''>
@@ -11,7 +8,12 @@
 </div>
 
 
-
-<span><%= notification.target.body %> </span>
-
+ <% if notification.target.present? %>
+<span>
+  <b><u>
+    "<%= notification.target.body %>"
+  </u>
+</b>
+</span>
+<% end %>
 </div>

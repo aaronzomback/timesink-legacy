@@ -14,5 +14,9 @@ class Review < ApplicationRecord
   acts_as_votable
 
 
+  private
+
+
+
 
 end

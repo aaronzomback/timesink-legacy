@@ -8,6 +8,7 @@ input[type=submit].back-button {
   margin-top: 10px;
   margin-left: 25px;
   font-family: "Spectral";
+    cursor: pointer;
 }
 
 
@@ -141,4 +142,12 @@ input[type=submit].back-button {
   a {
     font-family: "MonumentGroteskTrial-Regular";
   }
+}
+
+input[type=submit].skip-button {
+  border: none;
+  background-color: #020b17;
+  color: #80acff;
+  font-size: 18px;
+  cursor: pointer;
 }

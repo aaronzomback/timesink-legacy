@@ -1,4 +1,14 @@
+<div class="notification-box">
+
 <div class=''>
-  <%= link_to notification.actor.username, main_app.user_path(notification.actor) %> has commented in
+  <% if notification.user.avatar.present? %>
+  <%= image_tag notification.actor.avatar.thumbnail.url, :class => "avatar" %>
+  <% end %>
+  <%= link_to notification.actor.username, main_app.user_path(notification.actor) %> responded to your comment/thread activity:
+</div>
+
+
+
+<span><%= notification.target.body %> </span>
 
 </div>

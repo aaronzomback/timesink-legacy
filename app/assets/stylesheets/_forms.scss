@@ -3,6 +3,31 @@
   src: url('app/assets/fonts/SangBleuEmpire-Regular.ttf');
 }
 
+textarea.form-control {
+  border: 1px solid rgba(122, 168, 255, 0.85);
+  border-radius: 2px;
+  color: #F5F7F9;
+
+  &:focus {
+      border: 1px solid rgba(122, 168, 255, 0.85);
+      border-radius: 2px;
+      color: #F5F7F9;
+  }
+
+}
+
+
+
+input, #review_title.string.required {
+  border: 1px solid rgba(122, 168, 255, 0.85);
+  color: #F5F7F9;
+}
+
+input, #review_body.text.required {
+  border: 1px solid rgba(122, 168, 255, 0.85);
+  color: #F5F7F9;
+}
+
 input.newsletter {
   min-width: 30px;
 }
@@ -54,6 +79,7 @@ input[type=submit] {
   font-family: "Spectral";
 }
 
+
 input, textarea {
   font-size: 16px;
   min-width: 100px;
@@ -68,9 +94,8 @@ input, textarea {
   border-left-style: hidden;
   border-bottom-style: groove;
 
-
       &:focus {
-          outline: none !important;
+        outline: none !important;
       }
 
 }

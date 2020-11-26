@@ -9,7 +9,7 @@ class Review < ApplicationRecord
   has_many :comments, as: :commentable, dependent: :destroy
 
   validates :title, presence: true
-  validates :body, length: {minimum: 5}
+  validates :body, presence: true, length: {minimum: 5}
 
   acts_as_votable
 

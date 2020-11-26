@@ -1,5 +1,8 @@
 <%= render "shared/ticker" %>
 
+<main data-barba="container">
+
+  <section data-barba="container">
 
 
     <div class="film-gallery-grid">
@@ -60,9 +63,11 @@
 
   <% end %>
 </div>
-
-
+</section>
+</main>
 
 <%= javascript_pack_tag 'utils' %>
 <%= javascript_pack_tag 'two_min' %>
 <%= javascript_pack_tag 'script' %>
+<%= javascript_pack_tag 'barba' %>
+<%= javascript_pack_tag 'barba-css' %>

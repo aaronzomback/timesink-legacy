@@ -2,16 +2,16 @@
 
 
 <div class="back-to-films">
-  <%= link_to film_path(@film) do %>
-    <span><%= image_tag "BackArrow1.svg" %> </span><h3>Back to <%= @film.title %> </h3>
+  <%= link_to film_reviews_path(@film) do %>
+    <span><%= image_tag "BackArrow1.svg" %> </span><h3>Back to The <%= @film.title  %> Café </h3>
   <% end %>
 </div>
 
 <section class="review-form">
 
 <%= simple_form_for [@film, @review] do |f| %>
-<%= f.input :title %>
-<%= f.input :body, :class => "body" %>
+<%= f.input :title, :placeholder => "Enter a review title" %>
+<%= f.input :body, :class => "body", :placeholder => "Enter your thoughts and ideas..." %>
 
 <%= f.button :submit, "Publish review" %>
 <% end %>

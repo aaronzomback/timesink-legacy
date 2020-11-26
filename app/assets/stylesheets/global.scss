@@ -66,6 +66,16 @@
   src: url('app/assets/fonts/RivieraNights-Regular-WebTrial.woff2');
 }
 
+html, body {
+  height: 100%;
+}
+body {
+  display: flex;
+  flex-direction: column;
+}
+.content {
+  flex: 1 0 auto;
+}
 
 .links a.selected {
   border-bottom: 1px solid white;
@@ -141,6 +151,7 @@ body {
 @import "sign_in";
 
 @import "footer";
+
 
 
 .welcome {
@@ -377,4 +388,27 @@ $duration: 30s;
 .home-video-wrapper {
   height: 100vh;
   display: flex;
+}
+
+
+// barba page transitions
+.fade-leave-active,
+.fade-enter-active {
+  transition: opacity 1s ;
+}
+
+.fade-leave {
+  opacity:  1;
+}
+
+.fade-leave-to {
+  opacity: 0;
+}
+
+.fade-enter {
+  opacity: 0;
+}
+
+.fade-enter-to {
+  opacity: 1;
 }

@@ -1,5 +1,8 @@
 <%= render "shared/ticker" %>
 
+<main data-barba="container">
+  <section data-barba="container">
+
 
 
 <section class="blog-intro">
@@ -37,3 +40,10 @@
   <% end %>
 </ul>
   <% end %>
+
+  </section>
+  </main>
+
+
+  <%= javascript_pack_tag 'barba' %>
+  <%= javascript_pack_tag 'barba-css' %>

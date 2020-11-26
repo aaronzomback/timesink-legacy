@@ -1,3 +1,9 @@
+
+div.blog-root {
+  margin-left: 80px;
+  margin-right: 80px;
+}
+
 div.back-to-blog-index {
   h3 {
     display: inline-block;
@@ -42,7 +48,7 @@ ul {
   margin-top: 64px;
   margin-left: auto;
   margin-right: auto;
-  width: 100%;
+  width: 80%;
   box-shadow: 0px 4px 34px rgba(0, 0, 0, 0.65), inset 0 1px 0 #222222;
   padding: 24px 4px;
   border-radius: 12px;
@@ -85,7 +91,7 @@ div.blog-post-cover-wrapper {
         margin-left: 32px;
       }
 
-      p.blog-descriptor {
+      p {
         width: 400px;
         font-size: 14px;
       }

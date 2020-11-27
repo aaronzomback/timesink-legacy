@@ -74,7 +74,9 @@
 
               <div class="popupfilm" id="filmPopUp">
                 <span class="">
-                  <%= video_tag @film.video_url.to_s, :controlsList => "nodownload", :size => "960x540", :controls =>true, :class => "video" %>
+                  <video-js controls autoplay preload data-setup='{"liveui": true}' class="vjs-big-play-centered" width=960 height=540>
+                    <source src="<%= @film.video_url.to_s %>" >
+                  </video-js>
                   <span class="close" onclick="toggle();"><%= image_tag "EXIT.svg" %></span>
                 </span>
               </div>

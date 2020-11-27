@@ -99,7 +99,15 @@
 <%= javascript_pack_tag 'barba-css' %>
 
 <script type="text/javascript">
-  Barba.Pjax.start();
+  barba.use(barbaCss);
+
+barba.init({
+  transitions: [
+    {
+      name: "fade"
+    }
+  ]
+})
 </script>
 
 </body>

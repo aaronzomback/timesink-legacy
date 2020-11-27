@@ -17,6 +17,10 @@ textarea.form-control {
 }
 
 
+#user_name.string.required {
+  font-size: 24px;
+  color: #F5F7F9;
+}
 
 input, #review_title.string.required {
   border: 1px solid rgba(122, 168, 255, 0.85);

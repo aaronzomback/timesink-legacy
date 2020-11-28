@@ -23,7 +23,7 @@ class Comment < ApplicationRecord
    Notification.create do |notification|
      notification.notify_type = 'comment'
      notification.actor = self.user
-     notification.user = self.user
+     notification.user = self.commentable.user
      notification.target = self
    end
  end

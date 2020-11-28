@@ -181,6 +181,22 @@ div.comment-body {
 
 section.info {
   font-family: 'Spectral-Light';
+    font-size: 21px;
+    line-height: 1.75;
+
+    li {
+      font-family: "SangBleu";
+    }
+}
+
+section.review-guidelines {
+    margin-left: 12em;
+    width: 600px;
+
+    h2 {
+      font-family: "SangBleu";
+      margin-bottom: 16px;
+    }
 }
 
 section.about {
@@ -188,10 +204,16 @@ section.about {
   margin-top: 64px;
   font-family: 'Spectral-Light';
   margin-left: 12em;
+  width: 600px;
+
+  h2 {
+    font-family: "SangBleu";
+    margin-bottom: 16px;
+  }
 
   h1 {
     font-family: 'Canela-Light';
-    font-size: 24px;
+    font-size: 32px;
   }
 }
 

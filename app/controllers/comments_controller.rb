@@ -15,6 +15,7 @@ before_action :find_current_user
       @comment = @commentable.comments.new(comment_params)
       @comment.user = @current_user
       if @comment.save
+        CommentNotifier.call(@comment, @current_user)
         respond_to do |format|
           format.html { redirect_to @commentable }
           format.js # create.js.erb

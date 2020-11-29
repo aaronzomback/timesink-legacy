@@ -10,6 +10,8 @@
 <p>Featuring articles and op-ed's by guest writers </p>
 </section>
 
+<div class="blog-index-loop">
+
   <% @blog_posts.order("created_at desc").each do |blog_post| %>
 <ul>
     <%= link_to blog_post_path(blog_post) do %>
@@ -40,6 +42,7 @@
   <% end %>
 </ul>
   <% end %>
+  </div>
 
   </section>
   </main>

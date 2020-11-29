@@ -7,7 +7,7 @@
 
     <div class="film-gallery-grid">
 
-    <% @films.order(cached_votes_up: :desc).each do |film| %>
+    <% @films.order(cached_votes_up: :desc, created_at: :desc).each do |film| %>
 
     <div class="film-item">
 

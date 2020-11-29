@@ -22,7 +22,7 @@ div.back-to-blog-index {
   margin-left: 4em;
 
   h5 {
-      font-family: "SangBleuEmpire";
+      font-family: "SangBlue";
       margin-bottom: 2px;
       letter-spacing: 3px;
   }
@@ -42,7 +42,7 @@ div.back-to-blog-index {
 
 // Blog Posts as they appear in index
 
-ul {
+div.blog-index-loop ul {
 
   display: grid;
   margin-top: 64px;

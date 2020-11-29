@@ -1,10 +1,15 @@
+
+span.film-title-cafe {
+  width: 100%;
+}
+
 div.review-index-like {
   width: 40px;
   display: inline-block;
 }
 
 .coffee-cafe img {
-  display: inline-block;
+  display: block;
   width: 20%;
 }
 
@@ -16,11 +21,12 @@ h2.film-cafe {
 .cafe-banner-title {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-column-gap: 280px;
+  grid-column-gap: 300px;
   align-items: center;
 }
 
 .write-review-button {
+  margin-left: 12em;
   margin-top: 24px;
   display: inline-block;
   width: 180px;
@@ -80,12 +86,25 @@ h3 .review-title  {
 }
 
 .review-content {
-  width: 600px;
+  width: 60em;
   margin-left: 120px;
+  padding-bottom: 32px;
+  padding-left: 48px;
+  padding-right: 48px;
+  border-bottom: 1px dotted rgba(122, 168, 255, 0.5);
+
+  h3 {
+    font-family: "SangBlue";
+  }
 
   h5 {
     display: inline-block;
     margin-bottom: 0;
+  }
+
+  p {
+    line-height: 1.67;
+    width: 776px;
   }
 }
 

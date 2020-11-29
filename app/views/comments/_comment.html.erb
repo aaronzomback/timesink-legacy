@@ -12,7 +12,8 @@
     <%= link_to user_path(comment.user) do %>
     <strong><%= comment.user.username %></strong>
     <% end %>
-    <p> <%= auto_link(simple_format(comment.body), html: { target: '_blank' }) %></p>
+
+    <p> <%= auto_link(simple_format(comment.body), html: { target: '_blank' }) %> </p>
 
     <div class="liking-target">
     <%= link_to like_comment_path(comment), class: "upvoted {liked_or_not}", remote: true, method: :put do %>

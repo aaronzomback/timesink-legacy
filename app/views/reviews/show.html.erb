@@ -2,17 +2,19 @@
 
 <div class="back-to-films">
   <%= link_to film_reviews_path(@film) do %>
-  <span><%= image_tag "BackArrow1.svg" %> </span> <h3>Back to reviews index </h3>
+  <span><%= image_tag "BackArrow1.svg" %> </span> <h3>Back to <%= @film.title %> reviews </h3>
   <% end %>
 </div>
 
 <section class="review-content">
+<h3><%= @review.title %> </h3>
   <div class="">
-    <p> Written by <span><%= @review.created_at.strftime("%b %e, %Y")%></span>
+    <p> By
         <% if @review.user.avatar.present? %>
         <%= image_tag @review.user.avatar.thumbnail.url, :class => "avatar" %>
         <% end %>
         <u><%= link_to @review.user.username, user_path(@review.user) %></u></p>
+        <span><%= @review.created_at.strftime("%b %e, %Y")%></span>
   </div>
   <div class="review-body-content">
       <p class="review-body"><%= simple_format @review.body %></p>

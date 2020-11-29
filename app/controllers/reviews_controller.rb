@@ -4,10 +4,12 @@ class ReviewsController < ApplicationController
   before_action :set_review, only: [:show, :edit, :update, :destroy, :like]
 
 
-
   def index
       @film = Film.friendly.find(params[:film_id])
     @reviews = Review.all
+
+  render layout: "success"
+
   end
 
   def new
@@ -20,10 +22,15 @@ class ReviewsController < ApplicationController
     # this is the form for adding a new review
     @review = Review.new
 
+
+
   else
     @film = Film.friendly.find(params[:film_id])
     redirect_to new_session_path
   end
+
+    render layout: "success"
+
 end
 
 def create
@@ -38,6 +45,7 @@ def create
   if @review.save
 
   flash[:success] = "Your review has been published!"
+
     # go back to our film show path
     redirect_to film_reviews_path(@film)
 
@@ -50,8 +58,8 @@ def show
   @film = Film.friendly.find(params[:film_id])
   @review = Review.friendly.find(params[:id])
 
-
     cookies[:original_referrer] = request.original_url
+    render layout: "success"
 end
 
 

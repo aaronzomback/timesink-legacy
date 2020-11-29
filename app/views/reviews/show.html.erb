@@ -2,7 +2,7 @@
 
 <div class="back-to-films">
   <%= link_to film_reviews_path(@film) do %>
-  <span><%= image_tag "BackArrow1.svg" %> </span> <h3>Back to reviews index </h3>
+  <span><%= image_tag "BackArrow1.svg" %> </span> <h3>Back to <%= @film.title %> reviews </h3>
   <% end %>
 </div>
 
@@ -20,8 +20,10 @@
 
   <div>
   <%= link_to like_review_path(@review), class: "upvoted {liked_or_not}", method: :put, remote: :true do %>
- <%= image_tag "Polygon2.svg" %>
+  <span class="like-image-count">
+ <%= image_tag "Polygon2.svg", :class => "upvote-shape" %>
    <% end %>
+   </span>
    <span class="like_count">
      <%= @review.get_likes.size %>
    </span>

@@ -1,35 +1,16 @@
-div.review-index-like {
-  width: 40px;
-  display: inline-block;
-}
 
-.coffee-cafe img {
-  display: inline-block;
-  width: 20%;
-}
-
-h2.film-cafe {
-  font-family: "SangBlue";
-  margin-left: 80px;
-}
-
-.cafe-banner-title {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-column-gap: 280px;
-  align-items: center;
-}
 
 .write-review-button {
   margin-top: 24px;
   display: inline-block;
   width: 180px;
-  background-color: #0f1011;
+  background-color: #020b17;
   border: 1px solid rgba(122, 168, 255, 0.85);
   color: rgba(122, 168, 255, 0.85);
   padding: 10px 20px;
   text-align: center;
   cursor: pointer;
+  margin-left: 80%;
   margin-bottom: 24px;
 }
 
@@ -92,11 +73,4 @@ h3 .review-title  {
 
 p.review-comment-count {
   font-size: 14px;
-}
-
-.posted {
-  span {
-    vertical-align: middle;
-    align-items: center;
-  }
 }

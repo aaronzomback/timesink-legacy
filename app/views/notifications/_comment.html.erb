@@ -1,31 +1,31 @@
 <div class="notification-box">
 
-  <div class=''>
-    <% if notification.user.avatar.present? %>
-      <span class="avatar-notification"><%= image_tag notification.actor.avatar.thumbnail.url, :class => "avatar" %></span>
-    <% end %>
-    <%= link_to notification.actor.username, main_app.user_path(notification.actor) %> responded
-    <% if notification.target %>
-      <% if notification.target.body.present?
-           obj = get_commentable_obj(notification.target)
-      %>
-        <% if obj.is_a?(BlogPost) %>
-          <span class="comment-notification"><i></i></span>
-          <span class="comment-notification"><i><%= link_to notification.target.body, "/blog/#{obj.title.downcase.parameterize}" %> </i> </span>
-          to your comment
-          <br><span>Blog : <%= obj.title %></span>
-        <% elsif obj.is_a?(Review) %>
-          <span class="comment-notification"><i><%= link_to notification.target.body, "/films/#{obj.film.title.downcase.parameterize}/cafe/#{obj.title.downcase.parameterize}" %> </i></span>
-          to your comment
-          <br><span>Review : <%= obj.title %></span>
-        <% end %>
-      <% else %>
-        <% nil %>
-      <% end %>
+<div class=''>
+  <% if notification.user.avatar.present? %>
+  <span class="avatar-notification"><%= image_tag notification.actor.avatar.thumbnail.url, :class => "avatar" %></span>
+  <% end %>
+  <%= link_to notification.actor.username, main_app.user_path(notification.actor) %> responded
+<% if notification.target %>
+  <% if notification.target.body.present?
+   obj = get_commentable_obj(notification.target)
+  %>
+
+  <% if obj.is_a?(BlogPost) %>
+to your comment in <span>blog article <%= obj.title %></span>
+  <span class="comment-notification"><i><%= link_to notification.target.body, "/blog/#{obj.title.downcase.parameterize}" %></i></span>
+  <% elsif obj.is_a?(Review) %>
+    to your comment in <span> review <%= obj.title %></span>
+        <span><i><%= link_to notification.target.body, "/films/#{obj.film.title.downcase.parameterize}/cafe/#{obj.title.downcase.parameterize}" %> </i></span>
+  <% end %>
+
     <% else %>
       <% nil %>
     <% end %>
-  </div>
+  <% else %>
+    <% nil %>
+  <% end %>
+
+</div>
 
 
 </div>

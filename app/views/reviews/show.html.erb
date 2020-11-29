@@ -20,7 +20,7 @@
 
   <div>
   <%= link_to like_review_path(@review), class: "upvoted {liked_or_not}", method: :put, remote: :true do %>
- <%= image_tag "Polygon2.svg" %>
+ <%= image_tag "Polygon2.svg", :class => "upvote-shape" %>
    <% end %>
    <span class="like_count">
      <%= @review.get_likes.size %>

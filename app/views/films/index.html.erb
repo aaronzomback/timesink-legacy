@@ -30,7 +30,7 @@
 
     <div>
     <%= link_to like_film_path(film.id), class: "upvoted {liked_or_not}", method: :put, remote: :true do %>
-   <%= image_tag "Polygon2.svg" %>
+   <%= image_tag "Polygon2.svg", :class => "upvote-shape" %>
      <% end %>
      <span id="js-<%= film.id %>">
        <%= film.get_likes.size %>

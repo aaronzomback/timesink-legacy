@@ -8,6 +8,8 @@ class ReviewsController < ApplicationController
   def index
       @film = Film.friendly.find(params[:film_id])
     @reviews = Review.all
+
+    render layout: "success"
   end
 
   def new
@@ -24,6 +26,8 @@ class ReviewsController < ApplicationController
     @film = Film.friendly.find(params[:film_id])
     redirect_to new_session_path
   end
+
+    render layout: "success"
 end
 
 def create
@@ -50,7 +54,7 @@ def show
   @film = Film.friendly.find(params[:film_id])
   @review = Review.friendly.find(params[:id])
 
-
+    render layout: "success"
     cookies[:original_referrer] = request.original_url
 end
 

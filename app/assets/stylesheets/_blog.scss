@@ -42,7 +42,9 @@ div.back-to-blog-index {
 
 // Blog Posts as they appear in index
 
-ul {
+div.blog-post-index {
+
+ ul {
 
   display: grid;
   margin-top: 64px;
@@ -124,6 +126,7 @@ div.blog-post-cover-wrapper {
     }
   }
 }
+ }
 
 
 //

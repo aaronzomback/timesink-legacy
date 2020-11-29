@@ -8,4 +8,10 @@ module ApplicationHelper
    end
 end
 ## ...
+  def get_commentable_obj(obj)
+    loop do
+      obj = obj.commentable
+      break obj if obj.is_a?(BlogPost)  || obj.is_a?(Review)
+    end
+  end
 end

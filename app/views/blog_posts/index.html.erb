@@ -11,6 +11,8 @@
 </section>
 
   <% @blog_posts.order("created_at desc").each do |blog_post| %>
+  <div class="blog-post-index">
+
 <ul>
     <%= link_to blog_post_path(blog_post) do %>
   <li>
@@ -39,6 +41,7 @@
 
   <% end %>
 </ul>
+  </div>
   <% end %>
 
   </section>

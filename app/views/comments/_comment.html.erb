@@ -5,12 +5,12 @@
 
 <% if comment.user.avatar.present? %>
 
-  <span><%= image_tag comment.user.avatar.thumbnail.url, class: "avatar" %> </span>
+  <span class="comment-avatar"><%= image_tag comment.user.avatar.thumbnail.url, class: "avatar" %> </span>
 
   <% end %>
 
     <%= link_to user_path(comment.user) do %>
-    <strong><%= comment.user.username %></strong>
+    <span><strong><%= comment.user.username %></strong></span>
     <% end %>
     <p> <%= auto_link(simple_format(comment.body), html: { target: '_blank' }) %></p>
 

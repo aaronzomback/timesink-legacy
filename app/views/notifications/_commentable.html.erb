@@ -11,14 +11,20 @@
 </div>
 
   <% if notification.target %>
-    <% if notification.target.body.present? %>
-      <span><%= notification.target.body %> </span>
-
+    <% if notification.target.body.present?
+         obj = get_commentable_obj(notification.target)
+    %>
+      <% if obj.is_a?(BlogPost) %>
+        <span ><i><%= link_to notification.target.body, "/blog/#{obj.title.downcase.parameterize}" %> </i> </span>
+        <br><span>Blog : <%= obj.title %></span>
+      <% elsif obj.is_a?(Review) %>
+        <span><i><%= link_to notification.target.body, "/films/#{obj.film.title.downcase.parameterize}/cafe/#{obj.title.downcase.parameterize}" %> </i></span>
+        <br><span>Review : <%= obj.title %></span>
+      <% end %>
     <% else %>
       <% nil %>
     <% end %>
   <% else %>
     <% nil %>
   <% end %>
-
 </div>

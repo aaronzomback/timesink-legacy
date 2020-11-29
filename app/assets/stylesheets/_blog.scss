@@ -42,9 +42,7 @@ div.back-to-blog-index {
 
 // Blog Posts as they appear in index
 
-div.blog-post-index {
-
- ul {
+ul {
 
   display: grid;
   margin-top: 64px;
@@ -126,7 +124,6 @@ div.blog-post-cover-wrapper {
     }
   }
 }
- }
 
 
 //
@@ -141,10 +138,10 @@ section.blog-body {
 
   width: 100%;
   margin-left: auto;
-  margin-right: auto;
+  margin-right: auto
 
- h2 {
-    font-family: "SangBlue";
+  h2 {
+    font-family: "SangBleuEmpire-Regular-WebTrial";
     width: 600px;
   }
 

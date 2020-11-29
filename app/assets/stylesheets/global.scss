@@ -124,10 +124,6 @@ body {
   width: 10%;
 }
 
-.upvote-shape {
-  vertical-align: middle;
-}
-
 @import "films";
 
 @import "reviews";
@@ -189,7 +185,7 @@ section.info {
     line-height: 1.75;
 
     li {
-      font-family: "SangBlue";
+      font-family: "SangBleu";
     }
 }
 
@@ -198,7 +194,7 @@ section.review-guidelines {
     width: 600px;
 
     h2 {
-      font-family: "SangBlue";
+      font-family: "SangBleu";
       margin-bottom: 16px;
     }
 }

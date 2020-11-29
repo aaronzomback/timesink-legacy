@@ -5,27 +5,14 @@
   <% end %>
 </div>
 
-<div class="cafe-banner-title">
 
-
-<span>
-<h2 class="film-cafe"><%= @film.title %> café </h2>
- <%= image_tag "coffee.svg", :class => "coffee-cafe" %>
-</span>
-
-
-
-<span>
 <%= link_to new_film_review_path(@film) do %>
 <div class="write-review-button">
   Write a review
 </div>
 <% end %>
-</span>
 
-</div>
-
-<% @film.reviews.order(cached_votes_up: :desc).each do |review| %>
+<% @film.reviews.order("created_at desc").each do |review| %>
 
 
   <div class="review">
@@ -45,22 +32,19 @@
 
 
       <p class="posted">
-
-          <span>By</span>
+        <small>Published by
           <% if review.user.avatar.thumbnail.url.present? %>
-        <span> <%= image_tag review.user.avatar.thumbnail.url, :class => "avatar" %> </span>
+        <span>  <%= image_tag review.user.avatar.thumbnail.url, :class => "avatar" %></span>
         <% end %>
-        <span><%= link_to review.user.username, user_path(review.user) %> <%= time_ago_in_words(review.created_at) %> ago </span>
+        <%= link_to review.user.username, user_path(review.user) %> <%= time_ago_in_words(review.created_at) %> ago</small>
           </p>
 
     </div>
 
-    <div class="review-index-like">
+    <div>
     <%= link_to like_review_path(review), class: "upvoted {liked_or_not}", method: :put, remote: :true do %>
-    <span class="like-image-tag">
-   <%= image_tag "Polygon2.svg", :class => "upvote-shape" %>
+   <%= image_tag "Polygon2.svg" %>
      <% end %>
-     </span>
      <span id="js3-<%= review.id %>">
        <%= review.get_likes.size %>
      </span>

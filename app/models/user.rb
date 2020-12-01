@@ -4,9 +4,8 @@ class User < ApplicationRecord
   attr_writer :current_step
   attr_writer :avatar_cache
 
-
-    extend FriendlyId
-    friendly_id :username, use: :slugged
+  extend FriendlyId
+  friendly_id :username, use: :slugged
 
   validates_presence_of :name, :if => lambda { |u| u.current_step == "name" }
   validates_presence_of :username, :if => lambda { |u| u.current_step == "username" }
@@ -19,7 +18,7 @@ class User < ApplicationRecord
 
   has_many :reviews, dependent: :destroy
   has_many :comments, dependent: :destroy
-  has_many :submissions
+  has_many :submissions, dependent: :destroy
 
   validates :name, presence: true
   validates :username, presence: true, uniqueness: true

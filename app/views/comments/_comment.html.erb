@@ -5,7 +5,7 @@
 
 <% if comment.user.avatar.present? %>
 
-  <span><%= image_tag comment.user.avatar.thumbnail.url, class: "avatar" %> </span>
+  <span><%= image_tag comment.user.avatar.small.url, class: "avatar" %> </span>
 
   <% end %>
 

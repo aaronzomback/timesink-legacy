@@ -90,7 +90,7 @@ class UsersController < ApplicationController
 end
 
   def show
-    @user = User.friendly.find(params[:id])
+     @user = User.friendly.find(params[:id]) rescue User.find_by_username(params[:id])
     render :layout => 'application'
   end
 

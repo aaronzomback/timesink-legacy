@@ -46,7 +46,16 @@
 
     <% if is_logged_in? %>
 
-    <span class="welcome">Bienvenue <%= @current_user.username %>!</span>
+    <% if @current_user.avatar.present? %>
+
+    <%= image_tag @current_user.avatar.small.url, :class => "avatar" %>
+
+    <% else %>
+
+ <span class="welcome">Bienvenue <%= @current_user.username %>!</span>
+
+ <% end %>
+
   <%= link_to "Log out", main_app.session_path, method: :delete %>
 
   <%= link_to "Edit profile", main_app.edit_account_path %>

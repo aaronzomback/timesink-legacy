@@ -7,14 +7,21 @@
 </div>
 
 <section class="review-content">
-<h3><%= @review.title %> </h3>
-  <div class="">
-    <p> By
+<h3 class="review-title"><%= @review.title %> </h3>
+  <div class="review-user">
+    <span class="review-avatar">
         <% if @review.user.avatar.present? %>
         <%= image_tag @review.user.avatar.thumbnail.url, :class => "avatar" %>
         <% end %>
-        <u><%= link_to @review.user.username, user_path(@review.user) %></u></p>
-        <span><%= @review.created_at.strftime("%b %e, %Y")%></span>
+        </span>
+        <span class="review-user-info">
+            <div>
+          By <%= link_to @review.user.username, user_path(@review.user) %>
+          </div>
+          <div>
+          <%= @review.created_at.strftime("%b %e, %Y")%>
+          </div>
+        </span>
   </div>
   <div class="review-body-content">
       <p class="review-body"><%= simple_format @review.body %></p>

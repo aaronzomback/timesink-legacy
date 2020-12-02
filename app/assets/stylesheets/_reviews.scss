@@ -1,3 +1,20 @@
+div.review-body-content {
+  margin-top: 32px;
+}
+
+h3.review-title {
+  margin-bottom: 16px;
+}
+
+div.review-user {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 195px;
+}
+
+span.review-user-info {
+  margin-left: -40px;
+}
 
 span.film-title-cafe {
   width: 100%;

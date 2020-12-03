@@ -51,7 +51,9 @@ gem 'activeadmin'
 gem 'devise'
 
 # for film page views count
-gem 'impressionist'
+gem 'impressionist',
+  git: 'git@github.com:charlotte-ruby/impressionist.git',
+   ref: '46a582ff8cd3496da64f174b30b91f9d97e86643'
 gem "punching_bag"
 
 # store file upload avatar in sessions

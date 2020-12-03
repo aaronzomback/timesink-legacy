@@ -24,7 +24,7 @@ class FilmsController < ApplicationController
   def show
     @film = Film.friendly.find(params[:id])
     @review = Review.find_by_id(params[:review_id])
-    @film.punch(request)
+    impressionist(@film)
 
 
   end

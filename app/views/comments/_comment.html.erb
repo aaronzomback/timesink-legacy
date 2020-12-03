@@ -3,16 +3,20 @@
 
 <%= content_tag :div, id: dom_id(comment), class: 'comment' do %>
 
-<% if comment.user.avatar.present? %>
 
+<div class="user-comment-grid">
 
-  <span class="comment-avatar"><%= image_tag comment.user.avatar.small.url, class: "avatar" %> </span>
+    <% if comment.user.avatar.present? %>
+      <span class="comment-avatar"><%= image_tag comment.user.avatar.small.url, class: "avatar" %> </span>
+      <% end %>
 
-  <% end %>
-
-    <%= link_to user_path(comment.user) do %>
-    <strong><%= comment.user.username %></strong>
-    <% end %>
+      <div class="user-comment-info">
+        <%= link_to user_path(comment.user) do %>
+        <%= comment.user.username %>
+        <% end %>
+        &#8226 <small><span><%= time_ago_in_words(comment.created_at) %> ago </span></small>
+      </div>
+  </div>
 
     <p> <%= auto_link(simple_format(comment.body), html: { target: '_blank' }) %> </p>
 

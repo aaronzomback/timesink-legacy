@@ -17,7 +17,7 @@
      <h6>By <%= @blog_post.author %></h6>
      <h6> Published: <%= @blog_post.publish_date %> </h6>
    </div>
-   <div class="blog-body-p">
+   <div class="blog-body-p" id="CMSContent">
          <p> <%= sanitize simple_format(@blog_post.body) %> </p>
    </div>
  </section>
@@ -47,3 +47,24 @@
  </div>
 
 </div>
+
+<script>
+//loop through all anchor tags that are within the element containing the CMS post
+$('a', $('#CMSContent')).each(function () {
+var link = this;
+var url = $(link).attr('href');
+var tweetId = url.substring(url.lastIndexOf("/") + 1);
+//see if the href fits the criteria of being a tweet url
+if (url.indexOf('https://twitter.com') === 0 && url.indexOf('status') > 0 && !isNaN(tweetId)) {
+   $.ajax({
+       url: 'https://api.twitter.com/1/statuses/oembed.json?id=' + tweetId,
+       crossDomain: true,
+       dataType: 'jsonp'
+   })
+   .done(function (data) {
+       //insert tweet embed html (data.html) & remove original link.
+       $(link).after(data.html).remove();
+   });
+};
+});
+</script>

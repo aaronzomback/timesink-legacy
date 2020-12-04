@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_04_114619) do
+ActiveRecord::Schema.define(version: 2020_12_04_234723) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string "namespace"
@@ -273,7 +273,7 @@ ActiveRecord::Schema.define(version: 2020_12_04_114619) do
     t.datetime "updated_at", precision: 6, null: false
     t.string "stripe_token"
     t.string "accepted"
-    t.string "status", default: "in-progress"
+    t.string "status", default: "Received"
     t.string "stripe_payment_id"
     t.index ["user_id"], name: "index_submissions_on_user_id"
   end

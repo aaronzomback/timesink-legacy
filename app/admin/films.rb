@@ -5,7 +5,7 @@ ActiveAdmin.register Film do
   #
   # Uncomment all parameters which should be permitted for assignment
   #
-   permit_params :title, :author, :cover, :description, :year, :is_top_pick, :slug, :video, :description_body, :cached_votes_total, :cached_votes_score, :cached_votes_up, :cached_votes_down, :cached_weighted_score, :cached_weighted_total, :cached_weighted_average, :trailer
+   permit_params :title, :author, :cover, :description, :year, :is_top_pick, :artist_website, :slug, :video, :description_body, :cached_votes_total, :cached_votes_score, :cached_votes_up, :cached_votes_down, :cached_weighted_score, :cached_weighted_total, :cached_weighted_average, :trailer
 
 
   index do
@@ -28,6 +28,8 @@ ActiveAdmin.register Film do
        f.input :title
        f.input :author
        f.input :year
+       f.input :artist_website
+       f.input :slug
      end
      f.inputs 'Duration, Year' do
        f.input :description

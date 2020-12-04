@@ -55,9 +55,9 @@
     <div class="preview-button" onclick="toggleTrailer();">
       Trailer
     </div>
-    <%= link_to film_reviews_path(@film) do %>
+    <%= link_to @film.artist_website do %>
     <div class="cafe-talk-button">
-      Artist website
+      View artist
     </div>
     <% end %>
 

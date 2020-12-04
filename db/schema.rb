@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_24_202818) do
+ActiveRecord::Schema.define(version: 2020_12_04_114619) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string "namespace"
@@ -57,6 +57,11 @@ ActiveRecord::Schema.define(version: 2020_11_24_202818) do
   end
 
   create_table "carts", force: :cascade do |t|
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "comment_notifiers", force: :cascade do |t|
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -108,6 +113,7 @@ ActiveRecord::Schema.define(version: 2020_11_24_202818) do
     t.integer "cached_weighted_total", default: 0
     t.float "cached_weighted_average", default: 0.0
     t.string "trailer"
+    t.string "artist_website"
     t.index ["slug"], name: "index_films_on_slug", unique: true
   end
 

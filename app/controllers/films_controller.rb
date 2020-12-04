@@ -60,7 +60,7 @@ end
 
 
   def form_params
-    params.require(:Film).permit(:title, :author, :cover, :video, :trailer, :description, :description_body, :year, :is_top_pick)
+    params.require(:Film).permit(:title, :author, :cover, :video, :trailer, :description, :description_body, :year, :is_top_pick, :artist_website)
   end
 
 end

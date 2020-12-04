@@ -1,5 +1,4 @@
 
-
 <section class="user-profile">
   <h2>User profile</h2>
 
@@ -10,5 +9,11 @@
   <p><%= @user.location %></p>
   <p><%= @user.name %></p>
   <p><%= @user.email %></p>
+
+<% if @user.submissions.present? %>
+  <%= @user.submissions.each do |submission| %>
+  <%= submission.film_length %>
+  <% end %>
+<% end %>
 
 </section>

@@ -136,33 +136,48 @@ div.back-to-blog-index {
 
 section.blog-body {
 
-  width: 100%;
-  margin-left: auto;
-  margin-right: auto;
+  width: 1400px;
+  margin-left: 12em;
 
-  h2 {
-    font-family: "SangBleuEmpire-Regular-WebTrial";
-    width: 600px;
+img {
+  width: 40%;
+}
+
+.blog-body-content {
+  margin-top: 56px;
+
+  .ql-indent-2 {
+    width: 800px;
   }
 
-.blog-body-p {
-  margin-top: 56px;
+  h1 {
+    margin-bottom: 40px;
+  }
+
+  h1 {
+    font-family: "SangBleuEmpire-Regular-WebTrial";
+    width: 800px;
+  }
 }
 
   p {
-    line-height: 1.6;
+    line-height: 1.6em;
     font-family: "Spectral-Light";
     width: 60%;
-    margin-left: auto;
-    margin-right: auto;
-    font-size: 21px;
+    font-size: 24px;
     text-align: left;
+    margin-bottom: 40px;
   }
 }
 
 .blog-author-date {
+
+  h1 {
+    margin-bottom: 16px;
+    font-family: "SangBlue";
+  }
+
   margin-top: 16px;
-  margin-left: 12.5em;
   margin-bottom: 32px;
   font-family: "Spectral-Light";
 

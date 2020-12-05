@@ -1,0 +1,21 @@
+
+<section>
+
+<% if @current_user.submissions.present? %>
+  <% @current_user.submissions.order(created_at: :desc).each do |submission| %>
+  <p>Film title: <%= submission.title %></p>
+  <p>Submission status: <%= submission.status %></p>
+  <p>Date submitted: <%= submission.created_at.strftime("%b %e, %Y") %></p>
+
+    <% end %>
+
+  <% else %>
+
+<h4>You don't have any active submissions...</h4>
+
+
+
+<% end %>
+
+
+</section>

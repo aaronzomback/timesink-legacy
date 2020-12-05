@@ -18,6 +18,8 @@ Rails.application.routes.draw do
   resources :password_resets
 
 
+  resources :user_submissions, :only => [:index, :show]
+
 
   # film submissions
   resources :submissions

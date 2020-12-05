@@ -60,6 +60,8 @@
 
   <%= link_to "Edit profile", main_app.edit_account_path %>
 
+  <%= link_to "My submissions", main_app.user_submissions_path(@current_user) %>
+
   <%= link_to pluralize(Notification.unread_count(@current_user), 'Notification'), main_app.notifications_path %>
 
   <button class="button button3">

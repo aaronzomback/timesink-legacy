@@ -27,10 +27,14 @@
       <p class="review-body"><%= simple_format @review.body %></p>
   </div>
 
-  <div>
+  <div class="flex-like-review">
+
+    <span class="like-action">
   <%= link_to like_review_path(@review), class: "upvoted {liked_or_not}", method: :put, remote: :true do %>
  <%= image_tag "Polygon2.svg", :class => "upvote-shape" %>
    <% end %>
+   </span>
+
    <span class="like_count">
      <%= @review.get_likes.size %>
    </span>
@@ -39,6 +43,8 @@
 
 
 </section>
+
+<hr>
 
 
 

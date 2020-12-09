@@ -3,6 +3,7 @@
 
 <%= content_tag :div, id: dom_id(comment), class: 'comment' do %>
 
+<section class="comment-instance">
 
 <div class="user-comment-grid">
 
@@ -48,3 +49,5 @@
   <%= render 'comments/form', commentable: comment, comment: Comment.new %>
   <%= render comment.comments.order("created_at desc")  %>
 <% end %>
+
+  </section>

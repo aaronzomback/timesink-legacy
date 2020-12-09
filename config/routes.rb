@@ -30,7 +30,7 @@ Rails.application.routes.draw do
 
   # films controller
   resources :films, :path => "films" do
-    resources :reviews, :path => "cafe"
+    resources :reviews, only: [:index, :create, :new, :show, :edit, :update, :destroy], :path => "cafe"
     end
 
     resources :reviews do

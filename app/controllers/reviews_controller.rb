@@ -5,14 +5,9 @@ class ReviewsController < ApplicationController
 
 
 
-  def index
-      @film = Film.friendly.find(params[:film_id])
-    @reviews = Review.all
-
-    render layout: "success"
-  end
 
   def new
+
 
       cookies[:original_referrer] = request.original_url
 
@@ -26,8 +21,6 @@ class ReviewsController < ApplicationController
     @film = Film.friendly.find(params[:film_id])
     redirect_to new_session_path
   end
-
-    render layout: "success"
 end
 
 def create
@@ -43,7 +36,7 @@ def create
 
   flash[:success] = "Your review has been published!"
     # go back to our film show path
-    redirect_to film_reviews_path(@film)
+    redirect_to film_path(@film)
 
   else
     render "new"

@@ -1,8 +1,8 @@
 
 
 <div class="back-to-films">
-  <%= link_to film_reviews_path(@film) do %>
-  <span><%= image_tag "BackArrow1.svg" %> </span> <h3>Back to <%= @film.title %> reviews </h3>
+  <%= link_to "#{film_path(@film)}#cafe" do %>
+  <span><%= image_tag "BackArrow1.svg" %> </span> <h3>Back to <%= @film.title %> café </h3>
   <% end %>
 </div>
 

@@ -89,11 +89,14 @@ div.back-to-films{
 div.film-gallery-grid {
   // border: 1px solid white;
   display: grid;
-  grid-column-gap: 0px;
+  grid-gap: 24px;
   grid-template-columns: 1fr 1fr 1fr;
   font-family: 'MonumentGroteskTrial-Mono';
-  width: 800px;
-  margin-left: 4em;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  align-items: center;
+  justify-items: center;
 
 
     div.film-item {

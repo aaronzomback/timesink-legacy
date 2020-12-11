@@ -70,8 +70,7 @@ html, body {
   height: 100%;
 }
 body {
-  display: flex;
-  flex-direction: column;
+
 }
 .content {
   flex: 1 0 auto;
@@ -112,7 +111,6 @@ body {
   font-family: 'Spectral';
   background-color: #0f1011;
   color: #F5F7F9;
-  position: relative;
   margin-left: 80px;
   margin-right: 80px;
 }

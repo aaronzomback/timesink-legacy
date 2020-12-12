@@ -1,6 +1,8 @@
 <%= render "shared/ticker" %>
 
-<main data-barba="container">
+<main data-barba="wrapper">
+
+<div data-barber="container">
 
 
 
@@ -21,7 +23,7 @@
     </div>
     <div class="blog-description">
       <h5><%= blog_post.title %></h5>
-        <p class="blog-descriptor"> <%= raw blog_post.description.html_safe... %></p>
+        <p class="blog-descriptor"> <%= raw blog_post.description.html_safe %></p>
         <div class="eyeglass">
           <%= image_tag "eyeglass.svg", :class => "eyeglass" %> <span class="read">Read article</span>
         </div> <br>
@@ -43,6 +45,7 @@
   <% end %>
   </div>
 
+</div>
   </main>
 
 

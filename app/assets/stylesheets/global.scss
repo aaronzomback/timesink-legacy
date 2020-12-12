@@ -70,7 +70,7 @@ html, body {
   height: 100%;
 }
 body {
-
+position: relative;
 }
 .content {
   flex: 1 0 auto;
@@ -247,12 +247,14 @@ a {
  display: block;
 }
 
+div.sign-in-timesink-logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
 .prime-logo2 {
- width: 15%;
- position: fixed;
- left: 50%;
- top: 20%;
- transform: translateX(-78%);
 }
 
 header {

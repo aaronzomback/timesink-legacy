@@ -9,3 +9,6 @@ require("@rails/activestorage").start()
 require("channels")
 require('jquery')
 require("video.js")
+
+import barba from '@barba/core';
+import barbaCss from '@barba/css';

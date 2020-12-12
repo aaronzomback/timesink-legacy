@@ -1,4 +1,4 @@
-<%# <%= render "shared/ticker" %> 
+<%# <%= render "shared/ticker" %>
 
 <div class="blog-root">
 
@@ -22,6 +22,8 @@
          <p> <%= sanitize simple_format(@blog_post.body) %> </p>
    </div>
  </section>
+
+ <hr>
 
 <% if is_logged_in? %>
 

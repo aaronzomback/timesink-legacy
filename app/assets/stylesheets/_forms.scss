@@ -104,12 +104,25 @@ input, textarea {
 
 }
 
+
+// on 'sign-in' layout view
+.sign-in-timesink-logo {
+  h1 {
+    font-family: "SangBlue";
+    font-size: 72px;
+    font-weight: 400;
+  }
+}
+
+div.log-in-form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .log-in {
   width: 400px;
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -75%);
+
 }
 
 

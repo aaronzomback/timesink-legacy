@@ -18,7 +18,7 @@ Rails.application.routes.draw do
   resources :password_resets
 
 
-  resources :user_submissions, :only => [:index, :show]
+  resources :user_submissions, :only => [:index, :show], :path => "user-submissions"
 
 
   # film submissions
@@ -88,10 +88,10 @@ end
   get "info", to: "pages#info"
   get "donate", to: "pages#donate"
   get "terms", to: "pages#terms"
-  get "privacy_policy", to: "pages#privacy_policy"
-  get "cookies_policy", to: "pages#cookies_policy"
+  get "privacy_policy", to: "pages#privacy-policy"
+  get "cookies_policy", to: "pages#cookies-policy"
   get "submit", to: "pages#submit"
-  get "donation_success", to: "pages#donation_success"
+  get "donation_success", to: "pages#donation-success"
   get "submission_success", to: "pages#submission_success"
 
   root "films#index"

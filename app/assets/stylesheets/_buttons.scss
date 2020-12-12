@@ -142,10 +142,11 @@ input[type=submit].skip-button {
 }
 
 .sign-in-button {
+  display: flex;
+  justify-content: center;
   border-radius: 25px;
-  position: fixed;
-  left: 50%;
-  transform: translate(-74%);
+  text-align: center;
+  align-items: center;
 
   a {
     font-family: "MonumentGroteskTrial-Regular";

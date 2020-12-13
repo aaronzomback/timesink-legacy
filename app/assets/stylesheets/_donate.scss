@@ -19,3 +19,39 @@ p.or-btc {
   margin-top: 16px;
   color: rgba(122, 168, 255, 0.85);
 }
+
+div.donation-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-column-gap: 96px;
+  margin: 0 auto;
+  width: 800px;
+}
+
+.donation-description {
+  width: 400px;
+}
+
+.donation-proceed {
+  margin-bottom: 32px;
+  color: white;
+}
+
+form.btcpay-form_btcpay-form--block {
+  width: 30%;
+}
+
+div.btcpay-custom-container {
+
+}
+
+
+ input[type='range'] {
+   width: 10px;
+      -webkit-appearance: none;
+      height: 10px;
+      cursor: ew-resize;
+      background-color: #434343;
+      color: blue;
+
+    }

@@ -108,9 +108,10 @@ input, textarea {
 // on 'sign-in' layout view
 .sign-in-timesink-logo {
   h1 {
-    font-family: "SangBlue";
+    font-family: "SangBleuEmpire";
     font-size: 72px;
     font-weight: 400;
+    margin-bottom: 32px;
   }
 }
 
@@ -118,10 +119,11 @@ div.log-in-form {
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
 }
 
 .log-in {
-  width: 400px;
+  width: 100%;
 
 }
 
@@ -145,10 +147,6 @@ div.log-in-form {
 div.new-account {
   text-align: center;
   width: 100%;
-  position: fixed;
-  transform: translate(-62%);
-  left: 50%;
-  top: 135%;
   margin-top: 16px;
   color: rgba(122, 168, 255, 0.85);
 
@@ -163,6 +161,33 @@ div.new-account {
     margin-top: 16px;
   }
 }
+
+label.email.required.original {
+  margin-left: 0;
+}
+
+label.password.required.original {
+    margin-left: 0;
+}
+
+input#session_password.password.required {
+  margin-bottom: 2px;
+}
+
+input.btn.sign-in-button {
+  margin-left: 0;
+  margin-top: 0;
+}
+
+div.forgot-password {
+  font-size: 14px;
+  margin-top: 0px;
+  text-align: center;
+  margin-bottom: 24px;
+  display: flex;
+  justify-content: flex-end;
+}
+
 
 
 

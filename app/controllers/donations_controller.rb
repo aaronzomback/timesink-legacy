@@ -9,6 +9,8 @@ class DonationsController < ApplicationController
   def new
     @donation = Donation.new
 
+      # render :layout => 'success'
+
   end
 
   def create

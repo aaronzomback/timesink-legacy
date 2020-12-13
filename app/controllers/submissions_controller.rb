@@ -19,6 +19,8 @@ class SubmissionsController < ApplicationController
     redirect_to new_session_path
 
   end
+
+   render :layout => 'success'
 end
 
 def create

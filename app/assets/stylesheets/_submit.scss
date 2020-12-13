@@ -1,3 +1,26 @@
+
+div.submission-form {
+  display: flex;
+  justify-content: center;
+}
+
+div.submission-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 124px;
+  margin-bottom: 24px;
+
+  h2 {
+    margin-bottom: 8px;
+    margin-top: 0px;
+  }
+
+  p {
+    width: 600px;
+    font-size: 16px;
+  }
+}
+
 ul.submit {
 
   display: grid;
@@ -42,11 +65,6 @@ ul.submit {
 
     }
 
-  .submit-img {
-    width: 65%;
-    border-radius: 100px;
-  }
-
 }
 
 .select-year {
@@ -60,9 +78,6 @@ ul.submit {
 }
 
 
-p.donation-proceed {
-  color: rgba(122, 168, 255, 0.85);
-}
 
 .StripeElement {
   box-shadow: 0px 4px 34px rgba(0, 0, 0, 0.65), inset 0 1px 0 #222222;
@@ -101,4 +116,11 @@ p.donation-proceed {
   padding-left: 0;
   padding-right: 25px;
   text-align: right;
+}
+
+.submit-img {
+  width: 100%;
+  height: 50%;
+  border-radius: 2px;
+  display: block;
 }

@@ -91,7 +91,7 @@ end
   get "privacy_policy", to: "pages#privacy-policy"
   get "cookies_policy", to: "pages#cookies-policy"
   get "submit", to: "pages#submit"
-  get "donation_success", to: "pages#donation-success"
+  get "donation_success", to: "pages#donation_success"
   get "submission_success", to: "pages#submission_success"
 
   root "films#index"

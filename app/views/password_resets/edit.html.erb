@@ -1,4 +1,9 @@
-<h1>Reset Password</h1>
+
+<main class="reset-pw-submit">
+
+<section class="reset-pw-final">
+
+<h5>Create your new password...</h5>
 
 <%= form_for @user, :url => password_reset_path(params[:id]) do |f| %>
   <% if @user.errors.any? %>
@@ -14,11 +19,15 @@
 
   <div class='field'>
     <%= f.label :password %>
-    <%= f.password_field :password %>
+    <%= f.password_field :password, :placeholder => "Enter your new password" %>
   </div>
   <div class='field'>
     <%= f.label :password_confirmation %>
-    <%= f.password_field :password_confirmation %>
+    <%= f.password_field :password_confirmation, :placeholder => "Confirm your new password" %>
   </div>
-  <div class='actions'><%= f.submit 'Update password' %></div>
+  <div class='actions'><%= f.submit 'Update password', :class => "update" %></div>
 <% end %>
+
+</section>
+
+</main>

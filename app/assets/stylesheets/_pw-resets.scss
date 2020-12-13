@@ -56,3 +56,19 @@ main.reset-email-sent {
     font-family: "Spectral";
   }
 }
+
+input.update {
+  margin-left: 0;
+}
+
+main.reset-pw-submit {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  transform: translateY(6rem);
+
+  h5 {
+    font-family: "SangBlue";
+  }
+}

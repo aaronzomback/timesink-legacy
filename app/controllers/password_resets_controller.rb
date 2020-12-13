@@ -9,8 +9,8 @@ class PasswordResetsController < ApplicationController
   def create
     @user = User.find_by_email(params[:email])
     @user.send_password_reset if @user
-    flash[:success] = "E-mail sent with password reset instructions."
-    redirect_to new_blob_path
+    # flash[:success] = "E-mail sent with password reset instructions."
+    redirect_to reset_path
   end
 
   def edit

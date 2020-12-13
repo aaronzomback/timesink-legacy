@@ -1,0 +1,58 @@
+main.flex-pw-reset {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  transform: translateY(6rem);
+}
+
+div.Forgot-password-intro {
+
+  width: 800px;
+
+  h1 {
+    font-family: "SangBlue";
+    font-size: 40px;
+  }
+
+  h5 {
+    font-size: 24px;
+  }
+
+  p{
+    width: 560px;
+    margin-bottom: 40px;
+  }
+}
+
+
+input.reset {
+  margin-left: 0;
+}
+
+
+main.reset-email-sent {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: translateY(6rem);
+
+  h5 {
+    font-family: "SangBlue";
+    width: 480px;
+    font-weight: 400;
+  }
+
+  span {
+    font-family: "Spectral";
+    font-size: 14px;
+  }
+
+  p.reset {
+    width: 400px;
+    font-size: 16px;
+    border-bottom: 1px solid gray;
+    padding-bottom: 48px;
+    font-family: "Spectral";
+  }
+}

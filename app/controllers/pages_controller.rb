@@ -14,6 +14,10 @@ class PagesController < ApplicationController
     render :layout => 'success'
   end
 
+  def reset
+    render :layout => 'success'
+  end
+
   def terms
   end
 

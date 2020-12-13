@@ -93,6 +93,7 @@ end
   get "submit", to: "pages#submit"
   get "donation_success", to: "pages#donation_success"
   get "submission_success", to: "pages#submission_success"
+  get "reset", to: "pages#reset"
 
   root "films#index"
 

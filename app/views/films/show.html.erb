@@ -104,41 +104,44 @@
 
       <div class="review">
           <%= link_to film_review_path(@film, review) do %>
-        <p><%= review.title %> </p>
+        <h5><%= review.title %> </h5>
         <% end %>
 
     <div class="">
       <% if review.comments.present? %>
       <p class="review-comment-count"><%= pluralize review.comments.count, "Comment" %></p>
       <% else %>
-      <p class="review-comment-count">no comments yet</p>
+      <p class="review-comment-count">no comments yet...</p>
       <% end %>
     </div>
 
 
 
+<section class="review-index-flex">
 
+        <div>
           <p class="posted">
-
               <% if review.user.avatar.small.url.present? %>
             <span> <%= image_tag review.user.avatar.small.url, :class => "avatar" %> </span>
             <% end %>
             <span><%= link_to review.user.username, user_path(review.user) %> <%= time_ago_in_words(review.created_at) %> ago </span>
               </p>
-
         </div>
 
         <div class="review-index-like">
-        <%= link_to like_review_path(review), class: "upvoted {liked_or_not}", method: :put, remote: :true do %>
-        <span class="like-image-tag">
-       <%= image_tag "Polygon2.svg", :class => "upvote-shape" %>
-         <% end %>
-         </span>
-         <span id="js3-<%= review.id %>">
-           <%= review.get_likes.size %>
-         </span>
+              <%= link_to like_review_path(review), class: "upvoted {liked_or_not}", method: :put, remote: :true do %>
+              <span class="like-image-tag">
+             <%= image_tag "Polygon2.svg", :class => "upvote-shape" %>
+               <% end %>
+               </span>
+               <span id="js3-<%= review.id %>">
+                 <%= review.get_likes.size %>
+               </span>
+        </div>
 
-           </div>
+        </div>
+
+  </section>
 
           <% end %>
 

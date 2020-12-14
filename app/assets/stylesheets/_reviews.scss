@@ -1,3 +1,15 @@
+// film show page - reviews index
+
+section.review-index-flex {
+  display: flex;
+  justify-content: space-between;
+}
+
+div.review h5 {
+  font-family: "SangBlue";
+}
+
+
 div.review-body-content {
   margin-top: 32px;
 }

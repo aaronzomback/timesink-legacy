@@ -11,11 +11,4 @@
   <p><%= @user.email %></p>
 
 
-<% if @user.submissions.present? %>
-  <% @user.submissions.each do |submission| %>
-  <p>Film title: <%= submission.title %></p>
-  <p>Submission status: <%= submission.status %></p>
-  <% end %>
-<% end %>
-
 </section>

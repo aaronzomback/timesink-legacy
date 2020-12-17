@@ -9,19 +9,22 @@
   <% end %>
 </div>
 
+<div class="blog-flex">
 
 
  <section class="blog-body">
    <div class="blog-author-date">
      <h1><%= @blog_post.title %></h1>
-     <h6>By <%= @blog_post.author %></h6>
-     <h6> Published: <%= @blog_post.publish_date %> </h6>
+     <h4>By <%= @blog_post.author %></h4>
+     <h5> Published <%= @blog_post.publish_date %> </h5>
    </div>
    <%= image_tag @blog_post.cover.show.url %>
    <div class="blog-body-content" id="CMSContent">
          <p> <%= sanitize simple_format(@blog_post.body) %> </p>
    </div>
  </section>
+
+ </div>
 
  <hr>
 

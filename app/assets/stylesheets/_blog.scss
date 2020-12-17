@@ -1,4 +1,9 @@
+div.blog-flex {
 
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
 div.blog-root {
   margin-left: 80px;
   margin-right: 80px;
@@ -151,13 +156,14 @@ img {
     width: 800px;
   }
 
-  h1 {
+  h2 {
     margin-bottom: 40px;
   }
 
-  h1 {
+  h2 {
     font-family: "SangBleuEmpire-Regular-WebTrial";
     width: 800px;
+    font-size: 56px;
   }
 }
 
@@ -165,13 +171,31 @@ img {
     line-height: 1.6em;
     font-family: "Spectral-Light";
     width: 60%;
-    font-size: 24px;
+    font-size: 21px;
     text-align: left;
     margin-bottom: 40px;
   }
 }
 
 .blog-author-date {
+
+  // display: flex;
+  // justify-content: center;
+  // align-items: center;
+
+  h4, h5 {
+    margin-bottom: 4px;
+    margin-top: 0px;
+  }
+
+  h4 {
+    font-size: 24px;
+  }
+
+  h5 {
+    font-size: 16px;
+    text-transform: uppercase;
+  }
 
   h1 {
     margin-bottom: 16px;
@@ -185,6 +209,11 @@ img {
   img {
     display: block;
     margin-bottom: 40px;
+    // display: flex;
+    // align-items: stretch;
+    max-width: 100%;
+max-height: auto;
+margin: auto;
   }
 
 

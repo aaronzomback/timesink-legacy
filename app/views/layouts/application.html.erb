@@ -10,6 +10,8 @@
   <link href="https://vjs.zencdn.net/7.8.4/video-js.css" rel="stylesheet" />
   <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css">
+  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'barba' %>
       <%= javascript_pack_tag 'barba-css' %>
@@ -51,19 +53,28 @@
 
     <% if @current_user.avatar.present? %>
 
-    <%= image_tag @current_user.avatar.small.url, :class => "avatar" %>
+    <span class="dropdown">
+      <%= image_tag @current_user.avatar.small.url, :class => "avatar" %>
+      <i class="fa fa-chevron-down"></i>
+      <ul class="dropdown-menu">
+        <li>  <%= link_to "Edit profile", main_app.edit_account_path %></li>
+        <li>  <%= link_to "Submissions", main_app.user_submissions_path(@current_user) %> </li>
+        <li>  <%= link_to "Log out", main_app.session_path, method: :delete %> </li>
+      </ul>
+    </span>
 
     <% else %>
 
- <span class="welcome">Bienvenue <%= @current_user.username %>!</span>
+ <span class="welcome dropdown">
+   Bienvenue <%= @current_user.username %>!
+   <ul class="dropdown-menu">
+     <li>  <%= link_to "Edit profile", main_app.edit_account_path %></li>
+     <li>  <%= link_to "Submissions", main_app.user_submissions_path(@current_user) %> </li>
+     <li>  <%= link_to "Log out", main_app.session_path, method: :delete %> </li>
+   </ul>
+ </span>
 
  <% end %>
-
-  <%= link_to "Log out", main_app.session_path, method: :delete %>
-
-  <%= link_to "Edit profile", main_app.edit_account_path %>
-
-  <%= link_to "My submissions", main_app.user_submissions_path(@current_user) %>
 
   <%= link_to pluralize(Notification.unread_count(@current_user), 'Notification'), main_app.notifications_path %>
 
@@ -84,6 +95,7 @@
       <% end %>
 
           </nav>
+
     </header>
 
 
@@ -120,6 +132,47 @@ console.log('barba is loaded');
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/barba.js/1.0.0/barba.js" integrity="sha512-0yosWZUFVMH6VlnUbYeovf+9oNckohCXi7B/U5G2JPGLz5oXrmVmk2mT8QUox9c0rgpe6+2HK0e6ygMHARz3Wg==" crossorigin="anonymous">
 console.log('barba is loaded');
+</script>
+
+
+<script>
+  function DropDown(el) {
+    this.dd = el;
+    this.initEvents();
+}
+
+DropDown.prototype = {
+    initEvents: function () {
+        var obj = this;
+
+        // // Determine if dropdown is on hover or on click
+        //     $(".dropdown-hover").mouseenter(function (event) {
+        //         event.stopPropagation();
+        //         $(this).addClass("dropdown-active");
+        //     });
+        //     $(".dropdown-hover").mouseleave(function () {
+        //         $(".dropdown").removeClass("dropdown-active");
+        //     });
+
+            // Toggle .dropdown-active on click
+            obj.dd.on('click', function (event) {
+                event.stopPropagation();
+                $(this).toggleClass('dropdown-active');
+            });
+
+    }
+}
+
+$(function () {
+    var dd = new DropDown($('.dropdown'));
+
+    $(document).click(function () {
+
+        // Remove class from all dropdowns
+        $('.dropdown').removeClass('dropdown-active');
+    });
+});
+
 </script>
 
 </body>

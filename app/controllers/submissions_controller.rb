@@ -16,7 +16,7 @@ class SubmissionsController < ApplicationController
 
   else
 
-    flash[:error] = "You must be signed in to submit a film!"
+    flash[:error] = "Ah! You must have an account and be signed in to submit a film!"
     redirect_to new_session_path
 
   end

@@ -22,20 +22,22 @@
         <%= image_tag blog_post.cover.blog_cover.url, :class => "cover_blog_img" %>
     </div>
     <div class="blog-description">
-      <h5><%= blog_post.title %></h5>
+      <h2><%= blog_post.title %></h2>
         <p class="blog-descriptor"> <%= raw blog_post.description.html_safe %></p>
         <div class="eyeglass">
           <%= image_tag "eyeglass.svg", :class => "eyeglass" %> <span class="read">Read article</span>
-        </div> <br>
-         <span class="author"> By <%= blog_post.author %></span> <span class="published"> Published: <%= blog_post.publish_date %></span>
-         <span class="">
+        </div>
+        <div class="flex-blog-index-read">
+           <span class="author"><h3>By <%= blog_post.author %></h3> </span>
+            <span class="published"> <h3>Published: <%= blog_post.publish_date %> </h3></span>
+           <span class="">
+        </div>
            <% if blog_post.comments.present? %>
-           <p class="blog-post-comment-count"><%= pluralize blog_post.comments.count, "Comment" %></p>
+           <h4 class="blog-post-comment-count"><%= pluralize blog_post.comments.count, "Comment" %></h4>
 
            <% else %>
-           <p class="blog-post-comment-count">no comments yet</p>
+           <h4 class="blog-post-comment-count">no comments yet</h4>
            <% end %>
-         </span>
     </div>
     </div>
   </li>

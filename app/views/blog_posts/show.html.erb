@@ -18,7 +18,9 @@
      <h4>By <%= @blog_post.author %></h4>
      <h5> Published <%= @blog_post.publish_date %> </h5>
    </div>
+   <div class="flex-blog-image">
    <%= image_tag @blog_post.cover.show.url %>
+    </div>
    <div class="blog-body-content" id="CMSContent">
          <p> <%= sanitize simple_format(@blog_post.body) %> </p>
    </div>

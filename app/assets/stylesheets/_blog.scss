@@ -49,7 +49,6 @@ div.back-to-blog-index {
 
 div.blog-index-loop ul {
 
-  display: grid;
   margin-top: 64px;
   margin-left: auto;
   margin-right: auto;
@@ -77,33 +76,46 @@ transform: scale(1);
 
 div.blog-post-cover-wrapper {
 
-  background-color: grey;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    // grid-column-gap: -24px;
 
 }
 
     div.blog-description {
-      padding: 12px;
-      align-items: center;
-      float: left;
-      margin-left: 64px;
-      h5 {
+      padding: 32px;
+      // align-items: center;
+      // float: left;
+      // margin-left: 64px;
+      h2 {
         font-family: "SangBlue";
         margin-top: 0;
-        margin-bottom: 8px;
+        margin-bottom: 16px;
+        font-size: 24px;
+      }
+
+      h3 {
+        font-size: 18px;
+        font-family: "Spectral";
+      }
+
+      h4 {
+        font-size: 14px;
+        font-family: "Spectral";
       }
 
       span.published {
         margin-left: 32px;
       }
 
-      p {
-        width: 400px;
-        font-size: 14px;
-      }
     }
 
     img {
       display: block;
+      align-items: center;
+      margin:0;
+
+      // margin-left: 128px;
 
     }
 
@@ -113,10 +125,11 @@ div.blog-post-cover-wrapper {
     }
 
     div.eyeglass {
-      margin-left: 20px;
       display: flex;
+      justify-content: flex-start;
       align-items: center;
-      margin-bottom: 8px;
+      margin-bottom: 24px;
+      margin-top: 16px;
     }
 
     span.author, span.published {
@@ -141,12 +154,15 @@ div.back-to-blog-index {
 
 section.blog-body {
 
-  width: 1400px;
+  width: 900px;
   margin-left: 12em;
+  display: flex;
+  flex-direction: column;
 
-img {
-  width: 40%;
-}
+  div.flex-blog-image {
+    display: flex;
+    align-items: stretch;
+  }
 
 .blog-body-content {
   margin-top: 56px;
@@ -170,7 +186,7 @@ img {
   p {
     line-height: 1.6em;
     font-family: "Spectral-Light";
-    width: 60%;
+    width: 100%;
     font-size: 21px;
     text-align: left;
     margin-bottom: 40px;
@@ -206,18 +222,15 @@ img {
   margin-bottom: 32px;
   font-family: "Spectral-Light";
 
-  img {
-    display: block;
-    margin-bottom: 40px;
-    // display: flex;
-    // align-items: stretch;
-    max-width: 100%;
-max-height: auto;
-margin: auto;
-  }
 
 
   h6 {
     margin: 4px;
   }
+}
+
+
+div.flex-blog-index-read {
+  display: flex;
+   justify-content: space-between;
 }

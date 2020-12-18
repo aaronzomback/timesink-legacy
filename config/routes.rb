@@ -94,6 +94,7 @@ end
   get "donation_success", to: "pages#donation_success"
   get "submission_success", to: "pages#submission_success"
   get "reset", to: "pages#reset"
+  delete 'logout', to: 'sessions#destroy'
 
   root "films#index"
 

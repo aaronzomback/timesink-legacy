@@ -9,6 +9,7 @@ require("@rails/activestorage").start()
 require("channels")
 require('jquery')
 require("video.js")
+//= require rails-ujs
 
 import barba from '@barba/core';
 import barbaCss from '@barba/css';

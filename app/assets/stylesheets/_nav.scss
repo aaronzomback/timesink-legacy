@@ -13,7 +13,7 @@
     left: 0;
     margin-left: 0px;
     opacity: 0;
-    pointer-events: none;
+    pointer-events: auto;
     position: absolute;
     right: 0;
     text-transform: none;
@@ -41,12 +41,11 @@
 .dropdown .dropdown-menu li {
     display: block;
     padding: 12px 10px;
-    transition: ease-in;
 
 }
 
 .dropdown .dropdown-menu li:hover {
-  color: blue;
+
 }
 
 .dropdown.dropdown-active .dropdown-menu {

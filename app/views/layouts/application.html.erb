@@ -53,21 +53,20 @@
 
     <% if @current_user.avatar.present? %>
 
-    <span class="dropdown">
+    <span class="dropdown" id="dropdown">
       <%= image_tag @current_user.avatar.small.url, :class => "avatar" %>
       <i class="fa fa-chevron-down"></i>
-      <ul class="dropdown-menu">
+      <ul class="dropdown-menu" id="dropdown-menu">
         <li>  <%= link_to "Edit profile", main_app.edit_account_path %></li>
         <li>  <%= link_to "Submissions", main_app.user_submissions_path(@current_user) %> </li>
-        <li>  <%= link_to "Log out", main_app.session_path, method: :delete %> </li>
+        <li> <%= link_to "Log out", main_app.logout_path, method: :delete, :class => 'logout' %> </li>
       </ul>
     </span>
-
     <% else %>
 
  <span class="welcome dropdown">
    Bienvenue <%= @current_user.username %>!
-   <ul class="dropdown-menu">
+   <ul class="dropdown-menu" id="dropdown-menu">
      <li>  <%= link_to "Edit profile", main_app.edit_account_path %></li>
      <li>  <%= link_to "Submissions", main_app.user_submissions_path(@current_user) %> </li>
      <li>  <%= link_to "Log out", main_app.session_path, method: :delete %> </li>
@@ -136,44 +135,16 @@ console.log('barba is loaded');
 
 
 <script>
-  function DropDown(el) {
-    this.dd = el;
-    this.initEvents();
-}
 
-DropDown.prototype = {
-    initEvents: function () {
-        var obj = this;
-
-        // // Determine if dropdown is on hover or on click
-        //     $(".dropdown-hover").mouseenter(function (event) {
-        //         event.stopPropagation();
-        //         $(this).addClass("dropdown-active");
-        //     });
-        //     $(".dropdown-hover").mouseleave(function () {
-        //         $(".dropdown").removeClass("dropdown-active");
-        //     });
-
-            // Toggle .dropdown-active on click
-            obj.dd.on('click', function (event) {
-                event.stopPropagation();
-                $(this).toggleClass('dropdown-active');
-            });
-
-    }
-}
-
-$(function () {
-    var dd = new DropDown($('.dropdown'));
-
-    $(document).click(function () {
-
-        // Remove class from all dropdowns
-        $('.dropdown').removeClass('dropdown-active');
-    });
-});
+  $(function() {
+    $('.dropdown').click(function() { // when a .myDiv is clicked
+      $('.dropdown').not(this).removeClass('dropdown-active')
+      $(this).toggleClass('dropdown-active')
+    })
+  })
 
 </script>
+
 
 </body>
 

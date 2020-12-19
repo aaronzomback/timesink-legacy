@@ -99,13 +99,14 @@
           <div class="bar"></div>
           <div class="bar"></div>
         </label>
-        <nav>
+        <nav id="hamburger">
           <ul style="list-style: none;">
             <li><%= link_to "Films", main_app.films_path  %></li>
             <li><%= link_to "Blog", main_app.blog_posts_path %></li>
             <li><%= link_to "Info", main_app.info_path %></li>
             <li><%= link_to "Donate", main_app.new_donation_path %></li>
           </ul>
+        </nav>
       </div>
 
       <% end %>

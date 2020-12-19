@@ -410,9 +410,37 @@ section.cafe {
 
 
 
-@media (max-width: 991px)
-    {
-      .film video {
-        max-width: 90%;
+@media (max-width: 1200px) {
+
+
+  div.film-gallery-grid {
+    // border: 1px solid white;
+    display: grid;
+    grid-gap: 24px;
+    grid-template-columns: 1fr 1fr;
+    font-family: 'MonumentGroteskTrial-Mono';
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    align-items: center;
+    justify-items: center;
+  }
+
+    }
+
+    @media (max-width: 600px) {
+
+      div.film-gallery-grid {
+        // border: 1px solid white;
+        display: grid;
+        grid-gap: 24px;
+        grid-template-columns: 1fr;
+        font-family: 'MonumentGroteskTrial-Mono';
+        margin-left: auto;
+        margin-right: auto;
+        width: 100%;
+        align-items: center;
+        justify-items: center;
       }
+
     }

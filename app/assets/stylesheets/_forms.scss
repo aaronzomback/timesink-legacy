@@ -92,7 +92,7 @@ input, textarea {
   font-family: 'Spectral';
   margin: 8px 0px 16px 0;
   color: rgba(122, 168, 255, 0.6);
-  background-color: #0f1011;
+  background-color: #222222;
   border-top-style: hidden;
   border-right-style: hidden;
   border-left-style: hidden;
@@ -201,17 +201,22 @@ select.required {
   background-color: #222222;
   color: rgba(122, 168, 255, 0.85);
   border-color: rgba(122, 168, 255, 0.85);
-    font-family: 'MonumentGroteskTrial-Mono';
+  font-family: 'MonumentGroteskTrial-Mono';
 }
 
 
 
 // new user
 
+div.flex-signup {
+    transform: translateY(4rem);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
 div.join-the-sink {
-  width: 600px;
-  margin-left: auto;
-  margin-right: auto;
   text-align: center;
 
   label {
@@ -229,6 +234,10 @@ a {
   border-bottom: 1px solid #80acff;
 }
 
+}
+
+div.email-step {
+  transform: translateY(-5rem);
 }
 
 .sign-in-from-new-account {

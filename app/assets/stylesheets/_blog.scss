@@ -83,7 +83,7 @@ div.blog-post-cover-wrapper {
 }
 
     div.blog-description {
-      padding: 32px;
+      padding: 16px 48px;
       // align-items: center;
       // float: left;
       // margin-left: 64px;
@@ -95,13 +95,14 @@ div.blog-post-cover-wrapper {
       }
 
       h3 {
-        font-size: 18px;
+        font-size: 16px;
         font-family: "Spectral";
       }
 
       h4 {
         font-size: 14px;
         font-family: "Spectral";
+        margin-bottom: 0;
       }
 
       span.published {
@@ -128,7 +129,7 @@ div.blog-post-cover-wrapper {
       display: flex;
       justify-content: flex-start;
       align-items: center;
-      margin-bottom: 24px;
+      margin-bottom: 16px;
       margin-top: 16px;
     }
 

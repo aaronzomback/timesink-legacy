@@ -21,7 +21,7 @@ input[type=submit].skip-button {
 
 
 .button {
-  background-color: #020b17; /* Dark Theater 4 */
+  background-color: #222222; /* Dark Theater 4 */
   border: none;
   color: #222222;
   padding: 6px 16px;
@@ -36,7 +36,7 @@ input[type=submit].skip-button {
 }
 
 .button1 {
-  background-color:  #020b17;
+  background-color:  #222222;
   color: #80acff;
   border: 2px solid #80acff;
   border-radius: 25px
@@ -77,7 +77,7 @@ input[type=submit].skip-button {
 .button2:hover {opacity: 0.6}
 
 .button3 {
-  background-color:  #020b17;
+  background-color:  #222222;
   color: rgba(122, 168, 255, 0.85);
   border: 2px solid rgba(122, 168, 255, 0.85);
   border-radius: 25px;
@@ -117,9 +117,16 @@ input[type=submit].skip-button {
 
 .button4:hover {opacity: 0.6}
 
+div.button-back-films {
+  margin-top: 32px;
+  display: flex;
+  justify-content:center;
+  align-items: center;
+
+}
 
 .button_continue {
-  background-color: #020b17;
+  background-color: #222222;
   color: rgba(122, 168, 255, 0.85);
   border: 2px solid rgba(122, 168, 255, 0.85);
   border-radius: 25px;
@@ -134,12 +141,6 @@ input[type=submit].skip-button {
 
 }
 
-.button_continue {
-  position: fixed;
-  left: 50%;
-  top: 55%;
-  transform: translateX(-40%);
-}
 
 .sign-in-button {
   display: flex;

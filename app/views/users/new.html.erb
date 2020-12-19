@@ -1,4 +1,5 @@
 
+<div class="flex-signup">
 
 <div class="join-the-sink">
 
@@ -6,8 +7,8 @@
 <%= simple_form_for @user do |f| %>
  <%= f.error_notification %>
   <%= render "#{@user.current_step}_step", :f => f %>
- <%= f.button :submit, "Next", :name => "continue_button" unless @user.last_step? %>
  <%= f.button :submit, "Back", :class => "back-button", :name => "back_button" unless @user.first_step? %>
+  <%= f.button :submit, "Next", :name => "continue_button" unless @user.last_step? %>
 
 <% end %>
 
@@ -22,3 +23,5 @@
 </div>
 
 <% end %>
+
+</div>

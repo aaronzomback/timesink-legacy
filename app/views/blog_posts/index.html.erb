@@ -30,7 +30,6 @@
         <div class="flex-blog-index-read">
            <span class="author"><h3>By <%= blog_post.author %></h3> </span>
             <span class="published"> <h3>Published: <%= blog_post.publish_date %> </h3></span>
-           <span class="">
         </div>
            <% if blog_post.comments.present? %>
            <h4 class="blog-post-comment-count"><%= pluralize blog_post.comments.count, "Comment" %></h4>

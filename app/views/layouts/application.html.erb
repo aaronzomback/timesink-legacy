@@ -97,8 +97,7 @@
 
     </header>
 
-
-
+    
     <% if flash[:success].present? %>
    <div class="success">
      <%= flash[:success] %>
@@ -107,7 +106,7 @@
 
    <% if flash[:error].present? %>
    <div class="error">
-    <p><%= flash[:error] %></p>
+    <%= flash[:error] %>
    </div>
    <% end %>
 

@@ -83,6 +83,7 @@
 
   <% else %>
 
+
   <button class="button button1">
     <%= link_to "Sign in", new_session_path %>
   </button>
@@ -91,13 +92,30 @@
     <%= link_to "Submit film", submit_path %>
   </button>
 
+    <div class="menuArea" id="menuArea">
+      <input type='checkbox' id='toggle' style="display:none;">
+        <label class='toggle-btn toggle-btn__cross' for='toggle'>
+          <div class="bar"></div>
+          <div class="bar"></div>
+          <div class="bar"></div>
+        </label>
+        <nav>
+          <ul style="list-style: none;">
+            <li><%= link_to "Films", main_app.films_path  %></li>
+            <li><%= link_to "Blog", main_app.blog_posts_path %></li>
+            <li><%= link_to "Info", main_app.info_path %></li>
+            <li><%= link_to "Donate", main_app.new_donation_path %></li>
+          </ul>
+      </div>
+
       <% end %>
+
 
           </nav>
 
     </header>
 
-    
+
     <% if flash[:success].present? %>
    <div class="success">
      <%= flash[:success] %>

@@ -471,7 +471,7 @@ $duration: 30s;
   header {
 
   nav#hamburger {
-    background-color:rgba(0,0,0,.8);
+    background-color:rgba(0,0,0,.9);
     position:fixed;
     top:0;
     left:0;
@@ -547,10 +547,17 @@ $duration: 30s;
         transform:translateY(0px);
         opacity:1;
 
-        @for $i from 1 through 4 {
+        a {
+          font-weight: 400;
+          font-family: "Spectral";
+          margin-bottom: 12px;
+
+        }
+
+        @for $i from 1 through 7 {
             $t: $i * 0.1;
             &:nth-child(#{$i}) {
-              transition:all 0.3s cubic-bezier(.6,0,.8,1.5) #{$t}s;
+              transition:all 0.3s cubic-bezier(.3,0,.3,1.7) #{$t}s;
             }
           }
       }

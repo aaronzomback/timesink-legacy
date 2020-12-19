@@ -62,6 +62,31 @@
         <li> <%= link_to "Log out", main_app.logout_path, method: :delete, :class => 'logout' %> </li>
       </ul>
     </span>
+
+<%= link_to pluralize(Notification.unread_count(@current_user), 'Notification'), main_app.notifications_path %>
+
+
+    <div class="menuArea" id="menuArea">
+      <input type='checkbox' id='toggle' style="display:none;">
+        <label class='toggle-btn toggle-btn__cross' for='toggle'>
+          <div class="bar"></div>
+          <div class="bar"></div>
+          <div class="bar"></div>
+        </label>
+        <nav id="hamburger">
+          <ul style="list-style: none;">
+            <li><%= link_to "Films", main_app.films_path  %></li>
+            <li><%= link_to "Blog", main_app.blog_posts_path %></li>
+            <li><%= link_to "Info", main_app.info_path %></li>
+            <li><%= link_to "Donate", main_app.new_donation_path %></li>
+            <hr>
+            <li><%= link_to "Sign in", main_app.new_session_path %></li>
+            <li><%= link_to "Submit film", main_app.submit_path %></li>
+          </ul>
+        </nav>
+      </div>
+
+
     <% else %>
 
  <span class="welcome dropdown">
@@ -73,9 +98,31 @@
    </ul>
  </span>
 
+   <%= link_to pluralize(Notification.unread_count(@current_user), 'Notification'), main_app.notifications_path %>
+
+
+ <div class="menuArea" id="menuArea">
+   <input type='checkbox' id='toggle' style="display:none;">
+     <label class='toggle-btn toggle-btn__cross' for='toggle'>
+       <div class="bar"></div>
+       <div class="bar"></div>
+       <div class="bar"></div>
+     </label>
+     <nav id="hamburger">
+       <ul style="list-style: none;">
+         <li><%= link_to "Films", main_app.films_path  %></li>
+         <li><%= link_to "Blog", main_app.blog_posts_path %></li>
+         <li><%= link_to "Info", main_app.info_path %></li>
+         <li><%= link_to "Donate", main_app.new_donation_path %></li>
+         <hr>
+         <li><%= link_to "Sign in", new_session_path %></li>
+         <li><%= link_to "Submit film", submit_path %></li>
+       </ul>
+     </nav>
+   </div>
+
  <% end %>
 
-  <%= link_to pluralize(Notification.unread_count(@current_user), 'Notification'), main_app.notifications_path %>
 
   <button class="button button3">
     <%= link_to "Submit film", main_app.submit_path %>

@@ -14,7 +14,7 @@
     <tr>
       <td id="submission-title"><%= submission.title %></td>
       <td><%= submission.status %></td>
-      <td><%= submission.updated_at.strftime("%H:%M, %m-%d-%Y")%></td>
+      <td><%= submission.updated_at.strftime("%H:%M UTC, %m-%d-%Y")%></td>
       <td><%= submission.created_at.strftime("%b %e, %Y") %></td>
     </tr>
         <% end %>

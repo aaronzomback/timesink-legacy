@@ -2,13 +2,15 @@
 .video-js {
   color: #007dff;
   font-size: 20px;
-  font-family: "Spectral";
+  font-family: "MonumentGroteskTrial-Regular";
 }
 
 /* Change the border of the big play button. */
 .video-js .vjs-big-play-button {
-
-  border-radius: 100px;
+  border: 2px solid #007dff;
+  border-radius: 50px;
+  height: 100px;
+  width: 100px;
 }
 
 .video-js .vjs-play-progress {
@@ -91,7 +93,7 @@ div.film-gallery-grid {
   display: grid;
   grid-gap: 24px;
   grid-template-columns: 1fr 1fr 1fr;
-  font-family: 'MonumentGroteskTrial-Mono';
+  font-family: "MonumentGroteskTrial-Regular";
   margin-left: auto;
   margin-right: auto;
   width: 100%;
@@ -135,7 +137,7 @@ box-shadow: 16px 16px 24px rgba(22, 20, 20, 0.65);
 
     h3 {
       font-size: 21px;
-        font-family: 'Spectral';
+        font-family: 'MonumentGroteskTrial-Regular';
     }
 
 
@@ -195,37 +197,45 @@ box-shadow: 16px 16px 24px rgba(22, 20, 20, 0.65);
   }
 
 
+  div.flex-likes-impressions-etc {
+    display: flex;
+  }
+
+
 section.film-show-grid {
 
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    width: 880px;
-    margin-left: 220px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
     grid-column-gap: 112px;
     margin-top: 24px;
 
+        h1.film-title1 {
+          margin-bottom: 4px;
+          font-family: "MonumentGroteskTrial-Regular";
+          font-size: 40px;
+          margin-top: 0;
+        }
 
 
-    h2.film-title {
-      margin-bottom: 4px;
-      margin-top: 8px;
-      clear: right;
-      font-family: "SangBleuEmpire";
-    }
-
-
-    h6.film-author {
+    h2.film-author, h2.film-duration {
       display: inline-block;
       margin-right: 3em;
       margin-top: 4px;
       margin-bottom: 0;
+      font-size: 18px;
+    }
+
+    div.flex-likes-impressions-etc {
+      margin-top: 12px;
     }
 
     .film-description {
-      font-family: "Spectral-Light";
+      font-family: "Spectral";
       font-size: 14px;
       margin-bottom: 0;
-      margin-top: 32px;
+      margin-top: 40px;
+      width: 20rem;
     }
 
 
@@ -418,7 +428,7 @@ section.cafe {
     display: grid;
     grid-gap: 24px;
     grid-template-columns: 1fr 1fr;
-    font-family: 'MonumentGroteskTrial-Mono';
+    font-family: "MonumentGroteskTrial-Regular";
     margin-left: auto;
     margin-right: auto;
     width: 100%;
@@ -435,7 +445,7 @@ section.cafe {
         display: grid;
         grid-gap: 24px;
         grid-template-columns: 1fr;
-        font-family: 'MonumentGroteskTrial-Mono';
+        font-family: "MonumentGroteskTrial-Regular";
         margin-left: auto;
         margin-right: auto;
         width: 100%;

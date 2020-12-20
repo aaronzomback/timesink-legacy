@@ -21,54 +21,59 @@
   </div>
 
   <div class="film-show-info">
-    <span><% if @film.is_top_pick %>
-     <%= image_tag "is_featured.svg", :class => "top-pick-show" %>
-   <% end %></span>
 
-  <span class="liking-target">
-       <%= link_to like_film_path(@film), class: "upvoted {liked_or_not}", method: :put, remote: :true do %>
-       <%= image_tag "Polygon2.svg", :class => "polygon" %>
-        <% end %>
-        <span class="like_count">
-          <%= @film.get_likes.size %>
-        </span>
-  </span>
+    <div class="film-show-flex-title-etc">
+              <h1 class="film-title1"><%= @film.title %></h1>
+              <h2 class="film-author"><%= @film.author %></h2> <h2 class="film-duration"><%= @film.description %></h2>
 
+       <div class="flex-likes-impressions-etc">
+            <span class="liking-target">
+                 <%= link_to like_film_path(@film), class: "upvoted {liked_or_not}", method: :put, remote: :true do %>
+                 <%= image_tag "Polygon2.svg", :class => "polygon" %>
+                  <% end %>
+                  <span class="like_count">
+                    <%= @film.get_likes.size %>
+                  </span>
+            </span>
 
-    <span class="views">
-    <%= image_tag "view.svg", :class => "eyeball" %>
-      <span class="impressions"><%= @film.impressionist_count(:filter=>:ip_address) %></span>
-    <span class="impressions"></span>
-    </span>
+            <span class="views">
+              <%= image_tag "view.svg", :class => "eyeball" %>
+                <span class="impressions"><%= @film.impressionist_count(:filter=>:ip_address) %></span>
+              <span class="impressions"></span>
+            </span>
 
-
-
-
-    <div class="">
-      <h2 class="film-title"><%= @film.title %></h2>
-      <h6 class="film-author"><%= @film.author %></h6> <span><%= @film.description %></span>
-      <p class="film-description"><%= @film.description_body %></p>
+            <span><% if @film.is_top_pick %>
+               <%= image_tag "is_featured.svg", :class => "top-pick-show" %>
+             <% end %>
+           </span>
+      </div>
     </div>
+
+    <p class="film-description"><%= @film.description_body %></p>
+
     <div class="play-button" onclick="toggle();">
       <span> Play </span> <%= image_tag "play.svg", :class => "play-symbol" %>
     </div>
     <div class="preview-button" onclick="toggleTrailer();">
       Trailer
     </div>
+
+    <div class="">
     <%= link_to @film.artist_website, :target => '_blank' do  %>
     <div class="cafe-talk-button">
       View artist
     </div>
     <% end %>
+    </div>
 
 
 
 
 
 
-  </div>
+    </div>
 
-</section>
+  </section>
 </section>
 
 <section class="cafe" id="cafe">
@@ -151,7 +156,6 @@
 
         <% end %>
   </section>
-</section>
 
 
               <div class="popupfilm" id="filmPopUp">

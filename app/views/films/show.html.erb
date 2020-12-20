@@ -5,11 +5,8 @@
 
 
 
-
-<div class="back-to-films">
-  <%= link_to films_path do %>
-  <span><%= image_tag "BackArrow1.svg" %> </span><h3 class="back-to-gallery">Back to the sink</h3>
-  <% end %>
+<div class="breadcrumb-film-show">
+  <span> <%= link_to "Films", films_path %></span> // <span><%= @film.title %></span>
 </div>
 
 

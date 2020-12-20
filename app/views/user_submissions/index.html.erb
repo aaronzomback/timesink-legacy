@@ -2,12 +2,24 @@
 <section>
 
 <% if @current_user.submissions.present? %>
-  <% @current_user.submissions.order(created_at: :desc).each do |submission| %>
-  <p>Film title: <%= submission.title %></p>
-  <p>Submission status: <%= submission.status %></p>
-  <p>Date submitted: <%= submission.created_at.strftime("%b %e, %Y") %></p>
 
-    <% end %>
+  <table id="user-submissions-table">
+    <tr>
+      <th>Film</th>
+      <th>Status</th>
+      <th>Status timestamp</th>
+      <th>Date submitted</th>
+    </tr>
+       <% @current_user.submissions.order(created_at: :desc).each do |submission| %>
+    <tr>
+      <td id="submission-title"><%= submission.title %></td>
+      <td><%= submission.status %></td>
+      <td><%= submission.updated_at.strftime("%H:%M, %m-%d-%Y")%></td>
+      <td><%= submission.created_at.strftime("%b %e, %Y") %></td>
+    </tr>
+        <% end %>
+  </table>
+
 
   <% else %>
 

@@ -1,0 +1,32 @@
+#user-submissions-table th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: center;
+  color: #222222;
+  background-color: #80acff;
+  font-weight: 400;
+}
+
+
+#user-submissions-table {
+  font-family: "Spectral", sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#user-submissions-table td, #user-submissions-table th {
+  border: 1px solid #80acff;
+  padding: 8px;
+  text-align: center;
+}
+
+#user-submissions-table td#submission-title {
+  text-align: left;
+  padding-left: 1rem;
+  padding-right: 0px;
+}
+
+#user-submissions-table tr:hover {
+  background-color: #ddd;
+  color: black;
+}

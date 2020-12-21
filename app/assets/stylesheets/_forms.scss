@@ -74,7 +74,7 @@ h2.whats-your-name {
 }
 
 input[type=submit] {
-  background: #80acff;
+  background: #7AA8FF;
   color: #222222;
   border-color: rgba(122, 168, 255, 0.2);
   padding: 8px 16px;
@@ -91,7 +91,7 @@ input, textarea {
   padding: 10px 16px;
   font-family: 'Spectral';
   margin: 8px 0px 16px 0;
-  color: rgba(122, 168, 255, 0.6);
+  color: white;
   background-color: #222222;
   border-top-style: hidden;
   border-right-style: hidden;
@@ -149,6 +149,7 @@ div.new-account {
   width: 100%;
   margin-top: 16px;
   color: rgba(122, 168, 255, 0.85);
+  font-family: "Spectral";
 
   .create-account {
     color: rgba(122, 168, 255, 0.85);

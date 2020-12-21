@@ -90,7 +90,8 @@
     <% else %>
 
  <span class="welcome dropdown">
-   Bienvenue <%= @current_user.username %>!
+   <%= @current_user.username %>
+    <i class="fa fa-chevron-down"></i>
    <ul class="dropdown-menu" id="dropdown-menu">
      <li>  <%= link_to "Edit profile", main_app.edit_account_path %></li>
      <li>  <%= link_to "Submissions", main_app.user_submissions_path(@current_user) %> </li>
@@ -115,8 +116,8 @@
          <li><%= link_to "Info", main_app.info_path %></li>
          <li><%= link_to "Donate", main_app.new_donation_path %></li>
          <hr>
-         <li><%= link_to "Sign in", new_session_path %></li>
-         <li><%= link_to "Submit film", submit_path %></li>
+         <li><%= link_to "Sign in", main_app.new_session_path %></li>
+         <li><%= link_to "Submit film", main_app.submit_path %></li>
        </ul>
      </nav>
    </div>

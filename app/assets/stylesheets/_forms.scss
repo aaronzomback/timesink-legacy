@@ -3,6 +3,13 @@
   src: url('app/assets/fonts/SangBleuEmpire-Regular.ttf');
 }
 
+
+//
+
+label.email.required {
+  margin-left: 0px;
+}
+
 textarea.form-control {
   border: 1px solid rgba(122, 168, 255, 0.85);
   border-radius: 2px;
@@ -38,21 +45,33 @@ input.newsletter {
 
 label.checkbox {
   margin-top: 16px;
-  padding-left: 120px;
   margin-bottom: 24px;
   font-size: 14px;
-  align-items: center;
   vertical-align: middle;
 }
 
 label.password.required, label.password.optional, label.email.required {
-  margin-left: 160px;
+
   margin-bottom: 4px;
   margin-top: 8px;
 }
 
 div.avatar-step {
-margin-top: 100px;
+// margin-top: 100px;
+display: flex;
+flex-direction: column;
+justify-content: center;
+
+h4.add-avatar {
+  text-align: center;
+}
+
+img {
+  text-align: center;
+  display: block;
+  margin-bottom: 16px;
+  margin-right: 0;
+}
 }
 
 div.email-step {
@@ -215,10 +234,22 @@ div.flex-signup {
     justify-content: center;
     align-items: center;
     flex-direction: column;
+
+    input.btn {
+      margin-left: 0;
+      margin-right: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+    }
 }
 
 div.join-the-sink {
-  text-align: center;
+  // text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 
   label {
     text-align: left;
@@ -239,6 +270,10 @@ a {
 
 div.email-step {
   transform: translateY(-5rem);
+  p {
+    text-align: center;
+    margin-bottom: 32px;
+  }
 }
 
 .sign-in-from-new-account {
@@ -250,7 +285,11 @@ div.email-step {
 div.agree {
   margin-top: 32px;
   font-size: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   text-align: center;
+  width: 100%;
 }
 
 // edit account

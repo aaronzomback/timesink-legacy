@@ -1,13 +1,13 @@
+<h4><%= @submission.title %></h4>
+
 
 <div class="">
-  <%= @submission.title %>
-
   <section>
-    <h3>Response:</h3>
+    <h5>Response:</h5>
     <% if @submission.response.present? %>
     <p><%= simple_format @submission.response %></p>
     <% else %>
-    <p>No response yet</p>
+    <p> Pending... </p>
     <% end %>
   </section>
 </div>

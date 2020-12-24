@@ -354,6 +354,13 @@ end
 
 ActiveAdmin::ResourceController.class_eval do
 def find_resource
+  finder = resource_class.is_a?(FriendlyId) ? :slug : :title
+  scoped_collection.find_by(finder => params[:id])
+end
+end
+
+ActiveAdmin::ResourceController.class_eval do
+def find_resource
   finder = resource_class.is_a?(FriendlyId) ? :slug : :username
   scoped_collection.find_by(finder => params[:id])
 end

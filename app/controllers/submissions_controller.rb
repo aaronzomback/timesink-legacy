@@ -42,6 +42,6 @@ end
 
 
   def form_params
-    params.require(:submission).permit(:title, :year, :description, :film_link, :film_length, :film_pw, :stripe_payment_id)
+    params.require(:submission).permit(:title, :year, :description, :film_link, :film_length, :film_pw, :stripe_payment_id, :response)
   end
 end

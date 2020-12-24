@@ -20,7 +20,13 @@
   <div class="film-show-info">
 
     <div class="film-show-flex-title-etc">
+      <div class="film-title-is-top-pick">
               <h1 class="film-title1"><%= @film.title %></h1>
+              <span><% if @film.is_top_pick %>
+                     <%= image_tag "is_featured.svg", :class => "top-pick-show" %>
+                   <% end %>
+              </span>
+        </div>
               <h2 class="film-author"><%= @film.author %></h2> <h2 class="film-duration"><%= @film.description %></h2>
 
        <div class="flex-likes-impressions-etc">
@@ -39,10 +45,6 @@
               <span class="impressions"></span>
             </span>
 
-            <span><% if @film.is_top_pick %>
-               <%= image_tag "is_featured.svg", :class => "top-pick-show" %>
-             <% end %>
-           </span>
       </div>
     </div>
 
@@ -80,7 +82,7 @@
     <div class="cafe-banner-title">
 
 
-    <span>
+    <span class="cafe-title">
     <span class="film-title-cafe"><h3 class="film-cafe"><%= @film.title %> café </h3></span>
      <span><%= image_tag "coffee.svg", :class => "coffee-cafe" %></span>
     </span>

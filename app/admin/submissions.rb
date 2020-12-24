@@ -5,7 +5,7 @@ ActiveAdmin.register Submission do
   #
   # Uncomment all parameters which should be permitted for assignment
   #
-  permit_params :title, :year, :description, :film_length, :film_link, :film_pw, :price, :user_id, :status, :created_at
+  permit_params :title, :year, :description, :response, :film_length, :film_link, :film_pw, :price, :user_id, :status, :created_at
 
 
   index do

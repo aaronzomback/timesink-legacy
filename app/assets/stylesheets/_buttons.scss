@@ -2,12 +2,12 @@
 input[type=submit].back-button {
 
   background-color: #222222;
-    border: 2px solid #7AA8FF;;
-   color: #80acff;
+  border: 1px solid #7AA8FF;
+  color: #80acff;
   padding: 8px 16px;
   margin-top: 10px;
   margin-left: 25px;
-  font-family: "MonumentGroteskTrial-Regular";
+  font-family: "KhmerSangamMN";
 }
 
 
@@ -24,12 +24,11 @@ input[type=submit].skip-button {
   background-color: #222222; /* Dark Theater 4 */
   border: none;
   color: #222222;
-  padding: 6px 16px;
+  padding: 4px 16px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
-  margin: 4px 2px;
   cursor: pointer;
   transition-duration: 0.4s;
   vertical-align: center;
@@ -39,14 +38,14 @@ input[type=submit].skip-button {
   background-color:  #222222;
   color: #80acff;
   border: 2px solid #7AA8FF;
-  border-radius: 25px
+  border-radius: 25px;
 }
 
 .button1 a {
   color: #7AA8FF;
   text-decoration: none;
   font-size: 12px;
-  font-family: 'MonumentGroteskTrial-Regular';
+  font-family: 'KhmerSangamMN';
   text-align: center;
 }
 
@@ -63,15 +62,15 @@ input[type=submit].skip-button {
   color:  #222222;
   text-decoration: none;
   font-size: 12px;
-  font-family: 'MonumentGroteskTrial-Regular';
+  font-family: 'KhmerSangamMN';
   text-align: center;
-  vertical-align: center;
 }
 
 .button2 {
   background-color: #7AA8FF;
   border: 2px solid rgba(122, 168, 255, 0.2);
-  border-radius: 25px
+  border-radius: 25px;
+  margin-left: 1rem;
 }
 
 .button2:hover {opacity: 0.6}

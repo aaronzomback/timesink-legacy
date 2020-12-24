@@ -36,10 +36,6 @@ div.donation-grid {
   width: 800px;
 }
 
-.donation-description {
-  width: 400px;
-}
-
 .donation-proceed {
   margin-bottom: 32px;
   color: white;
@@ -51,6 +47,25 @@ form.btcpay-form_btcpay-form--block {
 
 div.btcpay-custom-container {
 
+}
+
+.donation-description {
+  // transform: translateY(8rem);
+    border-left: 1px solid gray;
+}
+
+
+section.btc-donation-form {
+  // border-left: 1px solid white;
+  padding-left: 40px;
+}
+
+.stripe-logo {
+  width: 40%;
+}
+
+.secure-transaction {
+  font-family: "KhmerSangamMN";
 }
 
 

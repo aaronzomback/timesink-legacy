@@ -1,4 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700');
+
+
+@font-face {
+  font-family: "foundersgrotesk";
+  src: asset-url('app/assets/foundersgrotesktestregular.woff');
+}
 
 @font-face {
    font-family: 'Syne-Regular';
@@ -77,6 +82,8 @@
   src: url('app/assets/fonts/SuisseNeue-Regular-WebTrial.ttf');
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700');
+
 
 html, body {
   height: 100%;
@@ -124,11 +131,11 @@ section.animation {
 
 
 body {
-  font-family: "MonumentGroteskTrial-Regular";
-  background-color: #222222;
+  font-family: "Spectral";
+  background-color: #1B1C1E;
   color: #F5F7F9;
-  margin-left: 80px;
-  margin-right: 80px;
+  // margin-left: 80px;
+  // margin-right: 80px;
 }
 
 .ribbon img {
@@ -267,6 +274,7 @@ a {
 .prime-logo {
  width: 75%;
  display: block;
+ margin-right: 0;
 }
 
 div.sign-in-timesink-logo {
@@ -280,14 +288,14 @@ div.sign-in-timesink-logo {
 }
 
 header {
-  margin: 48px 0px 64px 80px ;
+  margin: 48px 0px 40px 0px;
   display: flex;
   align-items: center;
   justify-content:space-between;
   flex-flow: row nowrap;
-  width: 100%;
+  width: 100vw;
   // background-color: #222222;
-  padding: 0px 24px 24px 0;
+  padding: 0px 120px 24px 120px;
   box-shadow: 12px 16px 20px -20px rgba(0, 0, 0, 0.65);
 
   .fa-chevron-down {
@@ -302,7 +310,7 @@ nav {
     color: #F5F7F9;
     text-decoration: none;
     margin-right: 56px;
-    font-family: "MonumentGroteskTrial-Regular";
+    font-family: "KhmerSangamMN";
     font-size: 18px;
     white-space: nowrap;
 
@@ -319,7 +327,7 @@ nav {
 
 
 .success {
-  font-family: "Spectral";
+  font-family: "KhmerSangamMN";
   background-color: #4987FF;
   color: #F5F7F9;
   padding: 4px 20px;
@@ -331,7 +339,7 @@ nav {
 }
 
 .error {
-  font-family: "Spectral";
+  font-family: "KhmerSangamMN";
   background-color: hsl(36, 99%, 55%);
   color: #F5F7F9;
   padding: 4px 20px;

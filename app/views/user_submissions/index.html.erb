@@ -12,10 +12,26 @@
     </tr>
        <% @current_user.submissions.order(created_at: :desc).each do |submission| %>
     <tr>
-      <td id="submission-title"><%= submission.title %></td>
-      <td><%= submission.status %></td>
-      <td><%= submission.updated_at.strftime("%H:%M UTC, %m-%d-%Y")%></td>
-      <td><%= submission.created_at.strftime("%b %e, %Y") %></td>
+      <td id="submission-title">
+        <%= link_to user_submission_path(submission) do %>
+        <%= submission.title %>
+        <% end %>
+      </td>
+      <td>
+        <%= link_to user_submission_path(submission) do %>
+        <%= submission.status %>
+        <% end %>
+      </td>
+      <td>
+        <%= link_to user_submission_path(submission) do %>
+        <%= submission.updated_at.strftime("%H:%M UTC, %m-%d-%Y")%>
+        <% end %>
+      </td>
+      <td>
+        <%= link_to user_submission_path(submission) do %>
+        <%= submission.created_at.strftime("%b %e, %Y") %>
+        <% end %>
+      </td>
     </tr>
         <% end %>
   </table>

@@ -1,3 +1,23 @@
+
+
+.lock img {
+  width: 200%;
+  display: inline-block;
+}
+
+.secure-transaction {
+  display: inline-block;
+  margin-left: 0.4rem;
+  font-family: "KhmerSangamMN";
+  margin-bottom: 2px;
+}
+
+
+.stripe-logo {
+  width: 40%;
+}
+
+
 .donate-underline {
   border-bottom: 1px solid white;
 }
@@ -60,13 +80,6 @@ section.btc-donation-form {
   padding-left: 40px;
 }
 
-.stripe-logo {
-  width: 40%;
-}
-
-.secure-transaction {
-  font-family: "KhmerSangamMN";
-}
 
 
  input[type='range'] {

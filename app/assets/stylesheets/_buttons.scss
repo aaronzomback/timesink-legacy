@@ -50,7 +50,7 @@ input[type=submit].skip-button {
 }
 
 .button1:hover {
-  background-color: #7AA8FF;;
+  background-color: #7AA8FF;
   border-color: rgba(122, 168, 255, 0.2);
 
  a{
@@ -155,4 +155,25 @@ div.button-back-films {
 
 button.submit-btc {
   background-color: orange;
+}
+
+div.delete-account-button {
+  font-family: "KhmerSangamMN";
+  margin-left: 6em;
+  margin-top: 24px;
+  display: inline-block;
+  width: 200px;
+  background-color: none;
+  border: 1px solid #FE6D48;
+  color: #ec2013;
+  padding: 10px 20px;
+  text-align: center;
+  cursor: pointer;
+  margin-bottom: 24px;
+
+  a {
+    color: #FE6D48;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
 }

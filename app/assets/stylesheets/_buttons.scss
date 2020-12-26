@@ -4,7 +4,7 @@ input[type=submit].back-button {
   background-color: #222222;
   border: 1px solid #7AA8FF;
   color: #80acff;
-  padding: 8px 16px;
+  padding: 6px 16px;
   margin-top: 10px;
   margin-left: 25px;
   font-family: "KhmerSangamMN";
@@ -47,6 +47,7 @@ input[type=submit].skip-button {
   font-size: 12px;
   font-family: 'KhmerSangamMN';
   text-align: center;
+  line-height: 1.4;
 }
 
 .button1:hover {
@@ -64,6 +65,7 @@ input[type=submit].skip-button {
   font-size: 12px;
   font-family: 'KhmerSangamMN';
   text-align: center;
+  line-height: 1.4;
 }
 
 .button2 {

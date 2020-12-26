@@ -56,9 +56,14 @@ div.donation-grid {
   width: 800px;
 }
 
+div.donation-intro {
+  display: flex;
+  justify-content: center;
+}
 .donation-proceed {
-  margin-bottom: 32px;
+  margin-bottom: 80px;
   color: white;
+  font-family: "KhmerSangamMN";
 }
 
 form.btcpay-form_btcpay-form--block {

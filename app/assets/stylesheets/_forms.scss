@@ -112,7 +112,7 @@ input, textarea {
   font-family: 'Spectral';
   margin: 8px 0px 16px 0;
   color: white;
-  background-color: #222222;
+  background-color: #1B1C1E;
   border-top-style: hidden;
   border-right-style: hidden;
   border-left-style: hidden;
@@ -160,7 +160,8 @@ div.log-in-form {
  label {
    margin-bottom: 0;
   display: block;
-  color: rgba(122, 168, 255, 0.85);
+  color: #7AA8FF;
+  font-family: "KhmerSangamMN";
 }
 
 
@@ -207,6 +208,10 @@ div.forgot-password {
   margin-bottom: 24px;
   display: flex;
   justify-content: flex-end;
+
+  a {
+    font-family: "KhmerSangamMN";
+  }
 }
 
 

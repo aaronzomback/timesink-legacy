@@ -89,13 +89,10 @@
 
 
 
-    <span>
-    <%= link_to new_film_review_path(@film) do %>
-    <div class="write-review-button">
+
+    <div class="write-review-button"  onclick="toggleReview();">
       Write a review
     </div>
-    <% end %>
-    </span>
 
     </div>
 
@@ -156,6 +153,27 @@
         <% end %>
   </section>
 
+              <div class="popupReview" id="popupReview">
+
+                <div class="back-to-films">
+                  <%= link_to "#{film_path(@film)}#cafe" do %>
+                     <span><%= image_tag "BackArrow1.svg" %> </span><h3>Back to <%= @film.title  %> café </h3>
+                  <% end %>
+                </div>
+
+                <section class="review-form">
+
+              <%= simple_form_for @film do |f| %>
+                <%= f.input :title, :placeholder => "Enter a review title" %>
+
+                <%= f.button :submit, "Publish review" %>
+                <% end %>
+
+                </section>
+
+
+              </div>
+
 
               <div class="popupfilm" id="filmPopUp">
                 <span class="">
@@ -176,8 +194,16 @@
             </div>
 
 
+            <script type="text/javascript">
+                  function toggleReview() {
+                  var popupReview= document.querySelector(".popupReview")
+                  popupReview.classList.toggle("active")
+                }
+              </script>
 
-                <script type="text/javascript">
+
+
+            <script type="text/javascript">
                   function toggle() {
                   var popupfilm= document.querySelector(".popupfilm")
                   popupfilm.classList.toggle("active")
@@ -192,23 +218,22 @@
               </script>
 
 
-              <script>
-                $(function(){
-  var $refreshButton = $('#refresh');
-  var $results = $('#css_result');
+        <script>
+            $(function(){
+            var $refreshButton = $('#refresh');
+            var $results = $('#css_result');
 
-  function refresh(){
-    var css = $('style.cp-pen-styles').text();
-    $results.html(css);
-  }
+            function refresh(){
+              var css = $('style.cp-pen-styles').text();
+              $results.html(css);
+            }
 
-  refresh();
-  $refreshButton.click(refresh);
+            refresh();
+            $refreshButton.click(refresh);
 
-  // Select all the contents when clicked
-  $results.click(function(){
-    $(this).select();
-  });
-});
-
-              </script>
+            // Select all the contents when clicked
+            $results.click(function(){
+              $(this).select();
+            });
+          });
+        </script>

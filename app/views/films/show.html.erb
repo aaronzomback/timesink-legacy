@@ -163,8 +163,9 @@
 
                 <section class="review-form">
 
-              <%= simple_form_for @film do |f| %>
+                <%= simple_form_for [@film, @review] do |f| %>
                 <%= f.input :title, :placeholder => "Enter a review title" %>
+                <%= f.input :body, :class => "body", :placeholder => "Enter your thoughts and ideas..." %>
 
                 <%= f.button :submit, "Publish review" %>
                 <% end %>

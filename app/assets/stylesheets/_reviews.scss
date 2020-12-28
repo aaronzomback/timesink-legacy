@@ -1,3 +1,61 @@
+// film show page - new review form PopUp
+
+// div.popupReview {
+//   padding: 48px;
+//   background-color: #000000;
+// }
+
+.popupReview {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+  background: rgba(0, 0, 0, 0.85);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  visibility: hidden;
+  opacity: 0;
+
+  &.active {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  .popuptrailer.video-js {
+    position: relative;
+    outline: none;
+    max-width: 900px;
+    pointer-events: none;
+  }
+
+  .close {
+
+    position: absolute;
+    top: 50px;
+    right: 195px;
+
+
+    cursor: pointer;
+
+    img {
+      width: 100%;
+    }
+  }
+}
+
+/* Toggle this class - hide and show the popup */
+.popupReview .show {
+  visibility: visible;
+  -webkit-animation: fadeIn 0.40s;
+  animation: fadeIn 0.40s;
+}
+
+
+
 // film show page - reviews index
 
 section.review-index-flex {

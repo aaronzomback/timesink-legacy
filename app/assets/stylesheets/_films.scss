@@ -107,8 +107,8 @@ div.film-gallery-grid {
   grid-gap: 24px;
   grid-template-columns: 1fr 1fr 1fr;
   font-family: "KhmerSangamMN";
-  margin-left: auto;
-  margin-right: auto;
+  margin-left: 96px;
+  margin-right: 96px;
   margin-top: 120px;
   width: 75%;
   align-items: center;
@@ -313,7 +313,7 @@ section.film-show-grid {
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 1000;
-    background: rgba(0, 0, 0, 0.85);
+    background: rgba(45, 146, 230, 0.85);
     width: 100%;
     height: 100%;
     display: flex;
@@ -432,57 +432,6 @@ section.film-show-grid {
   from {opacity: 0;}
   to {opacity:1 ;}
 }
-
-
-.popupReview {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 1000;
-  background: rgba(0, 0, 0, 0.85);
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  visibility: hidden;
-  opacity: 0;
-
-  &.active {
-    visibility: visible;
-    opacity: 1;
-  }
-
-  .popuptrailer.video-js {
-    position: relative;
-    outline: none;
-    max-width: 900px;
-    pointer-events: none;
-  }
-
-  .close {
-
-    position: absolute;
-    top: 50px;
-    right: 195px;
-
-
-    cursor: pointer;
-
-    img {
-      width: 100%;
-    }
-  }
-}
-
-/* Toggle this class - hide and show the popup */
-.popupReview .show {
-  visibility: visible;
-  -webkit-animation: fadeIn 0.40s;
-  animation: fadeIn 0.40s;
-}
-
 
 
 

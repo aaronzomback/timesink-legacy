@@ -155,13 +155,15 @@
 
               <div class="popupReview" id="popupReview">
 
-                <div class="back-to-films">
-                  <%= link_to "#{film_path(@film)}#cafe" do %>
-                     <span><%= image_tag "BackArrow1.svg" %> </span><h3>Back to <%= @film.title  %> café </h3>
-                  <% end %>
-                </div>
+
 
                 <section class="review-form">
+
+                  <div class="back-to-films">
+                    <%= link_to "#{film_path(@film)}#cafe" do %>
+                    <ion-icon name="close-outline" id="close-outline" size="large"></ion-icon>
+                    <% end %>
+                  </div>
 
                 <%= simple_form_for [@film, @review] do |f| %>
                 <%= f.input :title, :placeholder => "Enter a review title" %>

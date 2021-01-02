@@ -1,8 +1,18 @@
+
+#video-wowza {
+  margin-left: auto;
+  margin-right: auto;
+}
+
 /* Change all text and icon colors in the player. */
 .video-js {
   color: #007dff;
   font-size: 20px;
   font-family: "KhmerSangamMN";
+}
+
+.vjs-poster{
+    background-size: 100%!important;
 }
 
 /* Change the border of the big play button. */
@@ -229,7 +239,6 @@ section.film-show-grid {
 
         div.film-title-is-top-pick {
           display: flex;
-          justify-content: space-around;
         }
 
 
@@ -439,6 +448,8 @@ section.film-show-grid {
 
 section.cafe {
   margin-top: 180px;
+  margin-left: 64px;
+  margin-right: 64px;
 }
 
 

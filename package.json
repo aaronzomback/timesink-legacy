@@ -11,7 +11,8 @@
     "jquery": "^3.5.1",
     "quill-image-uploader": "^1.2.2",
     "turbolinks": "^5.2.0",
-    "vash": "^0.13.0"
+    "vash": "^0.13.0",
+    "videojs-youtube": "^2.6.1"
   },
   "version": "0.1.0",
   "devDependencies": {

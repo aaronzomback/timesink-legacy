@@ -7,7 +7,7 @@
 
 @font-face {
    font-family: 'Syne-Regular';
-   src: url('/app/assets/fonts/Syne-Regular.ttf')
+   src: url('/app/assets/fonts/Syne-Regular.ttf');
 }
 
 @font-face {
@@ -43,8 +43,9 @@
 }
 
 @font-face {
-  font-family: "SangBleuEmpire";
-  src: url('app/assets/fonts/SangBleuEmpire-Regular-WebTrial.ttf');
+  font-family: "SangBleuEmpire-Regular-WebTrial";
+  font-weight: 400;
+  src: font-url("app/assets/fonts/SangBleuEmpire-Regular-WebTrial.ttf");
 }
 
 @font-face {

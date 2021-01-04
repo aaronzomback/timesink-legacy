@@ -3,6 +3,12 @@
   src: url('app/assets/fonts/SangBleuEmpire-Regular.ttf');
 }
 
+@font-face {
+  font-family: "SangBleuEmpire-Regular-WebTrial";
+  font-weight: 400;
+  src: font-url("app/assets/fonts/SangBleuEmpire-Regular-WebTrial.ttf");
+}
+
 
 //
 
@@ -128,7 +134,7 @@ input, textarea {
 // on 'sign-in' layout view
 .sign-in-timesink-logo {
   h1 {
-    font-family: "SangBleuEmpire";
+    font-family: "SangBleuEmpire-Regular-WebTrial";
     font-size: 72px;
     font-weight: 400;
     margin-bottom: 32px;
@@ -234,6 +240,11 @@ select.required {
 
 // new user
 
+input#user_username.string.required {
+  font-size: 24px;
+  width: 75%;
+}
+
 div.flex-signup {
     transform: translateY(4rem);
     display: flex;
@@ -241,14 +252,18 @@ div.flex-signup {
     align-items: center;
     flex-direction: column;
 
-    input.btn {
-      margin-left: 0;
-      margin-right: 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-direction: column;
+    div.flex-button-sign-up {
+        display: flex;
+        justify-content: space-between;
+        // flex-direction: column;
     }
+
+    input.btn {
+        margin-left: 0;
+        margin-right: 0;
+        align-items: center;
+        border-radius: 50px;
+        min-width: 150px!important;
 }
 
 div.join-the-sink {
@@ -282,6 +297,13 @@ div.email-step {
   }
 }
 
+div.username-step {
+  h3 {
+    font-size: 56px;
+    font-weight: 400px;
+  }
+}
+
 .sign-in-from-new-account {
   color: #80acff;
   text-align: center;
@@ -291,9 +313,6 @@ div.email-step {
 div.agree {
   margin-top: 32px;
   font-size: 10px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
   text-align: center;
   width: 100%;
 }
@@ -304,4 +323,5 @@ div.edit-account-form {
   input {
     border-radius: 2px;
   }
+}
 }

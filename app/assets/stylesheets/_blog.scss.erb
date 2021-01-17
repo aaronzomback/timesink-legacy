@@ -53,7 +53,7 @@ div.blog-index-loop ul {
   margin-top: 64px;
   margin-left: auto;
   margin-right: auto;
-  width: 80%;
+  width: 75%;
   box-shadow: 0px 4px 34px rgba(0, 0, 0, 0.65), inset 0 1px 0 #222222;
   padding: 24px 4px;
   border-radius: 12px;
@@ -82,9 +82,8 @@ transform: scale(1);
 
 div.blog-post-cover-wrapper {
 
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    // grid-column-gap: -24px;
+    display: flex;
+
 
 }
 
@@ -93,6 +92,11 @@ div.blog-post-cover-wrapper {
       // align-items: center;
       // float: left;
       // margin-left: 64px;
+
+      p {
+        width: 70%;
+      }
+
       h2 {
         font-family: "SangBlue";
         margin-top: 0;
@@ -111,7 +115,7 @@ div.blog-post-cover-wrapper {
         margin-bottom: 0;
       }
 
-      span.published {
+      span.published, span.blog-comments-number {
         margin-left: 32px;
       }
 
@@ -136,7 +140,7 @@ div.blog-post-cover-wrapper {
       justify-content: flex-start;
       align-items: center;
       margin-bottom: 16px;
-      margin-top: 16px;
+      margin-top: 24px;
     }
 
     span.author, span.published {
@@ -239,5 +243,5 @@ section.blog-body {
 
 div.flex-blog-index-read {
   display: flex;
-   justify-content: space-between;
+  justify-content: flex-start;
 }

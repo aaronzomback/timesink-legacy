@@ -117,15 +117,14 @@ h4.No-cafe-discussion {
 
 
 .cafe-banner-title {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-column-gap: 300px;
+  display: flex;
+  justify-content: flex-start;
   align-items: center;
 }
 
 .write-review-button {
   font-family: "KhmerSangamMN";
-  margin-left: 10rem;
+  margin-left: 5rem;
   margin-top: 24px;
   display: inline-block;
   width: 180px;
@@ -139,6 +138,7 @@ h4.No-cafe-discussion {
 }
 
 .review {
+  width: 800px;
   border-top: 1px dotted gray;
   font-family: "Spectral";
   margin-left: 80px;

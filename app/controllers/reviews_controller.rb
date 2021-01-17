@@ -25,9 +25,9 @@ end
 
 def create
   @film = Film.friendly.find(params[:film_id])
+
+  # user must be already logged in to access 'write a new revoew'
   @review = @film.reviews.new(form_params)
-
-
 
   # associate the review with the current user before saving
   @review.user = @current_user

@@ -7,10 +7,10 @@ class User < ApplicationRecord
   extend FriendlyId
   friendly_id :username, use: :slugged
 
-  validates_presence_of :name, :if => lambda { |u| u.current_step == "name" }
-  validates_presence_of :username, :if => lambda { |u| u.current_step == "username" }
-  validates_presence_of :email, :if => lambda { |u| u.current_step == "email_password" }
-  validates_presence_of :password, :if => lambda { |u| u.current_step == "password" }
+  validates :name, presence: true, :if => lambda { |u| u.current_step == "name" }
+  validates :username, presence: true, uniqueness: true, :if => lambda { |u| u.current_step == "username" }
+  validates :email, presence: true, uniqueness: true, format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i, :message => "is invalid. Check if it's in the correct format (i.e. timesink@gmail.com)", :on => :create }, :if => lambda { |u| u.current_step == "email_password" }
+  validates :password, presence: true, :length => { :minimum => 8, :message => "Must be at least 8 characters"}, :on => :create, :if => lambda { |u| u.current_step == "email_password" }
 
   acts_as_voter
 
@@ -20,10 +20,8 @@ class User < ApplicationRecord
   has_many :comments, dependent: :destroy
   has_many :submissions, dependent: :destroy
 
-  validates :name, presence: true
-  validates :username, presence: true, uniqueness: true
-  validates :email, presence: true, uniqueness: true, format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i, :on => :create }
-  validates :password, presence: true, :length => { :minimum => 8, :message => "Must be at least 8 characters"}, :on => :create
+
+
 
   has_secure_password
 

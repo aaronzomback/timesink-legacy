@@ -38,17 +38,20 @@ class UsersController < ApplicationController
    @user.current_step = session[:user_step]
 
 
-
+    # if @user.valid?
       if params[:back_button]
         @user.previous_step
       elsif @user.last_step?
         # Re-populate the Carrierwave uploader's cache with the cache identifier
         # saved in the session
         @user.avatar_cache = session[:user_params][:avatar]
+        if @user.all_valid?
         @user.save!
-      else
+      end
+    elsif params[:continue_button]
         @user.next_step
       end
+    # end
 
 
       # After deep_merge, bring back the image
@@ -63,8 +66,8 @@ class UsersController < ApplicationController
       session[:thumbnail_cached] = @user.avatar.url(:thumbnail)
     end
 
-      session[:user_step] = @user.current_step
 
+      session[:user_step] = @user.current_step
 
       if @user.new_record?
       render "new"
@@ -92,7 +95,7 @@ end
   def show
 
     @user = User.friendly.find(params[:id]) rescue User.find_by_username(params[:id])
-  
+
 
     render :layout => 'application'
   end

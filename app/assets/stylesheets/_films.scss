@@ -9,7 +9,7 @@
 .video-js {
   color: #007dff;
   font-size: 20px;
-  font-family: "KhmerSangamMN";
+  font-family: "AnoRegularW05WideItalic";
 }
 
 .vjs-poster{
@@ -43,7 +43,7 @@ $center-big-play-button: true;
 .vjs-matrix .vjs-volume-level,
 .vjs-matrix .vjs-play-progress,
 .vjs-matrix .vjs-slider-bar {
-  background: #007dff;
+  background: #222222;
 }
 
 
@@ -101,7 +101,7 @@ div.back-to-films{
     text-decoration: none;
     color: #F5F7F9;
     font-size: 14px;
-    font-family: 'SangBlue';
+    font-family: "SangBleuKingdom";
     display: inline-block;
   }
 }
@@ -117,7 +117,7 @@ div.film-gallery-grid {
   display: grid;
   grid-gap: 24px;
   grid-template-columns: 1fr 1fr 1fr;
-  font-family: "KhmerSangamMN";
+  font-family: "SangBleuKingdom";
   margin-left: 96px;
   margin-right: 96px;
   margin-top: 120px;
@@ -162,7 +162,7 @@ box-shadow: 16px 16px 24px rgba(22, 20, 20, 0.65);
 
     h3 {
       font-size: 21px;
-        font-family: 'KhmerSangamMN';
+        font-family: 'SangBleuKingdom';
     }
 
 
@@ -233,7 +233,7 @@ section.film-show-grid {
 
         h1.film-title1 {
           margin-bottom: 4px;
-          font-family: "SangBlue";
+          font-family: "SangBleuKingdom";
           font-size: 40px;
           margin-top: 0;
         }
@@ -244,7 +244,7 @@ section.film-show-grid {
 
 
     h2.film-author, h2.film-duration {
-      font-family: "KhmerSangamMN";
+      font-family: "SangBleuKingdom";
       display: inline-block;
       margin-right: 3em;
       margin-top: 4px;
@@ -259,7 +259,7 @@ section.film-show-grid {
     }
 
     .film-description {
-      font-family: "Spectral";
+      font-family: "Spectral-Regular";
       font-size: 18px;
       margin-bottom: 0;
       margin-top: 32px;
@@ -274,7 +274,7 @@ section.film-show-grid {
 }
 
 .preview-button {
-  font-family: "KhmerSangamMN";
+  font-family: "AnoRegularW05Wide";
   margin-top: 40px;
   display: inline-block;
   width: 100px;
@@ -286,7 +286,7 @@ section.film-show-grid {
 }
 
 .play-button {
-  font-family: "KhmerSangamMN";
+  font-family: "AnoRegularW05Wide";
   margin-top: 40px;
   display: inline-block;
   width: 100px;
@@ -305,7 +305,7 @@ section.film-show-grid {
 }
 
 .cafe-talk-button {
-  font-family: "KhmerSangamMN";
+  font-family: "AnoRegularW05Wide";
   margin-top: 24px;
   display: inline-block;
   width: 180px;

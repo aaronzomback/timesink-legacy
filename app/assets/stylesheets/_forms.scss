@@ -1,13 +1,3 @@
-@font-face {
-  font-family: "SangBleuEmpire";
-  src: url('app/assets/fonts/SangBleuEmpire-Regular.ttf');
-}
-
-@font-face {
-  font-family: "SangBleuEmpire-Regular-WebTrial";
-  font-weight: 400;
-  src: font-url("app/assets/fonts/SangBleuEmpire-Regular-WebTrial.ttf");
-}
 
 
 //
@@ -108,7 +98,7 @@ input[type=submit] {
   padding: 8px 16px;
   margin-top: 10px;
   margin-left: 25px;
-  font-family: "KhmerSangamMN";
+  font-family: "AnoRegularW05WideItalic";
 }
 
 
@@ -136,7 +126,7 @@ input, textarea {
 // on 'sign-in' layout view
 .sign-in-timesink-logo {
   h1 {
-    font-family: "SangBleuEmpire-Regular-WebTrial";
+    font-family: "AnoRegularW05Wide";
     font-size: 72px;
     font-weight: 400;
     margin-bottom: 32px;
@@ -169,7 +159,7 @@ div.log-in-form {
    margin-bottom: 0;
   display: block;
   color: #7AA8FF;
-  font-family: "KhmerSangamMN";
+  font-family: "AnoRegularW05WideItalic";
 }
 
 
@@ -190,6 +180,10 @@ div.new-account {
   label.password_optional {
     margin-top: 16px;
   }
+}
+
+label.checkbox {
+  font-family: "Spectral-Regular";
 }
 
 label.email.required.original {
@@ -218,7 +212,7 @@ div.forgot-password {
   justify-content: flex-end;
 
   a {
-    font-family: "KhmerSangamMN";
+    font-family: "AnoRegularW05Wide";
   }
 }
 

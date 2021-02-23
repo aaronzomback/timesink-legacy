@@ -1,89 +1,15 @@
 
-
-@font-face {
-  font-family: "foundersgrotesk";
-  src: asset-url('app/assets/foundersgrotesktestregular.woff');
-}
-
-@font-face {
-   font-family: 'Syne-Regular';
-   src: url('/app/assets/fonts/Syne-Regular.ttf');
-}
-
-@font-face {
-  font-family: 'MonumentGroteskTrial-Regular';
-  src: url('app/assets/fonts/MonumentGroteskTrial-Regular.woff');
-}
-
 @font-face {
   font-family: "Spectral";
   font-weight: 400;
-  src: url('app/assets/fonts/Spectral.ttf');
+  src: url('/fonts/Spectral.ttf');
 }
 
 @font-face {
   font-family: 'Spectral-Light';
   font-weight: 300;
-  src: url('app/assets/fonts/Spectral-Light.ttf');
+  src: url('/fonts/Spectral-Light.ttf');
 }
-
-@font-face {
-  font-family: 'KhmerSangamMN';
-  src: url('app/assets/fonts/KhmerSangamMN.ttf');
-}
-
-@font-face {
-  font-family: 'Canela';
-  src: url('app/assets/fonts/Canela-Light.ttf');
-}
-
-@font-face {
-  font-family: 'MonumentGroteskTrial-Mono.otf';
-  src: url('app/assets/fonts/MonumentGroteskTrial-Mono.otf');
-}
-
-@font-face {
-  font-family: "SangBleuEmpire-Regular-WebTrial";
-  font-weight: 400;
-  src: font-url("app/assets/fonts/SangBleuEmpire-Regular-WebTrial.ttf");
-}
-
-@font-face {
-  font-family: 'SangBleu-Light';
-  src: url('app/assets/fonts/SangBleuKingdom-Light-WebTrial.ttf');
-}
-
-@font-face {
-  font-family: 'Roboto', sans-serif;
-  font-weight: 300;
-  src:url('//fonts.googleapis.com/css2?family=Roboto');
-}
-
-@font-face {
-  font-family: 'SangBlueOGSans';
-  font-style: normal;
-  font-weight: normal;
-  src: url('app/assets/fonts/SangBleuOGSans-Regular-WebTrial.ttf');
-}
-
-@font-face {
-  font-family: "Riviera-Nights";
-  font-weight: 400;
-  src: url('app/assets/fonts/RivieraNights-Regular-WebTrial.woff2');
-}
-
-@font-face {
-  font-family: Aeonik-Regular;
-  src: url('/app/assets/fonts/AeonikTRIAL-Regular.otf') format("opentype");
-}
-
-@font-face {
-  font-family: "SuisseNeue-Regular";
-  font-weight: 400;
-  src: url('app/assets/fonts/SuisseNeue-Regular-WebTrial.ttf');
-}
-
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700');
 
 
 html, body {
@@ -278,6 +204,12 @@ a {
  margin-right: 0;
 }
 
+h1.header-logo {
+  font-family: "AnoRegularW05Wide";
+  font-size: 56px;
+  letter-spacing: 0.5px;
+}
+
 div.sign-in-timesink-logo {
   display: flex;
   justify-content: center;
@@ -311,7 +243,7 @@ nav {
     color: #F5F7F9;
     text-decoration: none;
     margin-right: 56px;
-    font-family: "KhmerSangamMN";
+    font-family: "SangBleuKingdom";
     font-size: 18px;
     white-space: nowrap;
 

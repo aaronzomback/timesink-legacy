@@ -3,7 +3,7 @@ class UsersController < ApplicationController
   layout "success"
 
   def index
-    @users = User.all
+    render "new"
   end
 
 

@@ -88,10 +88,22 @@
 
 
 
+  <% if is_logged_in? %>
 
     <div class="write-review-button"  onclick="toggleReview();">
       Write a review
     </div>
+
+    <% else %>
+
+<%= link_to new_session_path do %>
+    <div class="write-review-button">
+      Write a review
+    </div>
+    <%= flash[:error]= "Sign in to write a review!" %>
+    <% end %>
+
+    <% end %>
 
     </div>
 

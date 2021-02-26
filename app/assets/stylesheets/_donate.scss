@@ -1,4 +1,11 @@
 
+section.lock-donation-flex {
+  margin-bottom: 8px;
+}
+
+section.donation-form p {
+  font-family: "AnoRegularW05Wide";
+}
 
 .lock img {
   width: 200%;
@@ -8,13 +15,13 @@
 .secure-transaction {
   display: inline-block;
   margin-left: 0.4rem;
-  font-family: "KhmerSangamMN";
   margin-bottom: 2px;
+  font-size: 10px;
 }
 
 
 .stripe-logo {
-  width: 40%;
+  width: 30%;
 }
 
 
@@ -63,7 +70,8 @@ div.donation-intro {
 .donation-proceed {
   margin-bottom: 80px;
   color: white;
-  font-family: "KhmerSangamMN";
+  font-family: "SangBleuKingdom";
+  line-height: 1.6;
 }
 
 form.btcpay-form_btcpay-form--block {
@@ -83,6 +91,7 @@ div.btcpay-custom-container {
 section.btc-donation-form {
   // border-left: 1px solid white;
   padding-left: 40px;
+  font-family: "AnoRegularW05Wide";
 }
 
 

@@ -1,0 +1,1 @@
+$("#<%= dom_id(@commentable, 'form') %>").replaceWith('<%= j render 'comments/comment', commentable: @commentable, comment: @comment %>');

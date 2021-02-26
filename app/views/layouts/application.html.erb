@@ -170,7 +170,6 @@
 
     </header>
 
-
     <% if flash[:success].present? %>
    <div class="success">
      <%= flash[:success] %>
@@ -224,9 +223,8 @@ console.log('barba is loaded');
 
 <footer class="footer">
 
-  <span>© 2020 TimeSink Presents, All Rights Reserved</span>
-  <%= link_to "Terms", main_app.terms_path %>
-  <%= link_to "Cookies Policy", main_app.cookies_policy_path %>
-  <%= link_to "Privacy Policy", main_app.privacy_policy_path %>
+  <span>© 2021 TimeSink presents, all rights reserved</span>
+  <%= link_to "terms & conditions", main_app.terms_path %>
+  <%= link_to "privacy policy", main_app.privacy_policy_path %>
 
 </footer>

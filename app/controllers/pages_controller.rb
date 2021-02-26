@@ -27,9 +27,6 @@ class PagesController < ApplicationController
   def privacy_policy
   end
 
-  def cookies_policy
-  end
-
   def submission_success
      render :layout => 'success'
   end

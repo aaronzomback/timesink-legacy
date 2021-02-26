@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   ActiveAdmin.routes(self)
 
   # users controller
-  resources :users, :path => "join"
+  resources :users, :only => [:new, :create, :show], :path => "join"
 
 # session controller
   resource :session, :only => [:new, :create, :destroy, :show]
@@ -89,7 +89,6 @@ end
   get "donate", to: "pages#donate"
   get "terms", to: "pages#terms"
   get "privacy_policy", to: "pages#privacy-policy"
-  get "cookies_policy", to: "pages#cookies-policy"
   get "submit", to: "pages#submit"
   get "donation_success", to: "pages#donation_success"
   get "submission_success", to: "pages#submission_success"

@@ -111,6 +111,10 @@ body {
 
 @import "user-submissions";
 
+@import "terms";
+
+@import "privacy";
+
 @import "footer";
 
 
@@ -153,7 +157,7 @@ section.review-guidelines {
     width: 600px;
 
     h2 {
-      font-family: "SangBleu";
+      font-family: "SangBleuKingdom";
       margin-bottom: 16px;
     }
 }
@@ -260,7 +264,7 @@ nav {
 
 
 .success {
-  font-family: "KhmerSangamMN";
+  font-family: "AnoRegularW05Wide";
   background-color: #4987FF;
   color: #F5F7F9;
   padding: 4px 20px;
@@ -272,7 +276,7 @@ nav {
 }
 
 .error {
-  font-family: "KhmerSangamMN";
+  font-family: "AnoRegularW05Wide";
   background-color: hsl(36, 99%, 55%);
   color: #F5F7F9;
   padding: 4px 20px;
@@ -516,7 +520,7 @@ $duration: 30s;
 
         a {
           font-weight: 400;
-          font-family: "MonumentGroteskTrial-Regular";
+          font-family: "SangBleuKingdom";
           margin-bottom: 12px;
 
         }

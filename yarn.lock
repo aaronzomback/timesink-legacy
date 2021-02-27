@@ -804,14 +804,6 @@
     lodash "^4.17.19"
     to-fast-properties "^2.0.0"
 
-"@barba/core@^2.9.7":
-  version "2.9.7"
-  resolved "https://registry.yarnpkg.com/@barba/core/-/core-2.9.7.tgz#803f7b54c6fa7d69e482378168f701cbb1a28d8b"
-  integrity sha512-GLtpty1fzWnd500AoUHd+hJoSCVElqth20P4W8Bf0IAA9nd1K5e8NbPnCegXC4KzOwV+JHk5DVofAZcoc+I54Q==
-  dependencies:
-    is-promise "^2.1.0"
-    path-to-regexp "^3.0.0"
-
 "@csstools/convert-colors@^1.4.0":
   version "1.4.0"
   resolved "https://registry.yarnpkg.com/@csstools/convert-colors/-/convert-colors-1.4.0.tgz#ad495dc41b12e75d588c6db8b9834f08fa131eb7"
@@ -1464,11 +1456,6 @@ balanced-match@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/balanced-match/-/balanced-match-1.0.0.tgz#89b4d199ab2bee49de164ea02b89ce462d71b767"
   integrity sha1-ibTRmasr7kneFk6gK4nORi1xt2c=
-
-barba.js@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/barba.js/-/barba.js-1.0.0.tgz#3c1d7358f0d3f87719cb1bdb775be417c9273f7d"
-  integrity sha1-PB1zWPDT+HcZyxvbd1vkF8knP30=
 
 base64-js@^1.0.2:
   version "1.3.1"

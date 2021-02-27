@@ -15,8 +15,6 @@
  <script src="youtube.min.js"></script>
    <script src="https://unpkg.com/ionicons@5.2.3/dist/ionicons.js"></script>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'barba' %>
-      <%= javascript_pack_tag 'barba-css' %>
 
         <script src="https://js.stripe.com/v3/"></script>
 
@@ -183,26 +181,16 @@
    <% end %>
 
 
-<div data-barba="wrapper">
-  <main data-barba="container">
+
+  <main>
     <%= yield %>
   </main>
-  </div>
 
 </div>
 
 
 <script src="https://vjs.zencdn.net/7.8.4/video.js"></script>
-<script src="barba.min.js" type="text/javascript">console.log('barba working')</script>
 
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/barba.js/1.0.0/barba.min.js" integrity="sha512-7b1FfB2MGnB65aK6jrbS8k3REB+8bEE8UfP/TEwacejD0g02nLLI1VL4IPcKyiLk2lf7HJWaUYEUWc65aqaXQg==" crossorigin="anonymous">
-console.log('barba is loaded');
-</script>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/barba.js/1.0.0/barba.js" integrity="sha512-0yosWZUFVMH6VlnUbYeovf+9oNckohCXi7B/U5G2JPGLz5oXrmVmk2mT8QUox9c0rgpe6+2HK0e6ygMHARz3Wg==" crossorigin="anonymous">
-console.log('barba is loaded');
-</script>
 
 
 <script>

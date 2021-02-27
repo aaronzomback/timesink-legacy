@@ -2,7 +2,6 @@
   "name": "timesink",
   "private": true,
   "dependencies": {
-    "@barba/core": "^2.9.7",
     "@rails/actioncable": "^6.0.0",
     "@rails/activestorage": "^6.0.0",
     "@rails/ujs": "^6.0.0",
@@ -17,7 +16,6 @@
   },
   "version": "0.1.0",
   "devDependencies": {
-    "barba.js": "^1.0.0",
     "video.js": "^7.8.4",
     "webpack-dev-server": "^3.11.0"
   }

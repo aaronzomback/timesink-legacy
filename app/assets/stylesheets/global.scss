@@ -392,28 +392,6 @@ $duration: 30s;
 }
 
 
-// barba page transitions
-.fade-leave-active,
-.fade-enter-active {
-  transition: opacity 1s ;
-}
-
-.fade-leave {
-  opacity:  1;
-}
-
-.fade-leave-to {
-  opacity: 0;
-}
-
-.fade-enter {
-  opacity: 0;
-}
-
-.fade-enter-to {
-  opacity: 1;
-}
-
 
 // media query nav menu
 

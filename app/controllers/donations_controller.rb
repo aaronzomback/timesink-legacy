@@ -20,6 +20,7 @@ class DonationsController < ApplicationController
    if @donation.save
 
   DonationMailer.newdonation(@donation).deliver_now
+  DonationMailer.ThankYou(@donation).deliver_now
 
     redirect_to donation_success_path
 

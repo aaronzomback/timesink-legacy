@@ -1,8 +1,6 @@
-require('activeadmin_quill_editor')
+require('activeadmin_quill_editor'),
 
-
-
-<script src="/dist/quill.js"></script>
+<script src="/dist/quill.js"></script>,
 <script src="/dist/quill.imageUploader.min.js"></script>
 
 Quill.register("modules/ImageUploader", ImageUploader);

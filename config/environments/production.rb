@@ -110,6 +110,12 @@ Rails.application.configure do
   # config.active_record.database_resolver = ActiveRecord::Middleware::DatabaseSelector::Resolver
   # config.active_record.database_resolver_context = ActiveRecord::Middleware::DatabaseSelector::Resolver::Session
 
+  # Configure default URL for action mailer
+  config.action_mailer.default_url_options = {:host =>'timesinkpresents.com'}
+
+  config.read_encrypted_credentials = true
+
+
   config.action_mailer.raise_delivery_errors = true
   config.action_mailer.delivery_method = :smtp
 

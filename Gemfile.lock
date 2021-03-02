@@ -1,3 +1,13 @@
+GIT
+  remote: git@github.com:charlotte-ruby/impressionist.git
+  revision: 3e22fa2da1d90529fff811c3ea3cfee8962f00ec
+  ref: 3e22fa2da1d90529fff811c3ea3cfee8962f00ec
+  specs:
+    impressionist (2.0.0)
+      friendly_id
+      nokogiri (~> 1)
+      rails (>= 3.2.15)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -372,6 +382,7 @@ DEPENDENCIES
   fog-aws
   form_slider
   friendly_id (~> 5.4.0)
+  impressionist!
   jbuilder (~> 2.7)
   jquery-rails
   jquery-ui-rails

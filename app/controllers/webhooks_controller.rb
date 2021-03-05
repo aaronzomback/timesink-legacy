@@ -6,7 +6,7 @@ def create
   payload = request.body.read
   sig_header = request.env['HTTP_STRIPE_SIGNATURE']
   event = nil
-  endpoint_secret = Rails.application.credentials[Rails.env.to_sym][:stripe_webhook_secret]
+  endpoint_secret = Rails.application.credentials[Rails.env.to_sym][:stripe_webhook_secret_submissions]
 
 
   begin

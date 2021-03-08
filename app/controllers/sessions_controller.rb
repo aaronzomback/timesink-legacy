@@ -22,11 +22,12 @@ if @user.present?
 
  session[:user_id] = @user.id
 
-
+flash[:success] = 'Welcome back to the sink!'
  # go back to previous page the user was on
 redirect_to cookies[:original_referrer]
 
   else
+  flash[:error] = 'Your email and/or password is incorrect'
   render "new", :layout => 'sign'
   end
 end

@@ -47,7 +47,7 @@ def show
   @film = Film.friendly.find(params[:film_id])
   @review = Review.friendly.find(params[:id])
 
-    render layout: "success"
+    render :layout => 'application'
     cookies[:original_referrer] = request.original_url
 end
 

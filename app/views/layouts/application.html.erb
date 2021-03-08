@@ -55,7 +55,6 @@
 
     <span class="dropdown" id="dropdown">
       <%= image_tag @current_user.avatar.small.url, :class => "avatar" %>
-      <i class="fa fa-chevron-down"></i>
       <ul class="dropdown-menu" id="dropdown-menu">
         <li>  <%= link_to "Edit profile", main_app.edit_account_path %></li>
         <li>  <%= link_to "Submissions", main_app.user_submissions_path(@current_user) %> </li>
@@ -91,7 +90,6 @@
 
  <span class="welcome dropdown">
    <%= @current_user.username %>
-    <i class="fa fa-chevron-down"></i>
    <ul class="dropdown-menu" id="dropdown-menu">
      <li>  <%= link_to "Edit profile", main_app.edit_account_path %></li>
      <li>  <%= link_to "Submissions", main_app.user_submissions_path(@current_user) %> </li>

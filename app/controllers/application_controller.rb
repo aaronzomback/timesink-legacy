@@ -12,6 +12,10 @@ class ApplicationController < ActionController::Base
 
   helper_method :already
 
+  def error
+    render status_code.to_s, status: (params[:code] || 500)
+  end
+
   def already
     "Already a member?"
   end

@@ -1,4 +1,4 @@
-a.notifications {
+.notifications {
   font-family: "AnoRegularW05Wide";
   font-size: 14px;
   letter-spacing: 1px;
@@ -8,12 +8,11 @@ a.notifications {
     cursor: pointer;
     outline: none;
     position: relative;
-    width: auto;
 }
 
 .dropdown .dropdown-menu {
-    // background-color: #1b1919;
-    // box-shadow: 12px 2px 34px rgba(0, 0, 0, 0.65);
+    background-color: #1b1919;
+    box-shadow: 12px 2px 34px rgba(0, 0, 0, 0.65);
     border-radius: 2px;
     font-weight: inherit;
     left: 0;
@@ -33,21 +32,25 @@ a.notifications {
     transition: all 0.3s ease-in;
 }
 
-.dropdown .dropdown-menu a { text-decoration: none; }
+.dropdown .dropdown-menu a {
+  text-decoration: none;
+}
 
 .dropdown .dropdown-menu p {
     margin: 0;
     padding: 10px 15px;
 }
 
-.dropdown .dropdown-menu span { line-height: inherit; }
+.dropdown .dropdown-menu span {
+  line-height: inherit;
+}
 
-.dropdown ul.dropdown-menu { list-style-type: none; }
+.dropdown ul.dropdown-menu { list-style-type: none;  }
 
 .dropdown .dropdown-menu li {
     display: block;
     padding: 12px 10px;
-
+    font-family: "SangBleuKingdom";
 }
 
 .dropdown .dropdown-menu li:hover {
@@ -61,4 +64,5 @@ a.notifications {
 
 .dropdown-menu {
   padding-bottom: 8px;
+  background-color: white;
 }

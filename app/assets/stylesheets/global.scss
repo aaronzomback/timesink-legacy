@@ -117,6 +117,8 @@ body {
 
 @import "footer";
 
+@import "errors";
+
 
 
 .welcome {
@@ -225,7 +227,7 @@ div.sign-in-timesink-logo {
 }
 
 header {
-  margin: 48px 0px 40px 0px;
+  margin: 8px 0px 40px 0px;
   display: flex;
   align-items: center;
   justify-content:space-between;

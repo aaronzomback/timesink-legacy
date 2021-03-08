@@ -10,7 +10,7 @@
 
 
   <%= simple_form_for :session, html: { class: "hide-required" }, url: session_path do |f| %>
-   <%= f.error_notification %>
+  <%= f.error_notification %>
   <%= f.input :email, placeholder: 'Enter your email', :label_html => { :class => "original" } %>
   <%= f.input :password, placeholder: 'Enter your password', :label_html => { :class => "original" } %>
   <div class="forgot-password">

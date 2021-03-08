@@ -12,7 +12,6 @@ class SubmissionsController < ApplicationController
 
       # the form for adding a new submission
       @submission = Submission.new
-      render :layout => 'success'
 
   else
 

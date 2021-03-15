@@ -14,4 +14,8 @@ class ErrorsController < ApplicationController
     render status: 422
   end
 
+  def timeout
+    render status: 408
+  end
+
 end

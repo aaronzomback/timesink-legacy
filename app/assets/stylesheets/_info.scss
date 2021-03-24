@@ -63,9 +63,9 @@ ul.accordion-list {
     div.answer {
       position: relative;
       display: block;
-      width: 100%;
+      width: 80%;
       height: auto;
-      margin: 0;
+      margin-left: 2rem;
       padding: 24px 0;
       cursor: pointer;
 
@@ -78,6 +78,7 @@ ul.accordion-list {
         line-height: 150%;
         margin: 0 0 15px 0;
         font-size: 18px;
+        font-weight: 300;
       }
     }
   }

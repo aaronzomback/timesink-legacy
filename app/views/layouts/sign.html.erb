@@ -22,18 +22,17 @@
 
 </head>
   <body>
-
-   <% if flash[:success].present? %>
+     <% if flash[:success].present? %>
        <div class="success">
          <%= flash[:success] %>
        </div>
    <% end %>
 
-   <% if flash[:error].present? %>
-       <div class="error">
-      <%= flash[:error] %>
-       </div>
-   <% end %>
+  <% if flash[:error].present? %>
+      <div class="error">
+    <%= flash[:error] %>
+      </div>
+  <% end %>
 
 
 

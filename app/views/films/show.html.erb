@@ -87,22 +87,10 @@
 
 
 
-  <% if is_logged_in? %>
 
-    <div class="write-review-button"  onclick="toggleReview();">
-      Write a review
-    </div>
-
-    <% else %>
-
-<%= link_to new_session_path do %>
     <div class="write-review-button">
-      Write a review
+      <%= link_to "Write a review", main_app.new_film_review_path(@film) %>
     </div>
-    <%= flash[:error]= "Sign in to write a review!" %>
-    <% end %>
-
-    <% end %>
 
     </div>
 
@@ -163,29 +151,6 @@
         <% end %>
 
   <section>
-              <div class="popupReview" id="popupReview">
-
-
-
-                <section class="review-form">
-
-                  <div class="back-to-films">
-                    <%= link_to "#{film_path(@film)}#cafe" do %>
-                    <ion-icon name="close-outline" id="close-outline" size="large"></ion-icon>
-                    <% end %>
-                  </div>
-
-                <%= simple_form_for [@film, @review] do |f| %>
-                <%= f.input :title, :placeholder => "Enter a review title" %>
-                <%= f.input :body, :class => "body", :placeholder => "Enter your thoughts and ideas..." %>
-
-                <%= f.button :submit, "Publish review" %>
-                <% end %>
-
-                </section>
-
-
-              </div>
 
 
               <div class="popupfilm" id="filmPopUp">
@@ -206,13 +171,6 @@
                 </span>
             </div>
 
-
-            <script type="text/javascript">
-                  function toggleReview() {
-                  var popupReview= document.querySelector(".popupReview")
-                  popupReview.classList.toggle("active")
-                }
-              </script>
 
 
 

@@ -9,8 +9,8 @@
 <section class="review-form">
 
 <%= simple_form_for [@film, @review] do |f| %>
-<%= f.input :title, :placeholder => "Enter a review title" %>
-<%= f.input :body, :class => "body", :placeholder => "Enter your thoughts and ideas..." %>
+<%= f.input :title, :placeholder => "Enter a review title", :label_html => { :class => "review-title-label" } %>
+<%= f.input :body, :label => "Review", :class => "body", :placeholder => "Enter your thoughts and ideas...", :label_html => { :class => "review-body-label" } %>
 
 <%= f.button :submit, "Publish review" %>
 <% end %>

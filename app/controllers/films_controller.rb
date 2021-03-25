@@ -24,7 +24,6 @@ class FilmsController < ApplicationController
   def show
     @film = Film.friendly.find(params[:id])
     @review = Review.find_by_id(params[:review_id])
-    @review = @film.reviews.new(review_params)
     impressionist(@film)
 
   end
@@ -63,8 +62,5 @@ end
    params.require(:Film).permit(:title, :author, :cover, :video, :trailer, :description, :description_body, :year, :is_top_pick, :artist_website)
   end
 
-  def review_params
-    params.permit(:title, :body, :score)
-  end
 
 end

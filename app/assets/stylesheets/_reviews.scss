@@ -135,6 +135,9 @@ h4.No-cafe-discussion {
   text-align: center;
   cursor: pointer;
   margin-bottom: 24px;
+      a {
+        color: #7AA8FF;
+      }
 }
 
 .review {
@@ -149,11 +152,30 @@ h4.No-cafe-discussion {
 .review-form {
   width: 600px;
   margin-left: 80px;
-  padding: 120px 240px;
-  background-color: black;
+  padding: 64px 240px;
+  // background-color: black;
 
   input[type=text_area] {
     width: 50%;
+    border: none;
+  }
+
+  #review_title.string.required {
+    border-top-style: hidden;
+    border-right-style: hidden;
+    border-left-style: hidden;
+    border-bottom-style: groove;
+    border-bottom: 1px solid #7AA8FF;
+  }
+
+  label.review-title-label {
+    font-size: 24px;
+  }
+
+  label.review-body-label {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    font-size: 24px;
   }
 }
 

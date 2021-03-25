@@ -18,7 +18,7 @@ class ReviewsController < ApplicationController
     @review = Review.new
 
   else
-    @film = Film.friendly.find(params[:film_id])
+    flash[:error]= "Sign in to write a review!"
     redirect_to new_session_path
   end
 end

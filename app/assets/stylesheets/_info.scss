@@ -45,7 +45,8 @@ ul.accordion-list {
       font-size: 21px;
       letter-spacing: 0.01em;
       cursor: pointer;
-      font-family: "SangBlue";
+      font-family: "SangBleuOGSans";
+      text-transform: uppercase;
 
       &:after {
         content: "\f278";

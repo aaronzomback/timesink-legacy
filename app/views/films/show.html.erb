@@ -5,10 +5,11 @@
 
 
 
-<div class="breadcrumb-film-show">
-  <span> <%= link_to "Films", films_path %></span> // <span><%= @film.title %></span>
+<div class="back-to-films" style="margin-left: 10rem;">
+  <%= link_to films_path do %>
+     <span><%= image_tag "BackArrow1.svg" %> </span><h3>Back to films </h3>
+  <% end %>
 </div>
-
 
 
 <section class="film-show-grid">

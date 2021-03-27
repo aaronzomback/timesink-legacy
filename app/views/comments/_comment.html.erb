@@ -19,7 +19,7 @@
       </div>
   </div>
 
-    <p> <%= auto_link(simple_format(comment.body), html: { target: '_blank' }) %> </p>
+    <p class="comment-body" style="font-family: Spectral;"> <%= auto_link(simple_format(comment.body), html: { target: '_blank' }, class: "comment-body" ) %> </p>
 
     <div class="liking-target">
     <%= link_to like_comment_path(comment), class: "upvoted {liked_or_not}", remote: true, method: :put do %>

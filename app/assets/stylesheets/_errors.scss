@@ -1,11 +1,134 @@
 .timesink-404-error {
-  font-family: "SangBleuKingdom";
+  font-family: "SangBleuOGSans";
 }
 
 div.error-404 {
   font-family: "AnoRegularW05WideItalic";
-  font-size: 8rem;
+  font-size: 14rem;
+  margin-left: 12rem;
+  transform: translateY(20%);
   color: rgba(122, 168, 255, 0.85);
+  display: flex;
+  justify-content:flex-start;
+}
+
+div.oops {
+  margin-top: 8px;
+  display: flex;
+  justify-content: flex-end;
+  justify-content: center;
+}
+
+div.oop2 {
+  font-size: 21px;
+  margin-top: -2rem;
+  margin-left: 12rem;
   display: flex;
   justify-content: center;
 }
+
+//* for 500
+
+
+.timesink-500-error {
+  font-family: "SangBleuOGSans";
+}
+
+div.error-500 {
+  font-family: "AnoRegularW05WideItalic";
+  font-size: 14rem;
+  margin-left: 12rem;
+  transform: translateY(20%);
+  color: rgba(122, 168, 255, 0.85);
+  display: flex;
+  justify-content:flex-start;
+}
+
+div.internal {
+  margin-top: 8px;
+  display: flex;
+  justify-content: flex-end;
+  justify-content: center;
+}
+
+div.internal2 {
+  font-size: 21px;
+  margin-top: -2rem;
+  margin-left: 12rem;
+  display: flex;
+  justify-content: center;
+}
+
+
+// * end of error500
+
+
+
+//* 408 timeout error
+
+.timesink-408-error {
+  font-family: "SangBleuOGSans";
+}
+
+div.error-408 {
+  font-family: "AnoRegularW05WideItalic";
+  font-size: 14rem;
+  margin-left: 12rem;
+  transform: translateY(20%);
+  color: rgba(122, 168, 255, 0.85);
+  display: flex;
+  justify-content:flex-start;
+}
+
+div.timeout {
+  margin-top: 8px;
+  display: flex;
+  justify-content: flex-end;
+  justify-content: center;
+}
+
+div.timeout2 {
+  font-size: 21px;
+  margin-top: -2rem;
+  margin-left: 12rem;
+  display: flex;
+  justify-content: center;
+}
+
+//*408 end
+
+
+// * 422
+
+
+.timesink-422-error {
+  font-family: "SangBleuOGSans";
+}
+
+div.error-422 {
+  font-family: "AnoRegularW05WideItalic";
+  font-size: 14rem;
+  margin-left: 12rem;
+  transform: translateY(20%);
+  color: rgba(122, 168, 255, 0.85);
+  display: flex;
+  justify-content:flex-start;
+}
+
+div.entity {
+  margin-top: 8px;
+  display: flex;
+  justify-content: flex-end;
+  justify-content: center;
+}
+
+div.entity2 {
+  font-size: 21px;
+  margin-top: -2rem;
+  margin-left: 12rem;
+  display: flex;
+  justify-content: center;
+}
+
+
+//* 422 end

@@ -42,7 +42,7 @@ class ImageUploader < CarrierWave::Uploader::Base
   end
 
   version :show do
-    process resize_to_fill: [545, 540]
+    process resize_to_fill: [301, 402]
   end
 
   version :blog_cover do

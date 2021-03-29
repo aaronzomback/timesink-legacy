@@ -21,7 +21,7 @@
 <% if @user.first_step? %>
 
 <div class="already-sign-in">
-<%= already %> <%= link_to 'Sign in', new_session_path %>
+<%= already %> <u><%= link_to 'Sign in', new_session_path %></u>
 </div>
 
 <% end %>

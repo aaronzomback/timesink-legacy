@@ -11,7 +11,7 @@ div.Forgot-password-intro {
   width: 800px;
 
   h1 {
-    font-family: "SangBlue";
+    font-family: "SangBleuOGSans";
     font-size: 40px;
   }
 
@@ -38,22 +38,23 @@ main.reset-email-sent {
   transform: translateY(6rem);
 
   h5 {
-    font-family: "SangBlue";
+    font-family: "SangBleuOGSans";
     width: 480px;
     font-weight: 400;
   }
 
   span {
-    font-family: "Spectral";
+    font-family: "SangBleuOGSans";
     font-size: 14px;
   }
 
   p.reset {
     width: 400px;
     font-size: 16px;
-    border-bottom: 1px solid gray;
+    border-bottom: 1px solid #7AA8FF;
     padding-bottom: 48px;
     font-family: "Spectral";
+    font-weight: 300;
   }
 }
 
@@ -69,6 +70,6 @@ main.reset-pw-submit {
   transform: translateY(6rem);
 
   h5 {
-    font-family: "SangBlue";
+    font-family: "SangBleuOGSans";
   }
 }

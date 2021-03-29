@@ -1,17 +1,20 @@
-<h4><%= @submission.title %></h4>
+
+<div class="back-to-films" style="margin-left: 10rem;">
+  <%= link_to user_submissions_path(@user) do %>
+     <span><%= image_tag "BackArrow1.svg" %> </span><h3>Back to submissions </h3>
+  <% end %>
+</div>
 
 
-<div class="">
-
+<div class="user-submission-show">
   <section>
-    Current status: <%= @submission.status %>
-  </section>
-  <section>
-    <h5>Response:</h5>
+    <p>Film: <%= @submission.title %></p>
+    <p>Submitted: <%= @submission.created_at.strftime("%H:%M UTC, %m-%d-%Y") %> </p>
+    <p>Current status: <%= @submission.status %></p>
     <% if @submission.response.present? %>
-    <p><%= simple_format @submission.response %></p>
-    <% else %>
-    <p> Pending... </p>
-    <% end %>
+      <p>Response: <%= simple_format @submission.response %></p>
+        <% else %>
+      <p>Response: Pending... </p>
+      <% end %>
   </section>
 </div>

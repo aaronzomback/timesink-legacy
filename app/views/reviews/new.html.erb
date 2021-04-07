@@ -8,6 +8,12 @@
 
 <section class="review-form">
 
+  <% if @current_user.avatar.present? %>
+
+  <p style="margin-bottom: 24px;"><%= image_tag @current_user.avatar.thumbnail.url, class: "avatar" %></p>
+
+  <% end %>
+
 <%= simple_form_for [@film, @review] do |f| %>
 <%= f.input :title, :placeholder => "Enter a review title", :label_html => { :class => "review-title-label" } %>
 <%= f.input :body, :label => "Review", :class => "body", :placeholder => "Enter your thoughts and ideas...", :label_html => { :class => "review-body-label" } %>

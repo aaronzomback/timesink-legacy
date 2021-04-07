@@ -35,6 +35,9 @@
 
 <header>
 
+  <%= render "shared/ticker" %>
+
+
 <%= link_to main_app.root_path do %>
   <h1 class="header-logo">TimeSink</h1>
   <% end %>
@@ -163,7 +166,9 @@
 
           </nav>
 
-    </header>
+  </header>
+
+
 
     <% if flash[:success].present? %>
    <div class="success">

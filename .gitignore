@@ -53,3 +53,5 @@ yarn-debug.log*
 ./public/uploads/film/video/6/MixedforVimeo.mp4
 ./.git/objects/ae/7448a76f8c5df2c4f190322a5f05fd1f95c6b2
 ./.git/objects/9a/1dbcdfceb41c8c4927cdce62f8cccd29388f07
+
+/config/credentials/production.key

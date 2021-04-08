@@ -8,6 +8,13 @@ GIT
       nokogiri (~> 1)
       rails (>= 3.2.15)
 
+GIT
+  remote: https://github.com/mimemagicrb/mimemagic.git
+  revision: 01f92d86d15d85cfd0f20dabd025dcbd36a8a60f
+  ref: 01f92d86d15d85cfd0f20dabd025dcbd36a8a60f
+  specs:
+    mimemagic (0.3.5)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -212,9 +219,6 @@ GEM
     mime-types (3.3.1)
       mime-types-data (~> 3.2015)
     mime-types-data (3.2020.0512)
-    mimemagic (0.3.10)
-      nokogiri (~> 1)
-      rake
     mini_magick (4.10.1)
     mini_mime (1.0.2)
     mini_portile2 (2.4.0)
@@ -390,6 +394,7 @@ DEPENDENCIES
   jquery-ui-rails
   json
   listen (~> 3.2)
+  mimemagic!
   mini_magick
   notifications
   pg

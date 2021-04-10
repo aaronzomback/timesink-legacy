@@ -13,6 +13,16 @@ class Review < ApplicationRecord
 
   acts_as_votable
 
+  # def review_likes
+  #   @count = 0
+  #
+  #   reviews.all.each do |review|
+  #     @count = @count + review.get_likes.quantity
+  #   end
+  #
+  #   @count
+  # end
+
 
 
 end

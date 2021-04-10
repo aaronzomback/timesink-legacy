@@ -1,11 +1,11 @@
 
 
-<h2>We received a new generous donation in the amount of $<%= @donation.amount %> from <%= @donation.name %>!</h2>
+<p>We just received a new generous donation in the amount of $<%= @donation.amount %> from <%= @donation.name %>!</p>
 
 
 <% if @donation.note.present? %>
-<%= @donation.name %> left this note...
-"<%= @donation.note %>"
+<p><%= @donation.name %> left this note...</p>
+<p><i>"<%= @donation.note %>"</i></p>
 <% end %>
 
-<h2>Their email is <%= @donation.email %></h2>
+<p>Their email is <%= @donation.email %>...send them a nice follow up thank you note.</p>

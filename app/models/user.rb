@@ -20,7 +20,30 @@ class User < ApplicationRecord
   has_many :comments, dependent: :destroy
   has_many :submissions, dependent: :destroy
 
+  def review_likes
+    @sum = 0
 
+    reviews.all.each do |review|
+      @sum = @sum + review.get_likes.size
+    end
+
+    @sum
+  end
+
+  def comment_likes
+    @sum = 0
+
+    comments.all.each do |comment|
+      @sum = @sum + comment.get_likes.size
+    end
+
+    @sum
+  end
+
+  def sum(a, b)
+    @count = a + b
+    return @count
+  end
 
 
   has_secure_password

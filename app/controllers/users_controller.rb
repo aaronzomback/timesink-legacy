@@ -95,9 +95,11 @@ end
   def show
 
     @user = User.friendly.find(params[:id]) rescue User.find_by_username(params[:id])
-
+    @review = Review.friendly.find(params[:review_id]) rescue Review.find_by_title(params[:review_id])
+    @comment = Comment.find_by_id(params[:id]) rescue Comment.find_by_body(params[:comment_id])
 
     render :layout => 'application'
+
   end
 
   def destroy
@@ -110,6 +112,6 @@ end
 
 
   def form_params
-    params.require(:user).permit(:user, :name, :location, :username, :avatar, :email, :password, :password_confirmation, :newsletter)
+    params.require(:user).permit(:review, :commentable, :comment_id, :comment, :review_id, :user, :name, :location, :username, :avatar, :email, :password, :password_confirmation, :newsletter)
   end
 end

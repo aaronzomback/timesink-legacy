@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   ActiveAdmin.routes(self)
 
   # users controller
-  resources :users, :only => [:new, :create, :show], :path => "join"
+  resources :users, :only => [:new, :create, :show, :destroy], :path => "join"
 
 # session controller
   resource :session, :only => [:new, :create, :destroy, :show]
@@ -19,6 +19,7 @@ Rails.application.routes.draw do
 
 
   resources :user_submissions, :only => [:index, :show], :path => "user-submissions"
+  resources :user_reviews, :only => [:index], :path => "upvotes"
 
 
   # film submissions

@@ -1,9 +1,21 @@
-<h1>Welcome to TimeSink!</h1>
+<p>Dear <%= @user.name %>, it's wonderful to have you onboard...</p>
 
-<h2>Your username is: <%= @user.username %></h2>
+<h3>Welcome to TimeSink!</h3>
 
-<h2>See you around!</h2>
+<p>Our goal is to become the premiere destination for discovering the freshest talent in cinema today. </p>
 
-<h2>Sincerely,</h2>
+<p>In addition to discovering new <a href="www.timesinkpresents.com/films" style="text-decoration: none; color: black;"><u>films</u></a> and sharing your reviews and comments, we also feature a blog section called <a href="www.timesinkpresents.com/blog" style="text-decoration: none; color: black;"><i><u>Tales from the Faucet</u></i> </a> where we'll regularly publish exclusive articles, interviews, and op-eds with a diverse range of topics and perspectives from writers all over the globe.</p>
 
-<h2>TimeSink</h2>
+<p>As a platform, we are only as great as our members are, so we appreciate your presence and we look forward to your contributions.</p>
+
+<p>Above all, please be free to express yourself honestly here - we value your perspective and candid thoughts. </p>
+
+<h3>Account details</h3>
+<p><u>Username</u>: <%= @user.username %></p>
+<p style="text-decoration: none; color: black;"><u>Email</u>: <%= @user.email %> </p>
+
+<p>If you have any questions please don't hesitate to reach out to hello@timesinkpresents.com</p>
+
+<p>See you around!</p>
+
+<p>Cheers, <br> TimeSink</p>

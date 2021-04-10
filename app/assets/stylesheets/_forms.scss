@@ -64,11 +64,12 @@ h4.add-avatar {
 
 img {
   display:flex;
-  width: 35%;
+  width: 30%;
   flex-direction: column;
   justify-content: center;
   margin-bottom: 16px;
-  margin-right: 0;
+  margin-right: auto;
+  margin-left: auto;
 }
 }
 
@@ -84,6 +85,7 @@ h4.add-avatar {
 p.add-avatar-description {
   margin-top: 24px;
   margin-bottom: 56px;
+  text-align: center;
 }
 
 h2.whats-your-name {

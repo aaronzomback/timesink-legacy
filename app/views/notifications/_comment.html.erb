@@ -1,5 +1,6 @@
 <div class="notification-box">
 
+
   <div class=''>
     <% if notification.user.avatar.present? %>
       <span class="avatar-notification"><%= image_tag notification.actor.avatar.thumbnail.url, :class => "avatar" %></span>
@@ -9,7 +10,6 @@
       <% if notification.target.body.present?
            obj = get_commentable_obj(notification.target)
       %>
-
         <% if obj.is_a?(BlogPost) %>
           to your comment in <span>blog article <%= obj.title %></span>
           <span class="comment-notification"><i><%= link_to notification.target.body, "/blog/#{obj.title.downcase.parameterize}" %></i></span>

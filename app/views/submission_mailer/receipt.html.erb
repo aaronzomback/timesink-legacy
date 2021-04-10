@@ -1,7 +1,15 @@
-<h1> Your film submission for <%= @submission.title %> has been received!</h1>
 
+<p>Bonjour <%= @submission.user.name %>, we've received your submission for <%= @submission.title %>.</p>
 
-<h3>Total: $10</h3>
-<h3>Submission ID: <%= @submission.id %> </h3>
+<h3>Confirmation details</h3>
+<p><u>Total</u>: $25</p>
+<p><u>Film title</u>: <%= @submission.title %> </p>
+<p><u>Year released</u>: <%= @submission.year %> </p>
+<p><u>Film length</u>: <%= @submission.film_length %> </p
+<p><u>Film description</u>: <%= @submission.description %></p>
+<p><u>Film link</u>: <%= @submission.film_link %> </p>
+<p><u>Submission ID:</u> <%= @submission.id %></p>
 
-<h4>We will send you another confirmation once your film has been viewed. Stay tuned!</h4>
+<p>We'll send you another confirmation once your film has been viewed. Thank you!</p>
+
+<p>Cheers, <br> TimeSink </p>

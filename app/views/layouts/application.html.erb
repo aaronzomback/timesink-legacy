@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>TimeSink</title>
+  <title>TimeSink Presents</title>
 <%= csrf_meta_tags %>
   <%= csp_meta_tag %>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,18 +11,11 @@
   <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css">
   <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
- <script src="youtube.min.js"></script>
-   <script src="https://unpkg.com/ionicons@5.2.3/dist/ionicons.js"></script>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-
-        <script src="https://js.stripe.com/v3/"></script>
+  <script src="https://js.stripe.com/v3/"></script>
   <%= favicon_link_tag asset_path('Group1033.png') %>
 
-
-<script src="//vjs.zencdn.net/ie8/1.1.1/videojs-ie8.min.js" async></script>
-  <link rel="stylesheet"
-    href="https://fonts.googleapis.com/css?family=Roboto">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
   </head>
 
 
@@ -61,6 +54,7 @@
       <ul class="dropdown-menu" id="dropdown-menu">
         <li>  <%= link_to "Edit profile", main_app.edit_account_path %></li>
         <li>  <%= link_to "Submissions", main_app.user_submissions_path(@current_user) %> </li>
+        <li>  <%= link_to "Upvotes", main_app.user_reviews_path(@current_user) %> </li>
         <li> <%=  link_to "Log out", main_app.logout_path, method: :delete, :class => 'logout' %> </li>
       </ul>
     </span>
@@ -95,6 +89,7 @@
    <%= @current_user.username %>
    <ul class="dropdown-menu" id="dropdown-menu">
      <li>  <%= link_to "Edit profile", main_app.edit_account_path %></li>
+     <li>  <%= link_to "Upvotes", main_app.user_reviews_path(@current_user) %> </li>
      <li>  <%= link_to "Submissions", main_app.user_submissions_path(@current_user) %> </li>
      <li>  <%= link_to "Log out", main_app.session_path, method: :delete %> </li>
    </ul>
@@ -168,8 +163,6 @@
 
   </header>
 
-
-
     <% if flash[:success].present? %>
    <div class="success">
      <%= flash[:success] %>
@@ -194,7 +187,6 @@
 <script src="https://vjs.zencdn.net/7.8.4/video.js"></script>
 
 
-
 <script>
 
   $(function() {
@@ -205,6 +197,11 @@
   })
 
 </script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="youtube.min.js"></script>
+ <script src="https://unpkg.com/ionicons@5.2.3/dist/ionicons.js"></script>
+         <script src="//vjs.zencdn.net/ie8/1.1.1/videojs-ie8.min.js" async></script>
 
 
 </body>

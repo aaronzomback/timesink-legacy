@@ -10,7 +10,7 @@ class User < ApplicationRecord
   validates :name, presence: true, :if => lambda { |u| u.current_step == "name" }
   validates :username, presence: true, uniqueness: true, :if => lambda { |u| u.current_step == "username" }
   validates :email, presence: true, uniqueness: true, format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i, :message => "is invalid. Check if it's in the correct format (i.e. timesink@gmail.com)", :on => :create }, :if => lambda { |u| u.current_step == "email_password" }
-  validates :password, presence: true, :length => { :minimum => 8, :message => "Must be at least 8 characters"}, :on => :create, :if => lambda { |u| u.current_step == "email_password" }
+  validates :password, presence: true, :length => { :minimum => 8, :message => "Must be at least 8 characters", :on => :create}, :if => lambda { |u| u.current_step == "email_password" }
 
   acts_as_voter
 

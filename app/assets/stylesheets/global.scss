@@ -120,6 +120,14 @@ body {
 @import "errors";
 
 
+div.twitter {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 240px;
+  margin-left: 48rem;
+  width: 400px;
+}
+
 
 .welcome {
   font-size: 12px;

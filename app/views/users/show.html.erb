@@ -11,9 +11,6 @@
   <p><%= @user.email %></p>
 
   <span><%= image_tag "Polygon2.svg", :class => "upvote-shape" %></span>
-    <%= @user.review_likes %>
-    <%= @user.comment_likes %>
-
-
+  <%= @user.sum(@user.review_likes, @user.comment_likes) %>
 
 </section>

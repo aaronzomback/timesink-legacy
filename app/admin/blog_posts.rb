@@ -8,6 +8,14 @@ ActiveAdmin.register BlogPost, :as => "BlogArticle" do
   permit_params :title, :description, :body, :author, :cover, :publish_date, :image_1, :image_2, :image_3, :image_4, :image_5
 
 
+
+  # Upload method (to be included in the admin entity configuration)
+member_action :upload, method: [:post] do
+  result = { success: resource.images.attach(params[:file_upload]) }
+  result[:url] = url_for(resource.images.last) if result[:success]
+  render json: result
+end
+
   index do
    selectable_column
    index_column

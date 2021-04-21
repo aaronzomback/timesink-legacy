@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>TimeSink Presents</title>
+  <title>TimeSink Cinema</title>
 <%= csrf_meta_tags %>
   <%= csp_meta_tag %>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -27,10 +27,10 @@
 
     <div class="content">
 
+  <%= render "shared/ticker" %>
 
 <header>
 
-  <%= render "shared/ticker" %>
 
 
 <%= link_to main_app.root_path do %>
@@ -215,7 +215,7 @@
   </div>
 
 <footer class="footer">
-  <span>© <%= Time.current.year %> TimeSink presents, all rights reserved</span>
+  <span>© <%= Time.current.year %> TimeSink Cinema, all rights reserved</span>
   <%= link_to "Terms & conditions", main_app.terms_path %>
   <%= link_to "Privacy policy", main_app.privacy_policy_path %>
   <a href="#">hello@timesinkpresents.com</a>

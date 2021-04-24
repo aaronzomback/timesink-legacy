@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>TimeSink Cinema</title>
+  <title>TimeSink Presents</title>
 <%= csrf_meta_tags %>
   <%= csp_meta_tag %>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -40,7 +40,7 @@
     <nav>
 
     <span class="links">
-      <%= link_to "Films", main_app.films_path  %>
+      <%= link_to "Cinema", main_app.films_path  %>
       <%= link_to "Blog", main_app.blog_posts_path %>
       <%= link_to "Info", main_app.info_path %>
       <%= link_to "Donate", main_app.new_donation_path  %>
@@ -215,7 +215,7 @@
   </div>
 
 <footer class="footer">
-  <span>© <%= Time.current.year %> TimeSink Cinema, all rights reserved</span>
+  <span>© <%= Time.current.year %> TimeSink Presents, all rights reserved</span>
   <%= link_to "Terms & conditions", main_app.terms_path %>
   <%= link_to "Privacy policy", main_app.privacy_policy_path %>
   <a href="#">hello@timesinkpresents.com</a>

@@ -89,7 +89,7 @@ p.add-avatar-description {
 }
 
 h2.whats-your-name {
-  font-family: "SangBleuEmpire"
+  font-family: $button-font;
 }
 
 input[type=submit] {
@@ -100,7 +100,7 @@ input[type=submit] {
   padding: 8px 16px;
   margin-top: 10px;
   margin-left: 25px;
-  font-family: "AnoRegularW05WideItalic";
+  font-family: $button-font;
 }
 
 
@@ -109,7 +109,7 @@ input, textarea {
   min-width: 100px;
   border-bottom: 1px solid rgba(122, 168, 255, 0.85);
   padding: 10px 16px;
-  font-family: 'SangBleuOGSans';
+  font-family: $button-font;
   margin: 8px 0px 16px 0;
   color: white;
   background-color: #1B1C1E;
@@ -323,4 +323,8 @@ div.edit-account-form {
     border-radius: 2px;
   }
 }
+}
+
+#join-sink-btn {
+  font-family: "AnoRegularW05WideItalic";
 }

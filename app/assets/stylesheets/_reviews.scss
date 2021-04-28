@@ -5,6 +5,8 @@
 //   background-color: #000000;
 // }
 
+
+
 #submit-review {
   margin-left: 0;
   margin-top: 24px;
@@ -128,7 +130,7 @@ h4.No-cafe-discussion {
 }
 
 .write-review-button {
-  font-family: "AnoRegularW05WideItalic";
+  font-family: $button-font;
   margin-left: 5rem;
   margin-top: 24px;
   display: inline-block;

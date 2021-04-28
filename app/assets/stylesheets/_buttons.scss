@@ -1,4 +1,5 @@
 
+
 input[type=submit].back-button {
 
   background-color: #1B1C1E;
@@ -7,7 +8,7 @@ input[type=submit].back-button {
   padding: 6px 16px;
   margin-top: 10px;
   margin-left: 25px;
-  font-family: "AnoRegularW05WideItalic";
+  font-family: $button-font;
 }
 
 
@@ -45,7 +46,7 @@ input[type=submit].skip-button {
   color: #7AA8FF;
   text-decoration: none;
   font-size: 12px;
-  font-family: 'SangBleuOGSans';
+  font-family: $button-font;
   text-align: center;
   line-height: 1.4;
 }
@@ -63,7 +64,7 @@ input[type=submit].skip-button {
   color:  #1B1C1E;
   text-decoration: none;
   font-size: 12px;
-  font-family: 'SangBleuOGSans';
+  font-family: $button-font;
   text-align: center;
   line-height: 1.4;
 }
@@ -91,7 +92,7 @@ input[type=submit].skip-button {
   color: #7AA8FF;
   text-decoration: none;
   font-size: 12px;
-  font-family: "AnoRegularW05WideItalic";
+  font-family: $button-font;
 }
 
 .button3:hover {
@@ -106,7 +107,7 @@ input[type=submit].skip-button {
   color:  #020b17;
   text-decoration: none;
   font-size: 12px;
-  font-family: "AnoRegularW05WideItalic";
+  font-family: $button-font;
 }
 
 .button4 {
@@ -151,7 +152,7 @@ div.button-back-films {
   align-items: center;
 
   a {
-    font-family: "AnoRegularW05WideItalic";
+    font-family: $button-font;
   }
 }
 

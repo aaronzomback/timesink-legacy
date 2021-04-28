@@ -11,6 +11,9 @@
   src: url('/fonts/Spectral-Light.ttf');
 }
 
+$button-font: "SangBleuOGSans";
+
+
 
 html, body {
   height: 100%;
@@ -257,7 +260,7 @@ nav {
     color: #F5F7F9;
     text-decoration: none;
     margin-right: 56px;
-    font-family: "SangBleuOGSans";
+    font-family: $button-font;
     font-size: 14px;
     white-space: nowrap;
     text-transform: uppercase;

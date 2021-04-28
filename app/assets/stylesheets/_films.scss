@@ -276,7 +276,7 @@ section.film-show-grid {
 }
 
 .preview-button {
-  font-family: "AnoRegularW05Wide";
+  font-family: $button-font;
   margin-top: 40px;
   display: inline-block;
   width: 100px;
@@ -288,7 +288,7 @@ section.film-show-grid {
 }
 
 .play-button {
-  font-family: "AnoRegularW05Wide";
+  font-family: $button-font;
   margin-top: 40px;
   display: inline-block;
   width: 100px;
@@ -307,7 +307,7 @@ section.film-show-grid {
 }
 
 .cafe-talk-button {
-  font-family: "AnoRegularW05Wide";
+  font-family: $button-font;
   margin-top: 24px;
   display: inline-block;
   width: 180px;

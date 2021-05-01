@@ -13,6 +13,8 @@
 
 // Colors
 
+$MysteryWhite: #F5F7F9;
+
 $DarkTheater1: #1B1C1E;
 $DarkTheater2: #333538;
 $DarkTheater3: #64686D;
@@ -29,7 +31,6 @@ $NeonBlue4: #E0EBFF;
 
 
 $button-font: "SangBleuOGSans";
-$mystery-white: #F5F7F9;
 
 
 
@@ -81,7 +82,7 @@ section.animation {
 body {
   font-family: "SangBleuOGSans";
   background-color: $DarkTheater1;
-  color: $mystery-white;
+  color: $MysteryWhite;
   // margin-left: 80px;
   // margin-right: 80px;
 }

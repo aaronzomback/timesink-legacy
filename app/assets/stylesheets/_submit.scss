@@ -27,17 +27,16 @@ div.submission-grid {
 
 ul.submit {
 
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-column-gap: 0px;
-  width: 980px;
-  margin-left: auto;
-  margin-right: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 4rem;
+
 
 
     p.headline {
       font-size: 24px;
-        font-family: 'SangBleuOGSans';
+      font-family: 'SangBleuOGSans';
     }
 
     span {
@@ -50,17 +49,15 @@ ul.submit {
 
 
     li.submit-detail {
-      width: 25%;
-      float: left;
+      margin-right: 64px;
     }
 
     p {
         font-family: 'Spectral';
-        width: 360px;
+        width: 480px;
         font-weight: 300;
         font-size: 18px;
     }
-      margin-left: 4em;
 
     div.button-submit {
       margin-top: 32px;
@@ -125,7 +122,7 @@ ul.submit {
 }
 
 .submit-img {
-  width: 100%;
+  width: 45%;
   height: 50%;
   border-radius: 2px;
   display: block;

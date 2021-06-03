@@ -9,6 +9,8 @@ class NewslettersController < ApplicationController
   def create
     @newsletter = Newsletter.new(newsletter_params)
     if @newsletter.save
+      NewsletterSignUpMailer.newsletter_greeting(@newsletter).deliver_now
+      NewsletterSignUpMailer.new_subscription(@newsletter).deliver_now
       redirect_to donation_success_path
     else
       render "new"

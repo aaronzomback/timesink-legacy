@@ -13,13 +13,14 @@ input[type=submit].back-button {
   font-family: $button-font;
 }
 
-.input-subscribe {
+input[type=submit].input-subscribe {
   margin-left: 0 !important;
+  max-width: 300px;
 }
 
 .input-subscribe-page {
   margin-left: 0 !important;
-  width: 100%;
+  display: inline-block;
 }
 
 

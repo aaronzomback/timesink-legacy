@@ -1,5 +1,6 @@
-
+<div class="" style="display: flex; flex-direction: row;">
 <%= simple_form_for new_newsletter_path(@newsletter) do |f| %>
-  <%= f.input :email, placeholder: "Enter email" %>
+  <%= f.input :email, label: false, placeholder: "Enter email", class: "input-subscribe-front" %>
   <%= f.button :submit, "Subscribe", class: "input-subscribe" %>
 <% end %>
+</div>

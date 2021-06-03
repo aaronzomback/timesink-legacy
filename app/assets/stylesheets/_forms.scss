@@ -33,6 +33,10 @@ input, #review_title.string.required {
   color: #F5F7F9;
 }
 
+input, .subscribe-front {
+  max-width: 200px;
+}
+
 input, .input-email-subscribe {
   width: 100%;
 }

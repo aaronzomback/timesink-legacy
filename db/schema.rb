@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_24_131124) do
+ActiveRecord::Schema.define(version: 2021_06_03_090223) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string "namespace"
@@ -176,6 +176,12 @@ ActiveRecord::Schema.define(version: 2020_12_24_131124) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["film_id"], name: "index_nested_comments_on_film_id"
     t.index ["user_id"], name: "index_nested_comments_on_user_id"
+  end
+
+  create_table "newsletters", force: :cascade do |t|
+    t.string "email"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "notifications", force: :cascade do |t|

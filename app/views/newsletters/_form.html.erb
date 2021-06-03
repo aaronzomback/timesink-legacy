@@ -1,0 +1,5 @@
+
+<%= simple_form_for new_newsletter_path(@newsletter) do |f| %>
+  <%= f.input :email, placeholder: "Enter email" %>
+  <%= f.button :submit, "Subscribe", class: "input-subscribe" %>
+<% end %>

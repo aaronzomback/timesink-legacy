@@ -83,9 +83,14 @@ end
     resources :payment_intents_donations
     resources :webhooks_donations, only: [:create]
 
+    # newsletters
+
+    resources :newsletters
+
 
   get "info", to: "pages#info"
   get "donate", to: "pages#donate"
+  get "newsletter", to: "pages#newsletter"
   get "terms", to: "pages#terms"
   get "privacy_policy", to: "pages#privacy-policy"
   get "submit", to: "pages#submit"

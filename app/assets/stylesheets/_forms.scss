@@ -4,6 +4,7 @@ $button-font: "SangBleuOGSans";
 
 //
 
+
 label.email.required {
   margin-left: 0px;
 }
@@ -30,6 +31,10 @@ textarea.form-control {
 input, #review_title.string.required {
   border: 1px solid rgba(122, 168, 255, 0.85);
   color: #F5F7F9;
+}
+
+input, .input-email-subscribe {
+  width: 100%;
 }
 
 input, #review_body.text.required {
@@ -163,7 +168,7 @@ div.log-in-form {
    margin-bottom: 0;
   display: block;
   color: #7AA8FF;
-  font-family: "AnoRegularW05WideItalic";
+  font-family: "AnoRegularW05Wide";
 }
 
 

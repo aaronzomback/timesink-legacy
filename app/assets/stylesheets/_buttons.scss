@@ -13,6 +13,15 @@ input[type=submit].back-button {
   font-family: $button-font;
 }
 
+.input-subscribe {
+  margin-left: 0 !important;
+}
+
+.input-subscribe-page {
+  margin-left: 0 !important;
+  width: 100%;
+}
+
 
 input[type=submit].skip-button {
   border: none;

@@ -10,7 +10,12 @@
   <p><%= @user.name %></p>
   <p><%= @user.email %></p>
 
-  <span><%= image_tag "Polygon2.svg", :class => "upvote-shape" %></span>
-  <%= @user.sum(@user.review_likes, @user.comment_likes) %>
+<span><%= image_tag "Polygon2.svg", :class => "upvote-shape" %></span>
+
+  <% if (@user.sum(@user.review_likes, @user.comment_likes) === 0) %>
+    <%= "0" %>
+  <% else %>
+    <%= @user.sum(@user.review_likes, @user.comment_likes) %>
+  <% end %>
 
 </section>

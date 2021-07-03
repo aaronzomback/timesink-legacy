@@ -3,7 +3,12 @@
 <section>
 
   Total Upvotes:
-  <%= @current_user.review_likes %> + <%= @current_user.comment_likes %>
+    <% if (@current_user.sum(@current_user.review_likes, @current_user.comment_likes) === 0) %>
+    <%= "0" %>
+  <% else %>
+  <%= @current_user.sum(@current_user.review_likes, @current_user.comment_likes) %>
+  <% end %>
+
 
 
 </section>

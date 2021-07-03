@@ -40,10 +40,12 @@
   <% else %>
 
 
-  <section style="width: 100%; height: 60vh;">
+  <section style="margin-top: 88px; align-items: center; display: flex; flex-direction: column; justify-content: center;">
 
 
-<h4 style="display: flex; justify-content: center; transform: translateY(6rem);">You don't have any active submissions...</h4>
+<h4>You don't have any active submissions...</h4>
+
+<button class="film-submit-profile-btn" type="button" name="button"><%= link_to "Submit your film", new_submission_path(@user) %></button>
 
   </section>
 

@@ -1,9 +1,20 @@
 $button-font: "SangBleuOGSans";
 
+.film-submit-profile-btn {
+  background-color: #1B1C1E;
+  border: 1.5px solid #7AA8FF;
+  padding: 16px 32px;
+  border-radius: 4px;
+  font-family: $button-font;
+  width: 300px;
+  font-size: 18px;
 
+   a {
+    color: #80acff;
+   }
+}
 
 input[type=submit].back-button {
-
   background-color: #1B1C1E;
   border: 1px solid #7AA8FF;
   color: #80acff;

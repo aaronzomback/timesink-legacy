@@ -36,9 +36,11 @@
    <% end %>
 
 
-    <main>
-      <%= yield %>
-    </main>
+   <main data-barba="wrapper">
+     <div data-barba="container" data-barba-namespace="page-a">
+       <%= yield %>
+     </div>
+   </main>
 
   </body>
 

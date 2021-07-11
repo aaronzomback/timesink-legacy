@@ -196,19 +196,20 @@
 <script src="https://unpkg.com/ionicons@5.2.3/dist/ionicons.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 <script src="https://vjs.zencdn.net/7.8.4/video.js"></script>
-<script src="https://unpkg.com/@barba/core"></script>
-<script src="https://unpkg.com/gsap@latest/dist/gsap.min.js"></script>
 <script src="//vjs.zencdn.net/ie8/1.1.1/videojs-ie8.min.js" async></script>
 <script>
-  $(function() {
-    $('.dropdown').click(function() { // when a .myDiv is clicked
-      $('.dropdown').not(this).removeClass('dropdown-active')
-      $(this).toggleClass('dropdown-active')
-    })
-  })
-
 </script>
+<!-- <script src="https://unpkg.com/@barba/core"></script>
+<script src="https://unpkg.com/gsap@latest/dist/gsap.min.js"></script> -->
 <script type="text/javascript">
+    $(function() {
+      $('.dropdown').click(function() { // when a .myDiv is clicked
+        $('.dropdown').not(this).removeClass('dropdown-active')
+        $(this).toggleClass('dropdown-active')
+      })
+    })
+</script>
+<!-- <script type="text/javascript">
    barba.init({
      transitions: [{
        name: 'opacity-transition',
@@ -224,7 +225,7 @@
        }
      }]
    });
- </script>
+ </script> -->
 </body>
 
   </div>

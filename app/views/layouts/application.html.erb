@@ -11,6 +11,7 @@
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css">
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://webfonts.fontstand.com/WF-054032-ee4074715823c067879a5455d9e67c48.css" type="text/css"/>
       <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
     <script src="https://js.stripe.com/v3/"></script>
     <script src="https://cdn.quilljs.com/1.3.6/quill.min.js"></script>
@@ -24,7 +25,7 @@
 
   <body data-barba="wrapper">
 
-  <div class="content" data-barba="container" data-barba-namespace="page-a">
+  <div class="content" data-barba="container">
 
 
 <header>
@@ -197,17 +198,28 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 <script src="https://vjs.zencdn.net/7.8.4/video.js"></script>
 <script src="//vjs.zencdn.net/ie8/1.1.1/videojs-ie8.min.js" async></script>
+<script src="https://unpkg.com/@barba/core"></script>
+<script src="https://unpkg.com/@barba/css"></script>
+<script src="https://unpkg.com/gsap@latest/dist/gsap.min.js"></script>
 <script>
-</script>
-<!-- <script src="https://unpkg.com/@barba/core"></script>
-<script src="https://unpkg.com/gsap@latest/dist/gsap.min.js"></script> -->
-<script type="text/javascript">
     $(function() {
       $('.dropdown').click(function() { // when a .myDiv is clicked
         $('.dropdown').not(this).removeClass('dropdown-active')
         $(this).toggleClass('dropdown-active')
       })
     })
+</script>
+<script>
+  barba.init({
+    transitions: [
+    {
+        name: "fade",
+        leave() {},
+        enter() {}
+    }
+]
+console.log('done');
+});
 </script>
 <!-- <script type="text/javascript">
    barba.init({

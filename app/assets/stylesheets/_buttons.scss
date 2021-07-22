@@ -8,6 +8,7 @@ $button-font: "SangBleuOGSans";
   font-family: $button-font;
   width: 300px;
   font-size: 18px;
+  -webkit-appearance: none;
 
    a {
     color: #80acff;
@@ -22,6 +23,7 @@ input[type=submit].back-button {
   margin-top: 10px;
   margin-left: 25px;
   font-family: $button-font;
+  -webkit-appearance: none;
 }
 
 input[type=submit].input-subscribe {
@@ -41,6 +43,7 @@ input[type=submit].skip-button {
   color: #F5F7F9;
   font-size: 18px;
   cursor: pointer;
+  -webkit-appearance: none;
 }
 
 
@@ -56,6 +59,7 @@ input[type=submit].skip-button {
   cursor: pointer;
   transition-duration: 0.4s;
   vertical-align: center;
+  -webkit-appearance: none;
 }
 
 .button1 {
@@ -63,6 +67,7 @@ input[type=submit].skip-button {
   color: #7AA8FF;
   border: 2px solid #7AA8FF;
   border-radius: 25px;
+  -webkit-appearance: none;
 }
 
 .button1 a {
@@ -90,6 +95,7 @@ input[type=submit].skip-button {
   font-family: $button-font;
   text-align: center;
   line-height: 1.4;
+  -webkit-appearance: none;
 }
 
 .button2 {
@@ -108,6 +114,7 @@ input[type=submit].skip-button {
   border-radius: 25px;
   padding: 8px 16px;
   margin-left: 56px;
+  -webkit-appearance: none;
 
 }
 
@@ -138,6 +145,7 @@ input[type=submit].skip-button {
   border: 2px solid #7AA8FF;
   border-radius: 25px;
   padding: 8px 16px;
+  -webkit-appearance: none;
 }
 
 .button4:hover {opacity: 0.6}
@@ -147,6 +155,7 @@ div.button-back-films {
   display: flex;
   justify-content:center;
   align-items: center;
+  -webkit-appearance: none;
 
 }
 
@@ -156,6 +165,7 @@ div.button-back-films {
   border: 2px solid #7AA8FF;
   border-radius: 25px;
   padding: 12px 24px;
+  -webkit-appearance: none;
 
     a {
       color: #7AA8FF;
@@ -173,6 +183,7 @@ div.button-back-films {
   border-radius: 25px;
   text-align: center;
   align-items: center;
+  -webkit-appearance: none;
 
   a {
     font-family: $button-font;
@@ -181,6 +192,7 @@ div.button-back-films {
 
 button.submit-btc {
   background-color: orange;
+  -webkit-appearance: none;
 }
 
 div.delete-account-button {
@@ -196,6 +208,7 @@ div.delete-account-button {
   text-align: center;
   cursor: pointer;
   margin-bottom: 24px;
+  -webkit-appearance: none;
 
   a {
     color: #FE6D48;

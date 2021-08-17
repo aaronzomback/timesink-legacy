@@ -17,7 +17,9 @@ Rails.application.routes.draw do
 # user password resets
   resources :password_resets
 
-  resources :volumes
+  resources :volumes, :path => "cinema"  do
+    resources :films
+  end
 
 
   resources :user_submissions, :only => [:index, :show], :path => "user-submissions"
@@ -32,7 +34,7 @@ Rails.application.routes.draw do
 
 
   # films controller
-  resources :films, :path => "cinema" do
+  resources :films do
     resources :reviews, only: [:index, :create, :new, :show, :edit, :update, :destroy], :path => "cafe"
     end
 

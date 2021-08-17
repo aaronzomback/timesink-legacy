@@ -19,6 +19,7 @@ class Film < ApplicationRecord
 
   # one film has many reviews
   has_many :reviews, dependent: :destroy
+  belongs_to :volume
 
   validates :title, presence: true
   validates :author, presence: true

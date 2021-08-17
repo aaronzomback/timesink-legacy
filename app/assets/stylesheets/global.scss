@@ -38,7 +38,7 @@ html, body {
   height: 100%;
 }
 body {
-position: relative;
+position: absolute;
 }
 .content {
   flex: 1 0 auto;
@@ -534,7 +534,7 @@ $duration: 30s;
 
         a {
           font-weight: 400;
-          font-family: "SangBleuKingdom";
+          font-family: "SangBleuOGSans";
           margin-bottom: 12px;
 
         }

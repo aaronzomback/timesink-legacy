@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_03_090223) do
+ActiveRecord::Schema.define(version: 2021_08_17_094614) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string "namespace"
@@ -114,7 +114,9 @@ ActiveRecord::Schema.define(version: 2021_06_03_090223) do
     t.float "cached_weighted_average", default: 0.0
     t.string "trailer"
     t.string "artist_website"
+    t.integer "volume_id"
     t.index ["slug"], name: "index_films_on_slug", unique: true
+    t.index ["volume_id"], name: "index_films_on_volume_id"
   end
 
   create_table "forum_posts", force: :cascade do |t|
@@ -303,6 +305,16 @@ ActiveRecord::Schema.define(version: 2021_06_03_090223) do
     t.index ["slug"], name: "index_users_on_slug", unique: true
   end
 
+  create_table "volumes", force: :cascade do |t|
+    t.string "title"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.string "slug"
+    t.text "description"
+    t.string "cover_image"
+    t.index ["slug"], name: "index_volumes_on_slug", unique: true
+  end
+
   create_table "votes", force: :cascade do |t|
     t.string "votable_type"
     t.integer "votable_id"
@@ -319,6 +331,7 @@ ActiveRecord::Schema.define(version: 2021_06_03_090223) do
     t.index ["voter_type", "voter_id"], name: "index_votes_on_voter_type_and_voter_id"
   end
 
+  add_foreign_key "films", "volumes"
   add_foreign_key "forum_posts", "users"
   add_foreign_key "nested_comments", "films"
   add_foreign_key "nested_comments", "users"

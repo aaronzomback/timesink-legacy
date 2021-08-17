@@ -4,9 +4,7 @@
 
 <%= simple_form_for @current_user, url: account_path do |f| %>
 
-<% if @current_user.avatar.present? %>
   <%= image_tag @current_user.avatar.show.url, :class => "avatar" %>
-  <% end %>
 
   <%= f.input :avatar %>
   <%= f.input :location, placeholder: 'i.e. Houston, TX' %>

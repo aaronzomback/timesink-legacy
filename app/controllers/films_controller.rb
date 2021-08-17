@@ -55,7 +55,7 @@ end
 
   def set_film
       @film = Film.friendly.find(params[:id])
-    end
+  end
 
 
   def form_params

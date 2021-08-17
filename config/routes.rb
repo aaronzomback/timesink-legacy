@@ -17,6 +17,8 @@ Rails.application.routes.draw do
 # user password resets
   resources :password_resets
 
+  resources :volumes
+
 
   resources :user_submissions, :only => [:index, :show], :path => "user-submissions"
   resources :user_reviews, :only => [:index], :path => "upvotes"

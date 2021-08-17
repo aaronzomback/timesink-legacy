@@ -8,7 +8,7 @@
       </p>
     </div>
     <div class="newsletter-form">
-      <%= simple_form_for @newsletter do |f| %>
+      <%= simple_form_for @newsletter, remote: true do |f| %>
         <%= f.input :email, placeholder: "Enter email", class: "input-email-subscribe" %>
         <%= f.button :submit, "Subscribe", class: "input-subscribe-page" %>
       <% end %>

@@ -49,7 +49,6 @@
 
     <% if is_logged_in? %>
 
-    <% if @current_user.avatar.present? %>
 
     <span class="dropdown" id="dropdown">
       <%= image_tag @current_user.avatar.small.url, :class => "avatar" %>
@@ -83,44 +82,6 @@
           </ul>
         </nav>
       </div>
-
-
-    <% else %>
-
- <span class="welcome dropdown">
-   <%= @current_user.username %>
-   <ul class="dropdown-menu" id="dropdown-menu">
-     <li>  <%= link_to "Edit profile", main_app.edit_account_path %></li>
-     <li>  <%= link_to "Upvotes", main_app.user_reviews_path(@current_user) %> </li>
-     <li>  <%= link_to "Submissions", main_app.user_submissions_path(@current_user) %> </li>
-     <li>  <%= link_to "Log out", main_app.session_path, method: :delete %> </li>
-   </ul>
- </span>
-
-   <%= link_to pluralize(Notification.unread_count(@current_user), 'Notification'), main_app.notifications_path %>
-
-
- <div class="menuArea" id="menuArea">
-   <input type='checkbox' id='toggle' style="display:none;">
-     <label class='toggle-btn toggle-btn__cross' for='toggle'>
-       <div class="bar"></div>
-       <div class="bar"></div>
-       <div class="bar"></div>
-     </label>
-     <nav id="hamburger">
-       <ul style="list-style: none;">
-         <li><%= link_to "Films", main_app.films_path  %></li>
-         <li><%= link_to "Blog", main_app.blog_posts_path %></li>
-         <li><%= link_to "Info", main_app.info_path %></li>
-         <li><%= link_to "Donate", main_app.new_donation_path %></li>
-         <hr>
-         <li><%= link_to "Sign in", main_app.new_session_path %></li>
-         <li><%= link_to "Submit film", main_app.submit_path %></li>
-       </ul>
-     </nav>
-   </div>
-
- <% end %>
 
 
   <button class="button button3">

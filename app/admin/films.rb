@@ -21,6 +21,7 @@ ActiveAdmin.register Film do
    column :year
    column :is_top_pick
    column :volume_id
+   column :created_at
 #    column "Volume" do |film|
 #   film.volume.title
 # end
@@ -64,6 +65,7 @@ ActiveAdmin.register Film do
          row :year
          row :is_top_pick
          row :volume_id
+         row :created_at
        end
      end
 

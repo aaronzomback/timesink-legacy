@@ -13,12 +13,13 @@ ActiveAdmin.register Volume do
   column "Cover" do |volume|
     image_tag volume.cover_image.thumbnail.url if volume.cover_image.present?
   end
-  column :title
-  column :description
   column "Films" do |volume|
     volume.films.each do |film|
+      film
     end
 end
+  column :title
+  column :description
   actions
 end
 
@@ -31,7 +32,6 @@ show do
       row :description
       row "Films" do |volume|
         volume.films.each do |film|
-          film
         end
       end
       row :id

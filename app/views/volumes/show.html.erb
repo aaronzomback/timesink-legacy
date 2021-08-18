@@ -1,7 +1,10 @@
 
+    <h5 style="display: inline-block;"><%= @volume.title %>:</h5> <span><%= @volume.description %></span>
+
   <div class="film-gallery-grid">
 
-<% @volume.films.each do |film| %>
+
+<% @volume.films.order(cached_votes_up: :desc, created_at: :desc).each do |film| %>
 
 <div class="film-item">
 

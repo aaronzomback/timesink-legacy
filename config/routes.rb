@@ -106,6 +106,9 @@ end
   match "/500", to: "errors#internal_server_error", via: :all
   delete 'logout', to: 'sessions#destroy'
 
-  root "films#index"
+  
+  # root "films#index"
+
+  root :to => "volumes#show", :id => '1'
 
 end

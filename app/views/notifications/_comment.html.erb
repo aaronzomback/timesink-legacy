@@ -1,7 +1,12 @@
 <div class="notification-box">
 
-
-  <%= link_to notification.actor.username, main_app.user_path(notification.actor) %> responded
+  <div class=''>
+    <% if notification.actor.avatar.present? %>
+      <span class="avatar-notification"><%= image_tag notification.actor.avatar.thumbnail.url, :class => "avatar" %></span>
+      <% else %>
+      <span class="avatar-notification"><%= image_tag notification.actor.avatar.thumbnail.url, :class => "avatar_small" %></span>
+    <% end %>
+    <%= link_to notification.actor.username, main_app.user_path(notification.actor) %> responded
     <% if notification.target %>
       <% if notification.target.body.present?
            obj = get_commentable_obj(notification.target)
@@ -13,7 +18,6 @@
           to your <%= @current_user == obj.user && notification.target.commentable_type == "Review" ?  "" : "comment in" %><span> review <%= obj.title %></span>
           <span><i><%= link_to notification.target.body, "/films/#{obj.film.title.downcase.parameterize}/cafe/#{obj.title.downcase.parameterize}" %> </i></span>
         <% end %>
-
       <% else %>
         <% nil %>
       <% end %>
@@ -22,4 +26,7 @@
     <% end %>
 
   </div>
+
+
+
 </div>

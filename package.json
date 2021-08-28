@@ -6,10 +6,17 @@
     "@rails/activestorage": "^6.0.0",
     "@rails/ujs": "^6.0.0",
     "@rails/webpacker": "4.2.2",
-    "turbolinks": "^5.2.0"
+    "activeadmin_quill_editor": "blocknotes/activeadmin_quill_editor",
+    "jquery": "^3.5.1",
+    "quill-image-uploader": "^1.2.2",
+    "quill-url-embeds": "^1.2.5",
+    "turbolinks": "^5.2.0",
+    "vash": "^0.13.0",
+    "videojs-youtube": "^2.6.1"
   },
   "version": "0.1.0",
   "devDependencies": {
+    "video.js": "^7.8.4",
     "webpack-dev-server": "^3.11.0"
   }
 }

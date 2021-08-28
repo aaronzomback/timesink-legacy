@@ -1,0 +1,113 @@
+
+section.lock-donation-flex {
+  margin-bottom: 8px;
+}
+
+section.donation-form p {
+  font-family: "AnoRegularW05Wide";
+}
+
+.lock img {
+  width: 200%;
+  display: inline-block;
+}
+
+.secure-transaction {
+  display: inline-block;
+  margin-left: 0.4rem;
+  margin-bottom: 0px;
+  font-size: 8px;
+  font-family: "SangBleuOGSans";
+}
+
+#donate-btn {
+  font-family: "AnoRegularW05WideItalic";
+}
+
+
+.stripe-logo {
+  width: 24%;
+}
+
+
+.donate-underline {
+  border-bottom: 1px solid white;
+}
+
+
+div.card-donation {
+  margin: 24px 10px 10px 0;
+}
+
+.donation_amount {
+  margin: 10px 0;
+}
+
+form#new_donation {
+  input[type=submit] {
+    margin-left: 0;
+    width: 400px;
+    padding: 12px;
+  }
+}
+
+.btc img {
+  display: block;
+}
+
+p.or-btc {
+  margin-top: 16px;
+  color: rgba(122, 168, 255, 0.85);
+}
+
+div.donation-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-column-gap: 96px;
+  margin: 0 auto;
+  width: 800px;
+}
+
+div.donation-intro {
+  display: flex;
+  justify-content: center;
+}
+.donation-proceed {
+  margin-bottom: 80px;
+  color: white;
+  font-family: "SangBleuOGSans";
+  font-size: 18px;
+  line-height: 2.0;
+}
+
+form.btcpay-form_btcpay-form--block {
+  width: 30%;
+}
+
+div.btcpay-custom-container {
+
+}
+
+.donation-description {
+  // transform: translateY(8rem);
+    border-left: 1px solid gray;
+}
+
+
+section.btc-donation-form {
+  // border-left: 1px solid white;
+  padding-left: 40px;
+  font-family: "AnoRegularW05Wide";
+}
+
+
+
+ input[type='range'] {
+   width: 10px;
+      -webkit-appearance: none;
+      height: 10px;
+      cursor: ew-resize;
+      background-color: #434343;
+      color: blue;
+
+    }

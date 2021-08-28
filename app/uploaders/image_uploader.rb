@@ -34,20 +34,28 @@ class ImageUploader < CarrierWave::Uploader::Base
   end
 
   version :gallery do
-    process resize_to_fit: [300, 320]
+    process resize_to_fill: [215.25, 287.25]
+  end
+
+  version :gallery1 do
+    process resize_to_fill: [100, 150]
   end
 
   version :show do
-    process resize_to_fit: [400, 420]
+    process resize_to_fill: [301, 402]
+  end
+
+  version :blog_cover do
+    process resize_to_fit: [320, 240]
   end
 
 
 
   # Add a white list of extensions which are allowed to be uploaded.
   # For images you might use something like this:
-  # def extension_whitelist
-  #   %w(jpg jpeg gif png)
-  # end
+  def extension_whitelist
+    %w(svg jpg jpeg gif png)
+  end
 
   # Override the filename of the uploaded files:
   # Avoid using model.id or version_name here, see uploader/store.rb for details.

@@ -16,7 +16,8 @@ Rails.application.configure do
 
   # Ensures that a master key has been made available in either ENV["RAILS_MASTER_KEY"]
   # or in config/master.key. This key is used to decrypt credentials (and other encrypted files).
-  # config.require_master_key = true
+   config.require_master_key = true
+
 
   # Disable serving static files from the `/public` folder by default since
   # Apache or NGINX already handles this.
@@ -109,4 +110,23 @@ Rails.application.configure do
   # config.active_record.database_selector = { delay: 2.seconds }
   # config.active_record.database_resolver = ActiveRecord::Middleware::DatabaseSelector::Resolver
   # config.active_record.database_resolver_context = ActiveRecord::Middleware::DatabaseSelector::Resolver::Session
+
+  # Configure default URL for action mailer
+  config.action_mailer.default_url_options = {:host =>'www.timesinkpresents.com'}
+  # #
+  config.read_encrypted_credentials = true
+  # #
+  # #
+  config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.delivery_method = :smtp
+
+  config.action_mailer.smtp_settings = {
+  address:              'smtp.sendgrid.net',
+  port:                 587,
+  domain:               'hello@timesinkpresents.com',
+  user_name:             Rails.application.credentials[Rails.env.to_sym][:sendgrid_username],
+  password:              Rails.application.credentials[Rails.env.to_sym][:sendgrid_password],
+  authentication:       'plain',
+  enable_starttls_auto: true }
+
 end

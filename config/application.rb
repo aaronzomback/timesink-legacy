@@ -1,5 +1,6 @@
 require_relative 'boot'
 
+
 require 'rails/all'
 
 # Require the gems listed in Gemfile, including any gems
@@ -10,6 +11,12 @@ module Timesink
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 6.0
+    config.exceptions_app = self.routes
+    config.assets.paths << Rails.root.join("app", "assets", "fonts")
+    config.assets.enabled = true
+    config.assets.paths << "#{Rails.root}/app/assets/fonts"
+    config.assets.initialize_on_precompile = false
+
 
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration can go into files in config/initializers

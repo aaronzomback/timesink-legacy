@@ -1,0 +1,13 @@
+<p> A new member, <%= @user.name %>,  has joined the sink! </p>
+
+<h3> Contact details: </h3>
+<p><u>Name</u>: <%= @user.name %> </p>
+<p><u>Username</u>: <%= @user.username %> </p>
+<p><u> Email</u>: <%= @user.email %> </p>
+<% if @user.location.present? %>
+  <p><u>Location:</u>: <%= @user.location %> </p>
+<% else %>
+  <p><u>Location:</u>: Not provided </p>
+<% end %>
+
+<p> Give them a nice warm welcome! </p>

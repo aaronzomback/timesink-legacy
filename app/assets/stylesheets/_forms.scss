@@ -1,0 +1,343 @@
+
+$button-font: "SangBleuOGSans";
+
+
+//
+
+
+label.email.required {
+  margin-left: 0px;
+}
+
+textarea.form-control {
+  border: 1px solid rgba(122, 168, 255, 0.85);
+  border-radius: 2px;
+  color: #F5F7F9;
+
+  &:focus {
+      border: 1px solid rgba(122, 168, 255, 0.85);
+      border-radius: 2px;
+      color: #F5F7F9;
+  }
+
+}
+
+
+#user_name.string.required {
+  font-size: 24px;
+  color: #F5F7F9;
+}
+
+input, #review_title.string.required {
+  border: 1px solid rgba(122, 168, 255, 0.85);
+  color: #F5F7F9;
+}
+
+input, .subscribe-front {
+  max-width: 200px;
+}
+
+input, .input-email-subscribe {
+  width: 100%;
+}
+
+input, #review_body.text.required {
+  border: 1px solid rgba(122, 168, 255, 0.85);
+  color: #F5F7F9;
+}
+
+input.newsletter {
+  min-width: 30px;
+}
+
+label.checkbox {
+  margin-top: 16px;
+  margin-bottom: 24px;
+  font-size: 14px;
+  vertical-align: middle;
+}
+
+label.password.required, label.password.optional, label.email.required {
+
+  margin-bottom: 4px;
+  margin-top: 8px;
+}
+
+div.avatar-step {
+// margin-top: 100px;
+display: flex;
+flex-direction: column;
+justify-content: center;
+
+h4.add-avatar {
+  text-align: center;
+}
+
+img {
+  display:flex;
+  width: 30%;
+  flex-direction: column;
+  justify-content: center;
+  margin-bottom: 16px;
+  margin-right: auto;
+  margin-left: auto;
+}
+}
+
+div.email-step {
+  margin-top: 100px;
+}
+
+h4.add-avatar {
+  margin-top: 8px;
+  margin-bottom: 0;
+}
+
+p.add-avatar-description {
+  margin-top: 24px;
+  margin-bottom: 56px;
+  text-align: center;
+}
+
+h2.whats-your-name {
+  font-family: $button-font;
+}
+
+input[type=submit] {
+  background: #7AA8FF;
+  color: #222222;
+  border-color: rgba(122, 168, 255, 0.2);
+  border-radius: 4px;
+  padding: 8px 16px;
+  margin-top: 10px;
+  margin-left: 25px;
+  font-family: $button-font;
+}
+
+
+input, textarea {
+  font-size: 16px;
+  min-width: 100px;
+  border-bottom: 1px solid rgba(122, 168, 255, 0.85);
+  padding: 10px 16px;
+  font-family: $button-font;
+  margin: 8px 0px 16px 0;
+  color: white;
+  background-color: #1B1C1E;
+  border-top-style: hidden;
+  border-right-style: hidden;
+  border-left-style: hidden;
+  border-bottom-style: groove;
+
+      &:focus {
+        outline: none !important;
+      }
+
+}
+
+
+// on 'sign-in' layout view
+.sign-in-timesink-logo {
+  h1 {
+    font-family: "AnoRegularW05Wide";
+    font-size: 72px;
+    font-weight: 400;
+    margin-bottom: 32px;
+  }
+}
+
+div.log-in-form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.log-in {
+  width: 100%;
+
+}
+
+
+
+
+  input {
+    min-width: 300px;
+    font-size: 14px;
+
+  }
+
+
+ label {
+   margin-bottom: 0;
+  display: block;
+  color: #7AA8FF;
+  font-family: "AnoRegularW05Wide";
+}
+
+
+div.new-account {
+  text-align: center;
+  width: 100%;
+  margin-top: 16px;
+  color: rgba(122, 168, 255, 0.85);
+  font-family: "SangBleuOGSans";
+
+  .create-account {
+    color: rgba(122, 168, 255, 0.85);
+    border-bottom: 1px solid rgba(122, 168, 255, 0.85);
+    display: inline-block;
+    line-height: 0.85;
+  }
+
+  label.password_optional {
+    margin-top: 16px;
+  }
+}
+
+label.checkbox {
+  font-family: "SangBleuOGSans";
+}
+
+label.email.required.original {
+  margin-left: 0;
+}
+
+label.password.required.original {
+    margin-left: 0;
+}
+
+input#session_password.password.required {
+  margin-bottom: 2px;
+}
+
+input.btn.sign-in-button {
+  margin-left: 0;
+  margin-top: 0;
+  border-radius: 50px;
+}
+
+div.forgot-password {
+  font-size: 14px;
+  margin-top: 0px;
+  text-align: center;
+  margin-bottom: 24px;
+  display: flex;
+  justify-content: flex-end;
+
+  a {
+    font-family: "AnoRegularW05Wide";
+  }
+}
+
+
+
+
+.submit {
+  width: 500px;
+  font-size: 12px;
+}
+
+
+select.required {
+  background-color: #222222;
+  color: rgba(122, 168, 255, 0.85);
+  border-color: rgba(122, 168, 255, 0.85);
+  font-family: 'MonumentGroteskTrial-Mono';
+}
+
+
+
+// new user
+
+input#user_username.string.required {
+  font-size: 24px;
+  width: 75%;
+}
+
+div.flex-signup {
+    transform: translateY(4rem);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    div.flex-button-sign-up {
+        display: flex;
+        justify-content: space-between;
+        // flex-direction: column;
+    }
+
+    input.btn {
+        margin-left: 0;
+        margin-right: 0;
+        align-items: center;
+        border-radius: 50px;
+        min-width: 150px!important;
+}
+
+div.join-the-sink {
+  // text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  label {
+    text-align: left;
+  }
+}
+
+.already-sign-in {
+    color: #80acff;
+    text-align: center;
+    margin-top: 32px;
+
+a {
+  color: #80acff;
+  // border-bottom: 1px solid #80acff;
+}
+
+}
+
+div.email-step {
+  transform: translateY(-5rem);
+  p {
+    text-align: center;
+    margin-bottom: 32px;
+  }
+}
+
+div.username-step {
+  h3 {
+    font-size: 56px;
+    font-weight: 400px;
+  }
+}
+
+.sign-in-from-new-account {
+  color: #80acff;
+  text-align: center;
+  line-height: 0.85;
+}
+
+div.agree {
+  margin-top: 32px;
+  font-size: 10px;
+  text-align: center;
+  width: 100%;
+}
+
+// edit account
+
+
+div.edit-account-form {
+
+  input {
+    border-radius: 2px;
+  }
+}
+}
+
+#join-sink-btn {
+  font-family: "AnoRegularW05WideItalic";
+}

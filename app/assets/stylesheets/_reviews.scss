@@ -1,0 +1,273 @@
+// film show page - new review form PopUp
+
+// div.popupReview {
+//   padding: 48px;
+//   background-color: #000000;
+// }
+
+$button-font: "SangBleuOGSans";
+
+
+
+#submit-review {
+  margin-left: 0;
+  margin-top: 24px;
+}
+
+.popupReview {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.65);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  visibility: hidden;
+  opacity: 0;
+
+  ion-icon #close-outline {
+    color: gray;
+    font-size: 64px;
+  }
+
+  &.active {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  .popuptrailer.video-js {
+    position: relative;
+    outline: none;
+    max-width: 900px;
+    pointer-events: none;
+  }
+
+  .close {
+
+    position: absolute;
+    top: 50px;
+    right: 195px;
+
+
+    cursor: pointer;
+
+    img {
+      width: 100%;
+    }
+  }
+}
+
+/* Toggle this class - hide and show the popup */
+.popupReview .show {
+  visibility: visible;
+  -webkit-animation: fadeIn 0.40s;
+  animation: fadeIn 0.40s;
+}
+
+
+
+// film show page - reviews index
+
+section.review-index-flex {
+  display: flex;
+  justify-content: space-between;
+}
+
+div.review h5 {
+  font-family: "SangBleuOGSans";
+}
+
+
+div.review-body-content {
+  margin-top: 32px;
+}
+
+h3.review-title {
+  margin-bottom: 16px;
+}
+
+div.review-user {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 195px;
+}
+
+span.review-user-info {
+  margin-left: -40px;
+}
+
+span.film-title-cafe {
+  width: 100%;
+}
+
+div.review-index-like {
+  width: 40px;
+  display: inline-block;
+}
+
+.coffee-cafe img {
+  display: block;
+  width: 80%;
+}
+
+h3.film-cafe {
+  font-family: "SangBleuOGSans";
+  margin-left: 80px;
+  width: 515px;
+}
+
+h4.No-cafe-discussion {
+  margin-left: 80px;
+}
+
+
+.cafe-banner-title {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.write-review-button {
+  font-family: $button-font;
+  margin-left: 5rem;
+  margin-top: 24px;
+  display: inline-block;
+  width: 180px;
+  background-color: none;
+  border: 1px solid #7AA8FF;
+  color: #7AA8FF;
+  padding: 10px 20px;
+  text-align: center;
+  cursor: pointer;
+  margin-bottom: 24px;
+      a {
+        color: #7AA8FF;
+      }
+}
+
+.review {
+  width: 800px;
+  border-top: 1px dotted gray;
+  font-family: "SangBleuOGSans";
+  margin-left: 80px;
+  margin-top: 16px;
+  padding-top: 16px;
+}
+
+.review-form {
+  width: 600px;
+  margin-left: 80px;
+  padding: 64px 240px;
+  // background-color: black;
+
+  input[type=text_area] {
+    width: 50%;
+    border: none;
+  }
+
+  #review_title.string.required {
+    border-top-style: hidden;
+    border-right-style: hidden;
+    border-left-style: hidden;
+    border-bottom-style: groove;
+    border-bottom: 1px solid #7AA8FF;
+  }
+
+  textarea#review_body.text.required {
+    margin-bottom: 8px;
+  }
+
+  label.review-title-label {
+    font-size: 24px;
+  }
+
+  label.review-body-label {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    font-size: 24px;
+  }
+}
+
+textarea {
+  width: 600px;
+  height: 120px;
+}
+
+input {
+  font-size: 12px;
+  font-family: "Spectral";
+}
+
+
+div.review-details {
+  margin-left: 0;
+}
+
+.review h6 {
+  margin-bottom: 0px;
+  border-bottom: solid 1px white;
+  display: inline;
+}
+
+h3 .review-title  {
+  font-size: 24px;
+}
+
+.new-review-post {
+  display: block;
+  margin-bottom: 16px;
+  margin-left: 800px;
+  width: 2%;
+
+}
+
+.review-content {
+  width: 60em;
+  margin-left: 120px;
+  padding-bottom: 32px;
+  padding-left: 48px;
+  padding-right: 48px;
+
+  h3 {
+    font-family: "SangBleuOGSans";
+  }
+
+  h5 {
+    display: inline-block;
+    margin-bottom: 0;
+  }
+
+  p {
+    line-height: 1.67;
+    width: 776px;
+    font-size: 18px;
+  }
+
+  .flex-like-review {
+    float: right;
+  }
+}
+
+
+p.review-comment-count {
+  font-size: 14px;
+}
+
+.posted {
+  span {
+    vertical-align: middle;
+    align-items: center;
+  }
+}
+
+.review-body-content {
+  margin-left: 48px;
+}
+
+hr {
+  border: 0.5px solid gray;
+}

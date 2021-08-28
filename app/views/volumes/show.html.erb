@@ -1,0 +1,64 @@
+
+    <h5 style="display: inline-block;"><%= @volume.title %>:</h5> <span><%= @volume.description %></span>
+
+  <div class="film-gallery-grid">
+
+
+<% @volume.films.order(cached_votes_up: :desc, created_at: :desc).each do |film| %>
+
+<div class="film-item">
+
+
+  <%= link_to volume_film_path(@volume, film) do %>
+    <div class="cover-img">
+    <%= image_tag film.cover.gallery.url, :class => "cover_img" %>
+    </div>
+
+<div class="film-grid">
+<div class="title">
+  <h3><%= film.title %></h3>
+  <h3><%= film.description %></h3>
+  <h3><%= film.author %></h3>
+</div>
+
+<% end %>
+
+<div class="parent-likes">
+
+
+<div>
+<%= link_to like_film_path(film.id), class: "upvoted {liked_or_not}", method: :put, remote: :true do %>
+<%= image_tag "Polygon2.svg", :class => "upvote-shape" %>
+ <% end %>
+ <span id="js-<%= film.id %>">
+   <%= film.get_likes.size %>
+ </span>
+
+   </div>
+
+
+
+
+</div>
+
+
+
+
+
+
+</div>
+
+
+
+
+
+  </div>
+
+
+
+
+
+
+
+
+<% end %>

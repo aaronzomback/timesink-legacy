@@ -1,0 +1,14 @@
+
+
+if ($('#js-<%= @film.id %>').length > 0) {
+ $('#js-<%= @film.id %>').html('<%= @film.get_likes.size %>');
+} else {
+ $('.like_count').html('<%= @film.get_likes.size %>');
+}
+
+
+
+console.log("like worked")
+
+
+console.log("like worked")

@@ -1,0 +1,39 @@
+
+<div class="back-to-forum-index">
+  <%= link_to forum_posts_path do %>
+  <i class="arrow left"></i>
+  <h6>Back to forum</h6>
+  <% end %>
+</div>
+
+
+<h6><%= @forum_post.title %></h6>
+<p> Posted by <%= @forum_post.user.username %> </p>
+
+<p><%= simple_format @forum_post.body %></p>
+
+
+<% if is_logged_in? %>
+
+<%= simple_form_for [@forum_post, Comment.new] do |f| %>
+<%= f.text_area :body, placeholder: "Add a comment" %><br/>
+<%= f.submit "Add Comment" %>
+<% end %>
+
+<% else %>
+
+<h4> <%= link_to "Sign in to comment", new_session_path %></h4>
+
+<% end %>
+
+
+
+
+<h3>Comments</h3>
+
+
+
+
+<ul>
+  <%= render(partial: 'comments/comment', collection: @forum_post.comments) %>
+</ul>

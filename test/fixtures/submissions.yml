@@ -1,0 +1,21 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  year: 1
+  description: MyText
+  film_length: MyString
+  film_link: MyString
+  film_pw: MyString
+  price: 1
+  user: one
+
+two:
+  title: MyString
+  year: 1
+  description: MyText
+  film_length: MyString
+  film_link: MyString
+  film_pw: MyString
+  price: 1
+  user: two

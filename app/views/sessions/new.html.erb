@@ -1,9 +1,30 @@
-<h2>Log in</h2>
 
-<%= simple_form_for :session, url: session_path do |f| %>
+<div class="log-in-form">
 
-<%= f.input :username %>
-<%= f.input :password %>
-<%= f.button :submit, "Sign in" %>
 
-<% end %>
+  <div class="sign-in-timesink-logo">
+      <%= link_to root_path do %>
+    <h1>TimeSink</h1>
+      <% end %>
+  </div>
+
+
+  <%= simple_form_for :session, html: { class: "hide-required" }, url: session_path do |f| %>
+  <%= f.error_notification %>
+  <%= f.input :email, placeholder: 'Enter your email', :label_html => { :class => "original" } %>
+  <%= f.input :password, placeholder: 'Enter your password', :label_html => { :class => "original" } %>
+  <div class="forgot-password">
+      <p><%= link_to 'Forgot password?', new_password_reset_path %></p>
+  </div>
+  <%= f.button :submit, "Sign in", :class => "sign-in-button" %>
+
+  <% end %>
+
+
+  <div class="new-account">
+      Not a member? <%= link_to "Join the sink", new_user_path, :class => "create-account" %>
+  </div>
+
+
+
+</div>

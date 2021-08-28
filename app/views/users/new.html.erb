@@ -1,13 +1,28 @@
 
-<h3>Join the sink!</h3>
+<div class="flex-signup">
+
+<div class="join-the-sink">
+
 
 <%= simple_form_for @user do |f| %>
-<%= f.input :name %>
-<%= f.input :username %>
-<%= f.input :email %>
-<%= f.input :password %>
-<%= f.input :password_confirmation %>
-
-<%= f.button :submit, "Join the sink" %>
+  <%= render "#{@user.current_step}_step", :f => f %>
+  <div class="flex-button-sign-up">
+   <%= f.button :submit, "Back", :class => "back-button", :name => "back_button" unless @user.first_step? %>
+ <%= f.button :submit, "Next", :name => "continue_button" unless @user.last_step? %>
+    </div>
 
 <% end %>
+
+</div>
+
+
+
+<% if @user.first_step? %>
+
+<div class="already-sign-in">
+<%= already %> <u><%= link_to 'Sign in', new_session_path %></u>
+</div>
+
+<% end %>
+
+</div>

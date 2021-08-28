@@ -1,0 +1,11 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  order: one
+  submission: one
+  quantity: 1
+
+two:
+  order: two
+  submission: two
+  quantity: 1

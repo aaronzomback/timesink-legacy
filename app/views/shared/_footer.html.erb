@@ -1,0 +1,10 @@
+<footer class="footer">
+  <span>© <%= Time.current.year %> TimeSink presents, all rights reserved</span>
+  <%= link_to "Terms & conditions", main_app.terms_path %>
+  <%= link_to "Privacy policy", main_app.privacy_policy_path %>
+  <a href="#">hello@timesinkpresents.com</a>
+  <div class="" style="display: inline-block;">
+    <h6 style="margin: 0; font-family: SangBleuOGSans;">Sign up for our newsletter!</h6>
+    <%= render 'newsletters/form' %>
+  </div>
+</footer>

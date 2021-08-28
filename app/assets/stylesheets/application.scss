@@ -1,0 +1,64 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require global
+ *= require_self
+ *= require resets
+ */
+
+
+ @font-face {
+   font-family: "Spectral-Regular";
+   font-weight: 400;
+   src: font-url('Spectral-Regular.ttf');
+ }
+
+ @font-face {
+   font-family: "Spectral-Light";
+   font-weight: 300;
+   src: font-url('Spectral-Light.ttf');
+ }
+
+ @font-face {
+   font-family: "SangBleuKingdom";
+   font-weight: 400;
+   src: font-url('SangBleuKingdom-Regular-WebTrial.ttf');
+ }
+
+
+ @font-face {
+   font-family:"AnoRegularW05WideItalic";
+   font-weight: normal;
+   src: font-url('3344aef7-9436-4a94-ac89-8f67d9914a20.woff2') format('woff2'), font-url('19ffb4ec-02fc-4a18-a35f-c5008e5e5680.woff') format('woff');
+ }
+
+ @font-face{
+      font-family:"AnoRegularW05Wide";
+      font-weight: normal;
+      src: font-url('01001df7-8270-4d44-ad53-85091f1b6725.woff2') format('woff2'), font-url('af5352dc-274e-4518-872a-3c94487ba2da.woff') format('woff');
+  }
+
+@font-face {
+  font-family: "SangBleuOGSans";
+  src: font-url('SangBleuOGSans-Light-WebTrial.woff2') format('woff2'), font-url('SangBleuOGSans-Light-WebTrial.woff') format('woff');
+}
+
+
+ .display-none {
+    display: none;
+  }
+
+  .comment {
+    margin: 1em 0em 1em 1em;
+    padding-left: 1em;
+    border-left: 2px solid lightgray;
+  }

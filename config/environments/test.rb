@@ -46,4 +46,22 @@ Rails.application.configure do
 
   # Raises error for missing translations.
   # config.action_view.raise_on_missing_translations = true
+
+  # Configure default URL for action mailer
+  config.action_mailer.default_url_options = {:host =>'localhost:3000'}
+
+  config.read_encrypted_credentials = true
+
+  config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.delivery_method = :smtp
+
+  config.action_mailer.smtp_settings = {
+  address:              'smtp.sendgrid.net',
+  port:                 587,
+  domain:               'hello@timesinkpresents.com',
+  user_name:             Rails.application.credentials[Rails.env.to_sym][:sendgrid_username],
+  password:              Rails.application.credentials[Rails.env.to_sym][:sendgrid_password],
+  authentication:       'plain',
+  enable_starttls_auto: true }
+
 end

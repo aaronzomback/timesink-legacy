@@ -1,0 +1,28 @@
+<%= render "shared/ticker" %>
+
+
+
+
+
+<div class="forum-banner">
+</div>
+
+<div class="new-forum-post">
+  <%= link_to new_forum_post_path do %>
+   <%= image_tag "post.svg", :class => "new-forum-post" %>
+   <% end %>
+</div>
+
+
+  <% @forum_posts.order("created_at desc").each do |post| %>
+<div class="Forum-Post-Row">
+      <div class="Forum-Post">
+        <%= link_to forum_post_path(post) do %>
+        <h6><span><%= post.title %></span></h6>
+        <% end %>
+      <p class="posted-by-forum">Posted by <%= post.user.username %></p>
+      <p class="date-post"><%= time_ago_in_words(post.created_at) %> ago</p>
+    </div>
+
+  </div>
+      <% end %>

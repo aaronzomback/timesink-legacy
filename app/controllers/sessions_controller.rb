@@ -1,41 +1,46 @@
 class SessionsController < ApplicationController
 
+
   def new
+      render :layout => 'sign'
     # we don't need any variables in here
     # because were not adding to the database - just the session in this case
   end
 
+  def show
+    redirect_to new_session_path
+  end
+
   def create
 
-   @username = form_params[:username]
+   @email = form_params[:email]
    @password = form_params[:password]
 
-   @user = User.find_by(username: @username).try(:authenticate, @password)
+   @user = User.find_by(email: @email).try(:authenticate, @password)
 
 if @user.present?
 
  session[:user_id] = @user.id
 
- flash[:success] = "Succesfully logged in"
-
- redirect_to root_path
+flash[:success] = 'Welcome back to the sink!'
+ # go back to previous page the user was on
+redirect_to cookies[:original_referrer]
 
   else
-   render "new"
-   flash[:error] = "Incorrect username and/or password"
+  flash[:error] = 'Your email and/or password is incorrect'
+  render "new", :layout => 'sign'
   end
 end
 
 def destroy
   reset_session
 
-  flash[:success] = "Succesfully logged out"
 
   redirect_to root_path
 end
 
 def form_params
-  params.require(:session).permit(:username, :password)
+  params.require(:session).permit(:username, :email, :password)
 end
 
 

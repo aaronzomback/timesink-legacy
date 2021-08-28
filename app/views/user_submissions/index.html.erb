@@ -1,0 +1,55 @@
+
+<section>
+
+<% if @current_user.submissions.present? %>
+
+  <table id="user-submissions-table">
+    <tr>
+      <th>Film</th>
+      <th>Current status</th>
+      <th>Status update timestamp</th>
+      <th>Date submitted</th>
+    </tr>
+       <% @current_user.submissions.order(created_at: :desc).each do |submission| %>
+    <tr>
+      <td id="submission-title">
+        <%= link_to user_submission_path(submission) do %>
+        <%= submission.title %>
+        <% end %>
+      </td>
+      <td>
+        <%= link_to user_submission_path(submission) do %>
+        <%= submission.status %>
+        <% end %>
+      </td>
+      <td>
+        <%= link_to user_submission_path(submission) do %>
+        <%= submission.updated_at.strftime("%H:%M UTC, %m-%d-%Y")%>
+        <% end %>
+      </td>
+      <td>
+        <%= link_to user_submission_path(submission) do %>
+        <%= submission.created_at.strftime("%b %e, %Y") %>
+        <% end %>
+      </td>
+    </tr>
+        <% end %>
+  </table>
+
+
+  <% else %>
+
+
+  <section style="margin-top: 88px; align-items: center; display: flex; flex-direction: column; justify-content: center;">
+
+
+<h4>You don't have any active submissions...</h4>
+
+<button class="film-submit-profile-btn" type="button" name="button"><%= link_to "Submit your film", new_submission_path(@user) %></button>
+
+  </section>
+
+<% end %>
+
+
+</section>

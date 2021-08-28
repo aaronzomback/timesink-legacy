@@ -1,0 +1,53 @@
+span.comment-actions {
+  a {
+    margin-left: 12px;
+  }
+}
+
+.comment-body {
+  font-family: "Spectral";
+  font-weight: 300;
+}
+
+
+span.avatar-notification {
+  align-items: center;
+  vertical-align: middle;
+  margin-right: 8px;
+}
+
+
+span.comment-notification {
+  font-size: 18px;
+  margin-left: 8px;
+  margin-right: 8px;
+}
+
+
+.comment-body {
+  width: 400px;
+}
+
+
+span.comment-avatar {
+  vertical-align: middle;
+  align-items: center;
+}
+
+div.user-comment-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 14.6em;
+
+  div.user-comment-info {
+    margin-left: 0;
+    width: 190px;
+  }
+
+}
+
+section.comment-instance {
+  padding: 16px;
+  border-bottom: 1px dotted gray;
+
+}

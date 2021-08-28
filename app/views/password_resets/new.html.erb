@@ -1,0 +1,22 @@
+<main class="flex-pw-reset">
+
+<div class="Forgot-password-intro">
+    <h1 style="font-weight: 600;">Forgot your password?</h1>
+
+    <p style="font-family: Spectral; font-weight: 300;">We all forget passwords every now and then. Just provide the email address tied to
+        your account and we'll start the process of helping you recover it.</p>
+
+<%= form_tag password_resets_path, :method => :post do %>
+  <div class='field'>
+    <%= label_tag :email %>
+    <%= text_field_tag :email, params[:email], :placeholder => "Enter your email address" %>
+  </div>
+    <div class='actions'>
+    <%= submit_tag "Send password reset", :class => "reset" %>
+  </div>
+<% end %>
+
+
+</div>
+
+</main>

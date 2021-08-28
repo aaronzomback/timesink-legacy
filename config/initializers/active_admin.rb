@@ -6,6 +6,7 @@ ActiveAdmin.setup do |config|
   #
   config.site_title = "Timesink"
 
+
   # Set the link url for the title. For example, to take
   # users to your main site. Defaults to no link.
   #
@@ -172,7 +173,7 @@ ActiveAdmin.setup do |config|
 
   # == Setting a Favicon
   #
-  # config.favicon = 'favicon.ico'
+ config.favicon = 'Group1033.png'
 
   # == Meta Tags
   #
@@ -209,6 +210,9 @@ ActiveAdmin.setup do |config|
   #
   # To load a stylesheet:
   #   config.register_stylesheet 'my_stylesheet.css'
+
+  config.register_javascript 'tinymce.js'
+
   #
   # You can provide an options hash for more control, which is passed along to stylesheet_link_tag():
   #   config.register_stylesheet 'my_print_stylesheet.css', media: :print
@@ -283,7 +287,7 @@ ActiveAdmin.setup do |config|
   # hand side with a filter for each attribute of the registered model.
   # You can enable or disable them for all resources here.
   #
-  # config.filters = true
+  config.filters = true
   #
   # By default the filters include associations in a select, which means
   # that every record will be loaded for each association (up
@@ -332,4 +336,48 @@ ActiveAdmin.setup do |config|
   # You can switch to using Webpacker here.
   #
   # config.use_webpacker = true
+
+  config.display_name_methods = [ :display_name,
+                                  :full_name,
+                                  :name,
+                                  :username,
+                                  :login,
+                                  :email
+                                  ]
+
+  ActiveAdmin::ResourceController.class_eval do
+  def find_resource
+    finder = resource_class.is_a?(FriendlyId) ? :slug : :film_title
+    scoped_collection.find_by(finder => params[:id])
+  end
+end
+
+ActiveAdmin::ResourceController.class_eval do
+def find_resource
+  finder = resource_class.is_a?(FriendlyId) ? :slug : :title
+  scoped_collection.find_by(finder => params[:id])
+end
+end
+
+ActiveAdmin::ResourceController.class_eval do
+def find_resource
+  finder = resource_class.is_a?(FriendlyId) ? :slug : :username
+  scoped_collection.find_by(finder => params[:id])
+end
+end
+
+ActiveAdmin.setup do |config|
+  # == Friendly Id addon
+  ActiveAdmin::ResourceController.class_eval do
+    def find_resource
+      if resource_class.is_a?(FriendlyId)
+        scoped_collection.friendly.find(params[:id])
+      else
+        scoped_collection.find(params[:id])
+      end
+    end
+  end
+  # initial config
+end
+
 end

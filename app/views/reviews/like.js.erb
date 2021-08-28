@@ -1,0 +1,6 @@
+
+if ($('#js3-<%= @review.id %>').length > 0) {
+ $('#js3-<%= @review.id %>').html('<%= @review.get_likes.size %>');
+} else {
+ $('.like_count').html('<%= @review.get_likes.size %>');
+}

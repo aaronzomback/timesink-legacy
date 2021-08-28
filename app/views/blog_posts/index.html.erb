@@ -1,0 +1,46 @@
+<%# <%= render "shared/ticker" %>
+
+
+
+<section class="blog-intro">
+<h5>Tales from the faucet</h5>
+<p>Featuring articles and op-ed's by guest writers </p>
+</section>
+
+<div class="blog-index-loop">
+
+  <% @blog_posts.order("created_at desc").each do |blog_post| %>
+<ul>
+    <%= link_to blog_post_path(blog_post) do %>
+  <li>
+    <div class="blog-post-cover-wrapper">
+    <div class="blog-description">
+        <%= image_tag blog_post.cover.blog_cover.url, :class => "cover_blog_img" %>
+    </div>
+    <div class="blog-description">
+      <h2><%= blog_post.title %></h2>
+        <p class="blog-descriptor"> <%= raw blog_post.description.html_safe %></p>
+        <div class="eyeglass">
+          <%= image_tag "eyeglass.svg", :class => "eyeglass" %> <span class="read">Read article</span>
+        </div>
+        <div class="flex-blog-index-read">
+           <span class="author"><h3>By <%= blog_post.author %></h3> </span>
+            <span class="published"> <h3>Published: <%= blog_post.publish_date %> </h3></span>
+            <span class="blog-comments-number">
+              <% if blog_post.comments.present? %>
+              <h3 class="blog-post-comment-count"><%= pluralize blog_post.comments.count, "Comment" %></h3>
+
+              <% else %>
+              <h3 class="blog-post-comment-count">no comments yet</h3>
+              <% end %>
+            </span>
+        </div>
+
+    </div>
+    </div>
+  </li>
+
+  <% end %>
+</ul>
+  <% end %>
+  </div>

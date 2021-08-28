@@ -30,8 +30,15 @@
 /public/assets
 .byebug_history
 
+
 # Ignore master key for decrypting credentials and more.
 /config/master.key
+
+# Ignore self signed SSL for Heroku staging
+*.crt
+*.csr
+*.key
+
 
 /public/packs
 /public/packs-test
@@ -39,3 +46,12 @@
 /yarn-error.log
 yarn-debug.log*
 .yarn-integrity
+./storage/5h/gr/5hgrnezv6f7bcmzzcjr2s3ko607r
+./storage/gc/d1/gcd1cvsf04q7py73g8tidl7tl75d
+./public/uploads/film/video/4/Orchards__2019_.mp4
+./public/uploads/film/video/5/Little_Earthquake.mp4
+./public/uploads/film/video/6/MixedforVimeo.mp4
+./.git/objects/ae/7448a76f8c5df2c4f190322a5f05fd1f95c6b2
+./.git/objects/9a/1dbcdfceb41c8c4927cdce62f8cccd29388f07
+
+/config/credentials/production.key

@@ -1,8 +1,7 @@
 <div class="notification-box">
 
 
-
-    <%= link_to notification.actor.username, main_app.user_path(notification.actor) %> responded
+  <%= link_to notification.actor.username, main_app.user_path(notification.actor) %> responded
     <% if notification.target %>
       <% if notification.target.body.present?
            obj = get_commentable_obj(notification.target)
@@ -23,7 +22,4 @@
     <% end %>
 
   </div>
-
-
-
 </div>

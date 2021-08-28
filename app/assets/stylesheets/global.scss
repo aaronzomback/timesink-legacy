@@ -38,7 +38,7 @@ html, body {
   height: 100%;
 }
 body {
-position: absolute;
+// position: absolute;
 }
 .content {
   flex: 1 0 auto;
@@ -52,6 +52,17 @@ position: absolute;
   border-radius: 100px;
   vertical-align: text-bottom;
  // also might be good to set width and height
+}
+
+.avatar_small {
+  width: 1.8em;
+  vertical-align: middle;
+  margin-right: 0.4em;
+}
+
+.avatar_medium {
+  width: 5em;
+  margin-bottom: 1em;
 }
 
 /* =Fade out, fade in */

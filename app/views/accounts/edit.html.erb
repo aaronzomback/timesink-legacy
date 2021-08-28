@@ -1,10 +1,20 @@
+
+<section style="width: 17em; margin: 0 auto;">
+
+
+
+
 <h2>Edit profile</h2>
 
 <div class="edit-account-form">
 
 <%= simple_form_for @current_user, url: account_path do |f| %>
 
+<% if @current_user.avatar.present? %>
   <%= image_tag @current_user.avatar.show.url, :class => "avatar" %>
+  <% else %>
+  <%= image_tag @current_user.avatar.show.url, :class => "avatar_medium" %>
+  <% end %>
 
   <%= f.input :avatar %>
   <%= f.input :location, placeholder: 'i.e. Houston, TX' %>
@@ -20,3 +30,5 @@
 <div class="delete-account-button">
 <%= link_to 'Delete account', @current_user, :method => :delete, data: {confirm: "Are you sure? This will make your account disappear into nothingness!"} %>
 </div>
+
+</section>

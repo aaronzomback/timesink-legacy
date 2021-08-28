@@ -6,6 +6,8 @@
 <div class=''>
   <% if notification.user.avatar.present? %>
   <%= image_tag notification.actor.avatar.thumbnail.url, :class => "avatar" %>
+  <% else %>
+  <%= image_tag notification.actor.avatar.thumbnail.url, :class => "avatar_small" %>
   <% end %>
   <%= link_to notification.actor.username, main_app.user_path(notification.actor) %> responded to your comment/thread activity:
 </div>

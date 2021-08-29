@@ -48,6 +48,6 @@ Films are ranked in descending order with the most upvotes appearing at the top.
 
 For all inquiries email us at hello@timesinkpresents.com
 
-![Instagram post - 1 (3)](https://user-images.githubusercontent.com/63470294/131251088-4d2d1665-ec78-46ea-bd9a-49b6413ae026.png)
+<img width="540" alt="Screen Shot 2021-08-29 at 2 59 59 PM" src="https://user-images.githubusercontent.com/63470294/131251169-1264e72b-2fa7-4297-bfee-5f948baa5911.png">
 
 

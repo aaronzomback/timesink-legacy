@@ -107,8 +107,8 @@ end
   delete 'logout', to: 'sessions#destroy'
 
 
-  # root "films#index"
+  root "films#index"
 
-  root "volumes#show", :id => '1'
+  # root :to => "volumes#show", :id => '1'
 
 end

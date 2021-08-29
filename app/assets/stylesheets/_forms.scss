@@ -85,7 +85,7 @@ img {
 }
 
 div.email-step {
-  margin-top: 100px;
+  margin-top: 3.5em;
 }
 
 h4.add-avatar {
@@ -94,8 +94,8 @@ h4.add-avatar {
 }
 
 p.add-avatar-description {
-  margin-top: 24px;
-  margin-bottom: 56px;
+  margin-top: 1em;
+  margin-bottom: 1em;
   text-align: center;
 }
 
@@ -112,6 +112,7 @@ input[type=submit] {
   margin-top: 10px;
   margin-left: 25px;
   font-family: $button-font;
+  cursor: pointer;
 }
 
 
@@ -140,7 +141,7 @@ input, textarea {
 .sign-in-timesink-logo {
   h1 {
     font-family: "AnoRegularW05Wide";
-    font-size: 72px;
+    font-size: 4em;
     font-weight: 400;
     margin-bottom: 32px;
   }
@@ -167,6 +168,43 @@ div.log-in-form {
 
   }
 
+  div.name input {
+    font-size: 24px;
+  }
+
+  div.username input {
+    font-size: 24px;
+    min-width: 500px;
+  }
+
+  div.location input {
+    font-size: 24px;
+    min-width: 500px;
+  }
+
+  div.avatar-input {
+    min-width: 500px;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 0.4em;
+  }
+
+div.final-details input {
+  min-width: 500px;
+  font-size: 20px;
+}
+
+div.newsletter-box input {
+  min-width: 1em;
+}
+
+input#user_newsletter.boolean.optional.newsletter {
+  width: 1.0em;
+}
+
+label.boolean.optional.checkbox {
+  width: 8em;
+}
 
  label {
    margin-bottom: 0;
@@ -265,6 +303,7 @@ div.flex-signup {
     div.flex-button-sign-up {
         display: flex;
         justify-content: space-between;
+        cursor: pointer;
         // flex-direction: column;
     }
 
@@ -309,7 +348,7 @@ div.email-step {
 
 div.username-step {
   h3 {
-    font-size: 56px;
+    font-size: 40px;
     font-weight: 400px;
   }
 }

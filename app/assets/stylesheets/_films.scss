@@ -68,8 +68,13 @@ div.breadcrumb-film-show {
 
 
 .polygon {
-  vertical-align: baseline;
+  vertical-align: middle;
   display: inline-block;
+  transition: 0.2s ease-out;
+
+  &:hover {
+    transform: scale(1.5);
+  }
 }
 
 span.views {
@@ -81,9 +86,20 @@ span.impressions {
  // vertical-align: middle;
 }
 
+span.impressions-blog {
+  margin-left: -0.3em;
+  margin-right: 3em;
+}
+
 .eyeball {
   display: inline-block;
   width: 2.5rem;
+  vertical-align: middle;
+}
+
+.eyeball_small {
+  display: inline-block;
+  width: 1.5rem;
   vertical-align: middle;
 }
 

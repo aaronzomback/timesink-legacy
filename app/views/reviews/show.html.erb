@@ -8,6 +8,19 @@
 
 <section class="review-content">
 <h3 class="review-title"><%= @review.title %> </h3>
+<span class="flex-like-review" style="display: inline-block;">
+
+  <span class="like-action">
+<%= link_to like_review_path(@review), class: "upvoted {liked_or_not}", method: :put, remote: :true do %>
+<%= image_tag "Polygon2.svg", :class => "upvote-shape" %>
+ <% end %>
+ </span>
+
+ <span class="like_count">
+   <%= @review.get_likes.size %>
+ </span>
+
+   </span>
   <div class="review-user">
     <span class="review-avatar">
         <% if @review.user.avatar.present? %>
@@ -28,20 +41,6 @@
   <div class="review-body-content">
       <p class="review-body"><%= simple_format @review.body %></p>
   </div>
-
-  <div class="flex-like-review">
-
-    <span class="like-action">
-  <%= link_to like_review_path(@review), class: "upvoted {liked_or_not}", method: :put, remote: :true do %>
- <%= image_tag "Polygon2.svg", :class => "upvote-shape" %>
-   <% end %>
-   </span>
-
-   <span class="like_count">
-     <%= @review.get_likes.size %>
-   </span>
-
-     </div>
 
 
 </section>

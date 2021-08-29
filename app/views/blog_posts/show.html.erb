@@ -18,13 +18,24 @@
      <h4>By <%= @blog_post.author %></h4>
      <h5> Published <%= @blog_post.publish_date %> </h5>
    </div>
-   <% if @blog_post.comments.present? %>
 
-    <span> <%= @blog_post.comments.count %> Comments  </span>
-   <% else %>
-
-   <h5>No comments yet</h5>
-   <% end %>
+  <div class="blog-response-details">
+    <div class="resp-details-flex">
+     <span class="views-blog">
+       <%= image_tag "view.svg", :class => "eyeball_small" %>
+      <span class="impressions-blog"><%= @blog_post.impressionist_count(:filter=>:ip_address) %></span>
+       </span>
+       <% if @blog_post.comments.present? %>
+       <%= link_to "#comments" do %>
+        <span> <%= @blog_post.comments.count %> comments  </span>
+        <% end %>
+       <% else %>
+       <%= link_to "#comments" do %>
+       <span>No comments yet</span>
+       <% end %>
+       <% end %>
+    </div>
+   </div>
    <hr style="width: 30%; margin-bottom: 64px;">
    <div class="flex-blog-image">
    <%= image_tag @blog_post.cover.show.url %>

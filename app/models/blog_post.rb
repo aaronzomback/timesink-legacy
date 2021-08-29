@@ -1,5 +1,7 @@
 class BlogPost < ApplicationRecord
 
+  is_impressionable
+
     mount_uploader :cover, ImageUploader
     mount_uploader :image_1, ImageUploader
     mount_uploader :image_2, ImageUploader

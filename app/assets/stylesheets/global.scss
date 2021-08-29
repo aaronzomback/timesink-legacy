@@ -132,6 +132,21 @@ body {
 
 .upvote-shape {
   vertical-align: middle;
+  transition: 0.2s ease-out;
+
+  &:hover {
+    transform: scale(1.5);
+  }
+}
+
+.upvote-shape-comment {
+  vertical-align: middle;
+  transition: 0.2s ease-out;
+  width: 0.8em;
+
+  &:hover {
+    transform: scale(1.5);
+  }
 }
 
 @import "nav";

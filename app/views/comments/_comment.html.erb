@@ -25,9 +25,9 @@
 
     <div class="liking-target">
     <%= link_to like_comment_path(comment), class: "upvoted {liked_or_not}", remote: true, method: :put do %>
-   <%= image_tag "Polygon2.svg" %>
+   <%= image_tag "Polygon2.svg", class: "upvote-shape-comment" %>
      <% end %>
-      <span id="js2-<%= comment.id %>">
+      <span id="js2-<%= comment.id %>" style="font-size: 0.8em;">
        <%= comment.get_likes.size %>
      </span>
 
@@ -37,7 +37,7 @@
 
 
   <div class='links'><small>
-    <%= link_to 'Reply', [:new, comment, :comment], remote: true %>
+    <span style="margin-top: 1em;"><%= link_to 'Reply', [:new, comment, :comment], remote: true %></span>
     <% if @current_user == comment.user %>
        <span class="comment-actions">
          <% if comment.created_at > 1.hour.ago %>

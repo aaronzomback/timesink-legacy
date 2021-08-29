@@ -1,24 +1,54 @@
-# README
+<img width="540" alt="Screen Shot 2021-08-29 at 2 59 59 PM" src="https://user-images.githubusercontent.com/63470294/131251169-1264e72b-2fa7-4297-bfee-5f948baa5911.png">
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## What is TimeSink
 
-Things you may want to cover:
+Conceived in Sheepshead Bay, NY and made in Lyon, France. We are an independent cinema platform dedicated to curating, educating, reviewing, and presenting great films made by current filmmakers.
 
-* Ruby version
+As a catalyst, we help audiences discover exceptional films made by some of the freshest talent in cinema today. In return we help creators connect with audiences around the world and develop their careers.
 
-* System dependencies
+In short, we promote the art, the wonder, and the joy of cinema and make it accessible for everyone.
 
-* Configuration
+## Our Mission
 
-* Database creation
+We want to grow audiences, inspire the current and future generations of filmmakers, and create new traditions.
 
-* Database initialization
+From live stream shows to pop-up cinema events, our vision is to build a platform that promotes the art form while also cultivating the elements that make great cinema: creators and audience members.
 
-* How to run the test suite
+We aim to support filmmakers by promoting and presenting their work to our engaged viewership, while also reinvesting a portion of our profits and resources for them.
 
-* Services (job queues, cache servers, search engines, etc.)
+## Review Guidelines
 
-* Deployment instructions
+<i> "The artist only performs one part of the creative process. It's the onlooker who completes, and it is the onlooker who has the last word." Marchel Duchamp </i>
 
-* ...
+We believe the viewer ultimately makes the work, and focusing the art of critique and debate into the public space is one of our goals.
+
+We also believe that the best way to create a valuable platform is to promote honesty above everything.
+
+We want your candid thoughts, but we expect them to be expressed through great taste and style.
+
+Any reviews that become personal attacks or deemed 'poor taste' by our editors will be removed.
+
+## Film Submissions
+
+The driving force of cinema is fundamentally human. Not computer. We take pride in an algorithm-less selection approach, as we believe strongly in the human touch.
+
+We accept digital film submissions from around the globe for a fee of $10 each.
+
+Each submission comes with our guaranteed proof-of-viewership, followed by a written response. Filmmakers can also track the status of their submission throughout the process.
+
+We don't distinguish between genres, duration, or release year. Just great storytelling and impression.
+
+As Nietzsche once wrote, "That which doesn't kill us makes us stronger," so please don't be discouraged if your film is not selected - keep trying!
+
+## Top Picks
+
+To reward a culture of excellent quality, TimeSink members can upvote films, as well as other members' film reviews and comments beneath each review and blog article.
+
+Films are ranked in descending order with the most upvotes appearing at the top. In the near future, we plan on rolling out prizes for members who achieve a certain amount of upvotes on their activity (reviews and comments).
+
+## Contact
+
+For all inquiries email us at hello@timesinkpresents.com
+
+
+

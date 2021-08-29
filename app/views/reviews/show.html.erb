@@ -12,6 +12,8 @@
     <span class="review-avatar">
         <% if @review.user.avatar.present? %>
         <%= image_tag @review.user.avatar.thumbnail.url, :class => "avatar" %>
+        <% else %>
+        <%= image_tag @review.user.avatar.thumbnail.url, :class => "avatar_small" %>
         <% end %>
         </span>
         <span class="review-user-info">

@@ -12,6 +12,10 @@
 
   <p style="margin-bottom: 24px;"><%= image_tag @current_user.avatar.thumbnail.url, class: "avatar" %></p>
 
+  <% else %>
+
+  <p style="margin-bottom: 24px;"><%= image_tag @current_user.avatar.thumbnail.url, class: "avatar_small" %></p>
+
   <% end %>
 
 <%= simple_form_for [@film, @review] do |f| %>

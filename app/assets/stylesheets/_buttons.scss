@@ -9,6 +9,7 @@ $button-font: "SangBleuOGSans";
   width: 300px;
   font-size: 18px;
   -webkit-appearance: none;
+  cursor: pointer
 
    a {
     color: #80acff;
@@ -24,6 +25,7 @@ input[type=submit].back-button {
   margin-left: 25px;
   font-family: $button-font;
   -webkit-appearance: none;
+  cursor: pointer
 }
 
 input[type=submit].input-subscribe {
@@ -68,6 +70,7 @@ input[type=submit].skip-button {
   border: 2px solid #7AA8FF;
   border-radius: 25px;
   -webkit-appearance: none;
+  cursor: pointer;
 }
 
 .button1 a {
@@ -103,6 +106,7 @@ input[type=submit].skip-button {
   border: 2px solid #7AA8FF;
   border-radius: 25px;
   margin-left: 1rem;
+  cursor: pointer;
 }
 
 .button2:hover {opacity: 0.6}
@@ -115,6 +119,7 @@ input[type=submit].skip-button {
   padding: 8px 16px;
   margin-left: 56px;
   -webkit-appearance: none;
+  cursor: pointer;
 
 }
 
@@ -146,6 +151,7 @@ input[type=submit].skip-button {
   border-radius: 25px;
   padding: 8px 16px;
   -webkit-appearance: none;
+  cursor: pointer;
 }
 
 .button4:hover {opacity: 0.6}
@@ -156,6 +162,7 @@ div.button-back-films {
   justify-content:center;
   align-items: center;
   -webkit-appearance: none;
+  cursor: pointer;
 
 }
 
@@ -166,6 +173,7 @@ div.button-back-films {
   border-radius: 25px;
   padding: 12px 24px;
   -webkit-appearance: none;
+  cursor: pointer;
 
     a {
       color: #7AA8FF;
@@ -184,6 +192,7 @@ div.button-back-films {
   text-align: center;
   align-items: center;
   -webkit-appearance: none;
+  cursor: pointer;
 
   a {
     font-family: $button-font;
@@ -193,6 +202,7 @@ div.button-back-films {
 button.submit-btc {
   background-color: orange;
   -webkit-appearance: none;
+  cursor: pointer;
 }
 
 div.delete-account-button {

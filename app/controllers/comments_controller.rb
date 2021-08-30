@@ -41,7 +41,7 @@ before_action :find_current_user
     @comment = @commentable.comments.find(params[:id])
     Notification.find_by_target_id(@comment).destroy rescue ''
     @comment.destroy
-    flash[:success] = "D-E-S-T-R-O-Y-E-R, your comment has been erased from existence!"
+    flash[:success] = "Your comment has been removed!"
     redirect_back(fallback_location: root_url)
   end
 

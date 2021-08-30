@@ -81,7 +81,7 @@ class UsersController < ApplicationController
     session[:user_id] = @user.id
 
     # let the user know they've signed up
-    flash[:success] = "Welcome to TimeSink!"
+    flash[:success] = "Welcome to TimeSink! You can now discover new films, write reviews, comment, earn reputation through upvotes, and submit your films."
 
     # go back to previous page the user was on
    redirect_to cookies[:original_referrer]

@@ -10,16 +10,18 @@
 
   <% if @current_user.avatar.present? %>
 
-  <p style="margin-bottom: 24px;"><%= image_tag @current_user.avatar.thumbnail.url, class: "avatar" %></p>
+  <p style="margin-bottom: 24px; width: 14em;"><%= image_tag @current_user.avatar.thumbnail.url, class: "avatar" %> <span> By <%=@current_user.username %> </span></p>
 
   <% else %>
 
-  <p style="margin-bottom: 24px;"><%= image_tag @current_user.avatar.thumbnail.url, class: "avatar_small" %></p>
+  <p style="margin-bottom: 24px; width: 14em;"><%= image_tag @current_user.avatar.thumbnail.url, class: "avatar_small" %>  <span> By <%=@current_user.username %> </span></p>
 
   <% end %>
 
 <%= simple_form_for [@film, @review] do |f| %>
+<div class="review-title-input-size">
 <%= f.input :title, :placeholder => "Enter a review title", :label_html => { :class => "review-title-label" } %>
+</div>
 <%= f.input :body, :label => "Review", :class => "body", :placeholder => "Enter your thoughts and ideas...", :label_html => { :class => "review-body-label" } %>
 
 <%= f.button :submit, "Publish review", id: "submit-review" %>

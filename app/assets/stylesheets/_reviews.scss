@@ -79,6 +79,7 @@ section.review-index-flex {
 
 div.review h5 {
   font-family: "SangBleuOGSans";
+  margin-bottom: 0.2em;
 }
 
 
@@ -116,8 +117,8 @@ div.review-index-like {
 
 h3.film-cafe {
   font-family: "SangBleuOGSans";
-  margin-left: 80px;
-  width: 515px;
+  margin-left: 5rem;
+  width: 32rem;
 }
 
 h4.No-cafe-discussion {
@@ -151,7 +152,7 @@ h4.No-cafe-discussion {
 
 .review {
   width: 800px;
-  border-top: 1px dotted gray;
+  border-top: 1.5px solid gray;
   font-family: "SangBleuOGSans";
   margin-left: 80px;
   margin-top: 16px;
@@ -270,4 +271,10 @@ p.review-comment-count {
 
 hr {
   border: 0.5px solid gray;
+}
+
+
+div.review-title-input-size input {
+  font-size: 21px;
+  min-width: 20em;
 }

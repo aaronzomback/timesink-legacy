@@ -1,13 +1,35 @@
 
 
-<section>
+<section class="user-profile" style="height: 60vh; margin-top: 4.6em;">
 
-  Total Upvotes:
-    <% if (@current_user.sum(@current_user.review_likes, @current_user.comment_likes) === 0) %>
-    <%= "0" %>
-  <% else %>
-  <%= @current_user.sum(@current_user.review_likes, @current_user.comment_likes) %>
-  <% end %>
+<div class="" style="display: flex; justify-content: space-around; align-items: flex-start; width: 35%; margin: 0 auto">
+
+  <div class="" style="display: inline-block;">
+  <% if @current_user.avatar.present? %>
+  <p><%= image_tag @current_user.avatar.show.url, :class => "avatar_large"%>
+    <% else %>
+    <p><%= image_tag @current_user.avatar.show.url, :class => "avatar_medium"%>
+<% end %>
+  </div>
+
+  <div class="">
+        <h5 style="display: inline-block; margin-bottom: 0.6em;"><%= @current_user.name %></h5>
+        <div class="" style="display: flex; justify-content: space-between; align-items: center;">
+          <span>@<%= @current_user.username %></span><span><%= @current_user.location %></span>
+        </div>
+        <p><%= @current_user.email %></p>
+        <span>Total reputation:</span>
+
+          <% if (@current_user.sum(@current_user.review_likes, @current_user.comment_likes) === 0) %>
+            <%= "0" %> upvotes
+          <% else %>
+            <%= @current_user.sum(@current_user.review_likes, @current_user.comment_likes) %> upvotes
+
+        <% end %>
+
+          <hr style="margin-top: 2em;">
+  </div>
+</div>
 
 
 

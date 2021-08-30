@@ -1,6 +1,6 @@
 <img width="540" alt="Screen Shot 2021-08-29 at 2 59 59 PM" src="https://user-images.githubusercontent.com/63470294/131251169-1264e72b-2fa7-4297-bfee-5f948baa5911.png">
 
-## What is TimeSink
+## What is TimeSink?
 
 Conceived in Sheepshead Bay, NY and made in Lyon, France. We are an independent cinema platform dedicated to curating, educating, reviewing, and presenting great films made by current filmmakers.
 

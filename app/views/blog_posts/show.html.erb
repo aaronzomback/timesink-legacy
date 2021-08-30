@@ -22,12 +22,12 @@
   <div class="blog-response-details">
     <div class="resp-details-flex">
      <span class="views-blog">
-       <%= image_tag "view.svg", :class => "eyeball_small" %>
+       <%= image_tag "blogview.svg", :class => "eyeball_small" %>
       <span class="impressions-blog"><%= @blog_post.impressionist_count(:filter=>:ip_address) %></span>
        </span>
        <% if @blog_post.comments.present? %>
        <%= link_to "#comments" do %>
-        <span> <%= @blog_post.comments.count %> comments  </span>
+        <span style="vertical-align: middle;"> <%= image_tag "comments.svg", class: "comments-icon" %> <%= @blog_post.comments.count %>  </span>
         <% end %>
        <% else %>
        <%= link_to "#comments" do %>

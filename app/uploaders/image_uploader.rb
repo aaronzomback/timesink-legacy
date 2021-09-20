@@ -34,7 +34,7 @@ class ImageUploader < CarrierWave::Uploader::Base
   end
 
   version :gallery do
-    process resize_to_fill: [300, 400]
+    process resize_to_fill: [287, 383]
   end
 
   version :gallery1 do
@@ -42,7 +42,7 @@ class ImageUploader < CarrierWave::Uploader::Base
   end
 
   version :show do
-    process resize_to_fill: [500, 400]
+    process resize_to_fill: [300, 400]
   end
 
   version :blog_cover do

@@ -114,7 +114,7 @@
 
 
 <section class="review-index-flex">
-
+    <%= link_to user_path(review.user) do %>
         <div>
           <p class="posted">
               <% if review.user.avatar.present? %>
@@ -122,9 +122,10 @@
             <% else %>
               <span> <%= image_tag review.user.avatar.small.url, :class => "avatar_small" %> </span>
             <% end %>
-            <span><%= link_to review.user.username, user_path(review.user) %> <%= time_ago_in_words(review.created_at) %> ago </span>
+            <span><%= review.user.username %> <%= time_ago_in_words(review.created_at) %> ago </span>
               </p>
         </div>
+      <% end %>
 
         <div class="review-index-like">
               <%= link_to like_review_path(review), class: "upvoted {liked_or_not}", method: :put, remote: :true do %>

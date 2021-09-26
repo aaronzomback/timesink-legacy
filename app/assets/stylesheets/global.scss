@@ -51,6 +51,8 @@ body {
 .avatar {
   border-radius: 100px;
   vertical-align: text-bottom;
+  width: 2.2em;
+
  // also might be good to set width and height
 }
 
@@ -65,6 +67,12 @@ body {
 .avatar_medium {
   width: 5em;
   margin-bottom: 1em;
+}
+
+.avatar_medium_present {
+  width: 5em;
+  margin-bottom: 1em;
+  border-radius: 100px;
 }
 
 .avatar_large {

@@ -6,7 +6,7 @@
 <section class="comment-instance">
 
 <div class="user-comment-grid">
-
+    <%= link_to user_path(comment.user) do %>
       <% if comment.user.avatar.present? %>
       <span class="comment-avatar"><%= image_tag comment.user.avatar.small.url, class: "avatar" %> </span>
       <% else %>
@@ -14,9 +14,9 @@
       <% end %>
 
       <div class="user-comment-info">
-        <%= link_to user_path(comment.user) do %>
+
         <%= comment.user.username %>
-        <% end %>
+    <% end %>
         &#8226 <small><span><%= time_ago_in_words(comment.created_at) %> ago </span></small>
       </div>
   </div>

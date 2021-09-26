@@ -2,14 +2,17 @@
 
 
 <div class="notification-box">
-
+<%= link_to main_app.user_path(notification.actor) %>
 <div class=''>
   <% if notification.actor.avatar.present? %>
   <%= image_tag notification.actor.avatar.thumbnail.url, :class => "avatar" %>
   <% else %>
   <%= image_tag notification.actor.avatar.thumbnail.url, :class => "avatar_small" %>
   <% end %>
-  <%= link_to notification.actor.username, main_app.user_path(notification.actor) %> responded to your comment/thread activity:
+  <%= notification.actor.username %>
+    <% end %>
+    responded to your comment/thread activity:
+
 </div>
 
   <% if notification.target %>

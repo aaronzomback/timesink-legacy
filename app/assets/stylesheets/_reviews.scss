@@ -93,8 +93,8 @@ h3.review-title {
 
 div.review-user {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  width: 12em;
+  grid-template-columns: 1fr 1fr 1fr;
+  width: 17em;
 }
 
 span.review-user-info {
@@ -250,6 +250,7 @@ h3 .review-title  {
 
   .flex-like-review {
     display:inline-block;
+    // margin-bottom: 1em;
   }
 }
 
@@ -277,4 +278,9 @@ hr {
 div.review-title-input-size input {
   font-size: 21px;
   min-width: 20em;
+}
+
+section.review-comments-area {
+  margin-left: 80px;
+  margin-right: 80px;
 }

@@ -8,19 +8,7 @@
 
 <section class="review-content">
 <h3 class="review-title"><%= @review.title %> </h3>
-<span class="flex-like-review" style="display: inline-block;">
 
-  <span class="like-action">
-<%= link_to like_review_path(@review), class: "upvoted {liked_or_not}", method: :put, remote: :true do %>
-<%= image_tag "Polygon2.svg", :class => "upvote-shape" %>
- <% end %>
- </span>
-
- <span class="like_count">
-   <%= @review.get_likes.size %>
- </span>
-
-   </span>
   <div class="review-user">
     <span class="review-avatar">
         <% if @review.user.avatar.present? %>
@@ -37,6 +25,16 @@
           <%= @review.created_at.strftime("%b %e, %Y")%>
           </div>
         </span>
+        <span class="flex-like-review" style="display: inline-block;">
+          <span class="like-action">
+        <%= link_to like_review_path(@review), class: "upvoted {liked_or_not}", method: :put, remote: :true do %>
+        <%= image_tag "Polygon2.svg", :class => "upvote-shape" %>
+         <% end %>
+         </span>
+         <span class="like_count">
+           <%= @review.get_likes.size %>
+         </span>
+        </span>
   </div>
   <div class="review-body-content">
       <p class="review-body"><%= simple_format @review.body %></p>
@@ -45,32 +43,35 @@
 
 </section>
 
-<hr>
+<hr style="width: 90%;">
 
 
+<section class="review-comments-area">
 
 
-<% if is_logged_in? %>
+  <% if is_logged_in? %>
 
-<p><%= render 'comments/form', commentable: @review, comment: Comment.new %></p>
- <%= link_to "Add Comment", new_review_comment_path(@review), remote: true %>
-
- <% else %>
-
- <p><%= link_to "Sign in to comment", new_session_path  %></p>
-
- <% end %>
-
- <div class="">
-   <% if @review.comments.present? %>
-   <h5>Comments (<%= @review.comments.count %>) </h5>
+  <p><%= render 'comments/form', commentable: @review, comment: Comment.new %></p>
+   <%= link_to "Add Comment", new_review_comment_path(@review), remote: true %>
 
    <% else %>
-   <h5> No comments yet</h5>
+
+   <p><%= link_to "Sign in to comment", new_session_path  %></p>
+
    <% end %>
- </div>
+
+   <div class="">
+     <% if @review.comments.present? %>
+     <h5>Comments (<%= @review.comments.count %>) </h5>
+
+     <% else %>
+     <h5> No comments yet</h5>
+     <% end %>
+   </div>
 
 
- <div id='comments'>
-   <%= render @review.comments %>
- </div>
+   <div id='comments'>
+     <%= render @review.comments %>
+   </div>
+
+</section>

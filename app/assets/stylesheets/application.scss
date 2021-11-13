@@ -48,8 +48,8 @@
 
 @font-face {
   font-family: 'Lyon Display Web';
-  src: url('LyonDisplay-Light-Web.woff2') format('woff2'),
-       url('LyonDisplay-Light-Web.woff') format('woff');
+  src: font-url('LyonDisplay-Light-Web.woff2') format('woff2'),
+       font-url('LyonDisplay-Light-Web.woff') format('woff');
   font-weight:  300;
   font-style:   normal;
   font-stretch: normal;
@@ -57,8 +57,8 @@
 
 @font-face {
   font-family: 'SangBleuKingdom-Regular-WebS';
-  src: url('SangBleuKingdom-Regular-WebS.woff2') format('woff2'),
-       url('SangBleuKingdom-Regular-WebS.woff') format('woff');
+  src: font-url('SangBleuKingdom-Regular-WebS.woff2') format('woff2'),
+       font-url('SangBleuKingdom-Regular-WebS.woff') format('woff');
   font-weight:  200;
   font-style:   normal;
   font-stretch: normal;
@@ -66,8 +66,8 @@
 
 @font-face {
   font-family: 'SangBleuOGSans-Regular-WebS';
-  src: url('SangBleuOGSans-Regular-WebS.woff2') format('woff2'),
-       url('SangBleuOGSans-Regular-WebS.woff') format('woff');
+  src: font-url('SangBleuOGSans-Regular-WebS.woff2') format('woff2'),
+       font-url('SangBleuOGSans-Regular-WebS.woff') format('woff');
   font-weight:  300;
   font-style:   normal;
   font-stretch: normal;

@@ -1,4 +1,4 @@
-$button-font: "SangBleuOGSans";
+$button-font: 'SangBleuOGSans-Regular-WebS';
 
 
 #video-wowza {
@@ -118,7 +118,7 @@ div.back-to-films{
     text-decoration: none;
     color: #F5F7F9;
     font-size: 14px;
-    font-family: "SangBleuOGSans";
+    font-family: 'SangBleuOGSans-Regular-WebS';
     display: inline-block;
   }
 }
@@ -134,7 +134,7 @@ div.film-gallery-grid {
   display: grid;
   grid-gap: 48px;
   grid-template-columns: 1fr 1fr 1fr;
-  font-family: "SangBleuOGSans";
+  font-family: 'SangBleuOGSans-Regular-WebS';
   margin-left: auto;
   margin-right: auto;
   margin-top: 120px;
@@ -178,7 +178,7 @@ box-shadow: 16px 16px 24px rgba(22, 20, 20, 0.65);
 
     h3 {
       font-size: 21px;
-        font-family: 'SangBleuOGSans';
+        font-family: 'SangBleuOGSans-Regular-WebS';
     }
 
 
@@ -249,7 +249,7 @@ section.film-show-grid {
 
         h1.film-title1 {
           margin-bottom: 4px;
-          font-family: "SangBleuOGSans";
+          font-family: 'SangBleuOGSans-Regular-WebS';
           font-weight: 600;
           font-size: 40px;
           margin-top: 0;
@@ -261,7 +261,7 @@ section.film-show-grid {
 
 
     h2.film-author, h2.film-duration {
-      font-family: "SangBleuOGSans";
+      font-family: 'SangBleuOGSans-Regular-WebS';
       display: inline-block;
       margin-right: 3em;
       margin-top: 4px;
@@ -276,7 +276,7 @@ section.film-show-grid {
     }
 
     .film-description {
-      font-family: "Spectral";
+      font-family: "Lyon Display Web";
     	font-weight: normal;
     	font-style: normal;
       font-weight: 300;

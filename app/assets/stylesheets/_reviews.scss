@@ -5,7 +5,7 @@
 //   background-color: #000000;
 // }
 
-$button-font: "SangBleuOGSans";
+$button-font: 'SangBleuOGSans-Regular-WebS';
 
 
 
@@ -75,10 +75,14 @@ $button-font: "SangBleuOGSans";
 section.review-index-flex {
   display: flex;
   justify-content: space-between;
+
+  span {
+    font-family: 'SangBleuOGSans-Regular-WebS';
+  }
 }
 
 div.review h5 {
-  font-family: "SangBleuOGSans";
+  font-family: "Lyon Display Web";
   margin-bottom: 0.2em;
 }
 
@@ -116,7 +120,7 @@ div.review-index-like {
 }
 
 h3.film-cafe {
-  font-family: "SangBleuOGSans";
+  font-family: 'SangBleuKingdom-Regular-WebS';
   margin-left: 5rem;
   width: 27rem;
 }
@@ -234,7 +238,7 @@ h3 .review-title  {
   padding-right: 48px;
 
   h3 {
-    font-family: "SangBleuOGSans";
+    font-family: 'SangBleuOGSans-Regular-WebS';
   }
 
   h5 {
@@ -246,6 +250,7 @@ h3 .review-title  {
     line-height: 1.67;
     width: 776px;
     font-size: 18px;
+    font-family: 'Lyon Display Web';
   }
 
   .flex-like-review {
@@ -257,6 +262,7 @@ h3 .review-title  {
 
 p.review-comment-count {
   font-size: 14px;
+  font-family: "Lyon Display Web"
 }
 
 .posted {

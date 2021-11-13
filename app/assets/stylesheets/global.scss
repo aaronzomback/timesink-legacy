@@ -11,6 +11,33 @@
   src: url('/fonts/Spectral-Light.ttf');
 }
 
+@font-face {
+  font-family: 'Lyon Display Web';
+  src: url('LyonDisplay-Light-Web.woff2') format('woff2'),
+       url('LyonDisplay-Light-Web.woff') format('woff');
+  font-weight:  300;
+  font-style:   normal;
+  font-stretch: normal;
+}
+
+@font-face {
+  font-family: 'SangBleuKingdom-Regular-WebS';
+  src: url('SangBleuKingdom-Regular-WebS.woff2') format('woff2'),
+       url('SangBleuKingdom-Regular-WebS.woff') format('woff');
+  font-weight:  200;
+  font-style:   normal;
+  font-stretch: normal;
+}
+
+@font-face {
+  font-family: 'SangBleuOGSans-Regular-WebS';
+  src: url('SangBleuOGSans-Regular-WebS.woff2') format('woff2'),
+       url('SangBleuOGSans-Regular-WebS.woff') format('woff');
+  font-weight:  300;
+  font-style:   normal;
+  font-stretch: normal;
+}
+
 // Colors
 
 $MysteryWhite: #F5F7F9;
@@ -30,7 +57,7 @@ $NeonBlue3: #ADC9FF;
 $NeonBlue4: #E0EBFF;
 
 
-$button-font: "SangBleuOGSans";
+$button-font: 'SangBleuOGSans-Regular-WebS';
 
 
 
@@ -129,7 +156,7 @@ section.animation {
 
 
 body {
-  font-family: "SangBleuOGSans";
+  font-family: "SangBleuOGSans-Regular-WebS";
   background-color: $DarkTheater1;
   color: $MysteryWhite;
   // margin-left: 80px;
@@ -328,7 +355,7 @@ nav {
     color: #F5F7F9;
     text-decoration: none;
     margin-right: 56px;
-    font-family: $button-font;
+    font-family: 'SangBleuKingdom-Regular-WebS';
     font-size: 14px;
     white-space: nowrap;
     text-transform: uppercase;
@@ -417,7 +444,7 @@ $duration: 30s;
   padding-left: 100%;
   box-sizing: content-box;
   font-size: 16px;
-  font-family: "KhmerSangamMN";
+  font-family: 'SangBleuOGSans-Regular-WebS';
   margin-bottom: 48px;
 
 

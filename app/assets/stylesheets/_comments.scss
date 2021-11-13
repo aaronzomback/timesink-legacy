@@ -42,6 +42,7 @@ div.user-comment-grid {
   div.user-comment-info {
     margin-left: 0;
     width: 190px;
+    font-family: 'SangBleuOGSans-Regular-WebS'
   }
 
 }
@@ -49,5 +50,10 @@ div.user-comment-grid {
 section.comment-instance {
   padding: 16px;
   border-bottom: 1px dotted gray;
+  font-family: 'Lyon Display Web';
+
+  span, a {
+    font-family: 'SangBleuOGSans-Regular-WebS';
+  }
 
 }

@@ -15,13 +15,15 @@ div.submission-grid {
   h2 {
     margin-bottom: 8px;
     margin-top: 0px;
-    font-family: "SangBleuOGSans";
+    font-family: 'SangBleuKingdom-Regular-WebS';
     font-size: 64px;
   }
 
   p {
     width: 600px;
-    font-size: 16px;
+    font-size: 21px;
+    font-family: 'Lyon Display Web';
+    line-height: 1.6;
   }
 }
 
@@ -36,11 +38,11 @@ ul.submit {
 
     p.headline {
       font-size: 24px;
-      font-family: 'SangBleuOGSans';
+      font-family: 'SangBleuOGSans-Regular-WebS';
     }
 
     span {
-      font-family: 'Spectral';
+      font-family: 'Lyon Display Web';
       font-size: 18px;
     }
 
@@ -53,7 +55,7 @@ ul.submit {
     }
 
     p {
-        font-family: 'Spectral';
+        font-family: 'Lyon Display Web';
         width: 480px;
         font-weight: 300;
         font-size: 18px;

@@ -30,7 +30,7 @@ Any reviews that become personal attacks or deemed 'poor taste' by our editors w
 
 ## Film Submissions
 
-The driving force of cinema is fundamentally human. Not computer. We take pride in an algorithm-less selection approach, as we believe strongly in the human touch.
+The driving force of cinema is fundamentally human. We take pride in a 'hand-picked' selection approach, rather than generating algorithms.
 
 We accept digital film submissions from around the globe for a fee of $10 each.
 

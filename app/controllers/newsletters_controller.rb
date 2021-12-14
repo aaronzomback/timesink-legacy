@@ -11,7 +11,7 @@ class NewslettersController < ApplicationController
     if @newsletter.save
       NewsletterSignUpMailer.newsletter_greeting(@newsletter).deliver_now
       NewsletterSignUpMailer.new_subscription(@newsletter).deliver_now
-      redirect_to donation_success_path
+      redirect_to newsletter_thanks_path
     else
       render "new"
     end

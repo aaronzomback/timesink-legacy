@@ -22,6 +22,10 @@ class PagesController < ApplicationController
     render :layout => 'success'
   end
 
+  def newsletter_thanks
+    render :layout => 'success'
+  end
+
   def terms
   end
 

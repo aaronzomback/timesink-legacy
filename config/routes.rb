@@ -99,6 +99,7 @@ end
   get "submit", to: "pages#submit"
   get "donation_success", to: "pages#donation_success"
   get "submission_success", to: "pages#submission_success"
+  get "newsletter_thanks", to: "pages#newsletter_thanks"
   get "reset", to: "pages#reset"
   match "/404", to: "errors#not_found", via: :all
   match "/408", to: "errors#timeout", via: :all

@@ -62,7 +62,7 @@ gem "punching_bag"
 gem 'activerecord-session_store'
 
 # for image uploads
-gem 'carrierwave', '~> 2.0'
+gem 'carrierwave', '~> 2.1'
 gem 'mini_magick'
 gem 'fog-aws'
 

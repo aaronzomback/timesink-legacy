@@ -380,7 +380,7 @@ nav {
 
 
 * { box-sizing: border-box; }
-$duration: 43s;
+$duration: 30s;
 
 @-webkit-keyframes ticker {
   0% {
@@ -503,7 +503,6 @@ $duration: 43s;
   nav#hamburger {
     background-color: #222222;
     position:fixed;
-    z-index: 100;
     top:0;
     left:0;
     width:100%;
@@ -601,7 +600,6 @@ $duration: 43s;
       position: fixed;
       top: 4rem;
       right: 6rem;
-      z-index: 101;
 
     body {
       opacity: 0.5;

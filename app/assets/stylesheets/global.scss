@@ -328,7 +328,7 @@ nav {
     color: #F5F7F9;
     text-decoration: none;
     margin-right: 56px;
-    font-family: 'SangBleuKingdom-Regular-WebS';
+    font-family: 'SangBleuOGSans-Regular-WebS';
     font-size: 14px;
     white-space: nowrap;
     text-transform: uppercase;
@@ -346,7 +346,7 @@ nav {
 
 
 .success {
-  font-family: "SangBleuOGSans";
+  font-family: 'SangBleuOGSans-Regular-WebS';
   background-color: #4987FF;
   color: #F5F7F9;
   padding: 4px 20px;
@@ -358,7 +358,7 @@ nav {
 }
 
 .error {
-  font-family: "SangBleuOGSans";
+  font-family: 'SangBleuOGSans-Regular-WebS';
   font-size: 12px;
   background-color: hsl(36, 99%, 55%);
   color: #F5F7F9;
@@ -501,7 +501,7 @@ $duration: 30s;
   header {
 
   nav#hamburger {
-    background-color:rgba(0,0,0,.9);
+    background-color: #222222;
     position:fixed;
     top:0;
     left:0;
@@ -572,7 +572,7 @@ $duration: 30s;
     visibility:visible;
 
     ul {
-      top:70px;
+      top:50;
 
       li {
         transform:translateY(0px);
@@ -580,7 +580,7 @@ $duration: 30s;
 
         a {
           font-weight: 400;
-          font-family: "SangBleuKingdom-Regular-WebS";
+          font-family: 'SangBleuOGSans-Regular-WebS';
           margin-bottom: 12px;
 
         }

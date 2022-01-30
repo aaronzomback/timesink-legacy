@@ -1,4 +1,4 @@
-<footer class="text-xs mt-24 pb-4">
+<footer class="flex justify-between items-center text-xs mt-96 pb-6 mx-6">
   <div class="font-display-logo">© <%= Time.current.year %> TimeSink presents, all rights reserved</div>
   <div class="">
     <%= link_to "Terms & conditions", main_app.terms_path %>
@@ -6,6 +6,10 @@
   <div class="">
       <%= link_to "Privacy policy", main_app.privacy_policy_path %>
   </div>
-  <a href="#">hello@timesinkpresents.com</a>
-  <span class="font-display-logo">Made with </span> &hearts; <span class="font-display-logo"> and lots of coffee between Lyon & NYC</span>
+  <div class="">
+      <a href="#">hello@timesinkpresents.com</a>
+  </div>
+  <div class="">
+      <span class="font-display-logo">Made with </span> &hearts; <span class="font-display-logo"> and lots of coffee between Orange, fr & NYC</span>
+  </div>
 </footer>

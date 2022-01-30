@@ -12,22 +12,22 @@
 
 
 
-    <div class="film-gallery-grid">
+    <div class="flex flex-wrap flex-row justify-between gap-y-12">
 
     <% @films.order(cached_votes_up: :desc, created_at: :desc).each do |film| %>
 
     <div class="film-item">
 
       <%= link_to film_path(film) do %>
-        <div class="cover-img">
+        <div class="block">
         <%= image_tag film.cover.gallery.url, :class => "cover_img" %>
         </div>
 
-<div class="film-grid">
+<div class="flex justify-between">
   <div class="title">
-      <h3><%= film.title %></h3>
-      <h3><%= film.description %></h3>
-      <h3><%= film.author %></h3>
+      <h3 class="text-xl"><%= film.title %></h3>
+      <h3 class="text-base"><%= film.description %></h3>
+      <h3 class="text-sm"><%= film.author %></h3>
   </div>
 
 <% end %>
@@ -72,9 +72,9 @@
 
   <% end %>
 
-  <div class="twitter-timeline-pre">
+  <!-- <div class="twitter-timeline-pre">
 
-  </div>
+  </div> -->
 </div>
 
 <%= javascript_pack_tag 'utils' %>

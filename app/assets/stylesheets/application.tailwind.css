@@ -1,0 +1,60 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@font-face {
+  font-family:"AnoRegularW05WideItalic";
+  font-weight: normal;
+  src: font-url('3344aef7-9436-4a94-ac89-8f67d9914a20.woff2') format('woff2'), font-url('19ffb4ec-02fc-4a18-a35f-c5008e5e5680.woff') format('woff');
+}
+
+@font-face{
+     font-family:"AnoRegularW05Wide";
+     font-weight: normal;
+     src: font-url('01001df7-8270-4d44-ad53-85091f1b6725.woff2') format('woff2'), font-url('af5352dc-274e-4518-872a-3c94487ba2da.woff') format('woff');
+ }
+
+@font-face {
+ font-family: "SangBleuOGSans";
+ src: font-url('SangBleuOGSans-Light-WebTrial.woff2') format('woff2'), font-url('SangBleuOGSans-Light-WebTrial.woff') format('woff');
+}
+
+@font-face {
+ font-family: 'Lyon Display Web';
+ src: font-url('LyonDisplay-Light-Web.woff2') format('woff2'),
+      font-url('LyonDisplay-Light-Web.woff') format('woff');
+ font-weight:  300;
+ font-style:   normal;
+ font-stretch: normal;
+}
+
+@font-face {
+ font-family: 'SangBleuKingdom-Regular-WebS';
+ src: font-url('SangBleuKingdom-Regular-WebS.woff2') format('woff2'),
+      font-url('SangBleuKingdom-Regular-WebS.woff') format('woff');
+ font-weight:  200;
+ font-style:   normal;
+ font-stretch: normal;
+}
+
+@font-face {
+ font-family: 'SangBleuOGSans-Regular-WebS';
+ src: font-url('SangBleuOGSans-Regular-WebS.woff2') format('woff2'),
+      font-url('SangBleuOGSans-Regular-WebS.woff') format('woff');
+ font-weight:  300;
+ font-style:   normal;
+ font-stretch: normal;
+}
+
+
+
+/*
+
+@layer components {
+  .btn-primary {
+    @apply py-2 px-4 bg-blue-200;
+  }
+}
+
+*/

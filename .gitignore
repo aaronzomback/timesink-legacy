@@ -55,3 +55,6 @@ yarn-debug.log*
 ./.git/objects/9a/1dbcdfceb41c8c4927cdce62f8cccd29388f07
 
 /config/credentials/production.key
+
+/app/assets/builds/*
+!/app/assets/builds/.keep

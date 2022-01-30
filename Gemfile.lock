@@ -332,6 +332,8 @@ GEM
     sqlite3 (1.4.2)
     stringex (2.8.5)
     stripe (5.24.0)
+    tailwindcss-rails (2.0.5)
+      railties (>= 6.0.0)
     thor (1.0.1)
     thread_safe (0.3.6)
     tilt (2.0.10)
@@ -414,6 +416,7 @@ DEPENDENCIES
   sqlite3 (~> 1.4)
   stringex (~> 2.8, >= 2.8.5)
   stripe
+  tailwindcss-rails (~> 2.0)
   tinymce-rails
   turbolinks (~> 5)
   tzinfo-data
@@ -427,4 +430,4 @@ RUBY VERSION
    ruby 2.7.0p0
 
 BUNDLED WITH
-   2.1.4
+   2.2.27

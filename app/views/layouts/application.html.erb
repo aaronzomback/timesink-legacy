@@ -5,10 +5,11 @@
         <link rel="canonical" href="https://timesinkpresents.com"/>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-    <meta name="viewport" content="width=device-width, initial-scale=0.5, maximum-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="From live stream shows to pop-up cinema events, promoting the art, wonder, and joy of cinema.">
     <meta name="keywords" content="films, cinema, TimeSink, timesink, timesink presents, filmmaking">
     <link href="https://vjs.zencdn.net/7.8.4/video-js.css" rel="stylesheet" />
+    <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css">
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
@@ -20,29 +21,29 @@
   </head>
 
 
-  <div class="body">
+  <div class="bg-dark-theater-primary text-mystery-white font-blog">
 
   <body data-barba="wrapper">
 
   <div class="content" data-barba="container">
 
 
-<header>
+<header class="flex justify-between py-8 px-10">
 
 
 
 <%= link_to main_app.root_path do %>
-  <h1 class="header-logo">TimeSink</h1>
+  <h1 class="font-display-logo text-3xl">TimeSink</h1>
   <% end %>
 
     <nav>
 
-    <span class="links">
+    <div class="text-xs flex justify-between uppercase">
       <%= link_to "Cinema", main_app.films_path  %>
       <%= link_to "Blog", main_app.blog_posts_path %>
       <%= link_to "Info", main_app.info_path %>
       <%= link_to "Donate", main_app.new_donation_path  %>
-    </span>
+    </div>
 
 
     <% if is_logged_in? %>
@@ -144,12 +145,14 @@
 
 
   <main>
-      <%= yield %>
+    <main class="container mx-auto mt-28 px-5 flex">
+        <%= yield %>
+    </main>
   </main>
 
-  <div class="twitter">
+  <!-- <div class="twitter">
       <a class="twitter-timeline" data-width="282" data-height="282" data-theme="dark" href="https://twitter.com/timesink_?ref_src=twsrc%5Etfw">Tweets by timesink_</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-  </div>
+  </div> -->
 
 
   <%= render 'shared/footer' %>

@@ -24,7 +24,7 @@
         </div>
 
 <div class="flex justify-between">
-  <div class="title">
+  <div class="mt-4">
       <h3 class="text-xl"><%= film.title %></h3>
       <h3 class="text-base"><%= film.description %></h3>
       <h3 class="text-sm"><%= film.author %></h3>
@@ -32,22 +32,17 @@
 
 <% end %>
 
-<div class="parent-likes">
-
-
-    <div>
-    <%= link_to like_film_path(film.id), class: "upvoted {liked_or_not}", method: :put, remote: :true do %>
-   <%= image_tag "Polygon2.svg", :class => "upvote-shape" %>
-     <% end %>
-     <span id="js-<%= film.id %>">
-       <%= film.get_likes.size %>
-     </span>
-
-       </div>
-
-
-
-
+<div class="flex justify-between items-center w-8">
+      <div class="">
+        <%= link_to like_film_path(film.id), class: "upvoted {liked_or_not}", method: :put, remote: :true do %>
+       <%= image_tag "Polygon2.svg", :class => "upvote-shape" %>
+         <% end %>
+      </div>
+      <div class="text-lg">
+        <span id="js-<%= film.id %>">
+          <%= film.get_likes.size %>
+        </span>
+      </div>
 </div>
 
 

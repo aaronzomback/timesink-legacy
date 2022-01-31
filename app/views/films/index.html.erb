@@ -1,77 +1,43 @@
-
-
 <!-- <video-js controls preload data-setup='{"liveui": true}' class="vjs-big-play-centered" width=960 height=540>
   <src="https://iframe.dacast.com/live/319b90da-61dd-bd49-8585-994b78651caa/43ec0992-89e3-3e40-618f-d97532db03af" width="100%" height="100%" frameborder="0" scrolling="no" allow="autoplay" allowfullscreen webkitallowfullscreen mozallowfullscreen oallowfullscreen msallowfullscreen>
 </video-js -->
-
 <!-- <video-js controls preload data-setup='{"liveui": true}' class="vjs-big-play-centered" width=960 height=540 id="video-wowza" poster="https://raw.githubusercontent.com/aaronzomback/timesink/AllGood/app/assets/images/timesinklive2.svg">
   <source src="http://192.168.1.60:1935/live/Stream1/playlist.m3u8">
   </video-js> -->
-
-  <!-- <iframe src="https://deadsimplechat.com/AToTPphGZ" width="420px" height="600px"></iframe> -->
-
-
-
-    <div class="flex flex-wrap flex-row justify-between gap-y-12">
-
-    <% @films.order(cached_votes_up: :desc, created_at: :desc).each do |film| %>
-
+<!-- <iframe src="https://deadsimplechat.com/AToTPphGZ" width="420px" height="600px"></iframe> -->
+<div class="flex flex-wrap flex-row justify-between gap-y-12">
+  <% @films.order(cached_votes_up: :desc, created_at: :desc).each do |film| %>
     <div class="film-item">
-
       <%= link_to film_path(film) do %>
         <div class="block">
-        <%= image_tag film.cover.gallery.url, :class => "cover_img" %>
+          <%= image_tag film.cover.gallery.url, :class => "cover_img" %>
         </div>
-
-<div class="flex justify-between">
-  <div class="mt-4">
-      <h3 class="text-xl"><%= film.title %></h3>
-      <h3 class="text-base"><%= film.description %></h3>
-      <h3 class="text-sm"><%= film.author %></h3>
-  </div>
-
-<% end %>
-
-<div class="flex justify-between items-center w-8">
-      <div class="">
-        <%= link_to like_film_path(film.id), class: "upvoted {liked_or_not}", method: :put, remote: :true do %>
-       <%= image_tag "Polygon2.svg", :class => "upvote-shape" %>
-         <% end %>
+        <div class="flex justify-between">
+          <div class="mt-4">
+            <h3 class="text-xl"><%= film.title %></h3>
+            <h3 class="text-base"><%= film.description %></h3>
+            <h3 class="text-sm"><%= film.author %></h3>
+          </div>
+        <% end %>
+        <div class="flex justify-between items-center w-8">
+          <div class="">
+            <%= link_to like_film_path(film.id), class: "upvoted {liked_or_not}", method: :put, remote: :true do %>
+              <%= image_tag "Polygon2.svg", :class => "upvote-shape" %>
+            <% end %>
+          </div>
+          <div class="text-lg">
+            <span id="js-<%= film.id %>">
+              <%= film.get_likes.size %>
+            </span>
+          </div>
+        </div>
       </div>
-      <div class="text-lg">
-        <span id="js-<%= film.id %>">
-          <%= film.get_likes.size %>
-        </span>
-      </div>
-</div>
-
-
-
-
-
-
-</div>
-
-
-
-
-
-      </div>
-
-
-
-
-
-
-
-
+    </div>
   <% end %>
-
   <!-- <div class="twitter-timeline-pre">
 
   </div> -->
 </div>
-
 <%= javascript_pack_tag 'utils' %>
 <%= javascript_pack_tag 'two_min' %>
 <%= javascript_pack_tag 'script' %>

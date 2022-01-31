@@ -1,115 +1,93 @@
 <%# <%= render "shared/ticker" %>
-
 <div class="blog-root">
-
-
-<div class="back-to-blog-index">
-  <%= link_to blog_posts_path do %>
-    <span><%= image_tag "BackArrow1.svg" %> </span><h3>Back to blog index</h3>
-  <% end %>
-</div>
-
-<div class="blog-flex">
-
-
- <section class="blog-body">
-   <div class="blog-author-date">
-     <h1 class="blog-title"><%= @blog_post.title %></h1>
-     <h4>By <%= @blog_post.author %></h4>
-     <h5> Published <%= @blog_post.publish_date %> </h5>
-   </div>
-
-  <div class="blog-response-details">
-    <div class="resp-details-flex">
-     <span class="views-blog">
-       <%= image_tag "blogview.svg", :class => "eyeball_small" %>
-      <span class="impressions-blog"><%= @blog_post.impressionist_count(:filter=>:ip_address) %></span>
-       </span>
-       <% if @blog_post.comments.present? %>
-       <%= link_to "#comments" do %>
-        <span style="vertical-align: middle;"> <%= image_tag "comments.svg", class: "comments-icon" %> <%= @blog_post.comments.count %>  </span>
-        <% end %>
-       <% else %>
-       <%= link_to "#comments" do %>
-       <span>No comments yet</span>
-       <% end %>
-       <% end %>
-    </div>
-   </div>
-   <hr style="width: 30%; margin-bottom: 64px;">
-   <div class="flex-blog-image">
-   <%= image_tag @blog_post.cover.show.url %>
-    </div>
-   <div class="blog-body-content" id="CMSContent">
-         <p> <%= sanitize simple_format(@blog_post.body) %> </p>
-   </div>
-  </section>
-
+  <div class="back-to-blog-index">
+    <%= link_to blog_posts_path do %>
+      <span><%= image_tag "BackArrow1.svg" %> </span>
+      <h3>Back to blog index</h3>
+    <% end %>
   </div>
-
-
- <hr>
-
-<% if is_logged_in? %>
-
-<p><%= render 'comments/form', commentable: @blog_post, comment: Comment.new %></p>
- <%= link_to "Add Comment", new_blog_post_comment_path(@blog_post), remote: true %>
-
- <% else %>
-
- <p><%= link_to "Sign in to comment", new_session_path  %></p>
-
- <% end %>
-
-
- <% if @blog_post.comments.present? %>
-
-  <h5> Comments (<%= @blog_post.comments.count %>) </h5>
- <% else %>
-
- <h5>No comments yet</h5>
- <% end %>
-
- <div id='comments'>
-   <%= render @blog_post.comments %>
- </div>
-
+  <div class="blog-flex">
+    <section class="blog-body">
+      <div class="blog-author-date">
+        <h1 class="blog-title"><%= @blog_post.title %></h1>
+        <h4>By <%= @blog_post.author %></h4>
+        <h5> Published <%= @blog_post.publish_date %> </h5>
+      </div>
+      <div class="blog-response-details">
+        <div class="resp-details-flex">
+          <span class="views-blog">
+            <%= image_tag "blogview.svg", :class => "eyeball_small" %>
+            <span class="impressions-blog"><%= @blog_post.impressionist_count(:filter=>:ip_address) %></span>
+          </span>
+          <% if @blog_post.comments.present? %>
+            <%= link_to "#comments" do %>
+              <span style="vertical-align: middle;"> <%= image_tag "comments.svg", class: "comments-icon" %> <%= @blog_post.comments.count %>  </span>
+            <% end %>
+          <% else %>
+            <%= link_to "#comments" do %>
+              <span>No comments yet</span>
+            <% end %>
+          <% end %>
+        </div>
+      </div>
+      <hr style="width: 30%; margin-bottom: 64px;">
+      <div class="flex-blog-image">
+        <%= image_tag @blog_post.cover.show.url %>
+      </div>
+      <div class="blog-body-content" id="CMSContent">
+        <p> <%= sanitize simple_format(@blog_post.body) %> </p>
+      </div>
+    </section>
+  </div>
+  <hr>
+  <% if is_logged_in? %>
+    <p><%= render 'comments/form', commentable: @blog_post, comment: Comment.new %></p>
+    <%= link_to "Add Comment", new_blog_post_comment_path(@blog_post), remote: true %>
+  <% else %>
+    <p><%= link_to "Sign in to comment", new_session_path  %></p>
+  <% end %>
+  <% if @blog_post.comments.present? %>
+    <h5> Comments (<%= @blog_post.comments.count %>) </h5>
+  <% else %>
+    <h5>No comments yet</h5>
+  <% end %>
+  <div id='comments'>
+    <%= render @blog_post.comments %>
+  </div>
 </div>
-
 <script>
-//loop through all anchor tags that are within the element containing the CMS post
-$('a', $('#CMSContent')).each(function () {
-var link = this;
-var url = $(link).attr('href');
-var tweetId = url.substring(url.lastIndexOf("/") + 1);
-//see if the href fits the criteria of being a tweet url
-if (url.indexOf('https://twitter.com') === 0 && url.indexOf('status') > 0 && !isNaN(tweetId)) {
-   $.ajax({
-       url: 'https://api.twitter.com/1/statuses/oembed.json?id=' + tweetId,
-       crossDomain: true,
-       dataType: 'jsonp'
-   })
-   .done(function (data) {
-       //insert tweet embed html (data.html) & remove original link.
-       $(link).after(data.html).remove();
-   });
-};
-});
+  //loop through all anchor tags that are within the element containing the CMS post
+  $('a', $('#CMSContent')).each(function () {
+  var link = this;
+  var url = $(link).attr('href');
+  var tweetId = url.substring(url.lastIndexOf("/") + 1);
+  //see if the href fits the criteria of being a tweet url
+  if (url.indexOf('https://twitter.com') === 0 && url.indexOf('status') > 0 && !isNaN(tweetId)) {
+     $.ajax({
+         url: 'https://api.twitter.com/1/statuses/oembed.json?id=' + tweetId,
+         crossDomain: true,
+         dataType: 'jsonp'
+     })
+     .done(function (data) {
+         //insert tweet embed html (data.html) & remove original link.
+         $(link).after(data.html).remove();
+     });
+  };
+  });
 </script>
-
 <script>
   import Quill from 'quill'
-import { urlEmbed, urlEmbedModule } from 'quill-url-embeds'
-Quill.register({
+  import { urlEmbed, urlEmbedModule } from 'quill-url-embeds'
+  Quill.register({
   'blots/urlEmbed': urlEmbed,
   'modules/urlEmbeds': urlEmbedModule({
     metaApi
   })
-})
+  })
 
-const quill = new Quill(editor, {
+  const quill = new Quill(editor, {
   modules: {
     urlEmbeds: {}
   }
-});
+  });
 </script>

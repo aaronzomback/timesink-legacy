@@ -1,150 +1,127 @@
-
-
 <div class="submission-grid">
+  <section>
+    <h2>Submissions
+      <h2>
+        <h2>$25</h2>
+      </section>
+      <section>
+        <p>We select films from around the world. Each submission is guaranteed to be given careful consideration.
+          Our selections all share the same spirit of creative-risk taking and high-quality storytelling.</p>
+      </section>
+    </div>
+    <div class="submission-form">
+      <form action="/submissions" method="post" id="new_submission">
+        <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+        <input type="hidden" name="submission[stripe_payment_id]" id="payment">
+        <div class="field">
+          <label for="title">Film title</label>
+          <input type="text" name="submission[title]" id="title" placeholder="Enter your film title">
+        </div>
+        <div class="field">
+          <label for="year">Release year</label>
+          <input type="text" name="submission[year]" id="year" placeholder="Enter the year (i.e. 2018)">
+        </div>
+        <div class="field">
+          <label for="film_length">Film duration</label>
+          <input type="text" name="submission[film_length]" id="length" placeholder="Enter film duration in minutes">
+        </div>
+        <div class="field">
+          <label for="description">Tell us what your film is about in one sentence</label>
+          <input type="text" name="submission[description]" id="description" placeholder="One sentence film synopsis">
+        </div>
+        <div class="field">
+          <label for="film_link">Please provide a link to your film</label>
+          <input type="text" name="submission[film_link]" id="film_link" placeholder="Enter url to film link">
+        </div>
+        <div class="field">
+          <label for="film_pw">Please provide a password to film if link is private</label>
+          <input type="text" name="submission[film_pw]" id="film_pw" placeholder="Enter password to link if required">
+        </div>
+        <div class="field">
+          <div id="card"></div>
+        </div>
+        <div id="card-errors">
+          <% @submission.errors[:stripe_payment_id].each do |message| %>
+            <p class="error"><%= message %></p>
+          <% end %>
+        </div>
+        <input type="submit" value="Submit film and pay $25">
+        <section class="lock-donation-flex">
+          <%= image_tag "lock.svg", :class => "lock" %>
+          <p class="secure-transaction">All transactions are secure and encrypted</p>
+        </section>
+        <a href="http://www.stripe.com"><%= image_tag "stripe-white.svg", :class => "stripe-logo" %></a>
+      </form>
+    </div>
+    <script charset="utf-8">
+      var stripe = Stripe('<%= Rails.application.credentials[Rails.env.to_sym][:stripe_public_key] %>');
+        // load the fonts in
+      var fonts = [{
+        cssSrc: "https://fonts.googleapis.com/css?family=Karla",
+      }];
+      // styles for the stripe inputs
+      var styles = {
+        base: {
+          iconColor: "#F5F7F9",
+          color: "#F5F7F9",
+          fontFamily: "Spectral",
+          fontSize: "14px",
+          fontSmoothing: 'antialiased',
 
-<section>
-  <h2>Submissions<h2>
-  <h2>$25</h2>
-</section>
-
-<section>
-  <p>We select films from around the world. Each submission is guaranteed to be given careful consideration.
-    Our selections all share the same spirit of creative-risk taking and high-quality storytelling.</p>
-
-
-</section>
-</div>
-
-
-<div class="submission-form">
-
-<form action="/submissions" method="post" id="new_submission">
-  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-  <input type="hidden" name="submission[stripe_payment_id]" id="payment">
-
-  <div class="field">
-    <label for="title">Film title</label>
-    <input type="text" name="submission[title]" id="title" placeholder="Enter your film title">
-  </div>
-
-  <div class="field">
-    <label for="year">Release year</label>
-      <input type="text" name="submission[year]" id="year" placeholder="Enter the year (i.e. 2018)">
-  </div>
-
-  <div class="field">
-    <label for="film_length">Film duration</label>
-    <input type="text" name="submission[film_length]" id="length" placeholder="Enter film duration in minutes">
-  </div>
-
-  <div class="field">
-    <label for="description">Tell us what your film is about in one sentence</label>
-    <input type="text" name="submission[description]" id="description" placeholder="One sentence film synopsis">
-  </div>
-
-
-  <div class="field">
-    <label for="film_link">Please provide a link to your film</label>
-    <input type="text" name="submission[film_link]" id="film_link" placeholder="Enter url to film link">
-  </div>
-
-  <div class="field">
-    <label for="film_pw">Please provide a password to film if link is private</label>
-    <input type="text" name="submission[film_pw]" id="film_pw" placeholder="Enter password to link if required">
-  </div>
-
-  <div class="field">
-    <div id="card"></div>
-  </div>
-
-  <div id="card-errors">
-    <% @submission.errors[:stripe_payment_id].each do |message| %>
-<p class="error"><%= message %></p>
-<% end %>
-  </div>
-
-
-  <input type="submit" value="Submit film and pay $25">
-
-  <section class="lock-donation-flex">
-  <%= image_tag "lock.svg", :class => "lock" %>
-  <p class="secure-transaction">All transactions are secure and encrypted</p>
-  </section>
-  <a href="http://www.stripe.com"><%= image_tag "stripe-white.svg", :class => "stripe-logo" %></a>
-</form>
-
-</div>
-
-
-<script charset="utf-8">
-  var stripe = Stripe('<%= Rails.application.credentials[Rails.env.to_sym][:stripe_public_key] %>');
-    // load the fonts in
-  var fonts = [{
-    cssSrc: "https://fonts.googleapis.com/css?family=Karla",
-  }];
-  // styles for the stripe inputs
-  var styles = {
-    base: {
-      iconColor: "#F5F7F9",
-      color: "#F5F7F9",
-      fontFamily: "Spectral",
-      fontSize: "14px",
-      fontSmoothing: 'antialiased',
-
-      "::placeholder": {
-        color: "#F5F7F9"
-      },
-      ":-webkit-autofill": {
-        color: "#F5F7F9"
-      }
-    },
-    invalid: {
-      iconColor: "#F5F7F9",
-      color: "#261ce9"
-    }
-  }
-
-  var elements = stripe.elements();
-  var cardElement = elements.create('card', {style: styles});
-  cardElement.mount('#card');
-
-  const form = document.querySelector('#new_submission');
-  form.addEventListener('submit', function(e) {
-    e.preventDefault();
-    // Step 1: POST request to create payment intent
-    fetch('/payment_intents', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        authenticity_token: '<%= form_authenticity_token %>',
-      }),
-    })
-    .then((response) => response.json())
-    .then((paymentIntent) => {
-      // Step 2: Create payment method and confirm payment intent.
-      stripe.confirmCardPayment(
-        paymentIntent.client_secret, {
-          payment_method: {
-            card: cardElement
+          "::placeholder": {
+            color: "#F5F7F9"
+          },
+          ":-webkit-autofill": {
+            color: "#F5F7F9"
           }
+        },
+        invalid: {
+          iconColor: "#F5F7F9",
+          color: "#261ce9"
         }
-      ).then((resp) => {
-        if (resp.error) {
-          $("#card-errors").html(resp.error.message)
-        } else {
-          // Step 3: Embed payment ID in form
-          const paymentIdInput = document.querySelector('#payment');
-          paymentIdInput.value = paymentIntent.id;
-          form.submit();
-        }
-      })
-    })
-    .catch((error) => {
-      console.error('Error:', error);
-    });
-  });
+      }
 
-  console.log("Success!")
-</script>
+      var elements = stripe.elements();
+      var cardElement = elements.create('card', {style: styles});
+      cardElement.mount('#card');
+
+      const form = document.querySelector('#new_submission');
+      form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        // Step 1: POST request to create payment intent
+        fetch('/payment_intents', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            authenticity_token: '<%= form_authenticity_token %>',
+          }),
+        })
+        .then((response) => response.json())
+        .then((paymentIntent) => {
+          // Step 2: Create payment method and confirm payment intent.
+          stripe.confirmCardPayment(
+            paymentIntent.client_secret, {
+              payment_method: {
+                card: cardElement
+              }
+            }
+          ).then((resp) => {
+            if (resp.error) {
+              $("#card-errors").html(resp.error.message)
+            } else {
+              // Step 3: Embed payment ID in form
+              const paymentIdInput = document.querySelector('#payment');
+              paymentIdInput.value = paymentIntent.id;
+              form.submit();
+            }
+          })
+        })
+        .catch((error) => {
+          console.error('Error:', error);
+        });
+      });
+
+      console.log("Success!")
+    </script>

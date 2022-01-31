@@ -1,5 +1,4 @@
 class ForumPost < ApplicationRecord
-
   mount_uploader :image_1, ImageUploader
 
   extend FriendlyId
@@ -11,6 +10,4 @@ class ForumPost < ApplicationRecord
 
   validates :title, presence: true
   validates :body, presence: true
-
-
 end

@@ -1,55 +1,39 @@
-
-
-
 <%= content_tag :div, id: dom_id(comment), class: 'comment' do %>
-
-<section class="comment-instance">
-
-<div class="user-comment-grid">
-    <%= link_to user_path(comment.user) do %>
-      <% if comment.user.avatar.present? %>
-      <span class="comment-avatar"><%= image_tag comment.user.avatar.small.url, class: "avatar" %> </span>
-      <% else %>
-      <span class="comment-avatar"><%= image_tag comment.user.avatar.small.url, class: "avatar_small" %> </span>
-      <% end %>
-
-      <div class="user-comment-info">
-
-        <%= comment.user.username %>
-    <% end %>
+  <section class="comment-instance">
+    <div class="user-comment-grid">
+      <%= link_to user_path(comment.user) do %>
+        <% if comment.user.avatar.present? %>
+          <span class="comment-avatar"><%= image_tag comment.user.avatar.small.url, class: "avatar" %> </span>
+        <% else %>
+          <span class="comment-avatar"><%= image_tag comment.user.avatar.small.url, class: "avatar_small" %> </span>
+        <% end %>
+        <div class="user-comment-info">
+          <%= comment.user.username %>
+        <% end %>
         &#8226 <small><span><%= time_ago_in_words(comment.created_at) %> ago </span></small>
       </div>
-  </div>
-
+    </div>
     <p class="comment-body" style="font-family: Spectral;"> <%= auto_link(simple_format(comment.body), html: { target: '_blank' }, class: "comment-body" ) %> </p>
-
     <div class="liking-target">
-    <%= link_to like_comment_path(comment), class: "upvoted {liked_or_not}", remote: true, method: :put do %>
-   <%= image_tag "Polygon2.svg", class: "upvote-shape-comment" %>
-     <% end %>
+      <%= link_to like_comment_path(comment), class: "upvoted {liked_or_not}", remote: true, method: :put do %>
+        <%= image_tag "Polygon2.svg", class: "upvote-shape-comment" %>
+      <% end %>
       <span id="js2-<%= comment.id %>" style="font-size: 0.8em;">
-       <%= comment.get_likes.size %>
-     </span>
-
-       </div>
-
-
-
-
-  <div class='links'><small>
-    <span style="margin-top: 1em;"><%= link_to 'Reply', [:new, comment, :comment], remote: true %></span>
-    <% if @current_user == comment.user %>
-       <span class="comment-actions">
-         <% if comment.created_at > 1.hour.ago %>
-          <%= link_to 'Edit', [:edit, comment.commentable, comment] %>
-          <%= link_to 'Delete', [comment.commentable, comment], remote: true, method: :delete, data: { confirm: 'Are you sure?' } %>
-          <% end %>
-       </span>
-    <% end %>
-  </small></div>
-
-  <%= render 'comments/form', commentable: comment, comment: Comment.new %>
-  <%= render comment.comments.order("created_at desc")  %>
-<% end %>
-
-  </section>
+        <%= comment.get_likes.size %>
+      </span>
+    </div>
+    <div class='links'><small>
+        <span style="margin-top: 1em;"><%= link_to 'Reply', [:new, comment, :comment], remote: true %></span>
+        <% if @current_user == comment.user %>
+          <span class="comment-actions">
+            <% if comment.created_at > 1.hour.ago %>
+              <%= link_to 'Edit', [:edit, comment.commentable, comment] %>
+              <%= link_to 'Delete', [comment.commentable, comment], remote: true, method: :delete, data: { confirm: 'Are you sure?' } %>
+            <% end %>
+          </span>
+        <% end %>
+      </small></div>
+    <%= render 'comments/form', commentable: comment, comment: Comment.new %>
+    <%= render comment.comments.order("created_at desc")  %>
+  <% end %>
+</section>

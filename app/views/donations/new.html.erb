@@ -1,107 +1,74 @@
-
 <div class="donation-intro">
   <p class="donation-proceed">Donate knowing that 100% of your funds are reinvested directly
-    back into the development and operation of TimeSink. <br> We accept payments from all major cards around the globe and &#8383 BTC as well.</p>
+    back into the development and operation of TimeSink. <br>
+     We accept payments from all major cards around the globe and &#8383 BTC as well.</p>
 </div>
-
-
 <div class="donation-grid">
-
-
-
-<section class="donation-form">
-
-  <p style="display:flex;justify-content: center;">give us your DIRTY FIAT!</p>
-
-<form action="/donations" method="post" id="new_donation">
-  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-  <input type="hidden" name="donation[stripe_payment_id]" id="payment">
-
-  <div class="field">
-    <label for="Name">Name</label>
-    <input type="text" name="donation[name]" id="Name" placeholder="Enter your name">
-  </div>
-
-  <div class="field">
-    <label for="Email">Email</label>
-    <input type="text" name="donation[email]" id="Email" placeholder="Enter your email">
-  </div>
-
-  <div class="field">
-    <label for="Note">Add a note (optional)</label>
-    <input type="text" name="donation[note]" id="Note" placeholder="Add a special note">
-  </div>
-
-
-
-<div class="input-icon">
-    <label for="Amount">Enter custom amount (i.e. $10, $25, $50, $100, etc.)</label>
-<input type="number" name="donation[amount]" id="amount" step="any" class="currency" min="1" max="2500.00" placeholder="0.00">
-<i class="donation-$">$</i>
-</div>
-
-
-<div id="card-errors">
-  <% @donation.errors[:stripe_payment_id].each do |message| %>
-<p class="error"><%= message %></p>
-<% end %>
-</div>
-
-<div id="card" class="card-donation">
-  <!-- card element appears here -->
-</div>
-
-
-    <input type="submit" value="Donate to TimeSink" id="donate-btn">
-
-  </form>
-
-<section class="lock-donation-flex">
-<%= image_tag "lock.svg", :class => "lock" %>
-<p class="secure-transaction" style="font-family: SangBleuOGSans;">All transactions are secure and encrypted</p>
-</section>
-<a href="http://www.stripe.com"><%= image_tag "stripe-white.svg", :class => "stripe-logo" %></a>
-  </section>
-
-
-  <section class="donation-description">
-
-  <section class="btc-donation-form">
-
-      <p style="display: flex;justify-content: center;">we run on BITCOIN!</p>
-
-    <style type="text/css"> .btcpay-form { display: inline-flex; align-items: center; justify-content: center; } .btcpay-form--inline { flex-direction: row; } .btcpay-form--block { flex-direction: column; } .btcpay-form--inline .submit { margin-left: 15px; } .btcpay-form--block select { margin-bottom: 10px; } .btcpay-form .btcpay-custom-container{ text-align: center; }.btcpay-custom { display: flex; align-items: center; justify-content: center; } .btcpay-form .plus-minus { cursor:pointer; font-size:16px; line-height: 25px; background: #7AA8FF; height: 30px; width: 45px; border:none; border-radius: 2px; margin: auto 5px; display: inline-flex; justify-content: center; } .btcpay-form select { -moz-appearance: none; -webkit-appearance: none; appearance: none; color: currentColor; background: transparent; border:1px solid transparent; display: block; padding: 1px; margin-left: auto; margin-right: auto; font-size: 11px; cursor: pointer; } .btcpay-form select:hover { border-color: #ccc; } #btcpay-input-price { font-family: SangBleuKingdom;-moz-appearance: none; -webkit-appearance: none; border: none; box-shadow: none; text-align: center; font-size: 25px; margin: auto; border-radius: 2px; line-height: 35px; background: none; border: 1px solid #7AA8FF; } #btcpay-input-price::-webkit-outer-spin-button, #btcpay-input-price::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; } </style>
-  <form method="POST"  action="https://mainnet.demo.btcpayserver.org/api/v1/invoices" class="btcpay-form btcpay-form--block">
-    <input type="hidden" name="storeId" value="BKbikKXShgen6g35NgzbFyahxiZPCUuLUeSSFKwi6Hph" />
-    <div class="btcpay-custom-container">
-      <div class="btcpay-custom">
-        <button class="plus-minus" onclick="event.preventDefault(); var price = parseInt(document.querySelector('#btcpay-input-price').value); if ('-' == '-' && (price - 1) < 1) { return; } document.querySelector('#btcpay-input-price').value = parseInt(document.querySelector('#btcpay-input-price').value) - 1;">-</button>
-        <input id="btcpay-input-price" name="price" type="text" min="1" max="20" step="1" value="10" style="width: 3em;" oninput="event.preventDefault();isNaN(event.target.value) || event.target.value <= 0 ? document.querySelector('#btcpay-input-price').value = 10 : event.target.value"  />
-        <button class="plus-minus" onclick="event.preventDefault(); var price = parseInt(document.querySelector('#btcpay-input-price').value); if ('+' == '-' && (price - 1) < 1) { return; } document.querySelector('#btcpay-input-price').value = parseInt(document.querySelector('#btcpay-input-price').value) + 1;">+</button>
+  <section class="donation-form">
+    <p style="display:flex;justify-content: center;">give us your DIRTY FIAT!</p>
+    <form action="/donations" method="post" id="new_donation">
+      <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+      <input type="hidden" name="donation[stripe_payment_id]" id="payment">
+      <div class="field">
+        <label for="Name">Name</label>
+        <input type="text" name="donation[name]" id="Name" placeholder="Enter your name">
       </div>
-      <select name="currency">
-        <option value="USD" selected>USD</option>
-        <option value="GBP">GBP</option>
-        <option value="EUR">EUR</option>
-        <option value="BTC">BTC</option>
-      </select>
-    </div>
-  <button type="submit" class="submit" name="submit" style="max-width:200px; max-height:100px; border-radius: 4px;border-style: none;background-color: #F7931A; cursor: pointer;" alt="Pay with BtcPay, Self-Hosted Bitcoin Payment Processor"><span style="color:#fff;font-size: 16px;vertical-align:middle;font-family:AnoRegularW05WideItalic;">Donate with</span>
-  <img src="https://upload.wikimedia.org/wikipedia/commons/9/9a/BTC_Logo.svg" style="height:40px;display:inline-block;vertical-align:middle;">
-  </button></form>
+      <div class="field">
+        <label for="Email">Email</label>
+        <input type="text" name="donation[email]" id="Email" placeholder="Enter your email">
+      </div>
+      <div class="field">
+        <label for="Note">Add a note (optional)</label>
+        <input type="text" name="donation[note]" id="Note" placeholder="Add a special note">
+      </div>
+      <div class="input-icon">
+        <label for="Amount">Enter custom amount (i.e. $10, $25, $50, $100, etc.)</label>
+        <input type="number" name="donation[amount]" id="amount" step="any" class="currency" min="1" max="2500.00" placeholder="0.00">
+        <i class="donation-$">$</i>
+      </div>
+      <div id="card-errors">
+        <% @donation.errors[:stripe_payment_id].each do |message| %>
+          <p class="error"><%= message %></p>
+        <% end %>
+      </div>
+      <div id="card" class="card-donation">
+        <!-- card element appears here -->
+      </div>
+      <input type="submit" value="Donate to TimeSink" id="donate-btn">
+    </form>
+    <section class="lock-donation-flex">
+      <%= image_tag "lock.svg", :class => "lock" %>
+      <p class="secure-transaction" style="font-family: SangBleuOGSans;">All transactions are secure and encrypted</p>
+    </section>
+    <a href="http://www.stripe.com"><%= image_tag "stripe-white.svg", :class => "stripe-logo" %></a>
   </section>
+  <section class="donation-description">
+    <section class="btc-donation-form">
+      <p style="display: flex;justify-content: center;">we run on BITCOIN!</p>
+      <style type="text/css">
+        .btcpay-form { display: inline-flex; align-items: center; justify-content: center; } .btcpay-form--inline { flex-direction: row; } .btcpay-form--block { flex-direction: column; } .btcpay-form--inline .submit { margin-left: 15px; } .btcpay-form--block select { margin-bottom: 10px; } .btcpay-form .btcpay-custom-container{ text-align: center; }.btcpay-custom { display: flex; align-items: center; justify-content: center; } .btcpay-form .plus-minus { cursor:pointer; font-size:16px; line-height: 25px; background: #7AA8FF; height: 30px; width: 45px; border:none; border-radius: 2px; margin: auto 5px; display: inline-flex; justify-content: center; } .btcpay-form select { -moz-appearance: none; -webkit-appearance: none; appearance: none; color: currentColor; background: transparent; border:1px solid transparent; display: block; padding: 1px; margin-left: auto; margin-right: auto; font-size: 11px; cursor: pointer; } .btcpay-form select:hover { border-color: #ccc; } #btcpay-input-price { font-family: SangBleuKingdom;-moz-appearance: none; -webkit-appearance: none; border: none; box-shadow: none; text-align: center; font-size: 25px; margin: auto; border-radius: 2px; line-height: 35px; background: none; border: 1px solid #7AA8FF; } #btcpay-input-price::-webkit-outer-spin-button, #btcpay-input-price::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
+      </style>
+      <form method="POST"  action="https://mainnet.demo.btcpayserver.org/api/v1/invoices" class="btcpay-form btcpay-form--block">
+        <input type="hidden" name="storeId" value="BKbikKXShgen6g35NgzbFyahxiZPCUuLUeSSFKwi6Hph" />
+        <div class="btcpay-custom-container">
+          <div class="btcpay-custom">
+            <button class="plus-minus" onclick="event.preventDefault(); var price = parseInt(document.querySelector('#btcpay-input-price').value); if ('-' == '-' && (price - 1) < 1) { return; } document.querySelector('#btcpay-input-price').value = parseInt(document.querySelector('#btcpay-input-price').value) - 1;">-</button>
+            <input id="btcpay-input-price" name="price" type="text" min="1" max="20" step="1" value="10" style="width: 3em;" oninput="event.preventDefault();isNaN(event.target.value) || event.target.value <= 0 ? document.querySelector('#btcpay-input-price').value = 10 : event.target.value"  />
+            <button class="plus-minus" onclick="event.preventDefault(); var price = parseInt(document.querySelector('#btcpay-input-price').value); if ('+' == '-' && (price - 1) < 1) { return; } document.querySelector('#btcpay-input-price').value = parseInt(document.querySelector('#btcpay-input-price').value) + 1;">+</button>
+          </div>
+          <select name="currency">
+            <option value="USD" selected>USD</option>
+            <option value="GBP">GBP</option>
+            <option value="EUR">EUR</option>
+            <option value="BTC">BTC</option>
+          </select>
+        </div>
+        <button type="submit" class="submit" name="submit" style="max-width:200px; max-height:100px; border-radius: 4px;border-style: none;background-color: #F7931A; cursor: pointer;" alt="Pay with BtcPay, Self-Hosted Bitcoin Payment Processor"><span style="color:#fff;font-size: 16px;vertical-align:middle;font-family:AnoRegularW05WideItalic;">Donate with</span>
+          <img src="https://upload.wikimedia.org/wikipedia/commons/9/9a/BTC_Logo.svg" style="height:40px;display:inline-block;vertical-align:middle;">
+        </button></form>
+    </section>
   </section>
-
-
-
-
 </div>
-
-
-
-
-
-
 <script charset="utf-8">
   (function(){
 

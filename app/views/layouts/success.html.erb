@@ -1,47 +1,33 @@
 <!DOCTYPE html>
-
 <html lang="en" dir="ltr">
-
   <head>
-
     <meta charset="utf-8">
-
     <title></title>
-
     <%= csrf_meta_tags %>
-
     <%= csp_meta_tag %>
-
-  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-  <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-            <script src="https://js.stripe.com/v3/"></script>
-        <%= favicon_link_tag asset_path('Group1033.png') %>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <script src="https://js.stripe.com/v3/"></script>
+    <%= favicon_link_tag asset_path('Group1033.png') %>
     <script src="//vjs.zencdn.net/ie8/1.1.1/videojs-ie8.min.js" async></script>
-      <link rel="stylesheet"
+    <link rel="stylesheet"
         href="https://fonts.googleapis.com/css?family=Roboto">
-
-</head>
+  </head>
   <body>
-
     <% if flash[:success].present? %>
-   <div class="success">
-     <%= flash[:success] %>
-   </div>
-   <% end %>
-
-   <% if flash[:error].present? %>
-       <div class="error">
-      <%= flash[:error] %>
-       </div>
-   <% end %>
-
-
-   <main data-barba="wrapper">
-     <div data-barba="container" data-barba-namespace="page-a">
-       <%= yield %>
-     </div>
-   </main>
-
+      <div class="success">
+        <%= flash[:success] %>
+      </div>
+    <% end %>
+    <% if flash[:error].present? %>
+      <div class="error">
+        <%= flash[:error] %>
+      </div>
+    <% end %>
+    <main data-barba="wrapper">
+      <div data-barba="container" data-barba-namespace="page-a">
+        <%= yield %>
+      </div>
+    </main>
   </body>
-
 </html>

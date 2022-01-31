@@ -1,53 +1,37 @@
 <!DOCTYPE html>
-
 <html lang="en" dir="ltr">
-
   <head>
-
     <meta charset="utf-8">
-
     <title></title>
-
     <%= csrf_meta_tags %>
-
     <%= csp_meta_tag %>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="a cinema and multimedia arts platform">
     <meta name="keywords" content="films, cinema, TimeSink, timesink">
-  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-  <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-  <%= favicon_link_tag asset_path('Group1033.png') %>
-  <script src="https://js.stripe.com/v3/"></script>
-  <script src="https://unpkg.com/@barba/core"></script>
-  <script src="https://unpkg.com/gsap@latest/dist/gsap.min.js"></script>
-  <script src="//vjs.zencdn.net/ie8/1.1.1/videojs-ie8.min.js" async></script>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
-
-</head>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= favicon_link_tag asset_path('Group1033.png') %>
+    <script src="https://js.stripe.com/v3/"></script>
+    <script src="https://unpkg.com/@barba/core"></script>
+    <script src="https://unpkg.com/gsap@latest/dist/gsap.min.js"></script>
+    <script src="//vjs.zencdn.net/ie8/1.1.1/videojs-ie8.min.js" async></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+  </head>
   <body data-barba="wrapper">
     <div data-barba="container" data-barba-namespace="page-b">
-
-
-     <% if flash[:success].present? %>
-       <div class="success">
-         <%= flash[:success] %>
-       </div>
-   <% end %>
-
-  <% if flash[:error].present? %>
-      <div class="error">
-    <%= flash[:error] %>
-      </div>
-  <% end %>
-
-
-
-  <main>
-      <%= yield %>
-  </main>
-
-  </div>
-
-</body>
-
+      <% if flash[:success].present? %>
+        <div class="success">
+          <%= flash[:success] %>
+        </div>
+      <% end %>
+      <% if flash[:error].present? %>
+        <div class="error">
+          <%= flash[:error] %>
+        </div>
+      <% end %>
+      <main>
+        <%= yield %>
+      </main>
+    </div>
+  </body>
 </html>

@@ -1,210 +1,157 @@
-
-
-
 <div class="back-to-films" style="margin-left: 10rem;">
   <%= link_to films_path do %>
-     <span><%= image_tag "BackArrow1.svg" %> </span><h3>Back to films </h3>
+    <span><%= image_tag "BackArrow1.svg" %> </span>
+    <h3>Back to films </h3>
   <% end %>
 </div>
-
-
 <section class="film-show-grid">
-
-    <div class="film-show-img" onclick="toggle();">
-  <%= image_tag @film.cover.show.url %>
+  <div class="film-show-img" onclick="toggle();">
+    <%= image_tag @film.cover.show.url %>
   </div>
-
   <div class="film-show-info">
-
     <div class="film-show-flex-title-etc">
       <div class="film-title-is-top-pick">
-              <h1 class="film-title1"><%= @film.title %></h1>
-              <span><% if @film.is_top_pick %>
-                     <%= image_tag "is_featured.svg", :class => "top-pick-show" %>
-                   <% end %>
-              </span>
-        </div>
-              <h2 class="film-author"><%= @film.author %></h2> <h2 class="film-duration"><%= @film.description %></h2>
-
-       <div class="flex-likes-impressions-etc">
-            <span class="liking-target">
-                 <%= link_to like_film_path(@film), class: "upvoted {liked_or_not}", method: :put, remote: :true do %>
-                 <%= image_tag "Polygon2.svg", :class => "polygon" %>
-                  <% end %>
-                  <span class="like_count">
-                    <%= @film.get_likes.size %>
-                  </span>
-            </span>
-
-            <span class="views">
-              <%= image_tag "view.svg", :class => "eyeball" %>
-                <span class="impressions"><%= @film.impressionist_count(:filter=>:ip_address) %></span>
-              <span class="impressions"></span>
-            </span>
-
+        <h1 class="film-title1"><%= @film.title %></h1>
+        <span><% if @film.is_top_pick %>
+            <%= image_tag "is_featured.svg", :class => "top-pick-show" %>
+          <% end %>
+        </span>
+      </div>
+      <h2 class="film-author"><%= @film.author %></h2>
+ 
+      <h2 class="film-duration"><%= @film.description %></h2>
+      <div class="flex-likes-impressions-etc">
+        <span class="liking-target">
+          <%= link_to like_film_path(@film), class: "upvoted {liked_or_not}", method: :put, remote: :true do %>
+            <%= image_tag "Polygon2.svg", :class => "polygon" %>
+          <% end %>
+          <span class="like_count">
+            <%= @film.get_likes.size %>
+          </span>
+        </span>
+        <span class="views">
+          <%= image_tag "view.svg", :class => "eyeball" %>
+          <span class="impressions"><%= @film.impressionist_count(:filter=>:ip_address) %></span>
+          <span class="impressions"></span>
+        </span>
       </div>
     </div>
-
     <p class="film-description"><%= @film.description_body %></p>
-
     <div class="play-button" onclick="toggle();">
       <span> Play</span> <%= image_tag "play.svg", :class => "play-symbol" %>
     </div>
     <div class="preview-button" onclick="toggleTrailer();">
       Trailer
     </div>
-
     <div class="">
-    <%= link_to @film.artist_website, :target => '_blank' do  %>
-    <div class="cafe-talk-button">
-      View artist
+      <%= link_to @film.artist_website, :target => '_blank' do  %>
+        <div class="cafe-talk-button">
+          View artist
+        </div>
+      <% end %>
     </div>
-    <% end %>
-    </div>
-
-
-
-
-
-
-    </div>
-
-  </section>
-
+  </div>
+</section>
 <section class="cafe" id="cafe">
   <!-- cafe reviews section included below film page here -->
-
-    <div class="cafe-banner-title">
-
-
+  <div class="cafe-banner-title">
     <span class="cafe-title">
-    <span class="film-title-cafe"><h3 class="film-cafe"><%= @film.title %> café </h3></span>
-     <span><%= image_tag "coffee.svg", :class => "coffee-cafe" %></span>
+      <span class="film-title-cafe">
+        <h3 class="film-cafe"><%= @film.title %> café </h3>
+      </span>
+      <span><%= image_tag "coffee.svg", :class => "coffee-cafe" %></span>
     </span>
-
-
-
-
     <div class="write-review-button">
       <%= link_to "Write a review", main_app.new_film_review_path(@film) %>
     </div>
-
-    </div>
-
-
-
-    <% if @film.reviews.present? %>
-
+  </div>
+  <% if @film.reviews.present? %>
     <% @film.reviews.order(cached_votes_up: :desc, created_at: :desc).each do |review| %>
-
-
       <div class="review">
-          <%= link_to film_review_path(@film, review) do %>
-        <h5><%= review.title %> </h5>
+        <%= link_to film_review_path(@film, review) do %>
+          <h5><%= review.title %> </h5>
         <% end %>
-
-    <div class="">
-      <% if review.comments.present? %>
-      <p class="review-comment-count"><%= pluralize review.comments.count, "Comment" %></p>
-      <% else %>
-      <p class="review-comment-count">no comments yet...</p>
-      <% end %>
-    </div>
-
-
-
-<section class="review-index-flex">
-    <%= link_to user_path(review.user) do %>
-        <div>
-          <p class="posted">
-              <% if review.user.avatar.present? %>
-            <span> <%= image_tag review.user.avatar.small.url, :class => "avatar" %> </span>
-            <% else %>
-              <span> <%= image_tag review.user.avatar.small.url, :class => "avatar_small" %> </span>
-            <% end %>
-            <span><%= review.user.username %> <%= time_ago_in_words(review.created_at) %> ago </span>
+        <div class="">
+          <% if review.comments.present? %>
+            <p class="review-comment-count"><%= pluralize review.comments.count, "Comment" %></p>
+          <% else %>
+            <p class="review-comment-count">no comments yet...</p>
+          <% end %>
+        </div>
+        <section class="review-index-flex">
+          <%= link_to user_path(review.user) do %>
+            <div>
+              <p class="posted">
+                <% if review.user.avatar.present? %>
+                  <span> <%= image_tag review.user.avatar.small.url, :class => "avatar" %> </span>
+                <% else %>
+                  <span> <%= image_tag review.user.avatar.small.url, :class => "avatar_small" %> </span>
+                <% end %>
+                <span><%= review.user.username %> <%= time_ago_in_words(review.created_at) %> ago </span>
               </p>
-        </div>
-      <% end %>
-
-        <div class="review-index-like">
-              <%= link_to like_review_path(review), class: "upvoted {liked_or_not}", method: :put, remote: :true do %>
-              <span class="like-image-tag">
-             <%= image_tag "Polygon2.svg", :class => "upvote-shape" %>
-               <% end %>
-               </span>
-               <span id="js3-<%= review.id %>">
-                 <%= review.get_likes.size %>
-               </span>
-        </div>
-
-        </div>
-      <% end %>
-  </section>
-
-
-
-        <% else %>
-
-        <h4 class="No-cafe-discussion">There is no discussion yet...</h4>
-
-        <% end %>
-
-  <section>
-
-
-              <div class="popupfilm" id="filmPopUp">
-                <span class="">
-                  <video-js controls preload data-setup='{"liveui": true}' class="vjs-big-play-centered" width=960 height=540>
-                    <source src="<%= @film.video_url.to_s %>" >
-                  </video-js>
-                  <span class="close" onclick="toggle();"><%= image_tag "EXIT.svg" %></span>
-                </span>
-              </div>
-
-              <div class="popuptrailer" id="popuptrailer">
-                <span>
-                  <video-js controls preload data-setup='{"liveui": true}' class="vjs-big-play-centered" width=960 height=540>
-                  <source src="<%= @film.trailer_url.to_s %>" >
-                  </video-js>
-              <span class="close" onclick="toggleTrailer();"><%= image_tag "EXIT.svg" %></span>
-                </span>
             </div>
+          <% end %>
+          <div class="review-index-like">
+            <%= link_to like_review_path(review), class: "upvoted {liked_or_not}", method: :put, remote: :true do %>
+              <span class="like-image-tag">
+                <%= image_tag "Polygon2.svg", :class => "upvote-shape" %>
+              <% end %>
+            </span>
+            <span id="js3-<%= review.id %>">
+              <%= review.get_likes.size %>
+            </span>
+          </div>
+        </div>
+      <% end %>
+    </section>
+  <% else %>
+    <h4 class="No-cafe-discussion">There is no discussion yet...</h4>
+  <% end %>
+  <section>
+    <div class="popupfilm" id="filmPopUp">
+      <span class="">
+        <video-js controls preload data-setup='{"liveui": true}' class="vjs-big-play-centered" width=960 height=540>
+          <source src="<%= @film.video_url.to_s %>" >
+        </video-js>
+        <span class="close" onclick="toggle();"><%= image_tag "EXIT.svg" %></span>
+      </span>
+    </div>
+    <div class="popuptrailer" id="popuptrailer">
+      <span>
+        <video-js controls preload data-setup='{"liveui": true}' class="vjs-big-play-centered" width=960 height=540>
+          <source src="<%= @film.trailer_url.to_s %>" >
+        </video-js>
+        <span class="close" onclick="toggleTrailer();"><%= image_tag "EXIT.svg" %></span>
+      </span>
+    </div>
+    <script type="text/javascript">
+      function toggle() {
+      var popupfilm= document.querySelector(".popupfilm")
+      popupfilm.classList.toggle("active")
+                      }
+    </script>
+    <script type="text/javascript">
+      function toggleTrailer() {
+      var trailer= document.querySelector(".popuptrailer")
+      trailer.classList.toggle("active")
+                   }
+    </script>
+    <script>
+      $(function(){
+      var $refreshButton = $('#refresh');
+      var $results = $('#css_result');
 
+      function refresh(){
+        var css = $('style.cp-pen-styles').text();
+        $results.html(css);
+      }
 
+      refresh();
+      $refreshButton.click(refresh);
 
-
-            <script type="text/javascript">
-                  function toggle() {
-                  var popupfilm= document.querySelector(".popupfilm")
-                  popupfilm.classList.toggle("active")
-                }
-              </script>
-
-             <script type="text/javascript">
-               function toggleTrailer() {
-               var trailer= document.querySelector(".popuptrailer")
-               trailer.classList.toggle("active")
-             }
-              </script>
-
-
-        <script>
-            $(function(){
-            var $refreshButton = $('#refresh');
-            var $results = $('#css_result');
-
-            function refresh(){
-              var css = $('style.cp-pen-styles').text();
-              $results.html(css);
-            }
-
-            refresh();
-            $refreshButton.click(refresh);
-
-            // Select all the contents when clicked
-            $results.click(function(){
-              $(this).select();
-            });
-          });
-        </script>
+      // Select all the contents when clicked
+      $results.click(function(){
+        $(this).select();
+      });
+                });
+    </script>

@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
-<head>
+  <head>
     <title>TimeSink Presents</title>
-        <link rel="canonical" href="https://timesinkpresents.com"/>
+    <link rel="canonical" href="https://timesinkpresents.com"/>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -13,172 +13,128 @@
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css">
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
-      <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
     <script src="https://js.stripe.com/v3/"></script>
     <script src="https://cdn.quilljs.com/1.3.6/quill.min.js"></script>
     <script src="https://unpkg.com/quill-image-uploader@1.2.1/dist/quill.imageUploader.min.js"></script>
     <%= favicon_link_tag asset_path('Group1033.png') %>
   </head>
-
-
   <div class="bg-dark-theater-primary text-mystery-white font-blog">
-
-  <body data-barba="wrapper">
-
-  <div class="content" data-barba="container">
-
-
-<header class="flex justify-between py-8 px-10">
-
-
-
-<%= link_to main_app.root_path do %>
-  <h1 class="font-display-logo text-3xl">TimeSink</h1>
-  <% end %>
-
-    <nav>
-
-    <div class="text-xs flex justify-between uppercase">
-      <%= link_to "Cinema", main_app.films_path  %>
-      <%= link_to "Blog", main_app.blog_posts_path %>
-      <%= link_to "Info", main_app.info_path %>
-      <%= link_to "Donate", main_app.new_donation_path  %>
-    </div>
-
-
-    <% if is_logged_in? %>
-
-
-
-    <span class="dropdown" id="dropdown">
-      <% if @current_user.avatar.present? %>
-      <%= image_tag @current_user.avatar.small.url, :class => "avatar" %>
-      <% else %>
-      <%= image_tag @current_user.avatar.small.url, :class => "avatar_small" %>
-      <% end %>
-      <ul class="dropdown-menu" id="dropdown-menu">
-        <li>  <%= link_to "Edit profile", main_app.edit_account_path %></li>
-        <li>  <%= link_to "View profile", main_app.user_reviews_path(@current_user) %> </li>
-        <li>  <%= link_to "Submissions", main_app.user_submissions_path(@current_user) %> </li>
-        <li> <%=  link_to "Log out", main_app.logout_path, method: :delete, :class => 'logout' %> </li>
-      </ul>
-    </span>
-
-<%= link_to pluralize(Notification.unread_count(@current_user), 'Splash'), main_app.notifications_path, :class => 'notifications' %>
-
-
-    <div class="menuArea" id="menuArea">
-      <input type='checkbox' id='toggle' style="display:none;">
-        <label class='toggle-btn toggle-btn__cross' for='toggle'>
-          <div class="bar"></div>
-          <div class="bar"></div>
-          <div class="bar"></div>
-        </label>
-        <nav id="hamburger">
-          <ul style="list-style: none;">
-            <li><%= link_to "Films", main_app.films_path  %></li>
-            <li><%= link_to "Blog", main_app.blog_posts_path %></li>
-            <li><%= link_to "Info", main_app.info_path %></li>
-            <li><%= link_to "Donate", main_app.new_donation_path %></li>
-            <hr>
-            <li><%= link_to "Sign in", main_app.new_session_path %></li>
-            <li><%= link_to "Submit film", main_app.submit_path %></li>
-          </ul>
-        </nav>
-      </div>
-
-
-  <button class="button button3">
-    <%= link_to "Submit film", main_app.submit_path %>
-  </button>
-
-  <% else %>
-
-
-  <button class="button button1">
-    <%= link_to "Sign in", new_session_path %>
-  </button>
-
-  <button class="button button2">
-    <%= link_to "Submit film", submit_path %>
-  </button>
-
-    <div class="menuArea" id="menuArea">
-      <input type='checkbox' id='toggle' style="display:none;">
-        <label class='toggle-btn toggle-btn__cross' for='toggle'>
-          <div class="bar"></div>
-          <div class="bar"></div>
-          <div class="bar"></div>
-        </label>
-        <nav id="hamburger">
-          <ul style="list-style: none;">
-            <li><%= link_to "Films", main_app.films_path  %></li>
-            <li><%= link_to "Blog", main_app.blog_posts_path %></li>
-            <li><%= link_to "Info", main_app.info_path %></li>
-            <li><%= link_to "Donate", main_app.new_donation_path %></li>
-            <hr>
-            <li><%= link_to "Sign in", new_session_path %></li>
-            <li><%= link_to "Submit film", submit_path %></li>
-          </ul>
-        </nav>
-      </div>
-
-    <% end %>
-
-
+    <body data-barba="wrapper">
+      <div class="content" data-barba="container">
+        <header class="flex justify-between py-8 px-10">
+          <%= link_to main_app.root_path do %>
+            <h1 class="font-display-logo text-3xl">TimeSink</h1>
+          <% end %>
+          <nav>
+            <div class="text-xs flex justify-between uppercase">
+              <%= link_to "Cinema", main_app.films_path  %>
+              <%= link_to "Blog", main_app.blog_posts_path %>
+              <%= link_to "Info", main_app.info_path %>
+              <%= link_to "Donate", main_app.new_donation_path  %>
+            </div>
+            <% if is_logged_in? %>
+              <span class="dropdown" id="dropdown">
+                <% if @current_user.avatar.present? %>
+                  <%= image_tag @current_user.avatar.small.url, :class => "avatar" %>
+                <% else %>
+                  <%= image_tag @current_user.avatar.small.url, :class => "avatar_small" %>
+                <% end %>
+                <ul class="dropdown-menu" id="dropdown-menu">
+                  <li>  <%= link_to "Edit profile", main_app.edit_account_path %></li>
+                  <li>  <%= link_to "View profile", main_app.user_reviews_path(@current_user) %> </li>
+                  <li>  <%= link_to "Submissions", main_app.user_submissions_path(@current_user) %> </li>
+                  <li> <%=  link_to "Log out", main_app.logout_path, method: :delete, :class => 'logout' %> </li>
+                </ul>
+              </span>
+              <%= link_to pluralize(Notification.unread_count(@current_user), 'Splash'), main_app.notifications_path, :class => 'notifications' %>
+              <div class="menuArea" id="menuArea">
+                <input type='checkbox' id='toggle' style="display:none;">
+                <label class='toggle-btn toggle-btn__cross' for='toggle'>
+                  <div class="bar"></div>
+                  <div class="bar"></div>
+                  <div class="bar"></div>
+                </label>
+                <nav id="hamburger">
+                  <ul style="list-style: none;">
+                    <li><%= link_to "Films", main_app.films_path  %></li>
+                    <li><%= link_to "Blog", main_app.blog_posts_path %></li>
+                    <li><%= link_to "Info", main_app.info_path %></li>
+                    <li><%= link_to "Donate", main_app.new_donation_path %></li>
+                    <hr>
+                    <li><%= link_to "Sign in", main_app.new_session_path %></li>
+                    <li><%= link_to "Submit film", main_app.submit_path %></li>
+                  </ul>
+                </nav>
+              </div>
+              <button class="button button3">
+                <%= link_to "Submit film", main_app.submit_path %>
+              </button>
+            <% else %>
+              <button class="button button1">
+                <%= link_to "Sign in", new_session_path %>
+              </button>
+              <button class="button button2">
+                <%= link_to "Submit film", submit_path %>
+              </button>
+              <div class="menuArea" id="menuArea">
+                <input type='checkbox' id='toggle' style="display:none;">
+                <label class='toggle-btn toggle-btn__cross' for='toggle'>
+                  <div class="bar"></div>
+                  <div class="bar"></div>
+                  <div class="bar"></div>
+                </label>
+                <nav id="hamburger">
+                  <ul style="list-style: none;">
+                    <li><%= link_to "Films", main_app.films_path  %></li>
+                    <li><%= link_to "Blog", main_app.blog_posts_path %></li>
+                    <li><%= link_to "Info", main_app.info_path %></li>
+                    <li><%= link_to "Donate", main_app.new_donation_path %></li>
+                    <hr>
+                    <li><%= link_to "Sign in", new_session_path %></li>
+                    <li><%= link_to "Submit film", submit_path %></li>
+                  </ul>
+                </nav>
+              </div>
+            <% end %>
           </nav>
-
-  </header>
-
-    <% if flash[:success].present? %>
-   <div class="success">
-     <%= flash[:success] %>
-   </div>
-   <% end %>
-
-   <% if flash[:error].present? %>
-   <div class="error">
-    <%= flash[:error] %>
-   </div>
-   <% end %>
-
-
-
-  <main>
-    <main class="container mx-auto mt-28 px-5 flex">
-        <%= yield %>
-    </main>
-  </main>
-
-  <!-- <div class="twitter">
+        </header>
+        <% if flash[:success].present? %>
+          <div class="success">
+            <%= flash[:success] %>
+          </div>
+        <% end %>
+        <% if flash[:error].present? %>
+          <div class="error">
+            <%= flash[:error] %>
+          </div>
+        <% end %>
+        <main>
+          <main class="container mx-auto mt-28 px-5 flex">
+            <%= yield %>
+          </main>
+        </main>
+        <!-- <div class="twitter">
       <a class="twitter-timeline" data-width="282" data-height="282" data-theme="dark" href="https://twitter.com/timesink_?ref_src=twsrc%5Etfw">Tweets by timesink_</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
   </div> -->
-
-
-  <%= render 'shared/footer' %>
-</div>
-
-
-
-
-
-<script src="https://unpkg.com/ionicons@5.2.3/dist/ionicons.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-<script src="https://vjs.zencdn.net/7.8.4/video.js"></script>
-<script src="//vjs.zencdn.net/ie8/1.1.1/videojs-ie8.min.js" async></script>
-<script src="https://unpkg.com/@barba/core"></script>
-<script src="https://unpkg.com/@barba/css"></script>
-<script src="https://unpkg.com/gsap@latest/dist/gsap.min.js"></script>
-<script>
-    $(function() {
-      $('.dropdown').click(function() { // when a .myDiv is clicked
-        $('.dropdown').not(this).removeClass('dropdown-active')
-        $(this).toggleClass('dropdown-active')
-      })
-    })
-</script>
-
-<!-- <script type="text/javascript">
+        <%= render 'shared/footer' %>
+      </div>
+      <script src="https://unpkg.com/ionicons@5.2.3/dist/ionicons.js"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+      <script src="https://vjs.zencdn.net/7.8.4/video.js"></script>
+      <script src="//vjs.zencdn.net/ie8/1.1.1/videojs-ie8.min.js" async></script>
+      <script src="https://unpkg.com/@barba/core"></script>
+      <script src="https://unpkg.com/@barba/css"></script>
+      <script src="https://unpkg.com/gsap@latest/dist/gsap.min.js"></script>
+      <script>
+        $(function() {
+          $('.dropdown').click(function() { // when a .myDiv is clicked
+            $('.dropdown').not(this).removeClass('dropdown-active')
+            $(this).toggleClass('dropdown-active')
+          })
+        })
+      </script>
+      <!-- <script type="text/javascript">
    barba.init({
      transitions: [{
        name: 'opacity-transition',
@@ -195,6 +151,5 @@
      }]
    });
  </script> -->
-</body>
-
+    </body>
   </div>

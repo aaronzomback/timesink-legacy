@@ -1,509 +1,509 @@
 $button-font: 'SangBleuOGSans-Regular-WebS';
 
 
-// #video-wowza {
-//   margin-left: auto;
-//   margin-right: auto;
-//   margin-top: 72px;
-// }
-//
-// /* Change all text and icon colors in the player. */
-// .video-js {
-//   color: #007dff;
-//   font-size: 20px;
-//   font-family: "AnoRegularW05WideItalic";
-// }
-//
-// .vjs-poster{
-//     background-size: 100%!important;
-// }
-//
-// /* Change the border of the big play button. */
-// .video-js .vjs-big-play-button {
-//   border: 2px solid #007dff;
-//   border-radius: 50px;
-//   height: 100px;
-//   width: 100px;
-// }
-//
-// .video-js .vjs-play-progress {
-//   background-color: #007dff;
-// }
-//
-// .video-js .vjs-volume-level{
-//   background-color: #007dff;
-// }
-//
-// .vjs-volume-panel.vjs-control.vjs-volume-panel-horizontal {
-//   color: #007dff;
-// }
-//
-//
-// $center-big-play-button: true;
-//
-// /* Change the color of various "bars". */
-// .vjs-matrix .vjs-volume-level,
-// .vjs-matrix .vjs-play-progress,
-// .vjs-matrix .vjs-slider-bar {
-//   background: #222222;
-// }
-//
-//
-//
-// .video-js .vjs-control-bar,
-// .video-js .vjs-big-play-button,
-// .video-js .vjs-menu-button .vjs-menu-content {
-//   /* IE8 - has no alpha support */
-//   background-color: black;
-//   /* Opacity: 1.0 = 100%, 0.0 = 0% */
-//   background-color: rgba(2, 1, 27, 0.8);
-// }
-//
-//
-// div.breadcrumb-film-show {
-//   margin-left: 8rem;
-//   margin-bottom: 40px;
-//   font-family: "KhmerSangamMN";
-// }
-//
-//
-// .polygon {
-//   vertical-align: middle;
-//   display: inline-block;
-//   transition: 0.2s ease-out;
-//
-//   &:hover {
-//     transform: scale(1.5);
-//   }
-// }
-//
-// span.views {
-//   margin-left: 5rem;
-//   margin-bottom: 0;
-// }
-//
-// span.impressions {
-//  // vertical-align: middle;
-// }
-//
-// span.impressions-blog {
-//   margin-left: -0.3em;
-//   margin-right: 3em;
-// }
-//
-// .eyeball {
-//   display: inline-block;
-//   width: 2.5rem;
-//   vertical-align: middle;
-// }
-//
-// .eyeball_small {
-//   display: inline-block;
-//   vertical-align: middle;
-// }
-//
-// .film-underline {
-//   border-bottom: 1px solid white;
-// }
-//
-// .film-grid {
-// }
-//
-// div.back-to-films{
-//
-//   margin-left: 80px;
-//   margin-bottom: 24px;
-//
-//   h3{
-//     text-decoration: none;
-//     color: #F5F7F9;
-//     font-size: 14px;
-//     font-family: 'SangBleuOGSans-Regular-WebS';
-//     display: inline-block;
-//   }
-// }
-//
-// span.cafe-title {
-//   display: flex;
-//   justify-content: flex-start;
-//   align-items: baseline;
-// }
-//
-// div.film-gallery-grid {
-//   // border: 1px solid white;
-//   display: grid;
-//   grid-gap: 48px;
-//   grid-template-columns: 1fr 1fr 1fr;
-//   font-family: 'SangBleuOGSans-Regular-WebS';
-//   margin-left: auto;
-//   margin-right: auto;
-//   margin-top: 120px;
-//   align-items: center;
-//   justify-items: center;
-//
-//
-//     div.film-item {
-//       text-align: center;
-//       margin: 24px;
-//       width: 360px;
-//       transition: 0.5s;
-//
-//       &:hover {
-//         transform: scale(1.019)
-//       }
-//
-//
-// img.cover_img  {
-// box-shadow: 16px 16px 24px rgba(22, 20, 20, 0.65);
-// // pseudo-border
-//  border-radius: 8px;
-//  display: block;
-//
-// }
-//
-//
-//     div.cover_img {
-//       border: 1px solid;
-//       box-shadow: 0px 4px 34px rgba(0, 0, 0, 0.65), inset 0 1px 0 #222222;
-//
-//
-//         img {
-//            display: block;
-//
-//
-//         }
-//
-//     }
-//
-//
-//     h3 {
-//       font-size: 21px;
-//         font-family: 'SangBleuOGSans-Regular-WebS';
-//     }
-//
-//
-//
-//     div.title {
-//       margin-left: 64px;
-//       margin-top: 2px;
-//       width: 300px;
-//       text-align: left;
-//       margin-right: 0;
-//
-//
-//
-//     }
-//
-//       div.coffee-review-metric {
-//         width: 100%;
-//
-//         img {
-//           width: 8%;
-//         }
-//   }
-//
-//
-//
-//           span.ribbon {
-//
-//
-//             margin-right: 0;
-//
-//
-//             img {
-//               width: 35%;
-//
-//             }
-//
-//
-//           }
-//
-//
-//     span.reviews-number {
-//       font-size: 12px;
-//     }
-//   }
-// }
-//
-//
-//   div.film-show-img img {
-//     margin-bottom: 64px;
-//     cursor: pointer;
-//     display: block;
-//     margin-left: 120px;
-//   }
-//
-//   div.comment-content {
-//     border-bottom: 1px solid white;
-//   }
-//
-//
-//
-// section.film-show-grid {
-//
-//     display: flex;
-//     align-items: flex-start;
-//     justify-content: center;
-//     grid-column-gap: 112px;
-//     // margin-top: 24px;
-//
-//         h1.film-title1 {
-//           margin-bottom: 4px;
-//           font-family: 'SangBleuOGSans-Regular-WebS';
-//           font-weight: 600;
-//           font-size: 40px;
-//           margin-top: 0;
-//         }
-//
-//         div.film-title-is-top-pick {
-//           display: flex;
-//         }
-//
-//
-//     h2.film-author, h2.film-duration {
-//       font-family: 'SangBleuOGSans-Regular-WebS';
-//       display: inline-block;
-//       margin-right: 3em;
-//       margin-top: 4px;
-//       margin-bottom: 0;
-//       font-size: 18px;
-//     }
-//
-//     div.flex-likes-impressions-etc {
-//       margin-top: 8px;
-//       display: flex;
-//       justify-content: flex-start;
-//     }
-//
-//     .film-description {
-//       font-family: "Lyon Display Web";
-//     	font-weight: normal;
-//     	font-style: normal;
-//       font-weight: 300;
-//       font-size: 18px;
-//       margin-bottom: 0;
-//       margin-top: 32px;
-//       width: 24rem;
-//     }
-//
-//
-//     img.top-pick-show {
-//     width: 6rem;
-//     margin-left: 1rem;
-//     }
-// }
-//
-// .preview-button {
-//   font-family: $button-font;
-//   margin-top: 40px;
-//   display: inline-block;
-//   width: 100px;
-//   border: 1px solid #7AA8FF;
-//   color: #7AA8FF;
-//   padding: 8px 20px;
-//   text-align: center;
-//   cursor: pointer;
-// }
-//
-// .play-button {
-//   font-family: $button-font;
-//   margin-top: 40px;
-//   display: inline-block;
-//   width: 100px;
-//   background-color: #7AA8FF;
-//   color: black;
-//   padding: 8px 20px;
-//   text-align: left;
-//   cursor: pointer;
-//   margin-right: 16px;
-// }
-//
-// .play-button img {
-//   vertical-align: middle;
-//   display: inline-block;
-//   margin-left: 4px;
-// }
-//
-// .cafe-talk-button {
-//   font-family: $button-font;
-//   margin-top: 24px;
-//   display: inline-block;
-//   width: 180px;
-//   border: 1px solid #7AA8FF;
-//   color: #7AA8FF;
-//   padding: 8px 20px;
-//   text-align: center;
-//   cursor: pointer;
-// }
-//
-//
-//   .popupfilm {
-//     position: fixed;
-//     top: 50%;
-//     left: 50%;
-//     transform: translate(-50%, -50%);
-//     z-index: 1000;
-//     background: rgba(4, 11, 17, 0.85);
-//     width: 100%;
-//     height: 100%;
-//     display: flex;
-//     justify-content: center;
-//     align-items: center;
-//     visibility: hidden;
-//     opacity: 0;
-//
-//     &.active {
-//       visibility: visible;
-//       opacity: 1;
-//     }
-//
-//     .popupfilm.video {
-//       position: relative;
-//       outline: none;
-//       max-width: 900px;
-//       pointer-events: none;
-//     }
-//
-//
-//
-//     .close {
-//
-//       position: absolute;
-//       top: 50px;
-//       right: 195px;
-//
-//
-//       cursor: pointer;
-//
-//       img {
-//         width: 100%;
-//       }
-//     }
-// }
-//
-//
-//
-// .popuptrailer {
-//   position: fixed;
-//   top: 50%;
-//   left: 50%;
-//   transform: translate(-50%, -50%);
-//   z-index: 1000;
-//   background: rgba(0, 0, 0, 0.85);
-//   width: 100%;
-//   height: 100%;
-//   display: flex;
-//   justify-content: center;
-//   align-items: center;
-//   visibility: hidden;
-//   opacity: 0;
-//
-//   &.active {
-//     visibility: visible;
-//     opacity: 1;
-//   }
-//
-//   .popuptrailer.video-js {
-//     position: relative;
-//     outline: none;
-//     max-width: 900px;
-//     pointer-events: none;
-//   }
-//
-//   .close {
-//
-//     position: absolute;
-//     top: 50px;
-//     right: 195px;
-//
-//
-//     cursor: pointer;
-//
-//     img {
-//       width: 100%;
-//     }
-//   }
-// }
-//
-//
-// /* Toggle this class - hide and show the popup */
-// .popupfilm .show {
-//   visibility: visible;
-//   -webkit-animation: fadeIn 0.40s;
-//   animation: fadeIn 0.40s;
-// }
-//
-// /* Add animation (fade in the popup) */
-// @-webkit-keyframes fadeIn {
-//   from {opacity: 0;}
-//   to {opacity: 1;}
-// }
-//
-// @keyframes fadeIn {
-//   from {opacity: 0;}
-//   to {opacity:1 ;}
-// }
-//
-//
-// /* Toggle this class - hide and show the popup */
-// .popuptrailer .show {
-//   visibility: visible;
-//   -webkit-animation: fadeIn 0.40s;
-//   animation: fadeIn 0.40s;
-// }
-//
-// /* Add animation (fade in the popup) */
-// @-webkit-keyframes fadeIn {
-//   from {opacity: 0;}
-//   to {opacity: 1;}
-// }
-//
-// @keyframes fadeIn {
-//   from {opacity: 0;}
-//   to {opacity:1 ;}
-// }
-//
-//
-//
-//
-//
-// section.cafe {
-//   margin-top: 180px;
-//   margin-left: 64px;
-//   margin-right: 64px;
-// }
-//
-//
-//
-// @media (max-width: 1200px) {
-//
-//
-//   div.film-gallery-grid {
-//     // border: 1px solid white;
-//     display: grid;
-//     grid-gap: 24px;
-//     grid-template-columns: 1fr 1fr;
-//     font-family: "MonumentGroteskTrial-Regular";
-//     margin-left: auto;
-//     margin-right: auto;
-//     align-items: center;
-//     justify-items: center;
-//   }
-//
-//     }
-//
-//     @media (max-width: 840px) {
-//
-//       div.film-gallery-grid {
-//         // border: 1px solid white;
-//         display: grid;
-//         grid-gap: 24px;
-//         grid-template-columns: 1fr;
-//         font-family: "MonumentGroteskTrial-Regular";
-//         margin-left: auto;
-//         margin-right: auto;
-//         align-items: center;
-//         justify-items: center;
-//       }
-//
-//     }
+#video-wowza {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 72px;
+}
+
+/* Change all text and icon colors in the player. */
+.video-js {
+  color: #007dff;
+  font-size: 20px;
+  font-family: "AnoRegularW05WideItalic";
+}
+
+.vjs-poster{
+    background-size: 100%!important;
+}
+
+/* Change the border of the big play button. */
+.video-js .vjs-big-play-button {
+  border: 2px solid #007dff;
+  border-radius: 50px;
+  height: 100px;
+  width: 100px;
+}
+
+.video-js .vjs-play-progress {
+  background-color: #007dff;
+}
+
+.video-js .vjs-volume-level{
+  background-color: #007dff;
+}
+
+.vjs-volume-panel.vjs-control.vjs-volume-panel-horizontal {
+  color: #007dff;
+}
+
+
+$center-big-play-button: true;
+
+/* Change the color of various "bars". */
+.vjs-matrix .vjs-volume-level,
+.vjs-matrix .vjs-play-progress,
+.vjs-matrix .vjs-slider-bar {
+  background: #222222;
+}
+
+
+
+.video-js .vjs-control-bar,
+.video-js .vjs-big-play-button,
+.video-js .vjs-menu-button .vjs-menu-content {
+  /* IE8 - has no alpha support */
+  background-color: black;
+  /* Opacity: 1.0 = 100%, 0.0 = 0% */
+  background-color: rgba(2, 1, 27, 0.8);
+}
+
+
+div.breadcrumb-film-show {
+  margin-left: 8rem;
+  margin-bottom: 40px;
+  font-family: "KhmerSangamMN";
+}
+
+
+.polygon {
+  vertical-align: middle;
+  display: inline-block;
+  transition: 0.2s ease-out;
+
+  &:hover {
+    transform: scale(1.5);
+  }
+}
+
+span.views {
+  margin-left: 5rem;
+  margin-bottom: 0;
+}
+
+span.impressions {
+ // vertical-align: middle;
+}
+
+span.impressions-blog {
+  margin-left: -0.3em;
+  margin-right: 3em;
+}
+
+.eyeball {
+  display: inline-block;
+  width: 2.5rem;
+  vertical-align: middle;
+}
+
+.eyeball_small {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.film-underline {
+  border-bottom: 1px solid white;
+}
+
+.film-grid {
+}
+
+div.back-to-films{
+
+  margin-left: 80px;
+  margin-bottom: 24px;
+
+  h3{
+    text-decoration: none;
+    color: #F5F7F9;
+    font-size: 14px;
+    font-family: 'SangBleuOGSans-Regular-WebS';
+    display: inline-block;
+  }
+}
+
+span.cafe-title {
+  display: flex;
+  justify-content: flex-start;
+  align-items: baseline;
+}
+
+div.film-gallery-grid {
+  // border: 1px solid white;
+  display: grid;
+  grid-gap: 48px;
+  grid-template-columns: 1fr 1fr 1fr;
+  font-family: 'SangBleuOGSans-Regular-WebS';
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 120px;
+  align-items: center;
+  justify-items: center;
+
+
+    div.film-item {
+      text-align: center;
+      margin: 24px;
+      width: 360px;
+      transition: 0.5s;
+
+      &:hover {
+        transform: scale(1.019)
+      }
+
+
+img.cover_img  {
+box-shadow: 16px 16px 24px rgba(22, 20, 20, 0.65);
+// pseudo-border
+ border-radius: 8px;
+ display: block;
+
+}
+
+
+    div.cover_img {
+      border: 1px solid;
+      box-shadow: 0px 4px 34px rgba(0, 0, 0, 0.65), inset 0 1px 0 #222222;
+
+
+        img {
+           display: block;
+
+
+        }
+
+    }
+
+
+    h3 {
+      font-size: 21px;
+        font-family: 'SangBleuOGSans-Regular-WebS';
+    }
+
+
+
+    div.title {
+      margin-left: 64px;
+      margin-top: 2px;
+      width: 300px;
+      text-align: left;
+      margin-right: 0;
+
+
+
+    }
+
+      div.coffee-review-metric {
+        width: 100%;
+
+        img {
+          width: 8%;
+        }
+  }
+
+
+
+          span.ribbon {
+
+
+            margin-right: 0;
+
+
+            img {
+              width: 35%;
+
+            }
+
+
+          }
+
+
+    span.reviews-number {
+      font-size: 12px;
+    }
+  }
+}
+
+
+  div.film-show-img img {
+    margin-bottom: 64px;
+    cursor: pointer;
+    display: block;
+    margin-left: 120px;
+  }
+
+  div.comment-content {
+    border-bottom: 1px solid white;
+  }
+
+
+
+section.film-show-grid {
+
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    grid-column-gap: 112px;
+    // margin-top: 24px;
+
+        h1.film-title1 {
+          margin-bottom: 4px;
+          font-family: 'SangBleuOGSans-Regular-WebS';
+          font-weight: 600;
+          font-size: 40px;
+          margin-top: 0;
+        }
+
+        div.film-title-is-top-pick {
+          display: flex;
+        }
+
+
+    h2.film-author, h2.film-duration {
+      font-family: 'SangBleuOGSans-Regular-WebS';
+      display: inline-block;
+      margin-right: 3em;
+      margin-top: 4px;
+      margin-bottom: 0;
+      font-size: 18px;
+    }
+
+    div.flex-likes-impressions-etc {
+      margin-top: 8px;
+      display: flex;
+      justify-content: flex-start;
+    }
+
+    .film-description {
+      font-family: "Lyon Display Web";
+    	font-weight: normal;
+    	font-style: normal;
+      font-weight: 300;
+      font-size: 18px;
+      margin-bottom: 0;
+      margin-top: 32px;
+      width: 24rem;
+    }
+
+
+    img.top-pick-show {
+    width: 6rem;
+    margin-left: 1rem;
+    }
+}
+
+.preview-button {
+  font-family: $button-font;
+  margin-top: 40px;
+  display: inline-block;
+  width: 100px;
+  border: 1px solid #7AA8FF;
+  color: #7AA8FF;
+  padding: 8px 20px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.play-button {
+  font-family: $button-font;
+  margin-top: 40px;
+  display: inline-block;
+  width: 100px;
+  background-color: #7AA8FF;
+  color: black;
+  padding: 8px 20px;
+  text-align: left;
+  cursor: pointer;
+  margin-right: 16px;
+}
+
+.play-button img {
+  vertical-align: middle;
+  display: inline-block;
+  margin-left: 4px;
+}
+
+.cafe-talk-button {
+  font-family: $button-font;
+  margin-top: 24px;
+  display: inline-block;
+  width: 180px;
+  border: 1px solid #7AA8FF;
+  color: #7AA8FF;
+  padding: 8px 20px;
+  text-align: center;
+  cursor: pointer;
+}
+
+
+  .popupfilm {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+    background: rgba(4, 11, 17, 0.85);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    visibility: hidden;
+    opacity: 0;
+
+    &.active {
+      visibility: visible;
+      opacity: 1;
+    }
+
+    .popupfilm.video {
+      position: relative;
+      outline: none;
+      max-width: 900px;
+      pointer-events: none;
+    }
+
+
+
+    .close {
+
+      position: absolute;
+      top: 50px;
+      right: 195px;
+
+
+      cursor: pointer;
+
+      img {
+        width: 100%;
+      }
+    }
+}
+
+
+
+.popuptrailer {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+  background: rgba(0, 0, 0, 0.85);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  visibility: hidden;
+  opacity: 0;
+
+  &.active {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  .popuptrailer.video-js {
+    position: relative;
+    outline: none;
+    max-width: 900px;
+    pointer-events: none;
+  }
+
+  .close {
+
+    position: absolute;
+    top: 50px;
+    right: 195px;
+
+
+    cursor: pointer;
+
+    img {
+      width: 100%;
+    }
+  }
+}
+
+
+/* Toggle this class - hide and show the popup */
+.popupfilm .show {
+  visibility: visible;
+  -webkit-animation: fadeIn 0.40s;
+  animation: fadeIn 0.40s;
+}
+
+/* Add animation (fade in the popup) */
+@-webkit-keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity:1 ;}
+}
+
+
+/* Toggle this class - hide and show the popup */
+.popuptrailer .show {
+  visibility: visible;
+  -webkit-animation: fadeIn 0.40s;
+  animation: fadeIn 0.40s;
+}
+
+/* Add animation (fade in the popup) */
+@-webkit-keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity:1 ;}
+}
+
+
+
+
+
+section.cafe {
+  margin-top: 180px;
+  margin-left: 64px;
+  margin-right: 64px;
+}
+
+
+
+@media (max-width: 1200px) {
+
+
+  div.film-gallery-grid {
+    // border: 1px solid white;
+    display: grid;
+    grid-gap: 24px;
+    grid-template-columns: 1fr 1fr;
+    font-family: "MonumentGroteskTrial-Regular";
+    margin-left: auto;
+    margin-right: auto;
+    align-items: center;
+    justify-items: center;
+  }
+
+    }
+
+    @media (max-width: 840px) {
+
+      div.film-gallery-grid {
+        // border: 1px solid white;
+        display: grid;
+        grid-gap: 24px;
+        grid-template-columns: 1fr;
+        font-family: "MonumentGroteskTrial-Regular";
+        margin-left: auto;
+        margin-right: auto;
+        align-items: center;
+        justify-items: center;
+      }
+
+    }

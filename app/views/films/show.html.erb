@@ -4,7 +4,7 @@
     <h3>Back to films </h3>
   <% end %>
 </div>
-<section class="film-show-grid">
+<section class="flex justify-center items-start">
   <div class="film-show-img" onclick="toggle();">
     <%= image_tag @film.cover.show.url %>
   </div>
@@ -18,7 +18,6 @@
         </span>
       </div>
       <h2 class="film-author"><%= @film.author %></h2>
- 
       <h2 class="film-duration"><%= @film.description %></h2>
       <div class="flex-likes-impressions-etc">
         <span class="liking-target">

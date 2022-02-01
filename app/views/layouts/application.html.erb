@@ -19,19 +19,19 @@
     <script src="https://unpkg.com/quill-image-uploader@1.2.1/dist/quill.imageUploader.min.js"></script>
     <%= favicon_link_tag asset_path('Group1033.png') %>
   </head>
-  <div class="bg-dark-theater-primary text-mystery-white font-blog">
+  <div class="bg-dark-theater-primary text-mystery-white font-primary">
     <body data-barba="wrapper">
       <div class="content" data-barba="container">
-        <header class="flex justify-between py-8 px-10">
+        <header class="flex flex-nowrap items-center flex-row justify-between py-8 px-10">
           <%= link_to main_app.root_path do %>
             <h1 class="font-display-logo text-3xl">TimeSink</h1>
           <% end %>
           <nav>
-            <div class="text-xs flex justify-between uppercase">
-              <%= link_to "Cinema", main_app.films_path  %>
-              <%= link_to "Blog", main_app.blog_posts_path %>
+            <div class="text-xs uppercase flex justify-between w-96">
+              <%= link_to "Cinema", main_app.films_path %>
+              <%= link_to "Blog", main_app.blog_posts_path  %>
               <%= link_to "Info", main_app.info_path %>
-              <%= link_to "Donate", main_app.new_donation_path  %>
+              <%= link_to "Donate", main_app.new_donation_path %>
             </div>
             <% if is_logged_in? %>
               <span class="dropdown" id="dropdown">
@@ -71,10 +71,10 @@
                 <%= link_to "Submit film", main_app.submit_path %>
               </button>
             <% else %>
-              <button class="button button1">
+              <button class="mx-6 text-xs text-neon-blue-primary border-solid border-2 rounded-3xl border-neon-blue-primary py-1 px-2">
                 <%= link_to "Sign in", new_session_path %>
               </button>
-              <button class="button button2">
+              <button class="border-2 text-xs text-dark-theater-primary rounded-3xl bg-neon-blue-primary border-neon-blue-primary py-1 px-2">
                 <%= link_to "Submit film", submit_path %>
               </button>
               <div class="menuArea" id="menuArea">
@@ -84,57 +84,45 @@
                   <div class="bar"></div>
                   <div class="bar"></div>
                 </label>
-                <nav id="hamburger">
-                  <ul style="list-style: none;">
-                    <li><%= link_to "Films", main_app.films_path  %></li>
-                    <li><%= link_to "Blog", main_app.blog_posts_path %></li>
-                    <li><%= link_to "Info", main_app.info_path %></li>
-                    <li><%= link_to "Donate", main_app.new_donation_path %></li>
-                    <hr>
-                    <li><%= link_to "Sign in", new_session_path %></li>
-                    <li><%= link_to "Submit film", submit_path %></li>
-                  </ul>
-                </nav>
-              </div>
-            <% end %>
-          </nav>
-        </header>
-        <% if flash[:success].present? %>
-          <div class="success">
-            <%= flash[:success] %>
-          </div>
-        <% end %>
-        <% if flash[:error].present? %>
-          <div class="error">
-            <%= flash[:error] %>
-          </div>
-        <% end %>
-        <main>
-          <main class="container mx-auto mt-28 px-5 flex">
-            <%= yield %>
+              <% end %>
+            </nav>
+          </header>
+          <% if flash[:success].present? %>
+            <div class="success">
+              <%= flash[:success] %>
+            </div>
+          <% end %>
+          <% if flash[:error].present? %>
+            <div class="error">
+              <%= flash[:error] %>
+            </div>
+          <% end %>
+          <main>
+            <main class="container mx-auto mt-28 px-5 flex">
+              <%= yield %>
+            </main>
           </main>
-        </main>
-        <!-- <div class="twitter">
+          <!-- <div class="twitter">
       <a class="twitter-timeline" data-width="282" data-height="282" data-theme="dark" href="https://twitter.com/timesink_?ref_src=twsrc%5Etfw">Tweets by timesink_</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
   </div> -->
-        <%= render 'shared/footer' %>
-      </div>
-      <script src="https://unpkg.com/ionicons@5.2.3/dist/ionicons.js"></script>
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-      <script src="https://vjs.zencdn.net/7.8.4/video.js"></script>
-      <script src="//vjs.zencdn.net/ie8/1.1.1/videojs-ie8.min.js" async></script>
-      <script src="https://unpkg.com/@barba/core"></script>
-      <script src="https://unpkg.com/@barba/css"></script>
-      <script src="https://unpkg.com/gsap@latest/dist/gsap.min.js"></script>
-      <script>
-        $(function() {
-          $('.dropdown').click(function() { // when a .myDiv is clicked
-            $('.dropdown').not(this).removeClass('dropdown-active')
-            $(this).toggleClass('dropdown-active')
+          <%= render 'shared/footer' %>
+        </div>
+        <script src="https://unpkg.com/ionicons@5.2.3/dist/ionicons.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+        <script src="https://vjs.zencdn.net/7.8.4/video.js"></script>
+        <script src="//vjs.zencdn.net/ie8/1.1.1/videojs-ie8.min.js" async></script>
+        <script src="https://unpkg.com/@barba/core"></script>
+        <script src="https://unpkg.com/@barba/css"></script>
+        <script src="https://unpkg.com/gsap@latest/dist/gsap.min.js"></script>
+        <script>
+          $(function() {
+            $('.dropdown').click(function() { // when a .myDiv is clicked
+              $('.dropdown').not(this).removeClass('dropdown-active')
+              $(this).toggleClass('dropdown-active')
+            })
           })
-        })
-      </script>
-      <!-- <script type="text/javascript">
+        </script>
+        <!-- <script type="text/javascript">
    barba.init({
      transitions: [{
        name: 'opacity-transition',
@@ -151,5 +139,5 @@
      }]
    });
  </script> -->
-    </body>
-  </div>
+      </body>
+    </div>

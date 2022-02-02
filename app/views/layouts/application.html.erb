@@ -26,12 +26,12 @@
           <%= link_to main_app.root_path do %>
             <h1 class="font-display-logo text-3xl">TimeSink</h1>
           <% end %>
-          <nav>
+          <nav class="flex flex-row items-center">
             <div class="text-xs uppercase flex justify-between w-96">
               <%= link_to "Cinema", main_app.films_path %>
               <%= link_to "Blog", main_app.blog_posts_path  %>
               <%= link_to "Info", main_app.info_path %>
-              <%= link_to "Donate", main_app.new_donation_path %>
+              <%= link_to "Donate", main_app.new_donation_path, class: "mr-8" %>
             </div>
             <% if is_logged_in? %>
               <span class="dropdown" id="dropdown">
@@ -71,12 +71,13 @@
                 <%= link_to "Submit film", main_app.submit_path %>
               </button>
             <% else %>
-              <button class="mx-6 text-xs text-neon-blue-primary border-solid border-2 rounded-3xl border-neon-blue-primary py-1 px-2">
-                <%= link_to "Sign in", new_session_path %>
-              </button>
-              <button class="border-2 text-xs text-dark-theater-primary rounded-3xl bg-neon-blue-primary border-neon-blue-primary py-1 px-2">
-                <%= link_to "Submit film", submit_path %>
-              </button>
+              <div class="flex items-center">
+                <button class="hover:bg-neon-blue-primary hover:text-dark-theater-primary mx-6 text-xs text-neon-blue-primary border-solid border-2 rounded-3xl border-neon-blue-primary py-1 px-4">
+                  <%= link_to "Sign in", new_session_path %>
+                </button>
+                <button class="hover:bg-opacity-75 hover:border-opacity-0 border-2 text-xs text-dark-theater-primary rounded-3xl bg-neon-blue-primary border-neon-blue-primary py-1 px-3.5">
+                  <%= link_to "Submit film", submit_path %>
+                </button> </div>
               <div class="menuArea" id="menuArea">
                 <input type='checkbox' id='toggle' style="display:none;">
                 <label class='toggle-btn toggle-btn__cross' for='toggle'>

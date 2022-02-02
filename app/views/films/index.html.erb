@@ -1,4 +1,4 @@
-<div class="grid grid-cols-3 items-center gap-y-12 gap-x-16 mx-auto">
+<div class="flex flex-wrap flex-row lg:grid lg:grid-cols-3 items-center gap-y-12 gap-x-16 mx-auto">
   <% @films.order(cached_votes_up: :desc, created_at: :desc).each do |film| %>
     <div>
       <%= link_to film_path(film) do %>

@@ -14,7 +14,7 @@ module.exports = {
   theme: {
     colors: {
       'mystery-white': '#F5F7F9',
-      'dark-theater-primary': '#222222',
+      'dark-theater-primary': '#1B1C1E',
       'dark-theater-medium': '#3B3B3B',
       'dark-theater-light': '#545454',
       'dark-theater-lightest': '#6E6E6E',

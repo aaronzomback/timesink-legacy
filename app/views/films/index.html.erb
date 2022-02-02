@@ -1,9 +1,9 @@
 <div class="flex flex-wrap flex-row lg:grid lg:grid-cols-3 items-center gap-y-12 gap-x-16 mx-auto">
   <% @films.order(cached_votes_up: :desc, created_at: :desc).each do |film| %>
-    <div>
+    <div class="hover:scale-105 transition ease-in-out duration-500">
       <%= link_to film_path(film) do %>
         <div class="block">
-          <%= image_tag film.cover.gallery.url, :class => "cover_img" %>
+          <%= image_tag film.cover.gallery.url, :class => "rounded-sm shadow-[16px 16px 24px rgb(22 20 20 / 65%)]" %>
         </div>
         <div class="flex justify-between">
           <div class="mt-4">
